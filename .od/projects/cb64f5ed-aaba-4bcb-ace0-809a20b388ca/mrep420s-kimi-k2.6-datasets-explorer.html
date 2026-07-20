@@ -1,0 +1,1710 @@
+
+<!doctype html>
+<html lang="yes">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kimi AI with K2.6 | Datasets Explorer & Agent Swarms</title>
+  
+  <!-- Tailwind CSS CDN (Optional confirmation, using static CSS reset + variables first) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#36b07c',
+              hover: '#2c9668',
+              light: '#eefcf7',
+              dark: '#1c4a36'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React & Babel CDNs -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+   <style>
+    /* Premium visual tokens & baseline styles */
+    :root {
+      --bg: oklch(15% 0.005 240);
+      --surface: oklch(18% 0.006 240);
+      --surface-hover: oklch(22% 0.007 240);
+      --fg: oklch(93% 0.005 240);
+      --muted: oklch(62% 0.01 240);
+      --border: oklch(24% 0.005 240);
+      --accent: oklch(69% 0.16 156); /* #36b07c Kimi Green */
+      --accent-hover: oklch(63% 0.17 156);
+      --accent-bg: oklch(20% 0.04 156);
+      
+      --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    .light {
+      --bg: oklch(99% 0.003 240);
+      --surface: oklch(100% 0 0);
+      --surface-hover: oklch(97% 0.002 240);
+      --fg: oklch(20% 0.015 240);
+      --muted: oklch(50% 0.015 240);
+      --border: oklch(92% 0.006 240);
+      --accent: oklch(69% 0.16 156);
+      --accent-hover: oklch(62% 0.17 156);
+      --accent-bg: oklch(94% 0.012 156);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--fg);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* Typographic tracking optimizations */
+    .heading-large {
+      font-family: var(--font-display);
+      letter-spacing: -0.020em;
+      line-height: 1.2;
+    }
+
+    .all-caps-label {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Hide scrollbars but preserve functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Highlight effects matching Kimi */
+    .chat-bubble-kimi {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+    }
+    
+    .chat-bubble-user {
+      background-color: var(--accent-bg);
+      border: 1px solid oklch(69% 0.16 156 / 35%);
+    }
+
+    .pulse-search {
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .dark-grid-bg {
+      background-image: radial-gradient(rgba(54, 176, 124, 0.06) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .light .dark-grid-bg {
+      background-image: radial-gradient(rgba(54, 176, 124, 0.04) 1px, transparent 0);
+    }
+
+    /* Glowing connections for Claw pipeline */
+    .glow-connection {
+      position: relative;
+    }
+    .glow-connection::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: pipe-glow 2.5s infinite linear;
+    }
+    @keyframes pipe-glow {
+      0% { left: -100%; right: 100%; }
+      50% { left: 0%; right: 0%; }
+      100% { left: 100%; right: -100%; }
+    }
+  </style>
+</head>
+<body class="h-screen w-screen overflow-hidden dark-grid-bg">
+
+  <div id="root" class="h-full w-full"></div>
+
+  <!-- React Code Implementation -->
+  <script type="text/babel">
+    const { useState, useEffect, useMemo, useRef } = React;
+
+    // Design Tweak defaults for persistence
+    const TWEAK_DEFAULTS = {
+      "primaryColor": "#36b07c",
+      "fontSize": 13,
+      "agentSpeed": 1
+    };
+
+    // Real production-grade dataset catalog
+    const DATASETS = [
+      {
+        id: "fineweb-edu",
+        name: "FineWeb-Edu",
+        category: "Pre-training",
+        size: "1.3T tokens (15TB)",
+        license: "Open / CC-BY-4.0",
+        description: "A subset of Hugging Face's FineWeb dataset, filtered using a classifier trained on Llama-3-70B annotations of educational value. Consistently outperforms other open web datasets on common benchmarks.",
+        source: "Hugging Face",
+        tags: ["LLM", "Pre-training", "Educational", "Web Text"],
+        stats: { tokens: "1.3 Trillion", sizeRaw: "15TB", educationScore: ">= 3/5", qualityFiltered: "Classifier-guided" },
+        schema: [
+          { field: "text", type: "string", desc: "Cleaned webpage markdown text with educational content" },
+          { field: "url", type: "string", desc: "Original URL of the crawled webpage" },
+          { field: "score", type: "float", desc: "Educational value classifier score (0 to 5)" }
+        ],
+        preview: [
+          { text: "Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy. There are two types of photosynthetic processes...", url: "https://en.wikipedia.org/wiki/Photosynthesis", score: "4.8" },
+          { text: "Linear algebra is the branch of mathematics concerning linear equations, linear functions, and their representations in vector spaces and through matrices...", url: "https://ocw.mit.edu/courses/mathematics", score: "4.9" }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\n# Load FineWeb-Edu English sample\ndataset = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train")`,
+          python: `import json\nimport urllib.request\n\n# Stream read FineWeb-Edu sample\nurl = "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/main/sample/sample-10BT.jsonl"\nwith urllib.request.urlopen(url) as response:\n    for line in response:\n        item = json.loads(line.decode('utf-8'))\n        print(f"[{item['score']}]: {item['text'][:120]}")`,
+          curl: `curl -L -O https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/main/sample/sample-10BT.jsonl`
+        }
+      },
+      {
+        id: "redpajama-v2",
+        name: "RedPajama-Data-v2",
+        category: "Pre-training",
+        size: "30B docs (100T+ tokens)",
+        license: "Apache 2.0 / CC-BY-4.0",
+        description: "An open corpus of high-quality dataset for large language model pre-training released by Together AI, aiming to replicate the recipe of the original LLaMA paper. Based on 84 Common Crawl data dumps, containing rich text and metadata tags for filtering.",
+        source: "Together AI",
+        tags: ["LLM", "Pre-training", "Multilingual", "Web Text"],
+        stats: { docs: "30,000,000,000+", sizeRaw: "100TB+", qualityFiltered: "Yes" },
+        schema: [
+          { field: "text", type: "string", desc: "Extracted and cleaned main text of the webpage" },
+          { field: "meta", type: "json", desc: "Metadata including webpage URL, crawl time, language detection scores, etc." },
+          { field: "quality_signals", type: "json", desc: "Heuristic evaluation scores including sentence length, repetition ratio, and perplexity" }
+        ],
+        preview: [
+          { text: "Together AI today announces the release of RedPajama-Data-v2, an open corpus for training leading language models containing over 30 billion documents...", meta: '{"url": "https://together.ai/blog/redpajama-v2", "lang": "en"}', quality_signals: '{"length": 850, "repetition_ratio": 0.04}' },
+          { text: "The training of large language models depends on extremely large corpora. To improve model effectiveness, researchers have proposed various text cleaning and quality evaluation methods...", meta: '{"url": "https://github.com/togethercomputer", "lang": "zh"}', quality_signals: '{"length": 620, "repetition_ratio": 0.01}' }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\n# Load RedPajama-v2 English main dataset\ndataset = load_dataset(\n    "togethercomputer/RedPajama-Data-V2",\n    name="default",\n    partition="head_middle",\n    snapshots=["2023-14"],\n    languages=["en"]\n)`,
+          python: `import json\nimport urllib.request\n\n# Stream read dataset samples\nurl = "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-V2/resolve/main/sample.jsonl"\nwith urllib.request.urlopen(url) as response:\n    for line in response:\n        item = json.loads(line.decode('utf-8'))\n        print(item['text'][:150])`,
+          curl: `curl -L -O https://huggingface.co/datasets/togethercomputer/RedPajama-Data-V2/resolve/main/sample.jsonl`
+        }
+      },
+      {
+        id: "deepseek-math",
+        name: "DeepSeek-Math-Corpus",
+        category: "Pre-training",
+        size: "120B tokens (2.5TB)",
+        license: "MIT",
+        description: "A large-scale high-quality math corpus gathered from the internet. Deduped, quality-filtered, and structured to train DeepSeekMath, achieving state-of-the-art results in math reasoning among open source models.",
+        source: "DeepSeek AI",
+        tags: ["Math", "Pre-training", "LaTeX", "Science"],
+        stats: { tokens: "120 Billion", sizeRaw: "2.5TB", formatting: "LaTeX / Markdown", sourceCount: "12M domains" },
+        schema: [
+          { field: "text", type: "string", desc: "Scientific webpage or document with inline LaTeX math symbols" },
+          { field: "source", type: "string", desc: "Target domain origin (e.g. arXiv, mathoverflow)" },
+          { field: "math_ratio", type: "float", desc: "Ratio of math equations to plain words in the document" }
+        ],
+        preview: [
+          { text: "Let $G$ be a finite group and $H \\le G$ a subgroup. The index of $H$ in $G$, denoted by $[G:H]$, is the number of left cosets of $H$ in $G$. Lagrange's theorem states that $|G| = [G:H]|H|$...", source: "mathoverflow.net", math_ratio: "0.24" },
+          { text: "Consider the differential equation $y'' + p(x)y' + q(x)y = 0$. If $x_0$ is a regular singular point, we can solve using the Frobenius method: $y(x) = \\sum_{n=0}^{\\infty} a_n (x-x_0)^{n+r}$...", source: "wikipedia.org", math_ratio: "0.35" }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\n# Load DeepSeek Math Corpus\ndataset = load_dataset("deepseek-ai/DeepSeek-Math-Corpus", split="train")`,
+          python: `from datasets import load_dataset\n\nds = load_dataset("deepseek-ai/DeepSeek-Math-Corpus", split="train", streaming=True)\nfor example in ds.take(3):\n    print(f"Domain: {example['source']} | Content: {example['text'][:120]}")`,
+          curl: `curl -L -O https://huggingface.co/datasets/deepseek-ai/DeepSeek-Math-Corpus/resolve/main/data/train.parquet`
+        }
+      },
+      {
+        id: "moss-003-sft",
+        name: "MOSS-003-SFT",
+        category: "SFT / Instruction",
+        size: "1.1M conversations",
+        license: "OAG-v1.2 (Non-commercial research only)",
+        description: "A multi-turn conversation instruction tuning dataset open-sourced by the MOSS team from Fudan University's NLP Laboratory. Contains over 1.1 million multi-turn dialogue records generated by LLMs, covering coding, mathematical reasoning, logical deduction, and safety compliance tasks.",
+        source: "Fudan University NLP Lab",
+        tags: ["Fine-tuning", "SFT", "Multi-turn Dialogue", "Code & Math"],
+        stats: { dialogs: "1,160,000+", lang: "Bilingual (Zh/En)", qualityFiltered: "SFT Cleaned" },
+        schema: [
+          { field: "conversation_id", type: "int", desc: "Dialogue sequence number" },
+          { field: "category", type: "string", desc: "Task type (e.g., code_generation, math_reasoning)" },
+          { field: "system", type: "string", desc: "System global instruction (System Prompt)" },
+          { field: "chat", type: "array", desc: "JSON array containing multi-turn Q&A conversations" }
+        ],
+        preview: [
+          { conversation_id: 10423, category: "math_reasoning", system: "You are a helpful mathematical assistant.", chat: '[{"role": "user", "content": "Solve the equation x^2 - 5x + 6 = 0."}, {"role": "assistant", "content": "Factoring the equation yields (x-2)(x-3) = 0, hence the solutions are x=2 or x=3."}]' },
+          { conversation_id: 10424, category: "code_generation", system: "You are an expert Python coder.", chat: '[{"role": "user", "content": "Write a Python function to check if a number is prime."}, {"role": "assistant", "content": "You can use trial division as shown below:\\ndef is_prime(n):\\n    if n <= 1: return False\\n    for i in range(2, int(n**0.5)+1):\\n        if n % i == 0: return False\\n    return True"}]' }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\n# Load MOSS SFT dataset\ndataset = load_dataset("fnlp/moss-003-sft")`,
+          python: `from datasets import load_dataset\n\nds = load_dataset("fnlp/moss-003-sft", split="train")\nfirst_sample = ds[0]\nprint(f"System: {first_sample['system']}")\nfor turn in first_sample['chat']:\n    print(f"{turn['role']}: {turn['content']}")`,
+          curl: `curl -L -O https://huggingface.co/datasets/fnlp/moss-003-sft/resolve/main/moss-003-sft-data.jsonl`
+        }
+      },
+      {
+        id: "sharegpt-90k",
+        name: "ShareGPT-90K",
+        category: "SFT / Instruction",
+        size: "90k conversations",
+        license: "CC-BY-NC-4.0",
+        description: "A multi-turn conversation dataset cleaned and extracted from publicly shared user ChatGPT conversation records. Essential for training human intent alignment (SFT) and chat assistants (e.g., Vicuna model).",
+        source: "ShareGPT Project",
+        tags: ["Fine-tuning", "SFT", "Real User Conversations", "Alignment"],
+        stats: { conversations: "90,000+", rawRating: "High", usage: "Vicuna Core" },
+        schema: [
+          { field: "id", type: "string", desc: "Conversation ID" },
+          { field: "conversations", type: "array", desc: "Main multi-turn dialogue, containing from (human/gpt) and value (content) key-value pairs" }
+        ],
+        preview: [
+          { id: "sharegpt-01923", conversations: '[{"from": "human", "value": "Explain the difference between SQL and NoSQL databases in simple terms."}, {"from": "gpt", "value": "SQL databases are relational, table-based, and have structured schemas, like a structured spreadsheet. NoSQL databases are non-relational, document-based, and highly dynamic, like a folder containing random text files."}]' }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\ndataset = load_dataset("Aeala/ShareGPT_Vicuna_unfiltered")`,
+          python: `import json\n# Read officially downloaded ShareGPT JSON data locally\nwith open("sharegpt_90k.json", "r") as f:\n    data = json.load(f)\n    print("Conversation turns:", len(data[0]["conversations"]))`,
+          curl: `curl -L -O https://huggingface.co/datasets/Aeala/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split.json`
+        }
+      },
+      {
+        id: "gsm8k",
+        name: "GSM8K",
+        category: "Reasoning & Math",
+        size: "8.5K problems",
+        license: "MIT",
+        description: "A high-quality dataset of grade school math problems published by OpenAI. All solutions are paired with detailed, step-by-step Chain-of-Thought (CoT) explanations, commonly used for fine-tuning and evaluating logical reasoning capabilities of large language models.",
+        source: "OpenAI",
+        tags: ["Math Reasoning", "Chain-of-Thought", "Model Evaluation", "SFT"],
+        stats: { trainSize: "7,473", testSize: "1,319", language: "English" },
+        schema: [
+          { field: "question", type: "string", desc: "Grade school math word problem description" },
+          { field: "answer", type: "string", desc: "Detailed derivation process presented as step-by-step CoT, ending with the final numeric result formatted as '#### answer_value'" }
+        ],
+        preview: [
+          { question: "Weng earns $12 an hour for babysitting. Yesterday, she babysat for 5 hours. How much money did she earn?", answer: "Weng babysat for 5 hours at $12 an hour, so she earned 5 * 12 = $60.\n#### 60" }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\ndataset = load_dataset("gsm8k", "main")`,
+          python: `from datasets import load_dataset\n\nds = load_dataset("gsm8k", "main", split="test")\nfor example in ds.take(1):\n    print("Question:", example["question"])\n    print("Answer CoT:\\n", example["answer"])`,
+          curl: `curl -L -O https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl`
+        }
+      },
+      {
+        id: "ultrafeedback",
+        name: "UltraFeedback-DPO",
+        category: "RLHF & Preference",
+        size: "64k prompts, 256k responses",
+        license: "MIT",
+        description: "A large-scale feedback rating dataset for training large language model alignment and human preference. Contains 64,000 task instructions, with responses generated by 4 models of different parameters and architectures, evaluated and scored by GPT-4 across multiple dimensions (helpfulness, truthfulness, honesty, etc.) along with preference selection.",
+        source: "Tsinghua University NLP Lab",
+        tags: ["Preference Learning", "DPO", "RLHF", "Evaluation Feedback"],
+        stats: { prompts: "63,967", modelOutputs: "255,868", gpt4Evaluations: "Yes" },
+        schema: [
+          { field: "prompt", type: "string", desc: "Initial input prompt" },
+          { field: "models", type: "array", desc: "List of model names that generated the responses" },
+          { field: "completions", type: "array", desc: "Specific response text generated by each model" },
+          { field: "scores", type: "array", desc: "GPT-4 multi-dimensional objective scores and rationales for each model response" }
+        ],
+        preview: [
+          { prompt: "How do I make beef stew in a slow cooker?", models: '["gpt-4", "llama-2-70b-chat", "vicuna-13b", "falcon-40b"]', completions: '["To make beef stew in a slow cooker, start by searing the beef cubes...", "Add beef, carrots, potatoes and onions to slow cooker..."]', scores: '{"gpt-4": 9.5, "llama-2-70b-chat": 8.8, "vicuna-13b": 7.5}' }
+        ],
+        code: {
+          hf: `from datasets import load_dataset\n\n# Load UltraFeedback raw alignment rating dataset\ndataset = load_dataset("openbmb/UltraFeedback")`,
+          python: `from datasets import load_dataset\n\nds = load_dataset("openbmb/UltraFeedback", split="train")\nsample = ds[0]\nprint("Prompt:", sample["prompt"])\nfor idx, model in enumerate(sample["models"]):\n    print(f"Model: {model} | Rating Score: {sample['annotations'][model]['overall_score']}")`,
+          curl: `curl -L -O https://huggingface.co/datasets/openbmb/UltraFeedback/resolve/main/data/train.parquet`
+        }
+      }
+    ];
+
+    // Helper functions for parsing multi-turn conversations
+    function parseJsonHelper(val) {
+      try {
+        return typeof val === 'string' ? JSON.parse(val) : val;
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function App() {
+      // Theme defaults to dark as in Kimi K2.6
+      const [theme, setTheme] = useState("dark");
+      const [activeTab, setActiveTab] = useState("chat"); // chat, swarm, claw, skill, catalog
+      const [selectedCategory, setSelectedCategory] = useState("All");
+      const [searchQuery, setSearchQuery] = useState("");
+      
+      // Design Tweaks Panel
+      const [showTweaks, setShowTweaks] = useState(false);
+      const [tweakBrandColor, setTweakBrandColor] = useState(TWEAK_DEFAULTS.primaryColor); // Default Kimi Green
+      const [tweakFontSize, setTweakFontSize] = useState(TWEAK_DEFAULTS.fontSize); // Default font size in px
+      const [tweakAgentSpeed, setTweakAgentSpeed] = useState(TWEAK_DEFAULTS.agentSpeed); // multiplier
+      
+      // Chat state
+      const [chatSessions, setChatSessions] = useState([
+        { id: "sess-1", title: "Kimi K2.6 Web Scraping Agent Swarms", category: "Kimi K2.6" },
+        { id: "sess-2", title: "How to Build a Custom FineWeb-Edu", category: "Pre-training" },
+        { id: "sess-3", title: "Logical Critique Alignment Pipelines", category: "SFT" }
+      ]);
+      const [activeSessionId, setActiveSessionId] = useState("sess-1");
+      const [chatMessages, setChatMessages] = useState({
+        "sess-1": [
+          { sender: "user", text: "How does the new Kimi K2.6 Agent Swarm structure crawler jobs for large scale production pre-training datasets?" },
+          { sender: "kimi", text: "Hello! The new Kimi K2.6 features native Agent Swarm capabilities. Instead of relying on a single monolithic web crawler, Kimi coordinates up to 100 concurrent specialized parsing agents that work together in real-time:\n\n1. **High Concurrency Harvesting**: Scouts continuously identify links and extract raw text from domain sources.\n2. **Classifier Filtering**: Educational value, toxicity, and quality scoring filters are applied inline.\n3. **De-duplication via Swarm MinHash**: High-velocity deduping indexes prevent duplicate tokens in the pre-training mix.\n\nYou can switch to the \"🐝 Agent Swarm\" tab at the top to configure parameters and run a live visual simulation of 40 agents compiling a dataset!", status: "done" }
+        ],
+        "sess-2": [
+          { sender: "user", text: "How can I filter web corpus documents to replicate a dataset like FineWeb-Edu?" },
+          { sender: "kimi", text: "Replicating FineWeb-Edu involves training a fast annotation classifier. Usually, researchers score a few thousand sample paragraphs with a larger model like Llama-3-70B using a rubric graded from 1 (low educational value, no learning worth) to 5 (excellent textbook style page). They then train a lightweight classifier (like FastText or a small BERT) on those scores. \n\nYou can inspect the schema and previews of FineWeb-Edu by checking the \"📦 Data Asset Catalog\" in the sidebar.", status: "done" }
+        ],
+        "sess-3": [
+          { sender: "user", text: "What is a Claw Group in Kimi K2.6?" },
+          { sender: "kimi", text: "A Claw Group is Kimi K2.6's multi-agent teamwork architecture. By splitting a complex task among multiple specialized sub-agents (e.g., Scout, Extractor, Critic, Formatter), they check each other's outputs sequentially. \n\nFor example, when creating a math reasoning dataset, the Extractor pulls the equations, the Critic verifies the mathematical steps, and the Formatter standardizes it to LaTeX format. You can click on the \"🧬 Claw Groups\" tab above to inspect the live routing graph.", status: "done" }
+        ]
+      });
+      
+      const [inputValue, setInputValue] = useState("");
+      const [isThinking, setIsThinking] = useState(false);
+      const [searchWeb, setSearchWeb] = useState(true);
+
+      // Dataset Inspector Panel state
+      const [inspectingDataset, setInspectingDataset] = useState(null);
+      const [inspectorTab, setInspectorTab] = useState("overview");
+      const [selectedFormatCode, setSelectedFormatCode] = useState("hf");
+
+      // Swarm Simulator State
+      const [swarmPreset, setSwarmPreset] = useState("math_olympiad");
+      const [swarmSize, setSwarmSize] = useState(25);
+      const [isSwarmRunning, setIsSwarmRunning] = useState(false);
+      const [swarmLogs, setSwarmLogs] = useState([]);
+      const [swarmStats, setSwarmStats] = useState({ tokens: 0, docs: 0, unique: 100, size: 0 });
+      const [agentNodes, setAgentNodes] = useState(
+        Array.from({ length: 40 }, (_, i) => ({
+          id: i + 1,
+          status: "idle",
+          label: `Agent-${String(i + 1).padStart(2, '0')}`
+        }))
+      );
+      
+      // Claw Groups Panel State
+      const [selectedClawAgent, setSelectedClawAgent] = useState("scout");
+
+      // Doc-to-Skill Compiler State
+      const [skillInputType, setSkillInputType] = useState("pdf");
+      const [skillInputText, setSkillInputText] = useState(
+        `[arXiv:1706.03762]\nTitle: Attention Is All You Need\nAbstract: We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. We show that these models generalize incredibly well to translation tasks...`
+      );
+      const [isCompilingSkill, setIsCompilingSkill] = useState(false);
+      const [compiledSkill, setCompiledSkill] = useState(null);
+
+      // Bottom ref for scrolling chat
+      const chatEndRef = useRef(null);
+      const swarmTerminalEndRef = useRef(null);
+      const swarmIntervalRef = useRef(null);
+
+      useEffect(() => {
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.classList.remove("light");
+        } else {
+          document.documentElement.classList.add("light");
+          document.documentElement.classList.remove("dark");
+        }
+      }, [theme]);
+
+      useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, [chatMessages, activeSessionId, isThinking]);
+
+      useEffect(() => {
+        swarmTerminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, [swarmLogs]);
+
+      // Category extraction for quick tags
+      const categories = ["All", "Pre-training", "SFT / Instruction", "Reasoning & Math", "RLHF & Preference"];
+
+      // Filtered datasets list
+      const filteredDatasets = useMemo(() => {
+        return DATASETS.filter(ds => {
+          const matchCategory = selectedCategory === "All" || ds.category.toLowerCase().includes(selectedCategory.split(" ")[0].toLowerCase());
+          const matchQuery = ds.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             ds.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             ds.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+          return matchCategory && matchQuery;
+        });
+      }, [selectedCategory, searchQuery]);
+
+      // Dynamic theme token bindings matching custom tweaks
+      const dynamicStyles = {
+        style: {
+          fontSize: `${tweakFontSize}px`
+        }
+      };
+
+      useEffect(() => {
+        document.documentElement.style.setProperty('--accent', tweakBrandColor);
+        // Slightly darker accent hover
+        document.documentElement.style.setProperty('--accent-hover', `oklch(from ${tweakBrandColor} calc(l - 0.05) c h)`);
+        document.documentElement.style.setProperty('--accent-bg', `oklch(from ${tweakBrandColor} 0.20 0.04 h)`);
+      }, [tweakBrandColor]);
+
+      // Swarm Simulator Interval Logic
+      const toggleSwarm = () => {
+        if (isSwarmRunning) {
+          clearInterval(swarmIntervalRef.current);
+          setIsSwarmRunning(false);
+          setAgentNodes(prev => prev.map(node => ({ ...node, status: "idle" })));
+        } else {
+          setIsSwarmRunning(true);
+          setSwarmStats({ tokens: 0, docs: 0, unique: 100, size: 0 });
+          setSwarmLogs(["[System] Initializing Kimi K2.6 Swarm pipeline...", `[System] Allocating ${swarmSize} specialized parsing agents.`]);
+
+          swarmIntervalRef.current = setInterval(() => {
+            setSwarmStats(prev => {
+              const newDocs = prev.docs + Math.floor(Math.random() * 5 + 1);
+              const extraTokens = Math.floor(Math.random() * 25000 + 5000);
+              const uniqueRatio = Math.max(76.4, prev.unique - (Math.random() * 0.4));
+              const sizeMB = prev.size + (extraTokens * 4) / 1024 / 1024;
+              return {
+                tokens: prev.tokens + extraTokens,
+                docs: newDocs,
+                unique: parseFloat(uniqueRatio.toFixed(2)),
+                size: parseFloat(sizeMB.toFixed(2))
+              };
+            });
+
+            // Randomly update agent statuses
+            setAgentNodes(prev => {
+              return prev.map(node => {
+                if (node.id > swarmSize) return { ...node, status: "idle" };
+                const roll = Math.random();
+                let status = "idle";
+                if (roll < 0.2) status = "crawling";
+                else if (roll < 0.4) status = "filtering";
+                else if (roll < 0.7) status = "deduping";
+                else status = "writing";
+                return { ...node, status };
+              });
+            });
+
+            // Append logs depending on preset
+            const logsPreset = {
+              math_olympiad: [
+                "Scouring mathoverflow.net for group theory proofs...",
+                "LaTeX sanitizer matching formula patterns: \\sum_{i=1}^n x_i...",
+                "Logical critique: verifying step-by-step arithmetic steps...",
+                "Writing shard to parquet format (3.2KB/s)..."
+              ],
+              arxiv_transformers: [
+                "Downloading PDF stream from arxiv.org/pdf/2403.0118...",
+                "Extracting title metadata: Swarm Multi-Agent Architectures...",
+                "Deduplicating reference bibliography against local DB...",
+                "Adding parsed abstract to token stream dataset..."
+              ],
+              dev_docstrings: [
+                "Cloning github.com/moonshot-ai/kimi-k2.6 examples...",
+                "Parsing python AST trees to extract nested docstrings...",
+                "Filtering docstrings with token lengths below 45...",
+                "Formatting JSON conversation block structures..."
+              ]
+            };
+
+            const selectedLogs = logsPreset[swarmPreset];
+            const randomLog = selectedLogs[Math.floor(Math.random() * selectedLogs.length)];
+            const time = new Date().toLocaleTimeString([], { hour12: false, fractionalSecondDigits: 1 });
+            const randomAgent = Math.floor(Math.random() * swarmSize) + 1;
+            setSwarmLogs(prev => [...prev, `[${time}] [Agent-${String(randomAgent).padStart(2, '0')}] ${randomLog}`]);
+
+          }, 1000 / tweakAgentSpeed);
+        }
+      };
+
+      useEffect(() => {
+        return () => clearInterval(swarmIntervalRef.current);
+      }, []);
+
+      // Doc-to-Skill compiler simulation
+      const handleCompileSkill = () => {
+        setIsCompilingSkill(true);
+        setTimeout(() => {
+          setIsCompilingSkill(false);
+          
+          let schema = [];
+          let codeStr = "";
+          let validator = "";
+
+          if (skillInputType === "pdf") {
+            schema = [
+              { field: "arxiv_id", type: "string", desc: "Parsed identifier from arXiv" },
+              { field: "title", type: "string", desc: "Scientific paper title" },
+              { field: "abstract", type: "string", desc: "Extracted abstract summary" }
+            ];
+            codeStr = `def parse_paper_skill(raw_pdf_bytes):\n    # Extract text from pdf layout streams\n    text = pdf_reader.extract_text(raw_pdf_bytes)\n    arxiv_id = re.search(r"arXiv:\\s*(\\d+\\.\\d+)", text).group(1)\n    title = text.split("\\n")[1]\n    abstract = text.split("Abstract:")[1].split("1. Introduction")[0]\n    return {\n        "arxiv_id": arxiv_id,\n        "title": title.strip(),\n        "abstract": abstract.strip()\n    }`;
+            validator = `from pydantic import BaseModel, Field\n\nclass ScientificPaperSkill(BaseModel):\n    arxiv_id: str = Field(pattern=r"^\\d{4}\\.\\d{4,5}$")\n    title: str\n    abstract: str = Field(min_length=50)`;
+          } else {
+            schema = [
+              { field: "html_title", type: "string", desc: "Webpage header title" },
+              { field: "clean_body", type: "string", desc: "Deduplicated readability text" },
+              { field: "meta_keywords", type: "array", desc: "HTML meta keywords" }
+            ];
+            codeStr = `def parse_web_skill(html_content):\n    soup = BeautifulSoup(html_content, 'html.parser')\n    title = soup.find('title').text\n    # Run Kimi boilerplate cleaner\n    body = remove_nav_elements(soup)\n    keywords = [tag['content'] for tag in soup.find_all('meta', {'name': 'keywords'})]\n    return {\n        "html_title": title,\n        "clean_body": body,\n        "meta_keywords": keywords\n    }`;
+            validator = `from pydantic import BaseModel\n\nclass WebScrapeSkill(BaseModel):\n    html_title: str\n    clean_body: str\n    meta_keywords: list[str]`;
+          }
+
+          setCompiledSkill({ schema, code: codeStr, validator });
+        }, 1800);
+      };
+
+      // Change doc presets
+      const handleInputPresetChange = (type) => {
+        setSkillInputType(type);
+        if (type === "pdf") {
+          setSkillInputText(`[arXiv:1706.03762]\nTitle: Attention Is All You Need\nAbstract: We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. We show that these models generalize incredibly well to translation tasks...`);
+        } else if (type === "web") {
+          setSkillInputText(`<!DOCTYPE html>\n<html>\n<head>\n  <meta name="keywords" content="Kimi, K2.6, agent swarm, visual coding">\n  <title>Kimi AI with K2.6 | Better Coding, Smarter Agents</title>\n</head>\n<body>\n  <nav>Navigation links</nav>\n  <main>Try Kimi K2.6 to build stunning, full-stack websites, use Agent Swarm for massive tasks...</main>\n</body>\n</html>`);
+        }
+        setCompiledSkill(null);
+      };
+
+      // Handle sending chat message
+      const handleSendMessage = (textToSend) => {
+        if (!textToSend.trim()) return;
+
+        const newUserMsg = { sender: "user", text: textToSend };
+        setChatMessages(prev => ({
+          ...prev,
+          [activeSessionId]: [...(prev[activeSessionId] || []), newUserMsg]
+        }));
+        setInputValue("");
+        setIsThinking(true);
+
+        setTimeout(() => {
+          const textLower = textToSend.toLowerCase();
+          let responseText = "Hello! I am Kimi, your production-grade dataset assistant.";
+          
+          if (textLower.includes("pre-training") || textLower.includes("pretrain") || textLower.includes("base")) {
+            responseText = `Based on your pre-training query, I have matched the best open-source datasets for you:\n\n* **FineWeb-Edu**: Hand-labeled samples trained on Llama-3 evaluations (1.3T tokens), ensuring extremely high educational content.\n* **RedPajama-Data-v2**: Features 30B docs, together with quality flags (repetition, perplexity).\n* **DeepSeek-Math-Corpus**: High LaTeX ratio math data, optimal for scientific foundations.\n\nGo to the **Data Asset Catalog** in the sidebar to review full sample logs.`;
+          } else if (textLower.includes("fine-tuning") || textLower.includes("sft") || textLower.includes("instruction")) {
+            responseText = `For instruction tuning tasks, I recommend:\n\n1. **MOSS-003-SFT**: 1.1M conversations, covering math steps, code blocks, and safety logic.\n2. **ShareGPT-90K**: Real user chats, perfect for conversational flow alignment.\n3. **GSM8K**: OpenAI's classic math word questions paired with Chain-of-Thought solutions.\n\nClick any dataset card in the catalog to view schema details.`;
+          } else if (textLower.includes("rlhf") || textLower.includes("preference") || textLower.includes("dpo")) {
+            responseText = `For preference learning / DPO alignment:\n\n* **UltraFeedback-DPO**: 64K prompt tasks rated across multiple dimensions by GPT-4. Features raw completions from 4 model architectures. Excellent for preference modeling.\n\nI recommend selecting UltraFeedback from the sidebar catalog to see the ratings preview.`;
+          } else if (textLower.includes("swarm") || textLower.includes("agent")) {
+            responseText = `In Kimi K2.6, **Agent Swarms** allow you to spin up independent, cooperating crawler nodes that harvest, filter, and write datasets concurrently. \n\nI have unlocked the "🐝 Agent Swarm" tab at the top. You can run custom jobs there!`;
+          } else if (textLower.includes("claw") || textLower.includes("team")) {
+            responseText = `The **Claw Group** architecture maps tasks to linear pipeline workflows. In the "🧬 Claw Groups" tab, you can examine how Scout, Extractor, Critic, and Formatter agents work collaboratively with confidence thresholds.`;
+          } else {
+            responseText = `I have indexed the assets catalog for **"${textToSend}"**. You can view details in the catalog list on the sidebar, or run distributed tasks in the Agent Swarm window.`;
+          }
+
+          const newKimiMsg = { sender: "kimi", text: responseText, status: "done" };
+          setChatMessages(prev => ({
+            ...prev,
+            [activeSessionId]: [...(prev[activeSessionId] || []), newKimiMsg]
+          }));
+          setIsThinking(false);
+        }, 1500);
+      };
+
+      const handleSuggestionClick = (promptText) => {
+        handleSendMessage(promptText);
+      };
+
+      const createNewSession = () => {
+        const newId = `sess-${Date.now()}`;
+        const newSession = {
+          id: newId,
+          title: `New Session - ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`,
+          category: "General"
+        };
+        setChatSessions(prev => [newSession, ...prev]);
+        setChatMessages(prev => ({ ...prev, [newId]: [] }));
+        setActiveSessionId(newId);
+        setActiveTab("chat");
+      };
+
+      return (
+        <div style={dynamicStyles.style} className="flex h-screen w-full overflow-hidden text-sm bg-[var(--bg)] text-[var(--fg)] relative">
+          
+          {/* Sidebar */}
+          <aside className="w-64 border-r border-[var(--border)] bg-[var(--surface)] flex flex-col justify-between select-none shrink-0 z-20">
+            <div className="flex flex-col h-full overflow-hidden">
+              {/* Header / Logo */}
+              <div className="p-4 flex items-center gap-2 border-b border-[var(--border)]">
+                <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center text-white font-black text-lg shadow-sm">
+                  K
+                </div>
+                <div>
+                  <h1 className="font-bold text-sm tracking-tight">Kimi K2.6 DataHub</h1>
+                  <p className="text-[9px] text-[var(--muted)] all-caps-label">Smarter Agents · Swarms</p>
+                </div>
+              </div>
+
+              {/* Navigation Tabs */}
+              <div className="p-2 border-b border-[var(--border)] space-y-1">
+                <button
+                  onClick={() => { setActiveTab("chat"); setInspectingDataset(null); }}
+                  className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition ${activeTab === "chat" ? 'bg-brand/10 text-brand font-semibold' : 'hover:bg-[var(--bg)] text-[var(--fg)] font-medium'}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                  </svg>
+                  <span>DataChat Agent</span>
+                </button>
+                <button
+                  onClick={() => { setActiveTab("swarm"); setInspectingDataset(null); }}
+                  className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition ${activeTab === "swarm" ? 'bg-brand/10 text-brand font-semibold' : 'hover:bg-[var(--bg)] text-[var(--fg)] font-medium'}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  </svg>
+                  <span>Agent Swarm</span>
+                </button>
+                <button
+                  onClick={() => { setActiveTab("claw"); setInspectingDataset(null); }}
+                  className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition ${activeTab === "claw" ? 'bg-brand/10 text-brand font-semibold' : 'hover:bg-[var(--bg)] text-[var(--fg)] font-medium'}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+                  <span>Claw Groups</span>
+                </button>
+                <button
+                  onClick={() => { setActiveTab("skill"); setInspectingDataset(null); }}
+                  className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition ${activeTab === "skill" ? 'bg-brand/10 text-brand font-semibold' : 'hover:bg-[var(--bg)] text-[var(--fg)] font-medium'}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <span>Doc-to-Skill</span>
+                </button>
+                <button
+                  onClick={() => { setActiveTab("catalog"); setInspectingDataset(null); }}
+                  className={`w-full text-left px-3 py-2 rounded-lg flex items-center gap-2.5 transition ${activeTab === "catalog" ? 'bg-brand/10 text-brand font-semibold' : 'hover:bg-[var(--bg)] text-[var(--fg)] font-medium'}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                  </svg>
+                  <span>Asset Catalog</span>
+                </button>
+              </div>
+
+              {/* Chat Sessions list (Active only in chat tab) */}
+              <div className="flex-1 overflow-y-auto no-scrollbar px-2 pt-3 space-y-1">
+                <div className="flex items-center justify-between px-2 py-1">
+                  <span className="text-[10px] text-[var(--muted)] font-semibold all-caps-label">History Logs</span>
+                  <button onClick={createNewSession} className="text-brand hover:text-brand-hover" title="Create new chat log">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                  </button>
+                </div>
+                {chatSessions.map((session) => (
+                  <button
+                    key={session.id}
+                    onClick={() => { setActiveSessionId(session.id); setActiveTab("chat"); }}
+                    className={`w-full text-left p-2 rounded-lg flex items-center gap-2.5 transition ${activeSessionId === session.id && activeTab === "chat" ? 'bg-brand/10 text-brand font-medium' : 'hover:bg-[var(--bg)] text-[var(--fg)]'}`}
+                  >
+                    <svg className="w-3.5 h-3.5 shrink-0 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span className="truncate text-xs">{session.title}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Panel Controls */}
+            <div className="p-3 border-t border-[var(--border)] space-y-2">
+              <div className="flex items-center justify-between p-2 rounded-lg bg-[var(--bg)]">
+                <span className="text-xs text-[var(--muted)]">Theme</span>
+                <button
+                  onClick={() => setTheme(prev => prev === "light" ? "dark" : "light")}
+                  className="p-1 rounded hover:bg-[var(--border)] transition"
+                >
+                  {theme === "light" ? (
+                    <svg className="w-4 h-4 text-zinc-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828 0l-.707-.707m2.828-11.314l-.707-.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
+                    </svg>
+                  )}
+                </button>
+              </div>
+
+              {/* Tweak settings trigger */}
+              <button 
+                onClick={() => setShowTweaks(prev => !prev)}
+                className="w-full py-1.5 px-3 rounded bg-[var(--bg)] hover:bg-[var(--border)] border border-[var(--border)] flex items-center justify-between text-xs transition"
+              >
+                <span className="text-[var(--muted)]">Design Config</span>
+                <svg className="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </button>
+
+              <div className="flex items-center gap-1.5 px-2 py-0.5 text-[10px] text-brand">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand animate-ping"></span>
+                <span>Kimi K2.6 active</span>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main workspace */}
+          <main className="flex-1 flex flex-col overflow-hidden bg-[var(--bg)] relative">
+            
+            {/* Top Navigation Filter/Status Bar */}
+            <header className="h-14 border-b border-[var(--border)] bg-[var(--surface)] flex items-center justify-between px-6 z-10 shrink-0">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-2 py-0.5 rounded">K2.6</span>
+                <span className="text-xs font-semibold text-[var(--muted)]">
+                  {activeTab === "chat" && "💬 Chat Data Agent"}
+                  {activeTab === "swarm" && "🐝 Distributed Crawler Swarms"}
+                  {activeTab === "claw" && "🧬 Claw Groups Teamwork Graph"}
+                  {activeTab === "skill" && "📄 Document-to-Skill Compiler"}
+                  {activeTab === "catalog" && "📦 Dataset Catalog Index"}
+                </span>
+              </div>
+
+              {/* Mini Search input */}
+              <div className="relative w-64">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg className="w-3.5 h-3.5 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Filter catalog datasets..."
+                  value={searchQuery}
+                  onChange={(e) => { setSearchQuery(e.target.value); if(activeTab !== "catalog") setActiveTab("catalog"); }}
+                  className="w-full py-1 pl-8 pr-4 text-xs bg-[var(--bg)] border border-[var(--border)] rounded-full focus:outline-none focus:border-brand transition"
+                />
+              </div>
+            </header>
+
+            {/* Sub-Panels render */}
+            <div className="flex-1 flex overflow-hidden">
+              
+              {/* Tab 1: Chat UI */}
+              {activeTab === "chat" && (
+                <div className="flex-1 flex overflow-hidden">
+                  
+                  {/* Left Column: Messages */}
+                  <div className="flex-1 flex flex-col justify-between overflow-hidden">
+                    <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                      {(chatMessages[activeSessionId] || []).length === 0 ? (
+                        <div className="h-full flex flex-col justify-center items-center max-w-xl mx-auto space-y-8 select-none">
+                          <div className="flex flex-col items-center text-center space-y-4">
+                            <div className="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-white text-3xl font-extrabold shadow-md select-none animate-pulse">
+                              K
+                            </div>
+                            <h2 className="text-xl font-bold heading-large mt-2">Hello, I'm Kimi K2.6</h2>
+                            <p className="text-xs text-[var(--muted)] max-w-md">
+                              Try Kimi K2.6 to build stunning, full-stack websites, use Agent Swarm for massive tasks, turn documents into reusable skills, and explore Claw Groups preview for agent teamwork.
+                            </p>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3.5 w-full">
+                            <button
+                              onClick={() => handleSuggestionClick("Explain Kimi K2.6 full-stack website capabilities")}
+                              className="p-3.5 text-left border border-[var(--border)] bg-[var(--surface)] hover:border-brand rounded-xl transition duration-150 group flex flex-col justify-between h-24 hover:shadow-md"
+                            >
+                              <div>
+                                <div className="font-semibold text-xs text-brand group-hover:underline flex items-center gap-1.5">
+                                  <svg className="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                  <span>Full-Stack Websites</span>
+                                </div>
+                                <div className="text-[11px] text-[var(--muted)] mt-1.5 leading-normal">Build full-stack websites with visual coding and multi-agent routing.</div>
+                              </div>
+                            </button>
+                            <button
+                              onClick={() => handleSuggestionClick("Explain Kimi K2.6 Swarm crawler capabilities")}
+                              className="p-3.5 text-left border border-[var(--border)] bg-[var(--surface)] hover:border-brand rounded-xl transition duration-150 group flex flex-col justify-between h-24 hover:shadow-md"
+                            >
+                              <div>
+                                <div className="font-semibold text-xs text-brand group-hover:underline flex items-center gap-1.5">
+                                  <svg className="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                  <span>Agent Swarm</span>
+                                </div>
+                                <div className="text-[11px] text-[var(--muted)] mt-1.5 leading-normal">Deploy crawler swarms concurrently harvesting and processing web corpus datasets.</div>
+                              </div>
+                            </button>
+                            <button
+                              onClick={() => handleSuggestionClick("How do I compile PDFs into reusable skills?")}
+                              className="p-3.5 text-left border border-[var(--border)] bg-[var(--surface)] hover:border-brand rounded-xl transition duration-150 group flex flex-col justify-between h-24 hover:shadow-md"
+                            >
+                              <div>
+                                <div className="font-semibold text-xs text-brand group-hover:underline flex items-center gap-1.5">
+                                  <svg className="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                  <span>Reusable Skills</span>
+                                </div>
+                                <div className="text-[11px] text-[var(--muted)] mt-1.5 leading-normal">Turn raw documents, research papers, and PDFs into extraction parser code.</div>
+                              </div>
+                            </button>
+                            <button
+                              onClick={() => handleSuggestionClick("Explain Claw Groups teamwork pipeline")}
+                              className="p-3.5 text-left border border-[var(--border)] bg-[var(--surface)] hover:border-brand rounded-xl transition duration-150 group flex flex-col justify-between h-24 hover:shadow-md"
+                            >
+                              <div>
+                                <div className="font-semibold text-xs text-brand group-hover:underline flex items-center gap-1.5">
+                                  <svg className="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                  <span>Claw Groups Preview</span>
+                                </div>
+                                <div className="text-[11px] text-[var(--muted)] mt-1.5 leading-normal">Explore collaborative workflows with scout, critic, and sharder feedback loops.</div>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-5">
+                          {chatMessages[activeSessionId].map((msg, index) => (
+                            <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                              <div className="flex gap-3 max-w-[85%]">
+                                {msg.sender === 'kimi' && (
+                                  <div className="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-extrabold text-xs shrink-0 select-none">
+                                    K
+                                  </div>
+                                )}
+                                <div className={`p-3.5 rounded-2xl text-xs leading-relaxed whitespace-pre-wrap ${msg.sender === 'user' ? 'chat-bubble-user text-right' : 'chat-bubble-kimi text-left'}`}>
+                                  {msg.text}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+
+                          {isThinking && (
+                            <div className="flex justify-start">
+                              <div className="flex gap-3">
+                                <div className="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-extrabold text-xs shrink-0 pulse-search">
+                                  K
+                                </div>
+                                <div className="p-3.5 rounded-2xl chat-bubble-kimi flex items-center gap-2">
+                                  <span className="text-xs text-[var(--muted)] animate-pulse">
+                                    {searchWeb ? "Kimi is searching the web..." : "Compiling token metrics..."}
+                                  </span>
+                                  <div className="flex gap-1">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{animationDelay:'0ms'}}></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{animationDelay:'150ms'}}></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{animationDelay:'300ms'}}></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                          <div ref={chatEndRef} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Chat Textarea Input */}
+                    <div className="p-4 bg-[var(--surface)] border-t border-[var(--border)]">
+                      <div className="max-w-2xl mx-auto border border-[var(--border)] rounded-2xl bg-[var(--bg)] p-2 focus-within:border-brand transition duration-150">
+                        <textarea
+                          rows={2}
+                          placeholder="Type a message or request a dataset schema..."
+                          value={inputValue}
+                          onChange={(e) => setInputValue(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                              e.preventDefault();
+                              handleSendMessage(inputValue);
+                            }
+                          }}
+                          className="w-full px-3 py-1.5 text-xs bg-transparent focus:outline-none resize-none no-scrollbar"
+                        />
+                        <div className="flex items-center justify-between border-t border-[var(--border)] pt-2 px-2 mt-1">
+                          <div className="flex items-center gap-3">
+                            <button className="text-[var(--muted)] hover:text-brand transition" title="Attach file info">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+                              </svg>
+                            </button>
+                            <button 
+                              onClick={() => setSearchWeb(prev => !prev)}
+                              className={`flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold transition ${searchWeb ? 'bg-brand/10 text-brand border border-brand/20' : 'bg-[var(--bg)] text-[var(--muted)] border border-transparent'}`}
+                            >
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                              </svg>
+                              Search Web
+                            </button>
+                          </div>
+                          <button
+                            onClick={() => handleSendMessage(inputValue)}
+                            disabled={!inputValue.trim()}
+                            className={`w-7 h-7 rounded-full flex items-center justify-center text-white transition ${inputValue.trim() ? 'bg-brand hover:bg-brand-hover' : 'bg-[var(--border)] cursor-not-allowed opacity-50'}`}
+                          >
+                            <svg className="w-3.5 h-3.5 text-center" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Right Column: Direct details inline if active */}
+                  {inspectingDataset && (
+                    <div className="w-96 border-l border-[var(--border)] bg-[var(--surface)] flex flex-col overflow-hidden">
+                      <div className="p-3 border-b border-[var(--border)] flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-[var(--muted)] all-caps-label">Quick Preview</span>
+                        <button onClick={() => setInspectingDataset(null)} className="text-xs hover:text-brand text-[var(--muted)]">Close</button>
+                      </div>
+                      <div className="p-4 flex-1 overflow-y-auto space-y-4">
+                        <h3 className="font-bold text-base text-brand">{inspectingDataset.name}</h3>
+                        <p className="text-xs text-[var(--muted)] leading-relaxed">{inspectingDataset.description}</p>
+                        <div className="bg-[var(--bg)] p-3 rounded-lg border border-[var(--border)] space-y-1 text-xs">
+                          {Object.entries(inspectingDataset.stats).map(([k, v]) => (
+                            <div key={k} className="flex justify-between font-mono">
+                              <span className="text-[var(--muted)]">{k}:</span>
+                              <span>{v}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <button 
+                          onClick={() => { setActiveTab("catalog"); setInspectorTab("preview"); }}
+                          className="w-full py-2 bg-brand/10 hover:bg-brand/20 text-brand rounded-lg text-xs font-semibold transition"
+                        >
+                          View Full Code & Previews
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                </div>
+              )}
+
+              {/* Tab 2: Agent Swarm (Visual Simulation) */}
+              {activeTab === "swarm" && (
+                <div className="flex-1 flex overflow-hidden">
+                  
+                  {/* Left Parameter Panel */}
+                  <div className="w-72 border-r border-[var(--border)] bg-[var(--surface)] p-4 flex flex-col justify-between shrink-0">
+                    <div className="space-y-4">
+                      <div>
+                        <label className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Extraction Task Preset</label>
+                        <select 
+                          value={swarmPreset} 
+                          onChange={(e) => setSwarmPreset(e.target.value)}
+                          className="w-full mt-1.5 p-2 bg-[var(--bg)] border border-[var(--border)] rounded-lg text-xs focus:outline-none focus:border-brand"
+                        >
+                          <option value="math_olympiad">Math Olympiad QA Pairs</option>
+                          <option value="arxiv_transformers">arXiv ML Paper Summaries</option>
+                          <option value="dev_docstrings">Github Code Docstrings</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between text-xs">
+                          <label className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Swarm Node Capacity</label>
+                          <span className="font-mono text-brand font-bold">{swarmSize} Agents</span>
+                        </div>
+                        <input 
+                          type="range" 
+                          min="5" 
+                          max="40" 
+                          value={swarmSize} 
+                          onChange={(e) => setSwarmSize(parseInt(e.target.value))}
+                          className="w-full mt-2 accent-brand"
+                          disabled={isSwarmRunning}
+                        />
+                      </div>
+
+                      <div className="space-y-2 border-t border-[var(--border)] pt-3">
+                        <div className="text-[10px] text-[var(--muted)] all-caps-label font-bold mb-1">State Legend</div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded bg-zinc-600"></span><span className="text-[var(--muted)]">Idle</span></div>
+                          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded bg-sky-500"></span><span className="text-[var(--muted)]">Crawling</span></div>
+                          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded bg-amber-500"></span><span className="text-[var(--muted)]">Filtering</span></div>
+                          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded bg-purple-500"></span><span className="text-[var(--muted)]">Deduping</span></div>
+                          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded bg-brand"></span><span className="text-[var(--muted)]">Writing</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button 
+                      onClick={toggleSwarm}
+                      className={`w-full py-2.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 ${isSwarmRunning ? 'bg-red-500/20 text-red-400 border border-red-500/30 hover:bg-red-500/30' : 'bg-brand text-white hover:bg-brand-hover'}`}
+                    >
+                      {isSwarmRunning ? (
+                        <>
+                          <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                          </svg>
+                          Stop Swarm
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                          </svg>
+                          Deploy Swarm
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  {/* Right Dashboard Visualization Area */}
+                  <div className="flex-1 flex flex-col overflow-hidden p-6 space-y-4">
+                    
+                    {/* Live Counters */}
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="p-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl">
+                        <span className="text-[10px] text-[var(--muted)] all-caps-label">Tokens Collected</span>
+                        <div className="text-xl font-bold mt-1 font-mono text-brand">{(swarmStats.tokens).toLocaleString()}</div>
+                      </div>
+                      <div className="p-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl">
+                        <span className="text-[10px] text-[var(--muted)] all-caps-label">Docs Compiled</span>
+                        <div className="text-xl font-bold mt-1 font-mono text-[var(--fg)]">{swarmStats.docs.toLocaleString()}</div>
+                      </div>
+                      <div className="p-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl">
+                        <span className="text-[10px] text-[var(--muted)] all-caps-label">Uniqueness Score</span>
+                        <div className="text-xl font-bold mt-1 font-mono text-emerald-400">{swarmStats.unique}%</div>
+                      </div>
+                      <div className="p-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl">
+                        <span className="text-[10px] text-[var(--muted)] all-caps-label">Raw Output Size</span>
+                        <div className="text-xl font-bold mt-1 font-mono text-[var(--fg)]">{swarmStats.size} MB</div>
+                      </div>
+                    </div>
+
+                    {/* Agent Swarm Node Matrix */}
+                    <div className="flex-1 bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 flex flex-col overflow-hidden">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] text-[var(--muted)] all-caps-label font-semibold">Active Agent Node Cluster</span>
+                        {isSwarmRunning && <span className="text-[10px] text-brand font-semibold animate-pulse">Processing concurrently</span>}
+                      </div>
+
+                      <div className="flex-1 grid grid-cols-8 gap-2.5 overflow-y-auto">
+                        {agentNodes.map(node => {
+                          const isActive = node.id <= swarmSize;
+                          let statusBg = "bg-zinc-800 text-zinc-500 border-zinc-700/50";
+                          let dotColor = "bg-zinc-600";
+                          
+                          if (isActive) {
+                            if (node.status === "idle") { statusBg = "bg-zinc-700 text-zinc-300 border-zinc-600"; dotColor = "bg-zinc-500"; }
+                            else if (node.status === "crawling") { statusBg = "bg-sky-500/10 text-sky-400 border-sky-500/30"; dotColor = "bg-sky-400 animate-ping"; }
+                            else if (node.status === "filtering") { statusBg = "bg-amber-500/10 text-amber-400 border-amber-500/30"; dotColor = "bg-amber-400"; }
+                            else if (node.status === "deduping") { statusBg = "bg-purple-500/10 text-purple-400 border-purple-500/30"; dotColor = "bg-purple-400"; }
+                            else if (node.status === "writing") { statusBg = "bg-brand/15 text-brand border-brand/30"; dotColor = "bg-brand"; }
+                          } else {
+                            statusBg = "bg-zinc-900/40 text-zinc-700 border-transparent opacity-30";
+                            dotColor = "bg-zinc-800";
+                          }
+
+                          return (
+                            <div 
+                              key={node.id} 
+                              className={`p-2 border rounded-lg flex items-center justify-between transition duration-200 ${statusBg}`}
+                            >
+                              <span className="text-[10px] font-mono font-bold">{node.label}</span>
+                              <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`}></span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Swarm Terminal Console */}
+                    <div className="h-44 bg-zinc-950 border border-zinc-800 rounded-xl p-3 flex flex-col font-mono text-[11px] text-zinc-400 select-text overflow-hidden">
+                      <div className="flex items-center justify-between border-b border-zinc-900 pb-2 mb-2">
+                        <span className="all-caps-label text-[9px] text-zinc-500">Live Swarm Console Output</span>
+                        <span className="text-zinc-600">PAGER=cat</span>
+                      </div>
+                      <div className="flex-1 overflow-y-auto no-scrollbar space-y-1">
+                        {swarmLogs.map((log, index) => (
+                          <div key={index} className={log.includes("[System]") ? "text-brand" : "text-zinc-300"}>
+                            {log}
+                          </div>
+                        ))}
+                        <div ref={swarmTerminalEndRef} />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              )}
+
+              {/* Tab 3: Claw Groups (Multi-Agent Teamwork Graph) */}
+              {activeTab === "claw" && (
+                <div className="flex-1 flex overflow-hidden p-6 gap-6">
+                  
+                  {/* Visual Node Graph */}
+                  <div className="flex-1 bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+                    <div className="text-[10px] text-[var(--muted)] all-caps-label font-bold mb-4">Pipeline Workflow Graph</div>
+                    
+                    <div className="flex-1 flex items-center justify-around relative px-10">
+                      
+                      {/* Connections (glowing pipes) */}
+                      <div className="absolute left-[20%] right-[20%] h-0.5 bg-[var(--border)] glow-connection"></div>
+                      
+                      {/* Scout Node */}
+                      <button 
+                        onClick={() => setSelectedClawAgent("scout")}
+                        className={`w-28 h-28 rounded-full border flex flex-col items-center justify-center gap-1.5 transition z-10 ${selectedClawAgent === "scout" ? 'bg-brand/10 border-brand shadow-lg scale-105' : 'bg-[var(--bg)] border-[var(--border)] hover:border-[var(--muted)]'}`}
+                      >
+                        <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <span className="font-bold text-xs">1. Scout Swarm</span>
+                        <span className="text-[9px] text-[var(--muted)]">Harvest & Clean</span>
+                      </button>
+
+                      {/* Extractor Node */}
+                      <button 
+                        onClick={() => setSelectedClawAgent("extractor")}
+                        className={`w-28 h-28 rounded-full border flex flex-col items-center justify-center gap-1.5 transition z-10 ${selectedClawAgent === "extractor" ? 'bg-brand/10 border-brand shadow-lg scale-105' : 'bg-[var(--bg)] border-[var(--border)] hover:border-[var(--muted)]'}`}
+                      >
+                        <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                        <span className="font-bold text-xs">2. Extractor</span>
+                        <span className="text-[9px] text-[var(--muted)]">Schema Mapping</span>
+                      </button>
+
+                      {/* Critic Node */}
+                      <button 
+                        onClick={() => setSelectedClawAgent("critic")}
+                        className={`w-28 h-28 rounded-full border flex flex-col items-center justify-center gap-1.5 transition z-10 ${selectedClawAgent === "critic" ? 'bg-brand/10 border-brand shadow-lg scale-105' : 'bg-[var(--bg)] border-[var(--border)] hover:border-[var(--muted)]'}`}
+                      >
+                        <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span className="font-bold text-xs">3. Critic Agent</span>
+                        <span className="text-[9px] text-[var(--muted)]">Sanity Critique</span>
+                      </button>
+
+                      {/* Formatter Node */}
+                      <button 
+                        onClick={() => setSelectedClawAgent("formatter")}
+                        className={`w-28 h-28 rounded-full border flex flex-col items-center justify-center gap-1.5 transition z-10 ${selectedClawAgent === "formatter" ? 'bg-brand/10 border-brand shadow-lg scale-105' : 'bg-[var(--bg)] border-[var(--border)] hover:border-[var(--muted)]'}`}
+                      >
+                        <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span className="font-bold text-xs">4. Formatter</span>
+                        <span className="text-[9px] text-[var(--muted)]">Code Sharding</span>
+                      </button>
+
+                    </div>
+
+                    <div className="text-xs text-[var(--muted)] text-center border-t border-[var(--border)] pt-4">
+                      Cooperating agents run validation queries, establishing consensus before writing shards.
+                    </div>
+                  </div>
+
+                  {/* Right Inspector Box */}
+                  <div className="w-96 bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-4 flex flex-col justify-between shrink-0">
+                    <div className="space-y-4">
+                      {selectedClawAgent === "scout" && (
+                        <>
+                          <h3 className="font-bold text-base text-brand">Scout Agent</h3>
+                          <div className="text-xs text-[var(--muted)]">Runs parallel DOM lookups, extracts text blocks, and computes heuristics language flags.</div>
+                          
+                          <div className="space-y-2 border-t border-[var(--border)] pt-3">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">System Directive</span>
+                            <pre className="p-2.5 bg-[var(--bg)] border border-[var(--border)] rounded font-mono text-[10px] text-[var(--fg)] whitespace-pre-wrap leading-relaxed">
+                              {`You are a Web Scout Agent. Given a set of target URLs, crawl and extract text blocks. Strip structural boilerplate and navigation headers.`}
+                            </pre>
+                          </div>
+
+                          <div className="space-y-1">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Active Throughput</span>
+                            <div className="font-mono text-xs">1,450 pages/min</div>
+                          </div>
+                        </>
+                      )}
+
+                      {selectedClawAgent === "extractor" && (
+                        <>
+                          <h3 className="font-bold text-base text-brand">Schema Extractor</h3>
+                          <div className="text-xs text-[var(--muted)]">Translates unstructured raw HTML blocks into clean key-value dictionary formats matching schemas.</div>
+                          
+                          <div className="space-y-2 border-t border-[var(--border)] pt-3">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">System Directive</span>
+                            <pre className="p-2.5 bg-[var(--bg)] border border-[var(--border)] rounded font-mono text-[10px] text-[var(--fg)] whitespace-pre-wrap leading-relaxed">
+                              {`You are a Data Schema Extractor. Read unstructured text and yield output matching target JSON schemas. Ensure exact type mapping.`}
+                            </pre>
+                          </div>
+
+                          <div className="space-y-1">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Confidence Score</span>
+                            <div className="font-mono text-xs text-brand font-bold">99.2% accuracy</div>
+                          </div>
+                        </>
+                      )}
+
+                      {selectedClawAgent === "critic" && (
+                        <>
+                          <h3 className="font-bold text-base text-brand">Logical Critic Agent</h3>
+                          <div className="text-xs text-[var(--muted)]">Runs toxicity filters, detects repeat loops, and scores educational metrics via LLM classifiers.</div>
+                          
+                          <div className="space-y-2 border-t border-[var(--border)] pt-3">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">System Directive</span>
+                            <pre className="p-2.5 bg-[var(--bg)] border border-[var(--border)] rounded font-mono text-[10px] text-[var(--fg)] whitespace-pre-wrap leading-relaxed">
+                              {`You are a Quality Critic Agent. Evaluate parsed text samples. Output toxic flags and educational quality score between 0.0 and 5.0.`}
+                            </pre>
+                          </div>
+
+                          <div className="space-y-1">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Critique Score Threshold</span>
+                            <div className="font-mono text-xs font-bold text-amber-400">&gt;= 3.0 score</div>
+                          </div>
+                        </>
+                      )}
+
+                      {selectedClawAgent === "formatter" && (
+                        <>
+                          <h3 className="font-bold text-base text-brand">Formatter & Sharder</h3>
+                          <div className="text-xs text-[var(--muted)]">Compiles completed partitions into Apache Parquet files and generates direct Hugging Face loaders.</div>
+                          
+                          <div className="space-y-2 border-t border-[var(--border)] pt-3">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">System Directive</span>
+                            <pre className="p-2.5 bg-[var(--bg)] border border-[var(--border)] rounded font-mono text-[10px] text-[var(--fg)] whitespace-pre-wrap leading-relaxed">
+                              {`You are a Sharding Agent. Collect verified records from the queue and write them to parity shards in binary parquet blocks.`}
+                            </pre>
+                          </div>
+
+                          <div className="space-y-1">
+                            <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Current Target</span>
+                            <div className="font-mono text-xs text-brand">HuggingFace Dataset CLI</div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+
+                    <div className="p-3 bg-[var(--bg)] border border-[var(--border)] rounded-xl text-[11px] text-[var(--muted)] font-mono flex justify-between">
+                      <span>Total Active Swarms:</span>
+                      <span className="text-brand font-bold">4 Groups</span>
+                    </div>
+                  </div>
+
+                </div>
+              )}
+
+              {/* Tab 4: Doc-to-Skill Dataset Parser */}
+              {activeTab === "skill" && (
+                <div className="flex-1 flex overflow-hidden p-6 gap-6">
+                  
+                  {/* Left Column: Inputs */}
+                  <div className="flex-1 flex flex-col bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-4 overflow-hidden">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Unstructured Document Input</span>
+                      <div className="flex gap-2">
+                        <button 
+                          onClick={() => handleInputPresetChange("pdf")}
+                          className={`px-2.5 py-1 text-[10px] font-bold rounded ${skillInputType === "pdf" ? 'bg-brand text-white' : 'bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--border)]'}`}
+                        >
+                          Scientific PDF
+                        </button>
+                        <button 
+                          onClick={() => handleInputPresetChange("web")}
+                          className={`px-2.5 py-1 text-[10px] font-bold rounded ${skillInputType === "web" ? 'bg-brand text-white' : 'bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--border)]'}`}
+                        >
+                          Web Page Source
+                        </button>
+                      </div>
+                    </div>
+
+                    <textarea
+                      value={skillInputText}
+                      onChange={(e) => setSkillInputText(e.target.value)}
+                      className="flex-1 w-full p-3 bg-[var(--bg)] border border-[var(--border)] rounded-xl font-mono text-xs focus:outline-none focus:border-brand resize-none leading-relaxed"
+                    />
+
+                    <button 
+                      onClick={handleCompileSkill}
+                      disabled={isCompilingSkill}
+                      className="w-full mt-3 py-2.5 bg-brand text-white rounded-xl text-xs font-bold transition hover:bg-brand-hover flex items-center justify-center gap-2"
+                    >
+                      {isCompilingSkill ? (
+                        <>
+                          <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                          </svg>
+                          Compiling document into Skill schema...
+                        </>
+                      ) : (
+                        "Compile document to extraction Skill"
+                      )}
+                    </button>
+                  </div>
+
+                  {/* Right Column: Schema Outputs */}
+                  <div className="flex-1 bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-4 flex flex-col overflow-hidden">
+                    <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold mb-3">Generated Reusable Skill Schema</span>
+                    
+                    {!compiledSkill ? (
+                      <div className="flex-1 flex flex-col items-center justify-center text-xs text-[var(--muted)] space-y-2">
+                        <svg className="w-8 h-8 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path>
+                        </svg>
+                        <span>Paste document text and click compile to view extraction code schemas.</span>
+                      </div>
+                    ) : (
+                      <div className="flex-1 flex flex-col overflow-hidden space-y-4">
+                        
+                        {/* Schema fields */}
+                        <div className="border border-[var(--border)] rounded-lg overflow-hidden shrink-0">
+                          <table className="w-full text-left text-xs border-collapse">
+                            <thead>
+                              <tr className="bg-[var(--bg)] border-b border-[var(--border)] text-[var(--muted)]">
+                                <th className="p-2 font-bold all-caps-label text-[9px]">Field</th>
+                                <th className="p-2 font-bold all-caps-label text-[9px]">Type</th>
+                                <th className="p-2 font-bold all-caps-label text-[9px]">Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {compiledSkill.schema.map((f, i) => (
+                                <tr key={i} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg)]">
+                                  <td className="p-2 font-mono font-bold text-brand">{f.field}</td>
+                                  <td className="p-2 font-mono text-[var(--muted)]">{f.type}</td>
+                                  <td className="p-2 text-[var(--fg)]">{f.desc}</td>
+                                </tr>
+                              ))}
+                            </body>
+                          </table>
+                        </div>
+
+                        {/* Python parser script code block */}
+                        <div className="flex-1 flex flex-col overflow-hidden">
+                          <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold mb-1.5">Extraction parser function</span>
+                          <pre className="flex-1 p-3 bg-zinc-950 text-emerald-400 rounded-xl overflow-y-auto font-mono text-[11px] leading-relaxed shadow-inner">
+                            {compiledSkill.code}
+                          </pre>
+                        </div>
+
+                        {/* Pydantic quality checks */}
+                        <div className="flex-1 flex flex-col overflow-hidden">
+                          <span className="text-[10px] text-[var(--muted)] all-caps-label font-bold mb-1.5">Pydantic Quality checks</span>
+                          <pre className="flex-1 p-3 bg-zinc-950 text-sky-400 rounded-xl overflow-y-auto font-mono text-[11px] leading-relaxed shadow-inner">
+                            {compiledSkill.validator}
+                          </pre>
+                        </div>
+
+                      </div>
+                    )}
+
+                  </div>
+
+                </div>
+              )}
+
+              {/* Tab 5: Asset Catalog list */}
+              {activeTab === "catalog" && (
+                <div className="flex-1 flex overflow-hidden">
+                  
+                  {/* Left Column: Filtered List */}
+                  <div className="flex-1 flex flex-col overflow-hidden">
+                    {/* Header bar category filters */}
+                    <div className="p-4 border-b border-[var(--border)] bg-[var(--surface)] flex items-center gap-2 overflow-x-auto no-scrollbar">
+                      <span className="text-[10px] text-[var(--muted)] font-bold all-caps-label shrink-0 mr-2">Category:</span>
+                      {categories.map(cat => (
+                        <button
+                          key={cat}
+                          onClick={() => setSelectedCategory(cat)}
+                          className={`px-3 py-1 text-xs rounded-full font-medium transition whitespace-nowrap ${selectedCategory === cat ? 'bg-brand text-white' : 'bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--muted)]'}`}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto p-4 space-y-3">
+                      {filteredDatasets.length === 0 ? (
+                        <div className="text-center py-10 text-xs text-[var(--muted)]">
+                          No datasets match your criteria.
+                        </div>
+                      ) : (
+                        filteredDatasets.map(ds => (
+                          <div 
+                            key={ds.id}
+                            className={`p-4 border rounded-xl transition cursor-pointer ${inspectingDataset && inspectingDataset.id === ds.id ? 'border-brand bg-brand/5' : 'border-[var(--border)] bg-[var(--surface)] hover:border-brand'}`}
+                            onClick={() => {
+                              setInspectingDataset(ds);
+                              setInspectorTab("overview");
+                            }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <span className="inline-block px-2 py-0.5 text-[9px] bg-brand/10 text-brand rounded font-semibold mb-1">
+                                  {ds.category}
+                                </span>
+                                <h3 className="font-bold text-sm text-[var(--fg)] hover:text-brand transition">{ds.name}</h3>
+                              </div>
+                              <span className="text-xs text-[var(--muted)] font-mono">{ds.size}</span>
+                            </div>
+                            <p className="text-xs text-[var(--muted)] mt-2 line-clamp-2 leading-relaxed">
+                              {ds.description}
+                            </p>
+                            <div className="mt-3 flex flex-wrap gap-1.5">
+                              {ds.tags.map(tag => (
+                                <span key={tag} className="px-2 py-0.5 bg-[var(--bg)] text-[var(--muted)] rounded-full text-[10px]">
+                                  #{tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Right Column: Deep detail Inspector */}
+                  <div className="w-[500px] border-l border-[var(--border)] bg-[var(--surface)] flex flex-col overflow-hidden shrink-0">
+                    {!inspectingDataset ? (
+                      <div className="flex-1 flex flex-col items-center justify-center text-xs text-[var(--muted)] space-y-2">
+                        <svg className="w-8 h-8 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                        <span>Select a dataset from the list to explore schemas and previews.</span>
+                      </div>
+                    ) : (
+                      <div className="flex-1 flex flex-col overflow-hidden">
+                        
+                        {/* Summary Header */}
+                        <div className="p-4 border-b border-[var(--border)] bg-[var(--bg)] shrink-0">
+                          <div className="flex items-center justify-between">
+                            <span className="px-2 py-0.5 text-[9px] bg-brand/10 text-brand rounded font-semibold">
+                              {inspectingDataset.category}
+                            </span>
+                            <span className="text-xs text-[var(--muted)] font-mono">{inspectingDataset.size}</span>
+                          </div>
+                          <h2 className="text-base font-bold mt-2 heading-large">{inspectingDataset.name}</h2>
+                          
+                          <div className="grid grid-cols-2 gap-y-1.5 gap-x-4 mt-3 text-xs">
+                            <div><span className="text-[var(--muted)]">Source: </span><span className="font-semibold">{inspectingDataset.source}</span></div>
+                            <div><span className="text-[var(--muted)]">License: </span><span className="font-semibold underline cursor-pointer">{inspectingDataset.license}</span></div>
+                          </div>
+                        </div>
+
+                        {/* Navigation Tabs */}
+                        <div className="border-b border-[var(--border)] flex gap-4 px-4 bg-[var(--surface)] shrink-0">
+                          {["overview", "schema", "preview", "sdk"].map((tab) => (
+                            <button
+                              key={tab}
+                              onClick={() => setInspectorTab(tab)}
+                              className={`py-2 text-xs font-semibold relative transition ${inspectorTab === tab ? 'text-brand' : 'text-[var(--muted)] hover:text-[var(--fg)]'}`}
+                            >
+                              {tab === 'overview' && 'Overview'}
+                              {tab === 'schema' && 'Schema'}
+                              {tab === 'preview' && 'Row Preview'}
+                              {tab === 'sdk' && 'Download Script'}
+                              {inspectorTab === tab && (
+                                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand rounded-full"></span>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Tab Content */}
+                        <div className="flex-1 overflow-y-auto p-4 text-xs">
+                          
+                          {inspectorTab === "overview" && (
+                            <div className="space-y-4 leading-relaxed">
+                              <p className="text-[var(--fg)]">{inspectingDataset.description}</p>
+                              
+                              <h4 className="font-bold border-l-2 border-brand pl-2 text-brand mt-4 mb-2">Dataset Statistics</h4>
+                              <div className="bg-[var(--bg)] p-3 rounded-lg border border-[var(--border)] space-y-1.5 font-mono">
+                                {Object.entries(inspectingDataset.stats).map(([k, v]) => (
+                                  <div key={k} className="flex justify-between">
+                                    <span className="text-[var(--muted)] capitalize">{k}:</span>
+                                    <span className="font-semibold text-[var(--fg)]">{v}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {inspectorTab === "schema" && (
+                            <div className="border border-[var(--border)] rounded-lg overflow-hidden bg-[var(--surface)]">
+                              <table className="w-full text-left border-collapse">
+                                <thead>
+                                  <tr className="bg-[var(--bg)] border-b border-[var(--border)] text-[var(--muted)]">
+                                    <th className="p-2 font-bold all-caps-label text-[9px]">Field Name</th>
+                                    <th className="p-2 font-bold all-caps-label text-[9px]">Type</th>
+                                    <th className="p-2 font-bold all-caps-label text-[9px]">Description</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {inspectingDataset.schema.map((item, idx) => (
+                                    <tr key={idx} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg)]">
+                                      <td className="p-2 font-mono font-bold text-brand">{item.field}</td>
+                                      <td className="p-2 font-mono text-[var(--muted)]">{item.type}</td>
+                                      <td className="p-2 text-[var(--fg)]">{item.desc}</td>
+                                    </tr>
+                                  ))}
+                                </body>
+                              </table>
+                            </div>
+                          )}
+
+                          {inspectorTab === "preview" && (
+                            <div className="space-y-3">
+                              {inspectingDataset.preview.map((sample, sIdx) => (
+                                <div key={sIdx} className="p-3 border border-[var(--border)] rounded-lg bg-[var(--bg)] space-y-2">
+                                  <div className="text-[9px] text-[var(--muted)] font-semibold border-b border-[var(--border)] pb-1 flex justify-between">
+                                    <span>Sample Row #{sIdx + 1}</span>
+                                    <span className="text-brand font-mono">Row Object</span>
+                                  </div>
+                                  {Object.entries(sample).map(([k, v]) => (
+                                    <div key={k} className="space-y-1">
+                                      <div className="font-semibold text-brand font-mono text-[10px]">{k}:</div>
+                                      {k === 'chat' || k === 'conversations' ? (
+                                        <div className="space-y-1.5 pl-2 border-l border-brand/30">
+                                          {parseJsonHelper(v).map((msg, mIdx) => (
+                                            <div key={mIdx} className="text-[11px]">
+                                              <span className="font-bold text-brand uppercase text-[9px] mr-1">{msg.role || msg.from}:</span>
+                                              <span className="text-[var(--fg)]">{msg.content || msg.value}</span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      ) : (
+                                        <pre className="text-[11px] bg-[var(--surface)] p-2 rounded border border-[var(--border)] overflow-x-auto whitespace-pre-wrap font-mono leading-normal max-h-32 text-[var(--fg)]">
+                                          {v}
+                                        </pre>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          {inspectorTab === "sdk" && (
+                            <div className="space-y-3">
+                              <div className="flex gap-2">
+                                {["hf", "python", "curl"].map((fmt) => (
+                                  <button
+                                    key={fmt}
+                                    onClick={() => setSelectedFormatCode(fmt)}
+                                    className={`px-3 py-1 rounded text-[10px] font-bold ${selectedFormatCode === fmt ? 'bg-brand text-white' : 'bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--border)]'}`}
+                                  >
+                                    {fmt === 'hf' && 'Hugging Face CLI'}
+                                    {fmt === 'python' && 'Python Stream'}
+                                    {fmt === 'curl' && 'cURL command'}
+                                  </button>
+                                ))}
+                              </div>
+
+                              <div className="relative">
+                                <pre className="p-3.5 bg-zinc-950 text-emerald-400 rounded-xl overflow-x-auto font-mono text-[11px] leading-relaxed shadow-inner select-text">
+                                  {inspectingDataset.code[selectedFormatCode]}
+                                </pre>
+                                
+                                <button
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(inspectingDataset.code[selectedFormatCode]);
+                                    alert("Script Copied!");
+                                  }}
+                                  className="absolute top-2.5 right-2.5 p-1 text-zinc-400 hover:text-white bg-zinc-800 rounded transition"
+                                  title="Copy script"
+                                >
+                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          )}
+
+                        </div>
+
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+
+            {/* Design Config/Tweaks Floating Drawer panel */}
+            {showTweaks && (
+              <div className="absolute bottom-16 right-6 w-80 bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-4 shadow-xl z-30 space-y-4">
+                <div className="flex items-center justify-between border-b border-[var(--border)] pb-2">
+                  <span className="font-bold text-xs text-[var(--muted)] all-caps-label">Design Config Panel</span>
+                  <button onClick={() => setShowTweaks(false)} className="text-xs hover:text-brand text-[var(--muted)]">Close</button>
+                </div>
+
+                {/* Knobs */}
+                <div className="space-y-3 text-xs">
+                  
+                  {/* Brand color selector */}
+                  <div>
+                    <label className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Accent Color</label>
+                    <div className="flex gap-2 mt-1.5">
+                      {[
+                        { label: "Mint", value: "#36b07c" },
+                        { label: "Emerald", value: "#059669" },
+                        { label: "Cyber", value: "#10b981" },
+                        { label: "Teal", value: "#0d9488" }
+                      ].map((color) => (
+                        <button
+                          key={color.value}
+                          onClick={() => setTweakBrandColor(color.value)}
+                          style={{ backgroundColor: color.value }}
+                          className={`w-6 h-6 rounded-full border-2 transition ${tweakBrandColor === color.value ? 'border-[var(--fg)] scale-110' : 'border-transparent'}`}
+                          title={color.label}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Font sizing slider */}
+                  <div>
+                    <div className="flex justify-between">
+                      <label className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Base Font Scale</label>
+                      <span className="font-mono text-brand font-bold">{tweakFontSize}px</span>
+                    </div>
+                    <input 
+                      type="range"
+                      min="12"
+                      max="16"
+                      value={tweakFontSize}
+                      onChange={(e) => setTweakFontSize(parseInt(e.target.value))}
+                      className="w-full mt-1.5 accent-brand"
+                    />
+                  </div>
+
+                  {/* Simulation latency slider */}
+                  <div>
+                    <div className="flex justify-between">
+                      <label className="text-[10px] text-[var(--muted)] all-caps-label font-bold">Swarm Extraction speed</label>
+                      <span className="font-mono text-brand font-bold">{tweakAgentSpeed}x</span>
+                    </div>
+                    <input 
+                      type="range"
+                      min="1"
+                      max="4"
+                      value={tweakAgentSpeed}
+                      onChange={(e) => setTweakAgentSpeed(parseInt(e.target.value))}
+                      className="w-full mt-1.5 accent-brand"
+                    />
+                  </div>
+
+                </div>
+              </div>
+            )}
+
+          </main>
+
+        </div>
+      );
+    }
+
+    const rootElement = document.getElementById("root");
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  </script>
+</body>
+</html>

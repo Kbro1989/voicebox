@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profiles — Voicebox</title>
+<style>
+:root{
+  --bg:#0f1115;
+  --surface:#151820;
+  --surface-2:#1c1f2a;
+  --fg:#e7e9ee;
+  --muted:#8a8f9b;
+  --border:#2a2f3a;
+  --accent:#ff7a3d;
+  --accent-2:#b46bff;
+  --success:#2dd4a8;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:15px/1.55 var(--font);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1220px;margin:0 auto;padding:26px 22px 120px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:32px;height:32px;object-fit:contain}
+.brand h1{font-size:20px;font-weight:800;letter-spacing:-.01em}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.nav a{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--fg);text-decoration:none;font-size:13px;font-weight:700}
+.nav a:hover{border-color:#3a4250}
+.nav a.primary{background:linear-gradient(135deg,rgba(255,122,61,.18),rgba(180,107,255,.18));border-color:#3d2f52}
+
+.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.search{max-width:340px}
+input,select,textarea{width:100%;padding:10px 12px;background:#0d1016;color:var(--fg);border:1px solid var(--border);border-radius:10px;font:inherit}
+textarea{min-height:120px;resize:vertical}
+label{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.field{margin-bottom:12px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--fg);text-decoration:none;font-size:13px;font-weight:700;cursor:pointer}
+.btn:hover{border-color:#4a5264}
+.btn.primary{background:linear-gradient(135deg,#ff7a3d,#ff5f2f);color:#fff;border-color:transparent}
+.btn.danger{background:rgba(239,68,68,.15);color:#ff9494;border-color:#5a2323}
+
+.dialog{position:fixed;inset:0;display:none;place-items:center;z-index:100;background:rgba(8,9,13,.72);backdrop-filter:blur(6px)}
+.dialog.open{display:grid}
+.dialog .panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;width:min(520px,calc(100vw - 32px));padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.dialog .panel h3{margin-bottom:12px;font-size:16px;font-weight:800}
+.dialog .panel .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:10px}
+
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:10px}
+.card .head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.card .name{font-weight:800;font-size:15px;word-break:break-word}
+.card .meta{color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:#0d1016;border:1px solid var(--border);color:var(--fg);font-size:12px;font-weight:700}
+.pill.gray{color:var(--muted)}
+
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:26px;text-align:center;color:var(--muted);font-size:14px}
+
+.toast{position:fixed;top:14px;right:14px;padding:12px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg);font-size:13px;z-index:200;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);transition:opacity .15s,transform .15s}
+.toast.show{opacity:1;transform:translate(0)}
+
+.loader{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="voicebox/app/src/assets/voicebox-logo.png" alt="Voicebox" onerror="this.style.display='none'" />
+      <h1>Voice profiles</h1>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="btn primary" id="createBtn">New profile</button>
+      <button class="btn" id="importBtn">Import</button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="profiles.html" class="primary">Profiles</a>
+    <a href="clone.html">Clone</a>
+    <a href="generate.html">Generate</a>
+    <a href="history.html">History</a>
+    <a href="captures.html">Captures</a>
+    <a href="server.html">Server</a>
+  </nav>
+
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="Search profiles…" autocomplete="off" />
+    <select id="engineFilter"><option value="">All engines</option></select>
+  </div>
+
+  <div id="profilesList" class="list"></div>
+  <div id="emptyState" class="empty">No profiles yet — clone a voice or import an existing profile.</div>
+
+  <!-- Create/edit dialog -->
+  <div class="dialog" id="dialog">
+    <form class="panel" id="profileForm" autocomplete="off">
+      <h3 id="dialogTitle">New profile</h3>
+      <div class="field">
+        <label>Name</label>
+        <input id="name" required placeholder="My cloned voice" />
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input id="description" placeholder="Short hint for later recognition" />
+      </div>
+      <div class="field">
+        <label>Gender</label>
+        <select id="gender"><option>male</option><option>female</option></select>
+      </div>
+      <div class="field">
+        <label>Default engine</label>
+        <select id="engine"><option value="">Use server default</option></select>
+      </div>
+      <div class="field">
+        <label>Voice notes</label>
+        <textarea id="notes" placeholder="Pronunciation, accent preference, sensitivity notes"></textarea>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn primary" id="saveBtn">Save profile</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(()=>{
+  const BASE_KEY='vb:base';
+  const base=localStorage.getItem(BASE_KEY)||'http://127.0.0.1:17493';
+  const $=id=>document.getElementById(id);
+  const toastEl=$('toast');
+  let profiles=[];
+  let engines=[];
+
+  function setState(id,v){$(id).textContent=v}
+  function toast(msg,dur=1600){toastEl.textContent=msg;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),dur)}
+  async function get(path){
+    const res=await fetch(base.replace(/\/$/,'')+path,{headers:{'content-type':'application/json'},credentials:'omit'});
+    if(!res.ok) throw new Error('HTTP '+res.status+' '+path);
+    return res.json().catch(()=>({}));
+  }
+  async function post(path,body){
+    const res=await fetch(base.replace(/\/$/,'')+path,{method:'POST',body:JSON.stringify(body||{}),headers:{'content-type':'application/json'},credentials:'omit'});
+    if(!res.ok) throw new Error('HTTP '+res.status+' '+path);
+    return res.json().catch(()=>({}));
+  }
+  async function del(path){const r=await fetch(base.replace(/\/$/,'')+path,{method:'DELETE',credentials:'omit'});if(!r.ok) throw new Error('HTTP '+r.status);}
+
+  function esc(s=''){return String(s).replace(/[<>&]/g,c=>({ '<':'&lt;','>':'&gt;','&':'&amp;' }[c]))}
+
+  async function loadEngines(){
+    try{
+      const data=await get('/api/profiles/presets/all');
+      engines=Array.isArray(data)?data:[];
+      if(!engines.length) engines=['kokoro','qwen_custom_voice','chatterbox'];
+      const sel=$('engine');
+      engines.forEach(e=>{const o=document.createElement('option');o.value=o.textContent=e;sel.appendChild(o)});
+    }catch{ engines=['kokoro','qwen_custom_voice','chatterbox']; }
+  }
+
+  async function loadProfiles(){
+    try{
+      const data=await get('/api/profiles');
+      profiles=Array.isArray(data)?data:[];
+      render();
+    }catch{
+      $('profilesList').innerHTML='<div class="empty" style="grid-column:1/-1">Cannot reach '+esc(base)+' — update server URL or start backend.</div>';
+    }
+  }
+
+  function render(){
+    const q=($('search').value||'').toLowerCase();
+    const eng=($('engineFilter').value||'').toLowerCase();
+    const list=profiles.filter(p=>{
+      const name=(p.name||p.voice_name||'').toLowerCase();
+      const engine=(p.engine||'').toLowerCase();
+      return (!q || name.includes(q)) && (!eng || engine.includes(eng));
+    });
+    const el=$('profilesList');
+    $('emptyState').style.display=list.length?'none':'block';
+    el.innerHTML=list.map(p=>{
+      const hasAvatar=!!p.avatar_path || !!p.avatar_url;
+      return '<div class="card">'+
+        '<div class="head"><div class="name">'+esc(p.name||p.voice_name||p.id)+'</div>'+
+        (p.is_cloned?'<span class="pill">cloned</span>':'<span class="pill gray">preset</span>')+
+        '</div>'+
+        '<div class="meta">'+(p.gender?esc(p.gender)+' · ':'')+'engine: '+esc(p.engine||'default')+'</div>'+
+        (p.samples_count!=null?'<div class="meta">Samples: '+esc(String(p.samples_count))+'</div>':'')+
+        (p.reference_text?'<div class="meta">Ref text set</div>':'')+
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+        '<button class="btn" data-id="'+esc(p.id)+'" data-act="select">Select</button>'+
+        '<button class="btn" data-id="'+esc(p.id)+'" data-act="samples">Samples</button>'+
+        '<button class="btn danger" data-id="'+esc(p.id)+'" data-act="delete">Delete</button>'+
+        '</div></div>';
+    }).join('');
+
+    el.querySelectorAll('button[data-act]').forEach(b=>b.addEventListener('click',async()=>{
+      const id=b.dataset.id,act=b.dataset.act;
+      if(act==='delete'){if(!confirm('Delete this profile?'))return; try{await del('/api/profiles/'+id);await loadProfiles();toast('Deleted');}catch(e){toast('Delete failed: '+e.message);}}
+      else if(act==='samples'){toast('Open detail view to manage samples');}
+      else{toast('Selected: '+(profiles.find(x=>x.id===id)?.name||id));}
+    }));
+  }
+
+  const dialog=$('dialog');
+  $('createBtn').addEventListener('click',()=>{ $('profileForm').reset(); $('dialogTitle').textContent='New profile'; dialog.classList.add('open');});
+  $('cancelBtn').addEventListener('click',()=>dialog.classList.remove('open'));
+  $('profileForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const body={name:$('name').value.trim(),description:$('description').value.trim(),gender:$('gender').value,engine:$('engine').value||void 0};
+    if(!body.name){ toast('Name required'); return; }
+    try{
+      await post('/api/profiles',body);
+      dialog.classList.remove('open');
+      await loadProfiles();
+      toast('Profile saved');
+    }catch(err){ toast('Save failed: '+err.message); }
+  });
+
+  $('search').addEventListener('input', render);
+  $('engineFilter').addEventListener('change', render);
+  $('importBtn').addEventListener('click', async()=>{
+    const url=prompt('Paste profile export URL or local file path:');
+    if(!url) return;
+    try{
+      const res=await fetch(url);
+      const data=await res.json().catch(()=>({}));
+      await post('/api/profiles/import',data);
+      await loadProfiles();
+      toast('Import request sent');
+    }catch{ toast('Import failed'); }
+  });
+
+  (async()=>{ await loadEngines(); await loadProfiles(); })();
+})();
+</script>
+</body>
+</html>

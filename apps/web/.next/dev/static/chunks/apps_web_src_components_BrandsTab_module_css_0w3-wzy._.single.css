@@ -1,0 +1,304 @@
+/* [project]/apps/web/src/components/BrandsTab.module.css [app-client] (css) */
+.BrandsTab-module__BK8x4q__root {
+  grid-template-columns: 288px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  display: grid;
+}
+
+.BrandsTab-module__BK8x4q__sidebar {
+  top: var(--entry-topbar-h, 44px);
+  max-height: calc(100dvh - var(--entry-topbar-h, 44px) - 48px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  padding: 16px;
+  display: flex;
+  position: sticky;
+}
+
+.BrandsTab-module__BK8x4q__sidebarHead {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__title {
+  letter-spacing: -.01em;
+  color: var(--text-strong);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 680;
+}
+
+.BrandsTab-module__BK8x4q__newBtn {
+  justify-content: center;
+  width: 100%;
+}
+
+.BrandsTab-module__BK8x4q__searchWrap {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.BrandsTab-module__BK8x4q__searchIcon {
+  color: var(--text-faint);
+  pointer-events: none;
+  position: absolute;
+  left: 11px;
+}
+
+.BrandsTab-module__BK8x4q__search {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  width: 100%;
+  min-height: 38px;
+  color: var(--text);
+  transition: border-color var(--dur-quick) var(--ease-out),
+    box-shadow var(--dur-quick) var(--ease-out);
+  padding: 0 12px 0 34px;
+  font-size: 13.5px;
+}
+
+.BrandsTab-module__BK8x4q__search::placeholder {
+  color: var(--text-faint);
+}
+
+.BrandsTab-module__BK8x4q__search:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+
+.BrandsTab-module__BK8x4q__list {
+  scrollbar-width: thin;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 0;
+  margin: 0 -6px -6px;
+  padding: 2px 6px 6px;
+  display: flex;
+  overflow-y: auto;
+}
+
+.BrandsTab-module__BK8x4q__item {
+  border-radius: var(--radius);
+  width: 100%;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--dur-quick) var(--ease-out),
+    border-color var(--dur-quick) var(--ease-out);
+  background: none;
+  border: 1px solid #0000;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 10px;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__item:hover {
+  background: var(--bg-subtle);
+}
+
+.BrandsTab-module__BK8x4q__item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.BrandsTab-module__BK8x4q__itemActive, .BrandsTab-module__BK8x4q__itemActive:hover {
+  background: var(--accent-tint);
+  border-color: color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+.BrandsTab-module__BK8x4q__itemThumb {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  display: flex;
+  overflow: hidden;
+}
+
+.BrandsTab-module__BK8x4q__itemLogo {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.BrandsTab-module__BK8x4q__itemLogoFallback {
+  border-radius: var(--radius-xs);
+  background: var(--bg-muted);
+  width: 100%;
+  height: 100%;
+  color: var(--text-soft);
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 650;
+  display: inline-flex;
+}
+
+.BrandsTab-module__BK8x4q__itemMeta {
+  flex-direction: column;
+  flex: auto;
+  gap: 2px;
+  min-width: 0;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__itemName {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-strong);
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.BrandsTab-module__BK8x4q__itemHost {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  overflow: hidden;
+}
+
+.BrandsTab-module__BK8x4q__statusDot {
+  border-radius: var(--radius-pill);
+  flex: none;
+  width: 8px;
+  height: 8px;
+}
+
+.BrandsTab-module__BK8x4q__statusDotBusy {
+  background: var(--amber);
+  animation: 1.4s ease-in-out infinite BrandsTab-module__BK8x4q__dotPulse;
+}
+
+.BrandsTab-module__BK8x4q__statusDotFailed {
+  background: var(--red);
+}
+
+.BrandsTab-module__BK8x4q__statusDotNeedsInput {
+  background: var(--accent);
+  animation: 1.4s ease-in-out infinite BrandsTab-module__BK8x4q__dotPulse;
+}
+
+@keyframes BrandsTab-module__BK8x4q__dotPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .35;
+  }
+}
+
+.BrandsTab-module__BK8x4q__listLoading {
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__skeletonRow {
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+  height: 56px;
+  animation: 1.4s ease-in-out infinite BrandsTab-module__BK8x4q__pulse;
+}
+
+@keyframes BrandsTab-module__BK8x4q__pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+}
+
+.BrandsTab-module__BK8x4q__sidebarEmpty {
+  text-align: center;
+  flex-direction: column;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 12px;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__sidebarEmptyText {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.BrandsTab-module__BK8x4q__preview {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  min-width: 0;
+}
+
+.BrandsTab-module__BK8x4q__pickerPane {
+  padding: 28px;
+}
+
+.BrandsTab-module__BK8x4q__previewEmpty {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  min-height: 420px;
+  padding: 40px;
+  display: flex;
+}
+
+.BrandsTab-module__BK8x4q__previewEmptyMark {
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+  width: 56px;
+  height: 56px;
+  color: var(--text-faint);
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.BrandsTab-module__BK8x4q__previewEmptyText {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .BrandsTab-module__BK8x4q__root {
+    grid-template-columns: 1fr;
+  }
+
+  .BrandsTab-module__BK8x4q__sidebar {
+    max-height: none;
+    position: static;
+  }
+
+  .BrandsTab-module__BK8x4q__list {
+    max-height: 320px;
+  }
+}
+
+/*# sourceMappingURL=apps_web_src_components_BrandsTab_module_css_0w3-wzy._.single.css.map*/

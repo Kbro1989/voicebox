@@ -1,0 +1,2 @@
+import{Mr as defineComponent,Tr as createCommentVNode,Wr as onMounted,Zr as renderSlot,hi as shallowRef}from"./framework-Xv-yTGwB.js";var CSROnly_default=defineComponent({__name:"CSROnly",setup(__props){const show=shallowRef(!1);return onMounted(()=>{show.value=!0}),(_ctx,_cache)=>show.value?renderSlot(_ctx.$slots,"default",{key:0}):createCommentVNode("",!0)}});export{CSROnly_default as t};
+//# sourceMappingURL=CSROnly-sN-Ky5GC.js.map

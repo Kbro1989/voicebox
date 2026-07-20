@@ -1,0 +1,51 @@
+/* [project]/packages/components/src/form-controls.module.css [app-client] (css) */
+.form-controls-module__RuFfNW__control {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  padding: 7px 10px;
+  transition: border-color .12s, box-shadow .12s;
+}
+
+.form-controls-module__RuFfNW__control::placeholder {
+  color: var(--text-faint);
+}
+
+.form-controls-module__RuFfNW__control:focus {
+  border-color: var(--selected);
+  box-shadow: 0 0 0 3px var(--selected-soft);
+  outline: none;
+}
+
+.form-controls-module__RuFfNW__textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-controls-module__RuFfNW__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%2374716b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 5 6 8 9 5'/%3E%3C/svg%3E");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  padding-right: 32px;
+}
+
+.form-controls-module__RuFfNW__select::-ms-expand {
+  display: none;
+}
+
+[data-theme="dark"] .form-controls-module__RuFfNW__select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%239a9690' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 5 6 8 9 5'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .form-controls-module__RuFfNW__select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%239a9690' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 5 6 8 9 5'/%3E%3C/svg%3E");
+  }
+}
+
+/*# sourceMappingURL=packages_components_src_form-controls_module_css_0w3-wzy._.single.css.map*/

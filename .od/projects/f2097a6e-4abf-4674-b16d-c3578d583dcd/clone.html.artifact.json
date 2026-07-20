@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "clone.html",
+  "entry": "clone.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-07-10T08:32:57.174Z",
+  "updatedAt": "2026-07-10T08:32:57.174Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

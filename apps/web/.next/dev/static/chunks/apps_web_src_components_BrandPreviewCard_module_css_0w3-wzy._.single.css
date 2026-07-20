@@ -1,0 +1,924 @@
+/* [project]/apps/web/src/components/BrandPreviewCard.module.css [app-client] (css) */
+.BrandPreviewCard-module__iKpPCG__previewInner {
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+  animation: .2s cubic-bezier(.23, 1, .32, 1) BrandPreviewCard-module__iKpPCG__previewIn;
+  display: flex;
+}
+
+@keyframes BrandPreviewCard-module__iKpPCG__previewIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.BrandPreviewCard-module__iKpPCG__cover {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(120% 140% at 50% -10%, var(--bg-subtle) 0%, var(--bg) 70%);
+  height: 208px;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--text-strong) 4%, transparent);
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__coverLogo {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 140px;
+}
+
+.BrandPreviewCard-module__iKpPCG__coverLogoFallback {
+  border-radius: var(--radius-lg);
+  background: var(--bg-muted);
+  width: 96px;
+  height: 96px;
+  color: var(--text-soft);
+  justify-content: center;
+  align-items: center;
+  font-size: 44px;
+  font-weight: 680;
+  display: inline-flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewHead {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewHeadText {
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewTitleRow {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewName {
+  letter-spacing: -.01em;
+  color: var(--text-strong);
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewTagline {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewDomain {
+  width: fit-content;
+  color: var(--text-muted);
+  transition: color var(--dur-quick) var(--ease-out);
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__previewDomain:hover {
+  color: var(--accent);
+}
+
+.BrandPreviewCard-module__iKpPCG__badge {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.BrandPreviewCard-module__iKpPCG__badgeBusy {
+  color: var(--amber);
+  background: var(--amber-bg);
+  border-color: color-mix(in srgb, var(--amber) 30%, var(--border));
+}
+
+.BrandPreviewCard-module__iKpPCG__badgeFailed {
+  color: var(--red);
+  background: var(--red-bg);
+  border-color: var(--red-border);
+}
+
+.BrandPreviewCard-module__iKpPCG__badgeNeedsInput {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.BrandPreviewCard-module__iKpPCG__previewActions {
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__missingProjectNotice {
+  border: 1px solid var(--red-border);
+  border-radius: var(--radius);
+  background: var(--red-bg);
+  color: var(--red);
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.BrandPreviewCard-module__iKpPCG__section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__sectionTitle {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 12px;
+  font-weight: 660;
+}
+
+.BrandPreviewCard-module__iKpPCG__description {
+  color: var(--text);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.BrandPreviewCard-module__iKpPCG__sectionAction {
+  color: var(--accent);
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+  transition: opacity var(--dur-quick) var(--ease-out);
+  background: none;
+  border: 0;
+  padding: 2px 4px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.BrandPreviewCard-module__iKpPCG__sectionAction:hover {
+  opacity: .78;
+}
+
+.BrandPreviewCard-module__iKpPCG__subTitle {
+  color: var(--text-soft);
+  margin: 0;
+  font-size: 12px;
+  font-weight: 620;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoStage {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  justify-content: center;
+  align-items: center;
+  min-height: 158px;
+  padding: 28px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoStageImg {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 96px;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoThumbs {
+  flex-wrap: wrap;
+  gap: 8px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoThumb {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  transition: border-color var(--dur-quick) var(--ease-out);
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoThumb:hover {
+  border-color: var(--accent);
+}
+
+.BrandPreviewCard-module__iKpPCG__logoThumbActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.BrandPreviewCard-module__iKpPCG__logoThumb img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.BrandPreviewCard-module__iKpPCG__logoNotes {
+  color: var(--text-faint);
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTiles {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  display: grid;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTile {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTileAg {
+  height: 104px;
+  color: var(--text-strong);
+  background: var(--bg);
+  justify-content: center;
+  align-items: center;
+  font-size: 56px;
+  line-height: 1;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTileMeta {
+  padding: 9px 12px 11px;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTileName {
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontTileRole {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-faint);
+  margin-top: 1px;
+  font-size: 11px;
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontList {
+  flex-direction: column;
+  gap: 14px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontItem {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontItemHead {
+  align-items: baseline;
+  gap: 10px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontRole {
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-faint);
+  font-size: 11px;
+  font-weight: 660;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontFamily {
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontWeights {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.BrandPreviewCard-module__iKpPCG__fontSpecimen {
+  color: var(--text-strong);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30px;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__paletteGrid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  display: grid;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatch {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchChip {
+  align-items: flex-end;
+  height: 84px;
+  padding: 8px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchHex {
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchBody {
+  flex-direction: column;
+  gap: 2px;
+  padding: 9px 11px 12px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchName {
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchRole {
+  color: var(--text-faint);
+  font-size: 11px;
+}
+
+.BrandPreviewCard-module__iKpPCG__swatchUsage {
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.BrandPreviewCard-module__iKpPCG__pills {
+  flex-wrap: wrap;
+  gap: 6px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__pill {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.BrandPreviewCard-module__iKpPCG__aesthetic {
+  color: var(--text);
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.BrandPreviewCard-module__iKpPCG__pillars {
+  color: var(--text);
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  font-size: 13.5px;
+  list-style: none;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__pillars li {
+  padding-left: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.BrandPreviewCard-module__iKpPCG__pillars li:before {
+  content: "—";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+.BrandPreviewCard-module__iKpPCG__vocab {
+  border-top: 1px solid var(--border);
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+  padding-top: 12px;
+  display: grid;
+}
+
+.BrandPreviewCard-module__iKpPCG__vocabCol {
+  flex-direction: column;
+  gap: 4px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__vocabUse, .BrandPreviewCard-module__iKpPCG__vocabAvoid {
+  font-size: 12px;
+  font-weight: 660;
+}
+
+.BrandPreviewCard-module__iKpPCG__vocabUse {
+  color: var(--green, #3d7a4f);
+}
+
+.BrandPreviewCard-module__iKpPCG__vocabAvoid {
+  color: var(--red);
+}
+
+.BrandPreviewCard-module__iKpPCG__vocabVals {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.BrandPreviewCard-module__iKpPCG__imageryLine {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.BrandPreviewCard-module__iKpPCG__imageryKey {
+  color: var(--text-strong);
+  font-weight: 640;
+}
+
+.BrandPreviewCard-module__iKpPCG__imageryKeyAvoid {
+  color: var(--red);
+  font-weight: 640;
+}
+
+.BrandPreviewCard-module__iKpPCG__posture {
+  border-top: 1px solid var(--border);
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 12px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__postureList {
+  color: var(--text-muted);
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.BrandPreviewCard-module__iKpPCG__gallery {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  display: grid;
+}
+
+.BrandPreviewCard-module__iKpPCG__shot {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  transition: border-color var(--dur-quick) var(--ease-out),
+    transform var(--dur-quick) var(--ease-out);
+  margin: 0;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__shot:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.BrandPreviewCard-module__iKpPCG__shotFrame {
+  aspect-ratio: 4 / 3;
+  background: var(--bg);
+  cursor: zoom-in;
+  border: 0;
+  width: 100%;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__shotFrame img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform .24s cubic-bezier(.23, 1, .32, 1);
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__shot:hover .BrandPreviewCard-module__iKpPCG__shotFrame img {
+  transform: scale(1.04);
+}
+
+.BrandPreviewCard-module__iKpPCG__shotMeta {
+  padding: 8px 11px 10px;
+}
+
+.BrandPreviewCard-module__iKpPCG__shotCap {
+  color: var(--text-strong);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__shotKind {
+  color: var(--text-faint);
+  margin-top: 1px;
+  font-size: 11px;
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsHead {
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsOpen {
+  color: var(--text-muted);
+  transition: color var(--dur-quick) var(--ease-out);
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsOpen:hover {
+  color: var(--accent);
+}
+
+.BrandPreviewCard-module__iKpPCG__dsFrameWrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsBar {
+  border-bottom: 1px solid var(--border);
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsTabs {
+  gap: 4px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsTab {
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color var(--dur-quick) var(--ease-out),
+    color var(--dur-quick) var(--ease-out);
+  background: none;
+  border: 0;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsTab:hover {
+  color: var(--text-strong);
+}
+
+.BrandPreviewCard-module__iKpPCG__dsTabActive, .BrandPreviewCard-module__iKpPCG__dsTabActive:hover {
+  background: var(--bg-panel);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--border);
+  font-weight: 600;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsCap {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsFrame {
+  background: #fff;
+  border: 0;
+  width: 100%;
+  height: 520px;
+  display: block;
+}
+
+.BrandPreviewCard-module__iKpPCG__dsTokens {
+  flex-wrap: wrap;
+  gap: 8px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__tok {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel);
+  align-items: center;
+  gap: 8px;
+  padding: 5px 11px 5px 5px;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__tokSwatch {
+  border-radius: var(--radius-xs);
+  border: 1px solid #0000001a;
+  width: 26px;
+  height: 26px;
+}
+
+.BrandPreviewCard-module__iKpPCG__tokText {
+  flex-direction: column;
+  line-height: 1.1;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__tokKey {
+  color: var(--text-strong);
+  font-size: 11px;
+  font-weight: 660;
+}
+
+.BrandPreviewCard-module__iKpPCG__tokHex {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+}
+
+.BrandPreviewCard-module__iKpPCG__tokValue {
+  border-radius: var(--radius-xs);
+  background: var(--accent-tint);
+  min-width: 26px;
+  height: 26px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 660;
+  display: flex;
+}
+
+.BrandPreviewCard-module__iKpPCG__assets {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  display: grid;
+}
+
+.BrandPreviewCard-module__iKpPCG__asset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  color: inherit;
+  transition: border-color var(--dur-quick) var(--ease-out),
+    transform var(--dur-quick) var(--ease-out);
+  flex-direction: column;
+  text-decoration: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__asset:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.BrandPreviewCard-module__iKpPCG__assetFrame {
+  aspect-ratio: 16 / 10;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__assetFrame iframe {
+  transform-origin: 0 0;
+  pointer-events: none;
+  background: #fff;
+  border: 0;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(.5);
+}
+
+.BrandPreviewCard-module__iKpPCG__assetMeta {
+  padding: 11px 13px;
+}
+
+.BrandPreviewCard-module__iKpPCG__assetName {
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.BrandPreviewCard-module__iKpPCG__lightbox {
+  z-index: 50;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: #0a0a0cbd;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+  animation: .2s cubic-bezier(.23, 1, .32, 1) BrandPreviewCard-module__iKpPCG__lightboxIn;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+@keyframes BrandPreviewCard-module__iKpPCG__lightboxIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.BrandPreviewCard-module__iKpPCG__lightboxImg {
+  object-fit: contain;
+  border-radius: var(--radius);
+  max-width: min(1100px, 92vw);
+  max-height: 86vh;
+  animation: .2s cubic-bezier(.23, 1, .32, 1) BrandPreviewCard-module__iKpPCG__lightboxImgIn;
+  box-shadow: 0 24px 60px #00000080;
+}
+
+@keyframes BrandPreviewCard-module__iKpPCG__lightboxImgIn {
+  from {
+    opacity: 0;
+    transform: scale(.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.BrandPreviewCard-module__iKpPCG__lightboxClose {
+  border-radius: var(--radius-pill);
+  color: #fff;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  transition: background-color var(--dur-quick) var(--ease-out);
+  background: #ffffff24;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  position: fixed;
+  top: 20px;
+  right: 24px;
+}
+
+.BrandPreviewCard-module__iKpPCG__lightboxClose:hover {
+  background: #ffffff42;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact {
+  gap: 12px;
+  max-width: none;
+  padding: 0;
+  animation: none;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__cover {
+  border-radius: var(--radius);
+  height: 96px;
+  padding: 16px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__coverLogo {
+  max-height: 64px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__coverLogoFallback {
+  width: 56px;
+  height: 56px;
+  font-size: 26px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__previewHead {
+  gap: 8px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__previewName {
+  font-size: 15px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__previewTagline {
+  font-size: 12px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__section {
+  border-radius: var(--radius);
+  gap: 8px;
+  padding: 10px 11px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__description {
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  line-height: 1.5;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__fontTiles {
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 8px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__fontTileAg {
+  height: 64px;
+  font-size: 34px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__fontTileMeta {
+  padding: 6px 8px 8px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__fontTileName {
+  font-size: 11.5px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__paletteGrid {
+  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  gap: 8px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__swatchChip {
+  height: 48px;
+  padding: 6px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__swatchBody {
+  padding: 6px 8px 8px;
+}
+
+.BrandPreviewCard-module__iKpPCG__compact .BrandPreviewCard-module__iKpPCG__swatchName {
+  font-size: 11.5px;
+}
+
+/*# sourceMappingURL=apps_web_src_components_BrandPreviewCard_module_css_0w3-wzy._.single.css.map*/

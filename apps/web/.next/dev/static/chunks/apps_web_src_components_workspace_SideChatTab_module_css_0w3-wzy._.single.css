@@ -1,0 +1,40 @@
+/* [project]/apps/web/src/components/workspace/SideChatTab.module.css [app-client] (css) */
+.SideChatTab-module__Ios02G__sideChat {
+  background: var(--bg);
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+}
+
+.SideChatTab-module__Ios02G__banner {
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border);
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 12.5px;
+  display: flex;
+}
+
+.SideChatTab-module__Ios02G__bannerIcon {
+  color: var(--accent);
+  flex: none;
+  display: inline-flex;
+}
+
+.SideChatTab-module__Ios02G__pane {
+  flex-direction: column;
+  flex: auto;
+  min-height: 0;
+  display: flex;
+}
+
+.SideChatTab-module__Ios02G__pane > .pane {
+  flex: auto;
+  min-height: 0;
+}
+
+/*# sourceMappingURL=apps_web_src_components_workspace_SideChatTab_module_css_0w3-wzy._.single.css.map*/

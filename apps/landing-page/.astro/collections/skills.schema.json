@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "i18n": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "tagline": {
+            "type": "string"
+          },
+          "atmosphere": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "bodyHtml": {
+            "type": "string"
+          },
+          "triggers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "examplePrompt": {
+            "type": "string"
+          },
+          "example_prompt": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {}
+      }
+    },
+    "od": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "scenario": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "featured": {
+          "type": "number"
+        },
+        "upstream": {
+          "type": "string"
+        },
+        "default_for": {
+          "type": "string"
+        },
+        "example_prompt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": {}
+}

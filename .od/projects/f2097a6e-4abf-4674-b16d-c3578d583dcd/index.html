@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voicebox · Local Control Surface</title>
+<style>
+:root{
+  --bg:#0f1115;
+  --surface:#151820;
+  --surface-2:#1c1f2a;
+  --fg:#e7e9ee;
+  --muted:#8a8f9b;
+  --border:#2a2f3a;
+  --accent:#ff7a3d;
+  --accent-2:#b46bff;
+  --success:#2dd4a8;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --font-display:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:16px/1.55 var(--font-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 24px 120px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:36px;height:36px;object-fit:contain}
+.brand h1{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.brand .sub{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.status{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.dot.on{background:var(--success);box-shadow:0 0 8px rgba(45,212,168,.35)}
+.dot.busy{background:var(--warn)}
+.dot.err{background:var(--danger)}
+
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:transform .08s,border-color .15s}
+.card:hover{border-color:#3a4250}
+.card h3{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.card .big{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.card .sub{font-size:12px;color:var(--muted);margin-top:6px}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.nav a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--fg);text-decoration:none;font-size:13px;font-weight:600}
+.nav a:hover{border-color:#3a4250}
+.nav a.primary{background:linear-gradient(135deg,rgba(255,122,61,.18),rgba(180,107,255,.18));border-color:#3d2f52}
+
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.row + .row{margin-top:10px}
+.row .name{font-weight:700}
+.row .meta{color:var(--muted);font-size:12px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--fg);text-decoration:none;font-size:13px;font-weight:700;cursor:pointer;transition:transform .06s,border-color .15s}
+.btn:hover{border-color:#4a5264}
+.btn.primary{background:linear-gradient(135deg,#ff7a3d,#ff5f2f);color:#fff;border-color:transparent}
+
+.section{margin-top:28px}
+.section header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section h2{font-size:18px;font-weight:800;letter-spacing:-.01em}
+
+input,select,textarea{width:100%;padding:10px 12px;background:#0d1016;color:var(--fg);border:1px solid var(--border);border-radius:10px;font:inherit}
+textarea{min-height:120px;resize:vertical}
+label{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.field{margin-bottom:12px}
+.form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:28px;text-align:center;color:var(--muted);font-size:14px}
+
+.toast{position:fixed;top:16px;right:16px;padding:12px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg);font-size:13px;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);transition:opacity .15s,transform .15s}
+.toast.show{opacity:1;transform:translate(0)}
+
+.spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.footer-note{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}
+code{background:#0d1016;border:1px solid var(--border);padding:2px 6px;border-radius:8px;color:var(--accent-2);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="voicebox/app/src/assets/voicebox-logo.png" alt="Voicebox" onerror="this.style.display='none'" />
+      <div>
+        <h1>Voicebox Control Surface</h1>
+        <div class="sub">Local backend · Windows-native</div>
+      </div>
+    </div>
+    <div class="status" id="status">
+      <span class="dot" id="dot"></span>
+      <span id="statusText">Checking local backend…</span>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html" class="primary">Overview</a>
+    <a href="profiles.html">Profiles</a>
+    <a href="clone.html">Clone</a>
+    <a href="generate.html">Generate</a>
+    <a href="history.html">History</a>
+    <a href="captures.html">Captures</a>
+    <a href="server.html">Server</a>
+  </nav>
+
+  <section class="section">
+    <header>
+      <h2>Quick status</h2>
+      <button class="btn" id="refreshBtn">Refresh</button>
+    </header>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Profiles</h3>
+        <div class="big" id="profilesCount">—</div>
+        <div class="sub">Voice profiles locally</div>
+      </div>
+      <div class="card">
+        <h3>Generations</h3>
+        <div class="big" id="generationsCount">—</div>
+        <div class="sub" id="recentGenTime">Recent generation history</div>
+      </div>
+      <div class="card">
+        <h3>Server</h3>
+        <div class="big" id="serverUrl">127.0.0.1:17493</div>
+        <div class="sub" id="serverStatus">Backend endpoint</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <header>
+      <h2>Recent activity</h2>
+    </header>
+    <div class="grid-2">
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase">Latest profiles</h3>
+          <a href="profiles.html" class="btn">Open profiles</a>
+        </div>
+        <div id="recentProfiles">
+          <div class="empty">No profiles loaded yet.</div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h3 style="font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase">Recent generations</h3>
+          <a href="history.html" class="btn">Open history</a>
+        </div>
+        <div id="recentGenerations">
+          <div class="empty">No generations loaded yet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <header><h2>Backend health</h2></header>
+    <div class="form">
+      <div class="field">
+        <label>Health endpoint</label>
+        <code>GET /health</code>
+      </div>
+      <div class="field">
+        <label>Last status</label>
+        <div id="healthStatus" style="font-size:14px">Checking…</div>
+      </div>
+      <div class="field">
+        <label>Backend base</label>
+        <input id="baseUrl" value="http://127.0.0.1:17493" />
+      </div>
+      <button class="btn primary" id="saveBase">Use this server</button>
+    </div>
+  </section>
+
+  <div class="footer-note">Runs entirely against your local Voicebox backend. Nothing leaves this machine unless you explicitly enable cloud sync.</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(()=>{
+  const BASE_KEY='vb:base';
+  const $=id=>document.getElementById(id);
+  const baseEl=$('baseUrl');
+  const dot=$('dot');
+  const statusText=$('statusText');
+  const toastEl=$('toast');
+  let base=localStorage.getItem(BASE_KEY)||'http://127.0.0.1:17493';
+  baseEl.value=base;
+
+  function setStatus(state,text){
+    dot.className='dot '+(state||'');
+    statusText.textContent=text||'';
+  }
+  function toast(msg,dur=1600){
+    toastEl.textContent=msg;
+    toastEl.classList.add('show');
+    setTimeout(()=>toastEl.classList.remove('show'),dur);
+  }
+  async function get(path,opts={}){
+    const res=await fetch(base.replace(/\/$/,'')+path,{...opts,headers:{'content-type':'application/json',...(opts.headers||{})},credentials:'omit'});
+    if(!res.ok) throw new Error('HTTP '+res.status+' '+path);
+    const ct=res.headers.get('content-type')||'';
+    if(ct.includes('application/octet-stream') || path.includes('/audio')) return res;
+    if(ct.includes('application/json')) return await res.json();
+    return res;
+  }
+  async function post(path,body){
+    const res=await fetch(base.replace(/\/$/,'')+path,{method:'POST',body:JSON.stringify(body||{}),headers:{'content-type':'application/json'},credentials:'omit'});
+    if(!res.ok) throw new Error('HTTP '+res.status+' '+path);
+    const ct=res.headers.get('content-type')||'';
+    if(ct.includes('application/octet-stream')) return res;
+    return res.json().catch(()=>({}));
+  }
+  function esc(s=''){
+    return String(s).replace(/[<>&]/g,c=>({ '<':'&lt;','>':'&gt;','&':'&amp;' }[c]));
+  }
+  async function load(){
+    setStatus('busy','Refreshing…');
+    try{
+      await get('/health');
+      setStatus('on','Local backend reachable');
+    }catch{
+      setStatus('err','Local backend unreachable');
+    }
+    try{
+      const profiles=await get('/api/profiles');
+      $('profilesCount').textContent=Array.isArray(profiles)?profiles.length:'?';
+      if(Array.isArray(profiles)) renderProfiles(profiles);
+    }catch{ $('profilesCount').textContent='!'; }
+    try{
+      const gens=await get('/api/history');
+      $('generationsCount').textContent='?';
+      const arr=Array.isArray(gens)?gens:[];
+      $('generationsCount').textContent=arr.length;
+      const latest=arr[0];
+      if(latest){
+        const d=new Date(latest.created_at||latest.createdAt||Date.now());
+        $('recentGenTime').textContent='Latest: '+d.toLocaleString();
+      }
+      renderGenerations(arr.slice(0,6));
+    }catch{ $('generationsCount').textContent='!'; }
+  }
+  function renderProfiles(list){
+    const el=$('recentProfiles');
+    if(!list?.length){ el.innerHTML='<div class="empty">No profiles loaded yet.</div>'; return; }
+    el.innerHTML=list.slice(0,6).map(p=>'<div class="row"><div><div class="name">'+esc(p.name||p.voice_name||p.id)+'</div><div class="meta">'+(p.gender||'')+' · '+(p.is_cloned?'cloned':'preset')+'</div></div><a class="btn" href="profiles.html">View</a></div>').join('');
+  }
+  function renderGenerations(list){
+    const el=$('recentGenerations');
+    if(!list?.length){ el.innerHTML='<div class="empty">No generations loaded yet.</div>'; return; }
+    el.innerHTML=list.map(g=>'<div class="row"><div><div class="name">Generation</div><div class="meta">'+(g.profile_id||g.voice_id||'—')+' · '+(g.engine||'')+'</div></div><a class="btn" href="history.html">Open</a></div>').join('');
+  }
+  $('refreshBtn').addEventListener('click',async()=>{ toast('Refreshing…'); await load(); toast('Refreshed'); });
+  $('saveBase').addEventListener('click',()=>{
+    const raw=baseEl.value.trim().replace(/\/$/,'');
+    if(!/^https?:\/\//i.test(raw)){ toast('Base URL must start with http(s)'); return; }
+    base=raw; localStorage.setItem(BASE_KEY,base);
+    toast('Base URL saved');
+    load();
+  });
+  load();
+})();
+</script>
+</body>
+</html>

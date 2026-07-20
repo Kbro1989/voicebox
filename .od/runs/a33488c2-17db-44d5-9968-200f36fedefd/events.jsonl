@@ -1,0 +1,220 @@
+{"id":1,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"startedAt":1783676649964},"timestamp":1783676649964}
+{"id":2,"event":"genui_surface_request","data":{"kind":"genui_surface_request","surfaceId":"task-type","runId":"a33488c2-17db-44d5-9968-200f36fedefd","payload":{"id":"task-type","kind":"choice","persist":"conversation","trigger":{"stageId":"task-type","atom":"discovery-question-form"},"schema":{"type":"object","required":["taskType"],"properties":{"taskType":{"type":"string","title":"Task type","enum":["prototype","live-artifact","deck","image","video","hyperframes","audio","other"]}}},"prompt":"What type of design task should this free-form prompt create?"},"requestedAt":1783676649971},"timestamp":1783676649972}
+{"id":3,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"completedAt":1783676649976,"converged":true},"timestamp":1783676649976}
+{"id":4,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"startedAt":1783676649976},"timestamp":1783676649976}
+{"id":5,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"completedAt":1783676649977,"converged":true},"timestamp":1783676649977}
+{"id":6,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"startedAt":1783676649977},"timestamp":1783676649977}
+{"id":7,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"completedAt":1783676649977,"converged":true},"timestamp":1783676649977}
+{"id":8,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"startedAt":1783676649977},"timestamp":1783676649977}
+{"id":9,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"completedAt":1783676649979,"converged":true},"timestamp":1783676649979}
+{"id":10,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"startedAt":1783676649979},"timestamp":1783676649979}
+{"id":11,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"a33488c2-17db-44d5-9968-200f36fedefd","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"completedAt":1783676649979,"converged":true},"timestamp":1783676649979}
+{"id":12,"event":"start","data":{"runId":"a33488c2-17db-44d5-9968-200f36fedefd","agentId":"hermes","bin":"hermes","streamFormat":"acp-json-rpc","projectId":"f2097a6e-4abf-4674-b16d-c3578d583dcd","cwd":"C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd","model":"default","reasoning":null,"toolTokenExpiresAt":"2026-07-10T09:59:17.844Z"},"timestamp":1783676658442}
+{"id":13,"event":"stderr","data":{"chunk":"2026-07-10 04:44:21 [INFO] acp_adapter.entry: Loaded env from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783676661906}
+{"id":14,"event":"stderr","data":{"chunk":"2026-07-10 04:44:21 [INFO] acp_adapter.entry: Starting hermes-agent ACP adapter\r\n"},"timestamp":1783676661908}
+{"id":15,"event":"stderr","data":{"chunk":"2026-07-10 04:44:28 [INFO] acp_adapter.server: ACP client connected\r\n"},"timestamp":1783676668327}
+{"id":16,"event":"stderr","data":{"chunk":"2026-07-10 04:44:28 [INFO] acp_adapter.server: Initialize from open-design (protocol v1)\r\n"},"timestamp":1783676668470}
+{"id":17,"event":"stderr","data":{"chunk":"2026-07-10 04:44:28 [INFO] run_agent: Loaded environment variables from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783676668554}
+{"id":18,"event":"stderr","data":{"chunk":"2026-07-10 04:44:44 [INFO] run_agent: OpenAI client created (agent_init, shared=True) thread=MainThread:64828 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783676684136}
+{"id":19,"event":"stderr","data":{"chunk":"2026-07-10 04:44:44 [WARNING] tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783676684368}
+{"id":20,"event":"stderr","data":{"chunk":"2026-07-10 04:44:44 [WARNING] tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783676684431}
+{"id":21,"event":"stderr","data":{"chunk":"2026-07-10 04:44:50 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783676690669}
+{"id":22,"event":"stderr","data":{"chunk":"2026-07-10 04:44:57 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783676697206}
+{"id":23,"event":"stderr","data":{"chunk":"2026-07-10 04:44:57 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n"},"timestamp":1783676697701}
+{"id":24,"event":"stderr","data":{"chunk":"2026-07-10 04:44:59 [INFO] acp_adapter.session: Created ACP session bbea6fab-0d05-416f-b944-ac3dfb51ffc9 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783676699569}
+{"id":25,"event":"stderr","data":{"chunk":"2026-07-10 04:45:01 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n"},"timestamp":1783676701330}
+{"id":26,"event":"stderr","data":{"chunk":"2026-07-10 04:45:01 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n"},"timestamp":1783676701331}
+{"id":27,"event":"stderr","data":{"chunk":"2026-07-10 04:45:01 [INFO] acp_adapter.server: Session bbea6fab-0d05-416f-b944-ac3dfb51ffc9: refreshed tool surface after ACP MCP registration (33 tools)\r\n"},"timestamp":1783676701635}
+{"id":28,"event":"stderr","data":{"chunk":"2026-07-10 04:45:01 [INFO] acp_adapter.server: New session bbea6fab-0d05-416f-b944-ac3dfb51ffc9 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783676701637}
+{"id":29,"event":"stderr","data":{"chunk":"2026-07-10 04:45:03 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n"},"timestamp":1783676703151}
+{"id":30,"event":"agent","data":{"type":"status","label":"model","model":"nous:stepfun/step-3.7-flash:free"},"timestamp":1783676705196}
+{"id":31,"event":"agent","data":{"type":"status","label":"waiting_for_first_output","elapsedMs":46748},"timestamp":1783676705206}
+{"id":32,"event":"agent","data":{"type":"status","label":"available_commands_update","elapsedMs":46751},"timestamp":1783676705208}
+{"id":33,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":46753},"timestamp":1783676705210}
+{"id":34,"event":"stderr","data":{"chunk":"2026-07-10 04:45:05 [INFO] acp_adapter.server: Prompt on session bbea6fab-0d05-416f-b944-ac3dfb51ffc9: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n"},"timestamp":1783676705216}
+{"id":35,"event":"stderr","data":{"chunk":"2026-07-10 04:45:05 [INFO] agent.turn_context: conversation turn: session=bbea6fab-0d05-416f-b944-ac3dfb51ffc9 model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n"},"timestamp":1783676705289}
+{"id":36,"event":"stderr","data":{"chunk":"2026-07-10 04:45:21 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):41796 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783676721994}
+{"id":37,"event":"agent","data":{"type":"thinking_start"},"timestamp":1783676750382}
+{"id":38,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783676750385}
+{"id":39,"event":"agent","data":{"type":"thinking_delta","delta":" user is stating"},"timestamp":1783676750389}
+{"id":40,"event":"agent","data":{"type":"thinking_delta","delta":" a"},"timestamp":1783676750394}
+{"id":41,"event":"agent","data":{"type":"thinking_delta","delta":" principle"},"timestamp":1783676750438}
+{"id":42,"event":"agent","data":{"type":"thinking_delta","delta":": durable objects usually"},"timestamp":1783676750441}
+{"id":43,"event":"agent","data":{"type":"thinking_delta","delta":" work best for heavy"},"timestamp":1783676750444}
+{"id":44,"event":"agent","data":{"type":"thinking_delta","delta":" loads. They're"},"timestamp":1783676750447}
+{"id":45,"event":"agent","data":{"type":"thinking_delta","delta":" likely pushing"},"timestamp":1783676750456}
+{"id":46,"event":"agent","data":{"type":"thinking_delta","delta":" back"},"timestamp":1783676750509}
+{"id":47,"event":"agent","data":{"type":"thinking_delta","delta":" against"},"timestamp":1783676750512}
+{"id":48,"event":"agent","data":{"type":"thinking_delta","delta":" or"},"timestamp":1783676750516}
+{"id":49,"event":"agent","data":{"type":"thinking_delta","delta":" refining"},"timestamp":1783676750522}
+{"id":50,"event":"agent","data":{"type":"thinking_delta","delta":" my earlier plan"},"timestamp":1783676750577}
+{"id":51,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783676750581}
+{"id":52,"event":"agent","data":{"type":"thinking_delta","delta":" They"},"timestamp":1783676750589}
+{"id":53,"event":"agent","data":{"type":"thinking_delta","delta":"'re"},"timestamp":1783676750609}
+{"id":54,"event":"agent","data":{"type":"thinking_delta","delta":" right —"},"timestamp":1783676750614}
+{"id":55,"event":"agent","data":{"type":"thinking_delta","delta":" Durable Objects are"},"timestamp":1783676750622}
+{"id":56,"event":"agent","data":{"type":"thinking_delta","delta":" designed for high"},"timestamp":1783676750646}
+{"id":57,"event":"agent","data":{"type":"thinking_delta","delta":"-cont"},"timestamp":1783676750651}
+{"id":58,"event":"agent","data":{"type":"thinking_delta","delta":"ention, stateful"},"timestamp":1783676750687}
+{"id":59,"event":"agent","data":{"type":"thinking_delta","delta":" workloads that"},"timestamp":1783676750695}
+{"id":60,"event":"agent","data":{"type":"thinking_delta","delta":" need coordination"},"timestamp":1783676750738}
+{"id":61,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783676750741}
+{"id":62,"event":"agent","data":{"type":"thinking_delta","delta":" not just \""},"timestamp":1783676750745}
+{"id":63,"event":"agent","data":{"type":"thinking_delta","delta":"any state"},"timestamp":1783676750809}
+{"id":64,"event":"agent","data":{"type":"thinking_delta","delta":".\"\n"},"timestamp":1783676750812}
+{"id":65,"event":"agent","data":{"type":"thinking_delta","delta":"\nFor"},"timestamp":1783676750817}
+{"id":66,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox, I"},"timestamp":1783676750822}
+{"id":67,"event":"agent","data":{"type":"thinking_delta","delta":" should consider"},"timestamp":1783676750845}
+{"id":68,"event":"agent","data":{"type":"thinking_delta","delta":" which"},"timestamp":1783676750849}
+{"id":69,"event":"agent","data":{"type":"thinking_delta","delta":" paths"},"timestamp":1783676750875}
+{"id":70,"event":"agent","data":{"type":"thinking_delta","delta":" actually benefit"},"timestamp":1783676750891}
+{"id":71,"event":"agent","data":{"type":"thinking_delta","delta":" from DO"},"timestamp":1783676750954}
+{"id":72,"event":"agent","data":{"type":"thinking_delta","delta":"s:\n-"},"timestamp":1783676750957}
+{"id":73,"event":"agent","data":{"type":"thinking_delta","delta":" Real"},"timestamp":1783676750961}
+{"id":74,"event":"agent","data":{"type":"thinking_delta","delta":"-time voice sessions"},"timestamp":1783676750964}
+{"id":75,"event":"agent","data":{"type":"thinking_delta","delta":" (WebSocket audio"},"timestamp":1783676750983}
+{"id":76,"event":"agent","data":{"type":"thinking_delta","delta":" streaming"},"timestamp":1783676750990}
+{"id":77,"event":"agent","data":{"type":"thinking_delta","delta":") →"},"timestamp":1783676751043}
+{"id":78,"event":"agent","data":{"type":"thinking_delta","delta":" DO with"},"timestamp":1783676751046}
+{"id":79,"event":"agent","data":{"type":"thinking_delta","delta":" `withVoice`"},"timestamp":1783676751052}
+{"id":80,"event":"agent","data":{"type":"thinking_delta","delta":" makes"},"timestamp":1783676751104}
+{"id":81,"event":"agent","data":{"type":"thinking_delta","delta":" sense\n- High"},"timestamp":1783676751108}
+{"id":82,"event":"agent","data":{"type":"thinking_delta","delta":"-frequency"},"timestamp":1783676751112}
+{"id":83,"event":"agent","data":{"type":"thinking_delta","delta":" generation queue"},"timestamp":1783676751128}
+{"id":84,"event":"agent","data":{"type":"thinking_delta","delta":" → DO"},"timestamp":1783676751132}
+{"id":85,"event":"agent","data":{"type":"thinking_delta","delta":" could help"},"timestamp":1783676751184}
+{"id":86,"event":"agent","data":{"type":"thinking_delta","delta":" with"},"timestamp":1783676751192}
+{"id":87,"event":"agent","data":{"type":"thinking_delta","delta":" coordination"},"timestamp":1783676751196}
+{"id":88,"event":"agent","data":{"type":"thinking_delta","delta":"\n- Simple"},"timestamp":1783676751260}
+{"id":89,"event":"agent","data":{"type":"thinking_delta","delta":" CR"},"timestamp":1783676751263}
+{"id":90,"event":"agent","data":{"type":"thinking_delta","delta":"UD on"},"timestamp":1783676751269}
+{"id":91,"event":"agent","data":{"type":"thinking_delta","delta":" profiles/generations"},"timestamp":1783676751274}
+{"id":92,"event":"agent","data":{"type":"thinking_delta","delta":" → D"},"timestamp":1783676751368}
+{"id":93,"event":"agent","data":{"type":"thinking_delta","delta":"1 is better"},"timestamp":1783676751376}
+{"id":94,"event":"agent","data":{"type":"thinking_delta","delta":"\n"},"timestamp":1783676751378}
+{"id":95,"event":"agent","data":{"type":"thinking_delta","delta":"\nThe"},"timestamp":1783676751379}
+{"id":96,"event":"agent","data":{"type":"thinking_delta","delta":" user is reminding"},"timestamp":1783676751382}
+{"id":97,"event":"agent","data":{"type":"thinking_delta","delta":" me to use"},"timestamp":1783676751384}
+{"id":98,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783676751402}
+{"id":99,"event":"agent","data":{"type":"thinking_delta","delta":" right tool."},"timestamp":1783676751409}
+{"id":100,"event":"agent","data":{"type":"thinking_delta","delta":" I should acknowledge"},"timestamp":1783676751414}
+{"id":101,"event":"agent","data":{"type":"thinking_delta","delta":" and"},"timestamp":1783676751464}
+{"id":102,"event":"agent","data":{"type":"thinking_delta","delta":" refine"},"timestamp":1783676751470}
+{"id":103,"event":"agent","data":{"type":"thinking_delta","delta":" the architecture"},"timestamp":1783676751476}
+{"id":104,"event":"agent","data":{"type":"thinking_delta","delta":":"},"timestamp":1783676751511}
+{"id":105,"event":"agent","data":{"type":"thinking_delta","delta":" D"},"timestamp":1783676751513}
+{"id":106,"event":"agent","data":{"type":"thinking_delta","delta":"1 for persistence"},"timestamp":1783676751517}
+{"id":107,"event":"agent","data":{"type":"thinking_delta","delta":", DOs for"},"timestamp":1783676751594}
+{"id":108,"event":"agent","data":{"type":"thinking_delta","delta":" hot"},"timestamp":1783676751599}
+{"id":109,"event":"agent","data":{"type":"thinking_delta","delta":" paths"},"timestamp":1783676751604}
+{"id":110,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783676751606}
+{"id":111,"event":"agent","data":{"type":"thinking_delta","delta":" KV"},"timestamp":1783676751644}
+{"id":112,"event":"agent","data":{"type":"thinking_delta","delta":" for caching"},"timestamp":1783676751648}
+{"id":113,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783676751653}
+{"id":114,"event":"agent","data":{"type":"thinking_delta","delta":" Then"},"timestamp":1783676751658}
+{"id":115,"event":"agent","data":{"type":"thinking_delta","delta":" continue"},"timestamp":1783676751671}
+{"id":116,"event":"agent","data":{"type":"thinking_delta","delta":" implementation"},"timestamp":1783676751678}
+{"id":117,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783676751725}
+{"id":118,"event":"agent","data":{"type":"status","label":"streaming","ttftMs":93272},"timestamp":1783676751730}
+{"id":119,"event":"agent","data":{"type":"text_delta","delta":"Correct"},"timestamp":1783676751733}
+{"id":120,"event":"agent","data":{"type":"text_delta","delta":"."},"timestamp":1783676751739}
+{"id":121,"event":"agent","data":{"type":"text_delta","delta":" Durable Objects are"},"timestamp":1783676751743}
+{"id":122,"event":"agent","data":{"type":"text_delta","delta":" the"},"timestamp":1783676751827}
+{"id":123,"event":"agent","data":{"type":"text_delta","delta":" **high"},"timestamp":1783676751830}
+{"id":124,"event":"agent","data":{"type":"text_delta","delta":"-contention coordination"},"timestamp":1783676751836}
+{"id":125,"event":"agent","data":{"type":"text_delta","delta":" layer**, not a"},"timestamp":1783676751841}
+{"id":126,"event":"agent","data":{"type":"text_delta","delta":" general"},"timestamp":1783676751846}
+{"id":127,"event":"agent","data":{"type":"text_delta","delta":"-purpose database"},"timestamp":1783676751870}
+{"id":128,"event":"agent","data":{"type":"text_delta","delta":"."},"timestamp":1783676751873}
+{"id":129,"event":"agent","data":{"type":"text_delta","delta":" For"},"timestamp":1783676751876}
+{"id":130,"event":"agent","data":{"type":"text_delta","delta":" Voicebox:\n\n"},"timestamp":1783676751902}
+{"id":131,"event":"agent","data":{"type":"text_delta","delta":"|"},"timestamp":1783676751907}
+{"id":132,"event":"agent","data":{"type":"text_delta","delta":" Path | Right"},"timestamp":1783676751910}
+{"id":133,"event":"agent","data":{"type":"text_delta","delta":" primitive | Why |\n"},"timestamp":1783676751936}
+{"id":134,"event":"agent","data":{"type":"text_delta","delta":"|---|---|---|\n|"},"timestamp":1783676751940}
+{"id":135,"event":"agent","data":{"type":"text_delta","delta":" Profile"},"timestamp":1783676752000}
+{"id":136,"event":"agent","data":{"type":"text_delta","delta":" CRUD,"},"timestamp":1783676752007}
+{"id":137,"event":"agent","data":{"type":"text_delta","delta":" generation"},"timestamp":1783676752012}
+{"id":138,"event":"agent","data":{"type":"text_delta","delta":" metadata"},"timestamp":1783676752048}
+{"id":139,"event":"agent","data":{"type":"text_delta","delta":" |"},"timestamp":1783676752053}
+{"id":140,"event":"agent","data":{"type":"text_delta","delta":" **"},"timestamp":1783676752061}
+{"id":141,"event":"agent","data":{"type":"text_delta","delta":"D1** |"},"timestamp":1783676752068}
+{"id":142,"event":"agent","data":{"type":"text_delta","delta":" SQL,"},"timestamp":1783676752079}
+{"id":143,"event":"agent","data":{"type":"text_delta","delta":" relational, global"},"timestamp":1783676752083}
+{"id":144,"event":"agent","data":{"type":"text_delta","delta":" reads."},"timestamp":1783676752123}
+{"id":145,"event":"agent","data":{"type":"text_delta","delta":" |\n| Audio"},"timestamp":1783676752127}
+{"id":146,"event":"agent","data":{"type":"text_delta","delta":" blobs ("},"timestamp":1783676752129}
+{"id":147,"event":"agent","data":{"type":"text_delta","delta":"cl"},"timestamp":1783676752175}
+{"id":148,"event":"agent","data":{"type":"text_delta","delta":"ones, outputs"},"timestamp":1783676752177}
+{"id":149,"event":"agent","data":{"type":"text_delta","delta":") | **"},"timestamp":1783676752182}
+{"id":150,"event":"agent","data":{"type":"text_delta","delta":"R2** |"},"timestamp":1783676752204}
+{"id":151,"event":"agent","data":{"type":"text_delta","delta":" Object storage"},"timestamp":1783676752207}
+{"id":152,"event":"agent","data":{"type":"text_delta","delta":", zero"},"timestamp":1783676752242}
+{"id":153,"event":"agent","data":{"type":"text_delta","delta":" egress."},"timestamp":1783676752245}
+{"id":154,"event":"agent","data":{"type":"text_delta","delta":" |\n| Live"},"timestamp":1783676752248}
+{"id":155,"event":"agent","data":{"type":"text_delta","delta":" voice session /"},"timestamp":1783676752272}
+{"id":156,"event":"agent","data":{"type":"text_delta","delta":" WebSocket audio"},"timestamp":1783676752275}
+{"id":157,"event":"agent","data":{"type":"text_delta","delta":" | **"},"timestamp":1783676752320}
+{"id":158,"event":"agent","data":{"type":"text_delta","delta":"D"},"timestamp":1783676752325}
+{"id":159,"event":"agent","data":{"type":"text_delta","delta":"urable Object with"},"timestamp":1783676752328}
+{"id":160,"event":"agent","data":{"type":"text_delta","delta":" `withVoice`"},"timestamp":1783676752347}
+{"id":161,"event":"agent","data":{"type":"text_delta","delta":"** | Single-"},"timestamp":1783676752351}
+{"id":162,"event":"agent","data":{"type":"text_delta","delta":"tenant state"},"timestamp":1783676752379}
+{"id":163,"event":"agent","data":{"type":"text_delta","delta":" machine"},"timestamp":1783676752383}
+{"id":164,"event":"agent","data":{"type":"text_delta","delta":", real-time audio"},"timestamp":1783676752408}
+{"id":165,"event":"agent","data":{"type":"text_delta","delta":" I/O. |\n"},"timestamp":1783676752410}
+{"id":166,"event":"agent","data":{"type":"text_delta","delta":"| Hot"},"timestamp":1783676752439}
+{"id":167,"event":"agent","data":{"type":"text_delta","delta":" cache / repeat"},"timestamp":1783676752441}
+{"id":168,"event":"agent","data":{"type":"text_delta","delta":" prompt"},"timestamp":1783676752478}
+{"id":169,"event":"agent","data":{"type":"text_delta","delta":" | **"},"timestamp":1783676752482}
+{"id":170,"event":"agent","data":{"type":"text_delta","delta":"KV** | Edge"},"timestamp":1783676752491}
+{"id":171,"event":"agent","data":{"type":"text_delta","delta":" cache, T"},"timestamp":1783676752516}
+{"id":172,"event":"agent","data":{"type":"text_delta","delta":"TL-friendly"},"timestamp":1783676752524}
+{"id":173,"event":"agent","data":{"type":"text_delta","delta":". |\n| Coord"},"timestamp":1783676752556}
+{"id":174,"event":"agent","data":{"type":"text_delta","delta":"inated generation"},"timestamp":1783676752560}
+{"id":175,"event":"agent","data":{"type":"text_delta","delta":" queue | **D"},"timestamp":1783676752577}
+{"id":176,"event":"agent","data":{"type":"text_delta","delta":"urable Object ("},"timestamp":1783676752587}
+{"id":177,"event":"agent","data":{"type":"text_delta","delta":"plain"},"timestamp":1783676752613}
+{"id":178,"event":"agent","data":{"type":"text_delta","delta":")** | FIF"},"timestamp":1783676752617}
+{"id":179,"event":"agent","data":{"type":"text_delta","delta":"O, state"},"timestamp":1783676752663}
+{"id":180,"event":"agent","data":{"type":"text_delta","delta":"ful"},"timestamp":1783676752694}
+{"id":181,"event":"agent","data":{"type":"text_delta","delta":" queue"},"timestamp":1783676752696}
+{"id":182,"event":"agent","data":{"type":"text_delta","delta":", no"},"timestamp":1783676752700}
+{"id":183,"event":"agent","data":{"type":"text_delta","delta":" races"},"timestamp":1783676752703}
+{"id":184,"event":"agent","data":{"type":"text_delta","delta":". |\n\nSo"},"timestamp":1783676752707}
+{"id":185,"event":"agent","data":{"type":"text_delta","delta":" the plan"},"timestamp":1783676752745}
+{"id":186,"event":"agent","data":{"type":"text_delta","delta":" is:\n- **"},"timestamp":1783676752749}
+{"id":187,"event":"agent","data":{"type":"text_delta","delta":"D1** for"},"timestamp":1783676752759}
+{"id":188,"event":"agent","data":{"type":"text_delta","delta":" `"},"timestamp":1783676752796}
+{"id":189,"event":"agent","data":{"type":"text_delta","delta":"profiles`,"},"timestamp":1783676752801}
+{"id":190,"event":"agent","data":{"type":"text_delta","delta":" `generations`,"},"timestamp":1783676752806}
+{"id":191,"event":"agent","data":{"type":"text_delta","delta":" `captures`,"},"timestamp":1783676752871}
+{"id":192,"event":"agent","data":{"type":"text_delta","delta":" `settings`\n-"},"timestamp":1783676752875}
+{"id":193,"event":"agent","data":{"type":"text_delta","delta":" **DO"},"timestamp":1783676752891}
+{"id":194,"event":"agent","data":{"type":"text_delta","delta":"** for live"},"timestamp":1783676752895}
+{"id":195,"event":"agent","data":{"type":"text_delta","delta":" voice sessions only"},"timestamp":1783676752900}
+{"id":196,"event":"agent","data":{"type":"text_delta","delta":"\n- **R"},"timestamp":1783676752905}
+{"id":197,"event":"agent","data":{"type":"text_delta","delta":"2** for audio"},"timestamp":1783676752910}
+{"id":198,"event":"agent","data":{"type":"text_delta","delta":" payload"},"timestamp":1783676752913}
+{"id":199,"event":"agent","data":{"type":"text_delta","delta":"s\n- **"},"timestamp":1783676752954}
+{"id":200,"event":"agent","data":{"type":"text_delta","delta":"KV** for short"},"timestamp":1783676752958}
+{"id":201,"event":"agent","data":{"type":"text_delta","delta":"-lived cache\n\nI"},"timestamp":1783676752962}
+{"id":202,"event":"agent","data":{"type":"text_delta","delta":"’m wiring"},"timestamp":1783676752966}
+{"id":203,"event":"agent","data":{"type":"text_delta","delta":" D"},"timestamp":1783676753040}
+{"id":204,"event":"agent","data":{"type":"text_delta","delta":"1 +"},"timestamp":1783676753044}
+{"id":205,"event":"agent","data":{"type":"text_delta","delta":" D"},"timestamp":1783676753051}
+{"id":206,"event":"agent","data":{"type":"text_delta","delta":"urable"},"timestamp":1783676753060}
+{"id":207,"event":"agent","data":{"type":"text_delta","delta":" Objects"},"timestamp":1783676753066}
+{"id":208,"event":"agent","data":{"type":"text_delta","delta":" into"},"timestamp":1783676753097}
+{"id":209,"event":"agent","data":{"type":"text_delta","delta":" `"},"timestamp":1783676753101}
+{"id":210,"event":"agent","data":{"type":"text_delta","delta":"voicebox-api"},"timestamp":1783676753105}
+{"id":211,"event":"agent","data":{"type":"text_delta","delta":"` now, then"},"timestamp":1783676753109}
+{"id":212,"event":"agent","data":{"type":"text_delta","delta":" deploying"},"timestamp":1783676753145}
+{"id":213,"event":"agent","data":{"type":"text_delta","delta":"."},"timestamp":1783676753149}
+{"id":214,"event":"stderr","data":{"chunk":"2026-07-10 04:45:53 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-26 (_call):41796 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783676753316}
+{"id":215,"event":"stderr","data":{"chunk":"2026-07-10 04:45:53 [INFO] agent.conversation_loop: API call #1: model=stepfun/step-3.7-flash:free provider=nous in=88323 out=392 total=88715 latency=35.7s\r\n"},"timestamp":1783676753318}
+{"id":216,"event":"stderr","data":{"chunk":"2026-07-10 04:45:53 [INFO] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=stepfun/step-3.7-flash:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=865 session=bbea6fab-0d05-416f-b944-ac3dfb51ffc9\r\n"},"timestamp":1783676753427}
+{"id":217,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":95038},"timestamp":1783676753496}
+{"id":218,"event":"agent","data":{"type":"usage","usage":{"input_tokens":88323,"output_tokens":392,"cached_read_tokens":0,"thought_tokens":0,"total_tokens":88715},"durationMs":95044},"timestamp":1783676753502}
+{"id":219,"event":"diagnostic","data":{"type":"runtime_close","rpc_close_reason":"signal","status":"succeeded","signal":"SIGTERM"},"timestamp":1783676754036}
+{"id":220,"event":"end","data":{"code":null,"signal":"SIGTERM","status":"succeeded","resumable":false},"timestamp":1783676754037}

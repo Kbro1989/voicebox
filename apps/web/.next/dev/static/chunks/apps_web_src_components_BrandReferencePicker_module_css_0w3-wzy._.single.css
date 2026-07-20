@@ -1,0 +1,460 @@
+/* [project]/apps/web/src/components/BrandReferencePicker.module.css [app-client] (css) */
+.BrandReferencePicker-module__o-4PwW__root {
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__fill {
+  flex: auto;
+  min-height: 0;
+}
+
+.BrandReferencePicker-module__o-4PwW__fill .BrandReferencePicker-module__o-4PwW__head, .BrandReferencePicker-module__o-4PwW__fill .BrandReferencePicker-module__o-4PwW__quickPicksSection, .BrandReferencePicker-module__o-4PwW__fill .BrandReferencePicker-module__o-4PwW__controls {
+  flex: none;
+}
+
+.BrandReferencePicker-module__o-4PwW__head {
+  text-align: center;
+  flex-direction: column;
+  gap: 6px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__heading {
+  font-family: var(--serif);
+  letter-spacing: -.01em;
+  color: var(--text-strong);
+  margin: 0;
+  font-size: 22px;
+  font-weight: 640;
+}
+
+.BrandReferencePicker-module__o-4PwW__subtext {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickPicksSection {
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__compact .BrandReferencePicker-module__o-4PwW__quickPicksSection {
+  align-items: stretch;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickPicksLabel {
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickPicks {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__compact .BrandReferencePicker-module__o-4PwW__quickPicks {
+  justify-content: flex-start;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--dur-quick) var(--ease-out),
+    background-color var(--dur-quick) var(--ease-out),
+    transform var(--dur-quick) var(--ease-out),
+    box-shadow var(--dur-quick) var(--ease-out);
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 8px;
+  font-size: 13px;
+  font-weight: 550;
+  display: inline-flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip:hover {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip:disabled {
+  cursor: default;
+  opacity: .55;
+  box-shadow: none;
+  transform: none;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickName {
+  white-space: nowrap;
+}
+
+.BrandReferencePicker-module__o-4PwW__chipLoading, .BrandReferencePicker-module__o-4PwW__chipLoading:disabled {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.BrandReferencePicker-module__o-4PwW__controls {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__searchWrap {
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.BrandReferencePicker-module__o-4PwW__compact .BrandReferencePicker-module__o-4PwW__searchWrap {
+  max-width: none;
+  margin: 0;
+}
+
+.BrandReferencePicker-module__o-4PwW__searchIcon {
+  color: var(--text-faint);
+  pointer-events: none;
+  position: absolute;
+  left: 11px;
+}
+
+.BrandReferencePicker-module__o-4PwW__search {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  width: 100%;
+  min-height: 38px;
+  color: var(--text);
+  transition: border-color var(--dur-quick) var(--ease-out),
+    box-shadow var(--dur-quick) var(--ease-out);
+  padding: 0 12px 0 34px;
+  font-size: 13.5px;
+}
+
+.BrandReferencePicker-module__o-4PwW__search::placeholder {
+  color: var(--text-faint);
+}
+
+.BrandReferencePicker-module__o-4PwW__search:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+
+.BrandReferencePicker-module__o-4PwW__categories {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__compact .BrandReferencePicker-module__o-4PwW__categories {
+  justify-content: flex-start;
+}
+
+.BrandReferencePicker-module__o-4PwW__categoryChip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color var(--dur-quick) var(--ease-out),
+    background-color var(--dur-quick) var(--ease-out),
+    color var(--dur-quick) var(--ease-out);
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.BrandReferencePicker-module__o-4PwW__categoryChip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.BrandReferencePicker-module__o-4PwW__categoryChip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.BrandReferencePicker-module__o-4PwW__categoryChipActive, .BrandReferencePicker-module__o-4PwW__categoryChipActive:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.BrandReferencePicker-module__o-4PwW__scrollArea {
+  flex-direction: column;
+  gap: 16px;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__fill .BrandReferencePicker-module__o-4PwW__scrollArea {
+  scrollbar-width: thin;
+  flex: auto;
+  min-height: 0;
+  padding: 2px 4px 4px 2px;
+  overflow-y: auto;
+}
+
+.BrandReferencePicker-module__o-4PwW__grid {
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 10px;
+  display: grid;
+}
+
+.BrandReferencePicker-module__o-4PwW__compact .BrandReferencePicker-module__o-4PwW__grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.BrandReferencePicker-module__o-4PwW__card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  min-width: 0;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--dur-quick) var(--ease-out),
+    transform var(--dur-quick) var(--ease-out),
+    box-shadow var(--dur-quick) var(--ease-out);
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.BrandReferencePicker-module__o-4PwW__card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.BrandReferencePicker-module__o-4PwW__card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.BrandReferencePicker-module__o-4PwW__card:disabled {
+  cursor: default;
+  opacity: .55;
+  box-shadow: none;
+  transform: none;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardLoading, .BrandReferencePicker-module__o-4PwW__cardLoading:disabled {
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardThumb {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+  display: flex;
+  overflow: hidden;
+}
+
+.BrandReferencePicker-module__o-4PwW__favicon {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.BrandReferencePicker-module__o-4PwW__faviconFallback {
+  border-radius: var(--radius-xs);
+  background: var(--bg-muted);
+  width: 100%;
+  height: 100%;
+  color: var(--text-soft);
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 650;
+  display: inline-flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip .BrandReferencePicker-module__o-4PwW__favicon, .BrandReferencePicker-module__o-4PwW__quickChip .BrandReferencePicker-module__o-4PwW__faviconFallback {
+  border-radius: var(--radius-xs);
+  width: 22px;
+  height: 22px;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardBody {
+  flex-direction: column;
+  flex: auto;
+  gap: 2px;
+  min-width: 0;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardName {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-strong);
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardCategory {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  overflow: hidden;
+}
+
+.BrandReferencePicker-module__o-4PwW__extractPill {
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-enter) var(--ease-out),
+    transform var(--dur-enter) var(--ease-out);
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  position: absolute;
+  right: 10px;
+  transform: translateY(6px);
+}
+
+.BrandReferencePicker-module__o-4PwW__card:hover .BrandReferencePicker-module__o-4PwW__extractPill, .BrandReferencePicker-module__o-4PwW__card:focus-visible .BrandReferencePicker-module__o-4PwW__extractPill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.BrandReferencePicker-module__o-4PwW__spinner {
+  border: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  animation: .7s linear infinite BrandReferencePicker-module__o-4PwW__brandPickerSpin;
+  display: inline-block;
+}
+
+.BrandReferencePicker-module__o-4PwW__cardThumb .BrandReferencePicker-module__o-4PwW__spinner {
+  width: 20px;
+  height: 20px;
+}
+
+.BrandReferencePicker-module__o-4PwW__quickChip .BrandReferencePicker-module__o-4PwW__spinner {
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes BrandReferencePicker-module__o-4PwW__brandPickerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.BrandReferencePicker-module__o-4PwW__statusBusy, .BrandReferencePicker-module__o-4PwW__statusError {
+  border-radius: var(--radius-sm);
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 550;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__statusBusy {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.BrandReferencePicker-module__o-4PwW__statusError {
+  border: 1px solid color-mix(in srgb, var(--red) 35%, transparent);
+  background: color-mix(in srgb, var(--red) 8%, transparent);
+  color: var(--red);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .BrandReferencePicker-module__o-4PwW__quickChip, .BrandReferencePicker-module__o-4PwW__card, .BrandReferencePicker-module__o-4PwW__extractPill {
+    transition: none;
+  }
+
+  .BrandReferencePicker-module__o-4PwW__quickChip:hover, .BrandReferencePicker-module__o-4PwW__card:hover {
+    transform: none;
+  }
+
+  .BrandReferencePicker-module__o-4PwW__spinner {
+    animation-duration: 1.4s;
+  }
+}
+
+.BrandReferencePicker-module__o-4PwW__sentinel {
+  height: 1px;
+}
+
+.BrandReferencePicker-module__o-4PwW__showMoreWrap {
+  justify-content: center;
+  display: flex;
+}
+
+.BrandReferencePicker-module__o-4PwW__showMore {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--dur-quick) var(--ease-out),
+    background-color var(--dur-quick) var(--ease-out);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.BrandReferencePicker-module__o-4PwW__showMore:hover {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.BrandReferencePicker-module__o-4PwW__showMore:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/*# sourceMappingURL=apps_web_src_components_BrandReferencePicker_module_css_0w3-wzy._.single.css.map*/

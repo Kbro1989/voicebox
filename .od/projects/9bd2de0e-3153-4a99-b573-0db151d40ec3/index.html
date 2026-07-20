@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sprint Board</title>
+  <style>
+    :root {
+      /* SLOT: theme tokens */
+      --bg:      oklch(96.5% 0.004 250);
+      --surface: oklch(100% 0 0);
+      --fg:      oklch(22% 0.018 250);
+      --muted:   oklch(52% 0.014 250);
+      --border:  oklch(91% 0.006 250);
+      --accent:  oklch(58% 0.16 255);
+
+      --font-display: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+      --font-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+      --snackbar:     oklch(28% 0.02 250);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font: 14px/1.45 var(--font-body);
+      height: 100%;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* top bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px dashed var(--border);
+    }
+    .top-bar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .project-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 10px;
+      color: var(--fg);
+      font: 600 13px/1 var(--font-display);
+    }
+    .project-chip .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.92;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font: 400 12px/1 var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .pill .count {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    /* filter row */
+    .filter-row {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px 16px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .search {
+      width: min(100%, 280px);
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--fg);
+      font: 400 12px/1 var(--font-body);
+      outline: none;
+    }
+    .search::placeholder { color: var(--muted); }
+    .search:focus { border-color: color-mix(in oklch, var(--accent) 32%, transparent); }
+
+    .add-btn {
+      margin-left: auto;
+      padding: 7px 10px;
+      border: 1px solid color-mix(in oklch, var(--accent) 40%, var(--border));
+      background: color-mix(in oklch, var(--accent) 8%, var(--surface));
+      color: var(--accent);
+      border-radius: 10px;
+      font: 600 12px/1 var(--font-display);
+      cursor: pointer;
+    }
+    .add-btn:hover { background: color-mix(in oklch, var(--accent) 12%, var(--surface)); }
+
+    /* body */
+    .board-root {
+      height: calc(100vh - 73px);
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+    .board {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 14px 16px 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    /* columns */
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 300px;
+    }
+    .column-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin: 0 3px;
+      padding: 6px 10px 8px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .column-title {
+      font: 600 13px/1 var(--font-display);
+      color: var(--fg);
+    }
+    .column-meta {
+      font: 500 11px/1 var(--font-mono);
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .col-add {
+      margin: 0 6px 10px;
+      padding: 6px 8px;
+      text-align: left;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      background: color-mix(in oklch, var(--fg) 2%, var(--surface));
+      color: var(--muted);
+      font: 500 12px/1 var(--font-display);
+      cursor: pointer;
+    }
+    .col-add:hover { color: var(--fg); border-color: var(--muted); }
+
+    /* cards */
+    .card {
+      margin: 0 3px 8px;
+      padding: 12px 12px 14px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 0 color-mix(in oklch, var(--fg) 3%, transparent);
+      cursor: grab;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      user-select: none;
+      transition: transform 0.12s ease;
+    }
+    .card:hover { transform: translateY(-1px); }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .tag {
+      font: 600 10px/1 var(--font-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: color-mix(in oklch, var(--fg) 5%, var(--surface));
+      color: var(--muted);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .points {
+      font: 700 11px/1 var(--font-mono);
+      color: var(--fg);
+      padding: 3px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .card-title {
+      font: 600 13px/1.35 var(--font-display);
+      color: var(--fg);
+      padding-right: 2px;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .avatars {
+      display: inline-flex;
+      align-items: center;
+    }
+    .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: color-mix(in oklch, var(--fg) 8%, var(--surface));
+      border: 1.5px solid var(--surface);
+      box-shadow: 0 0 0 1px var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font: 700 9px/1 var(--font-display);
+      color: var(--fg);
+      margin-left: -7px;
+    }
+    .avatar:first-child { margin-left: 0; }
+    .card-id {
+      font: 500 10px/1 var(--font-mono);
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .progress-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: color-mix(in oklch, var(--fg) 5%, var(--surface));
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: color-mix(in oklch, var(--accent) 72%, var(--fg));
+      border-radius: 999px;
+    }
+
+    /* drag affordance */
+    .card[aria-dropeffect] { transform: rotate(0.8deg); }
+    .card.dragging {
+      opacity: 0.95;
+      transform: rotate(0.4deg);
+      outline: 1.5px dashed color-mix(in oklch, var(--accent) 40%, var(--fg));
+      outline-offset: 4px;
+    }
+    .column.dragover { background: color-mix(in oklch, var(--accent) 4%, var(--bg)); }
+
+    /* inline dialog */
+    .dialog-backdrop {
+      position: fixed;
+      inset: 0;
+      background: color-mix(in oklch, var(--fg) 12%, transparent);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 10vh;
+      z-index: 100;
+    }
+    .dialog-backdrop.show { display: flex; }
+    .dialog {
+      width: min(100% - 24px, 440px);
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 24px 60px color-mix(in oklch, var(--fg) 16%, transparent);
+    }
+    .dialog h2 {
+      font: 700 15px/1.15 var(--font-display);
+      color: var(--fg);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    input, select {
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--fg);
+      font: 400 12px/1 var(--font-body);
+      outline: none;
+    }
+    input:focus, select:focus { border-color: color-mix(in oklch, var(--accent) 40%, var(--border)); }
+    .dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 10px;
+      border-radius: 10px;
+      font: 600 12px/1 var(--font-display);
+      cursor: pointer;
+    }
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+    }
+    .btn-accent:hover { filter: brightness(1.06); }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="project-chip">
+        <span class="dot" />
+        Engineered
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+        <div class="pill">Sprint 24 · <span class="count">18</span> open</div>
+        <div class="pill">Sprint 24 · <span class="count">12</span> closed</div>
+      </div>
+    </div>
+    <div class="filter-row">
+      <input class="search" id="search" placeholder="Search cards..." />
+      <select id="filter-label">
+        <option value="">All labels</option>
+        <option>Platform</option>
+        <option>Growth</option>
+        <option>Eng</option>
+        <option>QA</option>
+      </select>
+      <select id="filter-member">
+        <option value="">All members</option>
+        <option>Alex</option>
+        <option>Mara</option>
+        <option>Yuki</option>
+        <option>Jordan</option>
+        <option>Rae</option>
+      </select>
+      <select id="filter-priority">
+        <option value="">All priorities</option>
+        <option>P0</option>
+        <option>P1</option>
+        <option>P2</option>
+      </select>
+      <button class="add-btn" id="add-card-btn">+ Add card</button>
+    </div>
+  </div>
+
+  <div class="board-root">
+    <div class="board">
+      <div class="column" data-col="backlog" id="col-backlog">
+        <div class="column-header">
+          <span class="column-title">Backlog</span>
+          <span class="column-meta"><span class="count">5</span></span>
+        </div>
+        <!-- SLOT: column 1 cards -->
+        <article class="card" draggable="true" data-labels="Eng,P2" data-assignees="Yuki,Jordan">
+          <div class="card-header">
+            <span class="tag" style="color:oklch(45% 0.16 250);border-color:oklch(88% 0.06 250)">P2</span>
+            <span class="points">-</span>
+          </div>
+          <div class="card-title">Evaluate iframe sandbox for launcher</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">Y</div><div class="avatar">J</div></div>
+            <span class="card-id">#3042</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="Platform,P1" data-assignees="Alex">
+          <div class="card-header">
+            <span class="tag">P1</span>
+            <span class="points">3</span>
+          </div>
+          <div class="card-title">Localize date/time units in Settings</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">A</div></div>
+            <span class="card-id">#3039</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="QA,P2" data-assignees="Rae">
+          <div class="card-header">
+            <span class="tag">P2</span>
+            <span class="points">2</span>
+          </div>
+          <div class="card-title">Flaky test triage for onboarding</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">R</div></div>
+            <span class="card-id">#3036</span>
+          </div>
+        </article>
+
+        <button class="col-add">+ Add</button>
+      </div>
+
+      <div class="column" data-col="inprogress" id="col-inprogress">
+        <div class="column-header">
+          <span class="column-title">In progress</span>
+          <span class="column-meta"><span class="count">5</span></span>
+        </div>
+        <!-- SLOT: column 2 cards -->
+        <article class="card" draggable="true" data-labels="Growth,P0" data-assignees="Mara">
+          <div class="card-header">
+            <span class="tag" style="color:oklch(32% 0.16 28);border-color:oklch(84% 0.1 28)">P0</span>
+            <span class="points">5</span>
+          </div>
+          <div class="card-title">Activate referral credit storefront</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 68%"></div></div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">M</div></div>
+            <span class="card-id">#3011</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="Platform,P1" data-assignees="Jordan">
+          <div class="card-header">
+            <span class="tag">P1</span>
+            <span class="points">3</span>
+          </div>
+          <div class="card-title">Resolve IPC serialization for long lists</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 22%"></div></div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">J</div></div>
+            <span class="card-id">#3004</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="Eng,P1" data-assignees="Yuki">
+          <div class="card-header">
+            <span class="tag">P1</span>
+            <span class="points">2</span>
+          </div>
+          <div class="card-title">Reconcile remote config feature gates</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 41%"></div></div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">Y</div></div>
+            <span class="card-id">#2998</span>
+          </div>
+        </article>
+
+        <button class="col-add">+ Add</button>
+      </div>
+
+      <div class="column" data-col="inreview" id="col-inreview">
+        <div class="column-header">
+          <span class="column-title">In review</span>
+          <span class="column-meta"><span class="count">5</span></span>
+        </div>
+        <!-- SLOT: column 3 cards -->
+        <article class="card" draggable="true" data-labels="QA,P0" data-assignees="Rae,Alex">
+          <div class="card-header">
+            <span class="tag">P0</span>
+            <span class="points">-</span>
+          </div>
+          <div class="card-title">Passport expiry logic for India region</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 87%"></div></div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">R</div><div class="avatar">A</div></div>
+            <span class="card-id">#2957</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="Growth,P1" data-assignees="Mara">
+          <div class="card-header">
+            <span class="tag">P1</span>
+            <span class="points">2</span>
+          </div>
+          <div class="card-title">Win-back copy: 14-day inactive flow</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 64%"></div></div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">M</div></div>
+            <span class="card-id">#2941</span>
+          </div>
+        </article>
+
+        <button class="col-add">+ Add</button>
+      </div>
+
+      <div class="column" data-col="done" id="col-done">
+        <div class="column-header">
+          <span class="column-title">Done</span>
+          <span class="column-meta"><span class="count">3</span></span>
+        </div>
+        <!-- SLOT: column 4 cards -->
+        <article class="card" draggable="true" data-labels="Eng,P2" data-assignees="Jordan">
+          <div class="card-header">
+            <span class="tag">P2</span>
+            <span class="points">1</span>
+          </div>
+          <div class="card-title">Strip legacy call tracking telemetry</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">J</div></div>
+            <span class="card-id">#2910</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="Platform,P2" data-assignees="Yuki">
+          <div class="card-header">
+            <span class="tag">P2</span>
+            <span class="points">3</span>
+          </div>
+          <div class="card-title">Surface ARIA live regions in audit page</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">Y</div></div>
+            <span class="card-id">#2895</span>
+          </div>
+        </article>
+
+        <article class="card" draggable="true" data-labels="QA,P2" data-assignees="Rae">
+          <div class="card-header">
+            <span class="tag">P2</span>
+            <span class="points">2</span>
+          </div>
+          <div class="card-title">Archive perf snapshots from 2025 base</div>
+          <div class="meta">
+            <div class="avatars"><div class="avatar">R</div></div>
+            <span class="card-id">#2871</span>
+          </div>
+        </article>
+
+        <button class="col-add">+ Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add card dialog (kept out of board chrome) -->
+  <div class="dialog-backdrop" id="addCardDialog">
+    <div class="dialog" role="dialog" aria-modal="true">
+      <h2>New card</h2>
+      <input id="new-title" placeholder="Card title" />
+      <div class="row">
+        <select id="new-label"><option>Eng</option><option>Growth</option><option>Platform</option><option>QA</option></select>
+        <select id="new-priority"><option>P0</option><option>P1</option><option selected>P2</option></select>
+      </div>
+      <div class="row">
+        <select id="new-col">
+          <option value="backlog">Backlog</option>
+          <option value="inprogress">In progress</option>
+          <option value="inreview">In review</option>
+          <option value="done">Done</option>
+        </select>
+        <input id="new-points" placeholder="Points" maxlength="3" />
+      </div>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost" id="cancel">Cancel</button>
+        <button class="btn btn-accent" id="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Columns
+      var columns = document.querySelectorAll('.column');
+      var search = document.getElementById('search');
+
+      function cardMatches(card) {
+        var q = search ? (search.value || '').toLowerCase() : '';
+        if (!q) return true;
+        var title = (card.querySelector('.card-title') || {}).textContent || '';
+        return title.toLowerCase().indexOf(q) !== -1;
+      }
+      function applyFilter() {
+        document.querySelectorAll('.card').forEach(function (c) {
+          c.style.display = cardMatches(c) ? '' : 'none';
+        });
+      }
+      if (search) search.addEventListener('input', applyFilter);
+
+      // Drag and drop
+      document.querySelectorAll('.card').forEach(function (c) {
+        c.addEventListener('dragstart', function (e) {
+          if (e.target.classList.contains('card')) {
+            e.target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', Date.now());
+          }
+        });
+        c.addEventListener('dragend', function () {
+          c.classList.remove('dragging');
+          columns.forEach(function (col) { col.classList.remove('dragover'); });
+        });
+      });
+
+      columns.forEach(function (col) {
+        col.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          col.classList.add('dragover');
+        });
+        col.addEventListener('dragleave', function () {
+          col.classList.remove('dragover');
+        });
+        col.addEventListener('drop', function (e) {
+          e.preventDefault();
+          var dragging = document.querySelector('.card.dragging');
+          if (!dragging) return;
+          dragging.classList.remove('dragging');
+          col.classList.remove('dragover');
+          var addBtn = col.querySelector('.col-add');
+          if (addBtn) {
+            col.insertBefore(dragging, addBtn);
+          } else {
+            col.appendChild(dragging);
+          }
+        });
+      });
+
+      // Add card dialog
+      var dlg = document.getElementById('addCardDialog');
+      document.getElementById('add-card-btn').addEventListener('click', function () {
+        dlg.classList.add('show');
+      });
+      document.getElementById('cancel').addEventListener('click', function () {
+        dlg.classList.remove('show');
+      });
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg) dlg.classList.remove('show');
+      });
+      document.getElementById('save').addEventListener('click', function () {
+        var title = document.getElementById('new-title').value.trim();
+        if (!title) return;
+        var label = document.getElementById('new-label').value;
+        var priority = document.getElementById('new-priority').value;
+        var col = document.getElementById('new-col').value;
+        var points = document.getElementById('new-points').value.trim() || '-';
+        var id = '#30' + Math.floor(10 + Math.random() * 90);
+        var colEl = document.getElementById('col-' + col);
+        var card = document.createElement('article');
+        card.className = 'card';
+        card.draggable = true;
+        card.setAttribute('data-labels', label);
+        card.setAttribute('data-assignees', '');
+        card.innerHTML = '<div class="card-header"><span class="tag">' + priority +
+          '</span><span class="points">' + points +
+          '</span></div><div class="card-title">' + title +
+          '</div><div class="meta"><div class="avatars"></div><span class="card-id">' + id + '</span></div>';
+        var addBtn = colEl.querySelector('.col-add');
+        colEl.insertBefore(card, addBtn);
+        dlg.classList.remove('show');
+        // reset
+        document.getElementById('new-title').value = '';
+        document.getElementById('new-points').value = '';
+      });
+    })();
+  </script>
+</body>
+</html>

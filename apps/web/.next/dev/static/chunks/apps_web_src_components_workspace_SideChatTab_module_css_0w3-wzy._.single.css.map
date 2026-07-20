@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/apps/web/src/components/workspace/SideChatTab.module.css"],"sourcesContent":["/* Side Chat workspace tab: a ChatPane mounted in `.ws-body` with a context\r\n   banner pinned above it. Fills the body so the pane scrolls internally. */\r\n\r\n.sideChat {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\r\n  min-height: 0;\r\n  background: var(--bg);\r\n}\r\n\r\n.banner {\r\n  flex: 0 0 auto;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 8px;\r\n  padding: 8px 14px;\r\n  font-size: 12.5px;\r\n  color: var(--text-muted);\r\n  background: var(--bg-subtle);\r\n  border-bottom: 1px solid var(--border);\r\n}\r\n\r\n.bannerIcon {\r\n  flex: 0 0 auto;\r\n  display: inline-flex;\r\n  color: var(--accent);\r\n}\r\n\r\n.pane {\r\n  flex: 1 1 auto;\r\n  min-height: 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n/* ChatPane renders its own `.pane` shell; let it fill the remaining space. */\r\n.pane > :global(.pane) {\r\n  flex: 1 1 auto;\r\n  min-height: 0;\r\n}\r\n"],"names":[],"mappings":"AAGA;;;;;;;;AAQA;;;;;;;;;;;;AAYA;;;;;;AAMA;;;;;;;AAQA"}}]
+}

@@ -1,0 +1,116 @@
+{
+  "defaultPreset": "default",
+  "activePreset": "default",
+  "presets": {
+    "default": {
+      "name": "default",
+      "referenceModels": [
+        {
+          "provider": "antigravity",
+          "model": "default"
+        },
+        {
+          "provider": "opencode",
+          "model": "default"
+        },
+        {
+          "provider": "openrouter",
+          "model": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "cohere/north-mini-code:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "google/gemma-4-26b-a4b-it:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "google/gemma-4-31b-it:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "liquid/lfm-2.5-1.2b-instruct:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "liquid/lfm-2.5-1.2b-thinking:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "meta-llama/llama-3.2-3b-instruct:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "meta-llama/llama-3.3-70b-instruct:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nousresearch/hermes-3-llama-3.1-405b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3-nano-30b-a3b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3-super-120b-a12b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3.5-content-safety:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-nano-12b-v2-vl:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-nano-9b-v2:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "openai/gpt-oss-120b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "openai/gpt-oss-20b:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "poolside/laguna-m.1:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "poolside/laguna-xs-2.1:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "qwen/qwen3-coder:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "qwen/qwen3-next-80b-a3b-instruct:free"
+        },
+        {
+          "provider": "openrouter",
+          "model": "tencent/hy3:free"
+        }
+      ],
+      "aggregator": {
+        "provider": "antigravity",
+        "model": "default"
+      },
+      "enabled": true
+    }
+  }
+}

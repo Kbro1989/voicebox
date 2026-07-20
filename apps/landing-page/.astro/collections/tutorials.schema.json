@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "youtubeId": {
+      "type": "string",
+      "pattern": "^[\\w-]{11}$"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Getting started",
+        "Tutorial",
+        "Demo",
+        "Review",
+        "Community"
+      ]
+    },
+    "durationSeconds": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "author": {
+      "type": "string"
+    },
+    "official": {
+      "default": false,
+      "type": "boolean"
+    },
+    "thumbnail": {
+      "type": "string",
+      "format": "uri"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "youtubeId",
+    "summary",
+    "date",
+    "category",
+    "durationSeconds",
+    "author"
+  ]
+}

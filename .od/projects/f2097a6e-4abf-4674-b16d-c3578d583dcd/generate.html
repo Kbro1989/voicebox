@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Generate — Voicebox</title>
+<style>
+:root{
+  --bg:#0f1115;
+  --surface:#151820;
+  --surface-2:#1c1f2a;
+  --fg:#e7e9ee;
+  --muted:#8a8f9b;
+  --border:#2a2f3a;
+  --accent:#ff7a3d;
+  --accent-2:#b46bff;
+  --success:#2dd4a8;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:15px/1.55 var(--font);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:26px 22px 120px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:32px;height:32px;object-fit:contain}
+.brand h1{font-size:20px;font-weight:800;letter-spacing:-.01em}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.nav a{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--fg);text-decoration:none;font-size:13px;font-weight:700}
+.nav a:hover{border-color:#3a4250}
+.nav a.primary{background:linear-gradient(135deg,rgba(255,122,61,.18),rgba(180,107,255,.18));border-color:#3d2f52}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+
+.field{margin-bottom:12px}
+label{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+input,select,textarea{width:100%;padding:10px 12px;background:#0d1016;color:var(--fg);border:1px solid var(--border);border-radius:10px;font:inherit}
+textarea{min-height:160px;resize:vertical}
+.hint{color:var(--muted);font-size:12px;margin-top:6px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--fg);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer}
+.btn:hover{border-color:#4a5264}
+.btn.primary{background:linear-gradient(135deg,#ff7a3d,#ff5f2f);color:#fff;border-color:transparent}
+.btn.danger{background:rgba(239,68,68,.15);color:#ff9494;border-color:#5a2323}
+
+.player{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:16px;display:none}
+.track{display:flex;align-items:center;gap:12px}
+.track button{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:#0d1016;color:var(--fg);font-size:16px;cursor:pointer}
+.track progress{flex:1;height:6px;appearance:none;border:none;background:#0d1016;border-radius:999px;overflow:hidden}
+.track progress::-webkit-progress-bar{background:#0d1016}
+.track progress::-webkit-progress-value{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.meta{margin-top:10px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.row + .row{margin-top:10px}
+
+.toast{position:fixed;top:14px;right:14px;padding:12px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg);font-size:13px;z-index:200;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);transition:opacity .15s,transform .15s}
+.toast.show{opacity:1;transform:translate(0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="voicebox/app/src/assets/voicebox-logo.png" alt="Voicebox" onerror="this.style.display='none'" />
+      <h1>Speech generation</h1>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="profiles.html">Profiles</a>
+    <a href="clone.html">Clone</a>
+    <a href="generate.html" class="primary">Generate</a>
+    <a href="history.html">History</a>
+    <a href="captures.html">Captures</a>
+    <a href="server.html">Server</a>
+  </nav>
+
+  <div class="grid">
+    <div class="card">
+      <h2>New generation</h2>
+      <div class="field">
+        <label>Profile</label>
+        <select id="profileId"><option value="">Loading…</option></select>
+        <div class="hint">Local profile; audio is injected server-side.</div>
+      </div>
+      <div class="field">
+        <label>Engine</label>
+        <select id="engine"><option value="">Server default</option></select>
+      </div>
+      <div class="field">
+        <label>Text</label>
+        <textarea id="text" placeholder="Enter text to synthesize…"></textarea>
+        <div class="hint" id="charCount">0 characters</div>
+      </div>
+      <div class="field" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn primary" id="generateBtn">Generate</button>
+        <button class="btn" id="historyBtn">View history</button>
+        <span id="genStatus" style="color:var(--muted);font-size:12px"></span>
+      </div>
+      <div class="player" id="player">
+        <div class="track">
+          <button id="playBtn" aria-label="Play">▶</button>
+          <progress id="progress" value="0" max="1"></progress>
+          <button id="stopBtn" aria-label="Stop">■</button>
+        </div>
+        <div class="meta" id="playerMeta"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Recent</h2>
+      <div id="recent">
+        <div class="row">No recent generations yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script>
+(()=>{
+  const base=localStorage.getItem('vb:base')||'http://127.0.0.1:17493';
+  const $=id=>document.getElementById(id);
+  const toastEl=$('toast');
+  let audio=null;
+  let recent=[];
+
+  function toast(msg,dur=1800){toastEl.textContent=msg;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),dur)}
+  function esc(s=''){return String(s).replace(/[<>&]/g,c=>({ '<':'&lt;','>':'&gt;','&':'&amp;' }[c]))}
+  async function get(path){const r=await fetch(base.replace(/\/$/,'')+path,{headers:{'content-type':'application/json'},credentials:'omit'});if(!r.ok) throw new Error('HTTP '+r.status);try{return await r.json();}catch{return r;}}
+  async function post(path,body){const r=await fetch(base.replace(/\/$/,'')+path,{method:'POST',body:JSON.stringify(body||{}),headers:{'content-type':'application/json'},credentials:'omit'});if(!r.ok) throw new Error('HTTP '+r.status+' '+path);return r.json().catch(()=>({}));}
+
+  function formatTime(sec){if(!sec||!isFinite(sec)) return '0:00';const m=Math.floor(sec/60),s=Math.floor(sec%60);return m+':'+(s<10?'0':'')+s;}
+
+  async function loadProfiles(){
+    try{
+      const data=await get('/api/profiles');
+      const items=Array.isArray(data)?data:[];
+      $('profileId').innerHTML=items.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.name||p.voice_name||p.id)+'</option>').join('');
+    }catch{ $('profileId').innerHTML='<option value="">Unreachable</option>'; }
+  }
+  async function loadRecent(){
+    try{
+      const data=await get('/api/history');
+      recent=Array.isArray(data)?data:[];
+      $('recent').innerHTML=recent.slice(0,8).map(g=>{
+        const meta=[g.engine||'', g.voice_id?('profile: '+g.voice_id):''].filter(Boolean).join(' · ');
+        return '<div class="row"><div><div style="font-weight:700;font-size:14px">'+esc(meta||'Generation')+'</div><div style="color:var(--muted);font-size:12px)">'+(g.created_at||'')+'</div></div>'
+        +'<button class="btn" data-id="'+esc(g.id)+'">Open</button></div>';
+      }).join('') || '<div class="row">No generations yet.</div>';
+    }catch{ $('recent').innerHTML='<div class="row">Cannot reach backend.</div>'; }
+  }
+
+  $('text').addEventListener('input',e=>{$('charCount').textContent=(e.target.value||'').length+' characters'});
+  $('generateBtn').addEventListener('click',async()=>{
+    const profileId=$('profileId').value;
+    const text=$('text').value.trim();
+    if(!profileId){ toast('Choose a profile'); return; }
+    if(!text){ toast('Enter text to synthesize'); return; }
+    $('genStatus').textContent='Generating…';
+    try{
+      const data=await post('/api/generate',{profile_id:profileId,text});
+      $('genStatus').textContent='Complete';
+      toast('Generation queued');
+      await loadRecent();
+    }catch(e){ $('genStatus').textContent='Failed'; toast('Generation failed: '+e.message); }
+  });
+  $('historyBtn').addEventListener('click',()=>{/* navigation support could go here */ toast('Add a local history screen link'); });
+
+  (async()=>{ await loadProfiles(); await loadRecent(); })();
+})();
+</script>
+</body>
+</html>

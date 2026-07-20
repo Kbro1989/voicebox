@@ -1,0 +1,100 @@
+/* [project]/apps/web/src/components/MemoryHooksPanel.module.css [app-client] (css) */
+.MemoryHooksPanel-module__zMuDEq__panel {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-md, 10px);
+  background: var(--bg-subtle);
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  display: flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__head {
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__headIcon {
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-panel);
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.MemoryHooksPanel-module__zMuDEq__hint {
+  color: var(--text-muted);
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.MemoryHooksPanel-module__zMuDEq__list {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__row {
+  border-top: 1px solid var(--border-soft, var(--border));
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  display: flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__row:first-child {
+  border-top: none;
+}
+
+.MemoryHooksPanel-module__zMuDEq__rowIcon {
+  border-radius: var(--radius-sm, 6px);
+  background: var(--bg-panel);
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__rowCopy {
+  flex-direction: column;
+  flex: auto;
+  gap: 1px;
+  min-width: 0;
+  display: flex;
+}
+
+.MemoryHooksPanel-module__zMuDEq__rowLabel {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.MemoryHooksPanel-module__zMuDEq__rowDesc {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.MemoryHooksPanel-module__zMuDEq__toggle {
+  flex: none;
+  align-items: center;
+  display: inline-flex;
+}
+
+/*# sourceMappingURL=apps_web_src_components_MemoryHooksPanel_module_css_0w3-wzy._.single.css.map*/

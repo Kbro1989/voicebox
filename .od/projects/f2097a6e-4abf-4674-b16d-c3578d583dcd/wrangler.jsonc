@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "voicebox-api",
+  "main": "src/index.ts",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2026-07-10",
+  "account_id": "6872653edcee9c791787c1b783173793",
+  "workers_dev": true
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clone — Voicebox</title>
+<style>
+:root{
+  --bg:#0f1115;
+  --surface:#151820;
+  --surface-2:#1c1f2a;
+  --fg:#e7e9ee;
+  --muted:#8a8f9b;
+  --border:#2a2f3a;
+  --accent:#ff7a3d;
+  --accent-2:#b46bff;
+  --success:#2dd4a8;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:15px/1.55 var(--font);-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:26px 22px 120px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:32px;height:32px;object-fit:contain}
+.brand h1{font-size:20px;font-weight:800;letter-spacing:-.01em}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.nav a{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--fg);text-decoration:none;font-size:13px;font-weight:700}
+.nav a:hover{border-color:#3a4250}
+.nav a.primary{background:linear-gradient(135deg,rgba(255,122,61,.18),rgba(180,107,255,.18));border-color:#3d2f52}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.card h2{font-size:16px;font-weight:800;margin-bottom:10px}
+.card h3{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
+
+.field{margin-bottom:12px}
+label{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+input,select,textarea{width:100%;padding:10px 12px;background:#0d1016;color:var(--fg);border:1px solid var(--border);border-radius:10px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+.hint{color:var(--muted);font-size:12px;margin-top:6px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--fg);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .06s,border-color .15s}
+.btn:hover{border-color:#4a5264}
+.btn.primary{background:linear-gradient(135deg,#ff7a3d,#ff5f2f);color:#fff;border-color:transparent}
+.btn.danger{background:rgba(239,68,68,.15);color:#ff9494;border-color:#5a2323}
+.file{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--fg);font-size:13px;font-weight:700;cursor:pointer}
+.file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.dot.on{background:var(--success);box-shadow:0 0 8px rgba(45,212,168,.35)}
+.dot.busy{background:var(--warn)}
+.dot.err{background:var(--danger)}
+
+.wave{display:flex;align-items:flex-end;gap:3px;height:44px;padding:6px;background:#0d1016;border:1px solid var(--border);border-radius:12px}
+.wave span{width:4px;border-radius:999px;background:linear-gradient(to top,var(--accent),var(--accent-2));opacity:.85}
+
+.toast{position:fixed;top:14px;right:14px;padding:12px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg);font-size:13px;z-index:200;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);transition:opacity .15s,transform .15s}
+.toast.show{opacity:1;transform:translate(0)}
+
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:26px;text-align:center;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="voicebox/app/src/assets/voicebox-logo.png" alt="Voicebox" onerror="this.style.display='none'" />
+      <div>
+        <h1>Voice cloning</h1>
+        <div class="status" id="status"><span class="dot" id="dot"></span><span id="statusText">Checking backend…</span></div>
+      </div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="profiles.html">Profiles</a>
+    <a href="clone.html" class="primary">Clone</a>
+    <a href="generate.html">Generate</a>
+    <a href="history.html">History</a>
+    <a href="captures.html">Captures</a>
+    <a href="server.html">Server</a>
+  </nav>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Record sample</h2>
+      <p class="hint">Use your local microphone to capture a clean reference sample. Minimum length depends on backend settings.</p>
+      <div class="field">
+        <label>Target profile</label>
+        <select id="profileId"><option value="">Create a new profile…</option></select>
+      </div>
+      <div class="wave" id="meter"><span style="height:18%"></span><span style="height:28%"></span><span style="height:20%"></span><span style="height:40%"></span></div>
+      <div class="field" style="margin-top:12px">
+        <label>Reference text</label>
+        <textarea id="referenceText" placeholder="Short unobtrusive sentence aligned to your sample, e.g. reading a paragraph naturally."></textarea>
+        <div class="hint">Helps align training quality; backend may use this for stronger pronunciation.</div>
+      </div>
+      <div class="field">
+        <label>Sample file</label>
+        <label class="file"><input id="sampleFile" type="file" accept="audio/*" />Choose audio</label>
+        <div class="hint" id="fileHint">WAV / MP3 / M4A recommended</div>
+      </div>
+      <button class="btn primary" id="uploadBtn">Upload sample</button>
+    </div>
+
+    <div class="card">
+      <h2>Clone metadata</h2>
+      <div class="field">
+        <label>Name</label>
+        <input id="name" placeholder="Voice name" />
+      </div>
+      <div class="field">
+        <label>Gender</label>
+        <select id="gender"><option>male</option><option>female</option></select>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input id="description" placeholder="Warm, fast cadence, morning voice" />
+      </div>
+      <button class="btn" id="refreshProfiles">Refresh profiles</button>
+    </div>
+  </div>
+
+  <div class="empty" style="margin-top:18px">Clone progress and sample validation only appear when samples are uploaded to a reachable backend.</div>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script>
+(()=>{
+  const base=localStorage.getItem('vb:base')||'http://127.0.0.1:17493';
+  const $=id=>document.getElementById(id);
+  const toastEl=$('toast');
+  let profiles=[];
+  let selectedFile=null;
+
+  function toast(msg,dur=1600){toastEl.textContent=msg;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),dur)}
+  function esc(s=''){return String(s).replace(/[<>&]/g,c=>({ '<':'&lt;','>':'&gt;','&':'&amp;' }[c]))}
+  async function get(path){const r=await fetch(base.replace(/\/$/,'')+path,{headers:{'content-type':'application/json'},credentials:'omit'});if(!r.ok) throw new Error('HTTP '+r.status);return r.json().catch(()=>({}));}
+  async function post(path,body){const r=await fetch(base.replace(/\/$/,'')+path,{method:'POST',body:JSON.stringify(body||{}),headers:{'content-type':'application/json'},credentials:'omit'});if(!r.ok) throw new Error('HTTP '+r.status+' '+path);return r.json().catch(()=>({}));}
+
+  async function loadProfiles(){
+    try{
+      const data=await get('/api/profiles');
+      profiles=Array.isArray(data)?data:[];
+      const sel=$('profileId');
+      const current=sel.value;
+      sel.innerHTML='<option value="">Create a new profile…</option>' + profiles.map(p=>'<option value="'+esc(p.id)+'">'+esc(p.name||p.voice_name||p.id)+'</option>').join('');
+      if(current) sel.value=current;
+      $('#dot').className='dot on'; $('#statusText').textContent='Ready';
+    }catch(e){
+      $('#dot').className='dot err'; $('#statusText').textContent='Backend unreachable';
+    }
+  }
+  async function loadEngines(){
+    try{
+      const data=await get('/api/profiles/presets/all');
+      if(!Array.isArray(data)) return;
+      const inputs=[...document.querySelectorAll('#profileId option,[id="engine"] option')];
+      inputs.forEach(o=>{if(o.value)o.dataset.orig=o.value});
+    }catch{}
+  }
+
+  $('sampleFile').addEventListener('change',e=>{
+    const f=e.target.files[0]; selectedFile=f||null;
+    $('#fileHint').textContent=f?(f.name+' · '+(f.size/1024).toFixed(1)+' KB'):'WAV / MP3 / M4A recommended';
+  });
+  $('#uploadBtn').addEventListener('click',async()=>{
+    const profileId=$('profileId').value;
+    const text=$('referenceText').value.trim();
+    if(!profileId){ toast('Choose a target profile'); return; }
+    if(!selectedFile){ toast('Choose an audio sample'); return; }
+    const form=new FormData();
+    form.append('sample',selectedFile);
+    if(text) form.append('reference_text',text);
+    try{
+      const url=base.replace(/\/$/,'')+'/api/profiles/'+encodeURIComponent(profileId)+'/samples';
+      const r=await fetch(url,{method:'POST',body:form,credentials:'omit'});
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      const data=await r.json().catch(()=>({}));
+      toast('Sample uploaded');
+      await loadProfiles();
+    }catch(e){ toast('Upload failed: '+e.message); }
+  });
+  $('#refreshProfiles').addEventListener('click',async()=>{ toast('Refreshing…'); await loadProfiles(); toast('Refreshed'); });
+  (async()=>{ await loadEngines(); await loadProfiles(); })();
+})();
+</script>
+</body>
+</html>

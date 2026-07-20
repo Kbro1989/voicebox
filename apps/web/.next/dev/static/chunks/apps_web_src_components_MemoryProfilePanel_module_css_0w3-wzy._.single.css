@@ -1,0 +1,93 @@
+/* [project]/apps/web/src/components/MemoryProfilePanel.module.css [app-client] (css) */
+.MemoryProfilePanel-module__XfnS4G__panel {
+  flex-direction: column;
+  gap: 14px;
+  display: flex;
+}
+
+.MemoryProfilePanel-module__XfnS4G__head {
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+
+.MemoryProfilePanel-module__XfnS4G__headIcon {
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-subtle);
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.MemoryProfilePanel-module__XfnS4G__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.MemoryProfilePanel-module__XfnS4G__hint {
+  color: var(--text-muted);
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.MemoryProfilePanel-module__XfnS4G__fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+  display: grid;
+}
+
+.MemoryProfilePanel-module__XfnS4G__field {
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  display: flex;
+}
+
+.MemoryProfilePanel-module__XfnS4G__field:nth-child(5), .MemoryProfilePanel-module__XfnS4G__field:nth-child(8) {
+  grid-column: 1 / -1;
+}
+
+.MemoryProfilePanel-module__XfnS4G__fieldLabel {
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.MemoryProfilePanel-module__XfnS4G__field input, .MemoryProfilePanel-module__XfnS4G__field textarea {
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.MemoryProfilePanel-module__XfnS4G__field textarea {
+  resize: vertical;
+}
+
+.MemoryProfilePanel-module__XfnS4G__actions {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.MemoryProfilePanel-module__XfnS4G__savedPill {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 560px) {
+  .MemoryProfilePanel-module__XfnS4G__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/*# sourceMappingURL=apps_web_src_components_MemoryProfilePanel_module_css_0w3-wzy._.single.css.map*/

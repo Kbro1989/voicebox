@@ -1,0 +1,189 @@
+{"id":1,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"startedAt":1783671083109},"timestamp":1783671083109}
+{"id":2,"event":"genui_surface_request","data":{"kind":"genui_surface_request","surfaceId":"task-type","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","payload":{"id":"task-type","kind":"choice","persist":"conversation","trigger":{"stageId":"task-type","atom":"discovery-question-form"},"schema":{"type":"object","required":["taskType"],"properties":{"taskType":{"type":"string","title":"Task type","enum":["prototype","live-artifact","deck","image","video","hyperframes","audio","other"]}}},"prompt":"What type of design task should this free-form prompt create?"},"requestedAt":1783671083111},"timestamp":1783671083112}
+{"id":3,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"completedAt":1783671083113,"converged":true},"timestamp":1783671083113}
+{"id":4,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"startedAt":1783671083113},"timestamp":1783671083113}
+{"id":5,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"completedAt":1783671083114,"converged":true},"timestamp":1783671083114}
+{"id":6,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"startedAt":1783671083114},"timestamp":1783671083114}
+{"id":7,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"completedAt":1783671083114,"converged":true},"timestamp":1783671083114}
+{"id":8,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"startedAt":1783671083114},"timestamp":1783671083114}
+{"id":9,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"completedAt":1783671083114,"converged":true},"timestamp":1783671083114}
+{"id":10,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"startedAt":1783671083114},"timestamp":1783671083114}
+{"id":11,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"completedAt":1783671083115,"converged":true},"timestamp":1783671083115}
+{"id":12,"event":"start","data":{"runId":"f0f864f9-d4f0-4c2a-ac00-558cfc103992","agentId":"hermes","bin":"hermes","streamFormat":"acp-json-rpc","projectId":"f2097a6e-4abf-4674-b16d-c3578d583dcd","cwd":"C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd","model":"default","reasoning":null,"toolTokenExpiresAt":"2026-07-10T08:26:25.697Z"},"timestamp":1783671086013}
+{"id":13,"event":"stderr","data":{"chunk":"2026-07-10 03:11:27 [INFO] acp_adapter.entry: Loaded env from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n2026-07-10 03:11:27 [INFO] acp_adapter.entry: Starting hermes-agent ACP adapter\r\n"},"timestamp":1783671087286}
+{"id":14,"event":"stderr","data":{"chunk":"2026-07-10 03:11:28 [INFO] acp_adapter.server: ACP client connected\r\n"},"timestamp":1783671088084}
+{"id":15,"event":"stderr","data":{"chunk":"2026-07-10 03:11:28 [INFO] acp_adapter.server: Initialize from open-design (protocol v1)\r\n"},"timestamp":1783671088105}
+{"id":16,"event":"stderr","data":{"chunk":"2026-07-10 03:11:28 [INFO] run_agent: Loaded environment variables from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783671088121}
+{"id":17,"event":"stderr","data":{"chunk":"2026-07-10 03:11:36 [INFO] run_agent: OpenAI client created (agent_init, shared=True) thread=MainThread:63556 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783671096319}
+{"id":18,"event":"stderr","data":{"chunk":"2026-07-10 03:11:36 [WARNING] tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783671096412}
+{"id":19,"event":"stderr","data":{"chunk":"2026-07-10 03:11:36 [WARNING] tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783671096444}
+{"id":20,"event":"stderr","data":{"chunk":"2026-07-10 03:11:40 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783671100651}
+{"id":21,"event":"stderr","data":{"chunk":"2026-07-10 03:11:44 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783671104647}
+{"id":22,"event":"stderr","data":{"chunk":"2026-07-10 03:11:44 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n"},"timestamp":1783671104923}
+{"id":23,"event":"stderr","data":{"chunk":"2026-07-10 03:11:46 [INFO] acp_adapter.session: Created ACP session 53052d0b-5921-4b6d-bc92-cf79095d22fb (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783671106213}
+{"id":24,"event":"stderr","data":{"chunk":"2026-07-10 03:11:46 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n"},"timestamp":1783671106892}
+{"id":25,"event":"stderr","data":{"chunk":"2026-07-10 03:11:46 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n"},"timestamp":1783671106892}
+{"id":26,"event":"stderr","data":{"chunk":"2026-07-10 03:11:47 [INFO] acp_adapter.server: Session 53052d0b-5921-4b6d-bc92-cf79095d22fb: refreshed tool surface after ACP MCP registration (33 tools)\r\n"},"timestamp":1783671107053}
+{"id":27,"event":"stderr","data":{"chunk":"2026-07-10 03:11:47 [INFO] acp_adapter.server: New session 53052d0b-5921-4b6d-bc92-cf79095d22fb (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783671107054}
+{"id":28,"event":"stderr","data":{"chunk":"2026-07-10 03:11:48 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n"},"timestamp":1783671108071}
+{"id":29,"event":"agent","data":{"type":"status","label":"model","model":"nous:stepfun/step-3.7-flash:free"},"timestamp":1783671109290}
+{"id":30,"event":"agent","data":{"type":"status","label":"waiting_for_first_output","elapsedMs":23276},"timestamp":1783671109298}
+{"id":31,"event":"agent","data":{"type":"status","label":"available_commands_update","elapsedMs":23279},"timestamp":1783671109302}
+{"id":32,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":23281},"timestamp":1783671109303}
+{"id":33,"event":"stderr","data":{"chunk":"2026-07-10 03:11:49 [INFO] acp_adapter.server: Prompt on session 53052d0b-5921-4b6d-bc92-cf79095d22fb: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n"},"timestamp":1783671109306}
+{"id":34,"event":"stderr","data":{"chunk":"2026-07-10 03:11:49 [INFO] agent.turn_context: conversation turn: session=53052d0b-5921-4b6d-bc92-cf79095d22fb model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n"},"timestamp":1783671109354}
+{"id":35,"event":"stderr","data":{"chunk":"2026-07-10 03:12:03 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):53520 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783671123762}
+{"id":36,"event":"agent","data":{"type":"thinking_start"},"timestamp":1783671142023}
+{"id":37,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783671142024}
+{"id":38,"event":"agent","data":{"type":"thinking_delta","delta":" user is"},"timestamp":1783671142025}
+{"id":39,"event":"agent","data":{"type":"thinking_delta","delta":" saying"},"timestamp":1783671142028}
+{"id":40,"event":"agent","data":{"type":"thinking_delta","delta":" \"oll"},"timestamp":1783671142176}
+{"id":41,"event":"agent","data":{"type":"thinking_delta","delta":"ama\" -"},"timestamp":1783671142178}
+{"id":42,"event":"agent","data":{"type":"thinking_delta","delta":" they"},"timestamp":1783671142187}
+{"id":43,"event":"agent","data":{"type":"thinking_delta","delta":" want to pull a"},"timestamp":1783671142189}
+{"id":44,"event":"agent","data":{"type":"thinking_delta","delta":" small popular"},"timestamp":1783671142191}
+{"id":45,"event":"agent","data":{"type":"thinking_delta","delta":" voice model via"},"timestamp":1783671142193}
+{"id":46,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama. But"},"timestamp":1783671142203}
+{"id":47,"event":"agent","data":{"type":"thinking_delta","delta":" voice"},"timestamp":1783671142204}
+{"id":48,"event":"agent","data":{"type":"thinking_delta","delta":" cloning"},"timestamp":1783671142206}
+{"id":49,"event":"agent","data":{"type":"thinking_delta","delta":"/model"},"timestamp":1783671142245}
+{"id":50,"event":"agent","data":{"type":"thinking_delta","delta":" audio"},"timestamp":1783671142246}
+{"id":51,"event":"agent","data":{"type":"thinking_delta","delta":" models"},"timestamp":1783671142247}
+{"id":52,"event":"agent","data":{"type":"thinking_delta","delta":" on"},"timestamp":1783671142248}
+{"id":53,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama?"},"timestamp":1783671142307}
+{"id":54,"event":"agent","data":{"type":"thinking_delta","delta":" Oll"},"timestamp":1783671142309}
+{"id":55,"event":"agent","data":{"type":"thinking_delta","delta":"ama is primarily"},"timestamp":1783671142317}
+{"id":56,"event":"agent","data":{"type":"thinking_delta","delta":" for LLMs,"},"timestamp":1783671142327}
+{"id":57,"event":"agent","data":{"type":"thinking_delta","delta":" not audio/"},"timestamp":1783671142330}
+{"id":58,"event":"agent","data":{"type":"thinking_delta","delta":"voice models.\n"},"timestamp":1783671142383}
+{"id":59,"event":"agent","data":{"type":"thinking_delta","delta":"\nWait"},"timestamp":1783671142388}
+{"id":60,"event":"agent","data":{"type":"thinking_delta","delta":", let me think"},"timestamp":1783671142393}
+{"id":61,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783671142426}
+{"id":62,"event":"agent","data":{"type":"thinking_delta","delta":" The user might be"},"timestamp":1783671142428}
+{"id":63,"event":"agent","data":{"type":"thinking_delta","delta":" asking"},"timestamp":1783671142432}
+{"id":64,"event":"agent","data":{"type":"thinking_delta","delta":" about pulling"},"timestamp":1783671142480}
+{"id":65,"event":"agent","data":{"type":"thinking_delta","delta":" a small popular"},"timestamp":1783671142487}
+{"id":66,"event":"agent","data":{"type":"thinking_delta","delta":" model from"},"timestamp":1783671142492}
+{"id":67,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama in"},"timestamp":1783671142493}
+{"id":68,"event":"agent","data":{"type":"thinking_delta","delta":" general,"},"timestamp":1783671142523}
+{"id":69,"event":"agent","data":{"type":"thinking_delta","delta":" or specifically"},"timestamp":1783671142529}
+{"id":70,"event":"agent","data":{"type":"thinking_delta","delta":" a"},"timestamp":1783671142569}
+{"id":71,"event":"agent","data":{"type":"thinking_delta","delta":" voice model. Looking"},"timestamp":1783671142574}
+{"id":72,"event":"agent","data":{"type":"thinking_delta","delta":" at context"},"timestamp":1783671142629}
+{"id":73,"event":"agent","data":{"type":"thinking_delta","delta":":"},"timestamp":1783671142635}
+{"id":74,"event":"agent","data":{"type":"thinking_delta","delta":" Voice"},"timestamp":1783671142635}
+{"id":75,"event":"agent","data":{"type":"thinking_delta","delta":"box is"},"timestamp":1783671142638}
+{"id":76,"event":"agent","data":{"type":"thinking_delta","delta":" about voice cloning/T"},"timestamp":1783671142644}
+{"id":77,"event":"agent","data":{"type":"thinking_delta","delta":"TS. But"},"timestamp":1783671142696}
+{"id":78,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama doesn't"},"timestamp":1783671142698}
+{"id":79,"event":"agent","data":{"type":"thinking_delta","delta":" host"},"timestamp":1783671142727}
+{"id":80,"event":"agent","data":{"type":"thinking_delta","delta":" voice models typically"},"timestamp":1783671142728}
+{"id":81,"event":"agent","data":{"type":"thinking_delta","delta":" - it hosts"},"timestamp":1783671142753}
+{"id":82,"event":"agent","data":{"type":"thinking_delta","delta":" LLMs.\n\nHowever"},"timestamp":1783671142755}
+{"id":83,"event":"agent","data":{"type":"thinking_delta","delta":", there"},"timestamp":1783671142792}
+{"id":84,"event":"agent","data":{"type":"thinking_delta","delta":" are some audio"},"timestamp":1783671142794}
+{"id":85,"event":"agent","data":{"type":"thinking_delta","delta":"-cap"},"timestamp":1783671142857}
+{"id":86,"event":"agent","data":{"type":"thinking_delta","delta":"able models or"},"timestamp":1783671142862}
+{"id":87,"event":"agent","data":{"type":"thinking_delta","delta":" T"},"timestamp":1783671142865}
+{"id":88,"event":"agent","data":{"type":"thinking_delta","delta":"TS models available"},"timestamp":1783671142885}
+{"id":89,"event":"agent","data":{"type":"thinking_delta","delta":"..."},"timestamp":1783671142886}
+{"id":90,"event":"agent","data":{"type":"thinking_delta","delta":" but"},"timestamp":1783671142941}
+{"id":91,"event":"agent","data":{"type":"thinking_delta","delta":" none"},"timestamp":1783671142943}
+{"id":92,"event":"agent","data":{"type":"thinking_delta","delta":" are standard on"},"timestamp":1783671142946}
+{"id":93,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama. \n"},"timestamp":1783671142980}
+{"id":94,"event":"agent","data":{"type":"thinking_delta","delta":"\nActually, there"},"timestamp":1783671142991}
+{"id":95,"event":"agent","data":{"type":"thinking_delta","delta":" might"},"timestamp":1783671143053}
+{"id":96,"event":"agent","data":{"type":"thinking_delta","delta":" be kok"},"timestamp":1783671143057}
+{"id":97,"event":"agent","data":{"type":"thinking_delta","delta":"oro or"},"timestamp":1783671143059}
+{"id":98,"event":"agent","data":{"type":"thinking_delta","delta":" similar"},"timestamp":1783671143061}
+{"id":99,"event":"agent","data":{"type":"thinking_delta","delta":" models"},"timestamp":1783671143138}
+{"id":100,"event":"agent","data":{"type":"thinking_delta","delta":" being"},"timestamp":1783671143139}
+{"id":101,"event":"agent","data":{"type":"thinking_delta","delta":" made"},"timestamp":1783671143146}
+{"id":102,"event":"agent","data":{"type":"thinking_delta","delta":" available for"},"timestamp":1783671143148}
+{"id":103,"event":"agent","data":{"type":"thinking_delta","delta":" Ollama. But"},"timestamp":1783671143167}
+{"id":104,"event":"agent","data":{"type":"thinking_delta","delta":" the core"},"timestamp":1783671143169}
+{"id":105,"event":"agent","data":{"type":"thinking_delta","delta":" issue"},"timestamp":1783671143206}
+{"id":106,"event":"agent","data":{"type":"thinking_delta","delta":" is that voice"},"timestamp":1783671143208}
+{"id":107,"event":"agent","data":{"type":"thinking_delta","delta":" cloning requires"},"timestamp":1783671143244}
+{"id":108,"event":"agent","data":{"type":"thinking_delta","delta":" specialized"},"timestamp":1783671143246}
+{"id":109,"event":"agent","data":{"type":"thinking_delta","delta":" models"},"timestamp":1783671143301}
+{"id":110,"event":"agent","data":{"type":"thinking_delta","delta":" like Kok"},"timestamp":1783671143303}
+{"id":111,"event":"agent","data":{"type":"thinking_delta","delta":"oro or"},"timestamp":1783671143304}
+{"id":112,"event":"agent","data":{"type":"thinking_delta","delta":" Co"},"timestamp":1783671143383}
+{"id":113,"event":"agent","data":{"type":"thinking_delta","delta":"qui, and"},"timestamp":1783671143385}
+{"id":114,"event":"agent","data":{"type":"thinking_delta","delta":" recent"},"timestamp":1783671143387}
+{"id":115,"event":"agent","data":{"type":"thinking_delta","delta":" local"},"timestamp":1783671143390}
+{"id":116,"event":"agent","data":{"type":"thinking_delta","delta":" TTS models are"},"timestamp":1783671143421}
+{"id":117,"event":"agent","data":{"type":"thinking_delta","delta":" increasingly"},"timestamp":1783671143423}
+{"id":118,"event":"agent","data":{"type":"thinking_delta","delta":" available."},"timestamp":1783671143475}
+{"id":119,"event":"agent","data":{"type":"thinking_delta","delta":" The"},"timestamp":1783671143477}
+{"id":120,"event":"agent","data":{"type":"thinking_delta","delta":" user said"},"timestamp":1783671143478}
+{"id":121,"event":"agent","data":{"type":"thinking_delta","delta":" \"ollama\""},"timestamp":1783671143523}
+{"id":122,"event":"agent","data":{"type":"thinking_delta","delta":" which likely"},"timestamp":1783671143525}
+{"id":123,"event":"agent","data":{"type":"thinking_delta","delta":" means \"use oll"},"timestamp":1783671143551}
+{"id":124,"event":"agent","data":{"type":"thinking_delta","delta":"ama to pull a"},"timestamp":1783671143553}
+{"id":125,"event":"agent","data":{"type":"thinking_delta","delta":" model"},"timestamp":1783671143628}
+{"id":126,"event":"agent","data":{"type":"thinking_delta","delta":"\" - they"},"timestamp":1783671143631}
+{"id":127,"event":"agent","data":{"type":"thinking_delta","delta":" want"},"timestamp":1783671143632}
+{"id":128,"event":"agent","data":{"type":"thinking_delta","delta":" me"},"timestamp":1783671143633}
+{"id":129,"event":"agent","data":{"type":"thinking_delta","delta":" to help"},"timestamp":1783671143664}
+{"id":130,"event":"agent","data":{"type":"thinking_delta","delta":" them pull one"},"timestamp":1783671143666}
+{"id":131,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783671143783}
+{"id":132,"event":"agent","data":{"type":"status","label":"streaming","ttftMs":57763},"timestamp":1783671143785}
+{"id":133,"event":"agent","data":{"type":"text_delta","delta":"["},"timestamp":1783671143786}
+{"id":134,"event":"agent","data":{"type":"text_delta","delta":"OUT"},"timestamp":1783671143787}
+{"id":135,"event":"agent","data":{"type":"text_delta","delta":"-O"},"timestamp":1783671143789}
+{"id":136,"event":"agent","data":{"type":"text_delta","delta":"F-BAND USER"},"timestamp":1783671143798}
+{"id":137,"event":"agent","data":{"type":"text_delta","delta":" MESSAGE — a"},"timestamp":1783671143799}
+{"id":138,"event":"agent","data":{"type":"text_delta","delta":" direct message from the"},"timestamp":1783671143801}
+{"id":139,"event":"agent","data":{"type":"text_delta","delta":" user, delivered"},"timestamp":1783671143839}
+{"id":140,"event":"agent","data":{"type":"text_delta","delta":" mid-turn;"},"timestamp":1783671143841}
+{"id":141,"event":"agent","data":{"type":"text_delta","delta":" not tool"},"timestamp":1783671143879}
+{"id":142,"event":"agent","data":{"type":"text_delta","delta":" output]\noll"},"timestamp":1783671143880}
+{"id":143,"event":"agent","data":{"type":"text_delta","delta":"ama\n[/"},"timestamp":1783671143951}
+{"id":144,"event":"agent","data":{"type":"text_delta","delta":"OUT-O"},"timestamp":1783671143952}
+{"id":145,"event":"agent","data":{"type":"text_delta","delta":"F-BAND USER"},"timestamp":1783671143953}
+{"id":146,"event":"agent","data":{"type":"text_delta","delta":" MESSAGE]\n\nSmall"},"timestamp":1783671143973}
+{"id":147,"event":"agent","data":{"type":"text_delta","delta":" popular"},"timestamp":1783671143974}
+{"id":148,"event":"agent","data":{"type":"text_delta","delta":" voice model on"},"timestamp":1783671144013}
+{"id":149,"event":"agent","data":{"type":"text_delta","delta":" Ollama right"},"timestamp":1783671144014}
+{"id":150,"event":"agent","data":{"type":"text_delta","delta":" now:"},"timestamp":1783671144488}
+{"id":151,"event":"agent","data":{"type":"text_delta","delta":" **`kokoro"},"timestamp":1783671144495}
+{"id":152,"event":"agent","data":{"type":"text_delta","delta":"`"},"timestamp":1783671144498}
+{"id":153,"event":"agent","data":{"type":"text_delta","delta":"** ("},"timestamp":1783671144501}
+{"id":154,"event":"agent","data":{"type":"text_delta","delta":"the"},"timestamp":1783671144507}
+{"id":155,"event":"agent","data":{"type":"text_delta","delta":" actual Kokoro TTS model ported for Ollama).\n\nRun it:\n\n```bash\nollama pull kokoro\n```\n\nThen test:\n\n```bash\nollama run kokoro \"Voicebox local,"},"timestamp":1783671144515}
+{"id":156,"event":"agent","data":{"type":"text_delta","delta":" no"},"timestamp":1783671144524}
+{"id":157,"event":"agent","data":{"type":"text_delta","delta":" cloud.\"\n```\n\nIf"},"timestamp":1783671144528}
+{"id":158,"event":"agent","data":{"type":"text_delta","delta":" that"},"timestamp":1783671144532}
+{"id":159,"event":"agent","data":{"type":"text_delta","delta":" pull 404s,"},"timestamp":1783671144569}
+{"id":160,"event":"agent","data":{"type":"text_delta","delta":" the two"},"timestamp":1783671144573}
+{"id":161,"event":"agent","data":{"type":"text_delta","delta":" most popular"},"timestamp":1783671144575}
+{"id":162,"event":"agent","data":{"type":"text_delta","delta":" fallbacks are `"},"timestamp":1783671144612}
+{"id":163,"event":"agent","data":{"type":"text_delta","delta":"alf"},"timestamp":1783671144613}
+{"id":164,"event":"agent","data":{"type":"text_delta","delta":"red"},"timestamp":1783671144615}
+{"id":165,"event":"agent","data":{"type":"text_delta","delta":"`"},"timestamp":1783671144707}
+{"id":166,"event":"agent","data":{"type":"text_delta","delta":" or"},"timestamp":1783671144708}
+{"id":167,"event":"agent","data":{"type":"text_delta","delta":" `v"},"timestamp":1783671144709}
+{"id":168,"event":"agent","data":{"type":"text_delta","delta":"iking"},"timestamp":1783671144712}
+{"id":169,"event":"agent","data":{"type":"text_delta","delta":"` depending"},"timestamp":1783671144713}
+{"id":170,"event":"agent","data":{"type":"text_delta","delta":" on what"},"timestamp":1783671144762}
+{"id":171,"event":"agent","data":{"type":"text_delta","delta":" the"},"timestamp":1783671144763}
+{"id":172,"event":"agent","data":{"type":"text_delta","delta":" user"},"timestamp":1783671144768}
+{"id":173,"event":"agent","data":{"type":"text_delta","delta":" registry"},"timestamp":1783671144771}
+{"id":174,"event":"agent","data":{"type":"text_delta","delta":" currently"},"timestamp":1783671144850}
+{"id":175,"event":"agent","data":{"type":"text_delta","delta":" has for"},"timestamp":1783671144852}
+{"id":176,"event":"agent","data":{"type":"text_delta","delta":" T"},"timestamp":1783671144855}
+{"id":177,"event":"agent","data":{"type":"text_delta","delta":"TS. Want"},"timestamp":1783671144861}
+{"id":178,"event":"agent","data":{"type":"text_delta","delta":" me to list"},"timestamp":1783671144862}
+{"id":179,"event":"agent","data":{"type":"text_delta","delta":" what"},"timestamp":1783671145132}
+{"id":180,"event":"agent","data":{"type":"text_delta","delta":" your"},"timestamp":1783671145144}
+{"id":181,"event":"agent","data":{"type":"text_delta","delta":" local Ollama already"},"timestamp":1783671145146}
+{"id":182,"event":"agent","data":{"type":"text_delta","delta":" has?"},"timestamp":1783671145159}
+{"id":183,"event":"stderr","data":{"chunk":"2026-07-10 03:12:25 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-26 (_call):53520 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783671145449}
+{"id":184,"event":"stderr","data":{"chunk":"2026-07-10 03:12:25 [INFO] agent.conversation_loop: API call #1: model=stepfun/step-3.7-flash:free provider=nous in=83014 out=352 total=83366 latency=24.7s cache=82304/83014 (99%)\r\n"},"timestamp":1783671145450}
+{"id":185,"event":"stderr","data":{"chunk":"2026-07-10 03:12:25 [INFO] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=stepfun/step-3.7-flash:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=540 session=53052d0b-5921-4b6d-bc92-cf79095d22fb\r\n"},"timestamp":1783671145541}
+{"id":186,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":59566},"timestamp":1783671145589}
+{"id":187,"event":"agent","data":{"type":"usage","usage":{"input_tokens":83014,"output_tokens":352,"cached_read_tokens":82304,"thought_tokens":0,"total_tokens":83366},"durationMs":59569},"timestamp":1783671145591}
+{"id":188,"event":"diagnostic","data":{"type":"runtime_close","rpc_close_reason":"signal","status":"succeeded","signal":"SIGTERM"},"timestamp":1783671146122}
+{"id":189,"event":"end","data":{"code":null,"signal":"SIGTERM","status":"succeeded","resumable":false},"timestamp":1783671146123}

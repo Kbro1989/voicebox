@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "history.html",
+  "entry": "history.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-07-10T08:32:30.687Z",
+  "updatedAt": "2026-07-10T08:32:30.687Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

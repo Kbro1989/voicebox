@@ -1,0 +1,46 @@
+{
+  "telemetry": {
+    "metrics": true,
+    "content": true,
+    "artifactManifest": false
+  },
+  "onboardingCompleted": true,
+  "agentId": "hermes",
+  "skillId": null,
+  "designSystemId": "default",
+  "orbit": {
+    "enabled": false,
+    "time": "08:00",
+    "templateSkillId": "orbit-general"
+  },
+  "installationId": "03fc4e05-99e6-4d98-9480-60fdb87d227f",
+  "privacyDecisionAt": 1782605730629,
+  "customInstructions": "never build only a basic dashboard. allays build production grade with no mocked data. never stub, todo, fake, falsify, lie or do minimum of the request.\n",
+  "projectLocations": [
+    {
+      "id": "loc_qGkTebJGPNIvNdLt",
+      "name": "New folder (5)",
+      "path": "C:\\Users\\krist\\Desktop\\New folder (5)"
+    }
+  ],
+  "defaultProjectLocationId": "loc_qGkTebJGPNIvNdLt",
+  "recentLinkedDirs": [
+    "C:\\Users\\krist\\Desktop\\New folder (4)",
+    "C:\\Users\\krist\\Desktop\\open-design\\.od\\projects"
+  ],
+  "agentModels": {
+    "antigravity": {
+      "model": "Gemini 3.1 Pro (High)"
+    },
+    "hermes": {
+      "model": "default"
+    }
+  },
+  "agentCliEnv": {
+    "codex": {
+      "OPENAI_BASE_URL": "http://localhost:11434/v1",
+      "OPENAI_API_KEY": "local",
+      "CODEX_API_KEY": "local"
+    }
+  }
+}

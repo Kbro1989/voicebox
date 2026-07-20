@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0is79isxeqi08.js","/_next/static/chunks/0o.b-uksw0suy.js","/_next/static/chunks/0uqatj_w-snyq.js"],"ViewportBoundary"]
+3:I[97367,["/_next/static/chunks/0is79isxeqi08.js","/_next/static/chunks/0o.b-uksw0suy.js","/_next/static/chunks/0uqatj_w-snyq.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[27201,["/_next/static/chunks/0is79isxeqi08.js","/_next/static/chunks/0o.b-uksw0suy.js","/_next/static/chunks/0uqatj_w-snyq.js"],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#F4EFE6"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Open Design"}],["$","link","1",{"rel":"icon","href":"/app-icon.png"}],["$","link","2",{"rel":"apple-touch-icon","href":"/app-icon.png"}],["$","$L5","3",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"nxPyvMcnp3CYp4RxPq-xy"}

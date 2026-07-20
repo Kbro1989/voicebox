@@ -1,0 +1,103 @@
+/* [project]/packages/components/src/dialog.module.css [app-client] (css) */
+.dialog-module__2u7TqW__backdrop {
+  -webkit-backdrop-filter: blur(4px);
+  -webkit-app-region: no-drag;
+  z-index: 100;
+  background: #1c1b1a6b;
+  justify-content: center;
+  align-items: center;
+  animation: .16s ease-out dialog-module__2u7TqW__dialog-backdrop-fade-in;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+:where(.dialog-module__2u7TqW__dialog) {
+  background: var(--bg-elevated);
+  -webkit-app-region: no-drag;
+  border-radius: var(--radius-lg);
+  width: 520px;
+  max-width: calc(100vw - 32px);
+  box-shadow: var(--shadow-lg);
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  animation: .22s cubic-bezier(.21, 1.02, .73, 1) dialog-module__2u7TqW__dialog-panel-pop-in;
+  display: flex;
+}
+
+.dialog-module__2u7TqW__dialogSectioned {
+  gap: 0;
+  padding: 0;
+}
+
+.dialog-module__2u7TqW__header {
+  flex-direction: column;
+  gap: 4px;
+  display: flex;
+}
+
+.dialog-module__2u7TqW__body {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.dialog-module__2u7TqW__footer {
+  justify-content: flex-end;
+  gap: 8px;
+  display: flex;
+}
+
+.dialog-module__2u7TqW__dialogSectioned .dialog-module__2u7TqW__header {
+  padding: 22px 22px 0;
+}
+
+.dialog-module__2u7TqW__dialogSectioned .dialog-module__2u7TqW__body {
+  padding: 16px 22px 0;
+}
+
+.dialog-module__2u7TqW__dialogSectioned .dialog-module__2u7TqW__footer {
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  padding: 16px 22px;
+}
+
+.dialog-module__2u7TqW__title {
+  letter-spacing: -.015em;
+  color: var(--text);
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.dialog-module__2u7TqW__description {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@keyframes dialog-module__2u7TqW__dialog-backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-module__2u7TqW__dialog-panel-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=packages_components_src_dialog_module_css_0w3-wzy._.single.css.map*/

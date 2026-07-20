@@ -1,0 +1,606 @@
+{"id":1,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"startedAt":1783670908821},"timestamp":1783670908821}
+{"id":2,"event":"genui_surface_request","data":{"kind":"genui_surface_request","surfaceId":"task-type","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","payload":{"id":"task-type","kind":"choice","persist":"conversation","trigger":{"stageId":"task-type","atom":"discovery-question-form"},"schema":{"type":"object","required":["taskType"],"properties":{"taskType":{"type":"string","title":"Task type","enum":["prototype","live-artifact","deck","image","video","hyperframes","audio","other"]}}},"prompt":"What type of design task should this free-form prompt create?"},"requestedAt":1783670908824},"timestamp":1783670908824}
+{"id":3,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"completedAt":1783670908827,"converged":true},"timestamp":1783670908827}
+{"id":4,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"startedAt":1783670908827},"timestamp":1783670908827}
+{"id":5,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"completedAt":1783670908827,"converged":true},"timestamp":1783670908827}
+{"id":6,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"startedAt":1783670908827},"timestamp":1783670908827}
+{"id":7,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"completedAt":1783670908827,"converged":true},"timestamp":1783670908827}
+{"id":8,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"startedAt":1783670908827},"timestamp":1783670908827}
+{"id":9,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"completedAt":1783670908828,"converged":true},"timestamp":1783670908828}
+{"id":10,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"startedAt":1783670908828},"timestamp":1783670908828}
+{"id":11,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"fbf70892-444a-4f0b-b0e3-08216475dece","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"completedAt":1783670908828,"converged":true},"timestamp":1783670908828}
+{"id":12,"event":"start","data":{"runId":"fbf70892-444a-4f0b-b0e3-08216475dece","agentId":"hermes","bin":"hermes","streamFormat":"acp-json-rpc","projectId":"f2097a6e-4abf-4674-b16d-c3578d583dcd","cwd":"C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd","model":"default","reasoning":null,"toolTokenExpiresAt":"2026-07-10T08:23:31.592Z"},"timestamp":1783670912010}
+{"id":13,"event":"stderr","data":{"chunk":"2026-07-10 03:08:33 [INFO] acp_adapter.entry: Loaded env from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n2026-07-10 03:08:33 [INFO] acp_adapter.entry: Starting hermes-agent ACP adapter\r\n"},"timestamp":1783670913317}
+{"id":14,"event":"stderr","data":{"chunk":"2026-07-10 03:08:34 [INFO] acp_adapter.server: ACP client connected\r\n"},"timestamp":1783670914240}
+{"id":15,"event":"stderr","data":{"chunk":"2026-07-10 03:08:34 [INFO] acp_adapter.server: Initialize from open-design (protocol v1)\r\n"},"timestamp":1783670914268}
+{"id":16,"event":"stderr","data":{"chunk":"2026-07-10 03:08:34 [INFO] run_agent: Loaded environment variables from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783670914295}
+{"id":17,"event":"stderr","data":{"chunk":"2026-07-10 03:08:41 [INFO] run_agent: OpenAI client created (agent_init, shared=True) thread=MainThread:22720 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783670921991}
+{"id":18,"event":"stderr","data":{"chunk":"2026-07-10 03:08:42 [WARNING] tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783670922102}
+{"id":19,"event":"stderr","data":{"chunk":"2026-07-10 03:08:42 [WARNING] tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783670922161}
+{"id":20,"event":"stderr","data":{"chunk":"2026-07-10 03:08:46 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783670926355}
+{"id":21,"event":"stderr","data":{"chunk":"2026-07-10 03:08:50 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783670930130}
+{"id":22,"event":"stderr","data":{"chunk":"2026-07-10 03:08:50 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n"},"timestamp":1783670930367}
+{"id":23,"event":"stderr","data":{"chunk":"2026-07-10 03:08:51 [INFO] acp_adapter.session: Created ACP session f78b0a82-cf87-4551-8984-ae630a9468a2 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783670931470}
+{"id":24,"event":"stderr","data":{"chunk":"2026-07-10 03:08:52 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n"},"timestamp":1783670932101}
+{"id":25,"event":"stderr","data":{"chunk":"2026-07-10 03:08:52 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n"},"timestamp":1783670932102}
+{"id":26,"event":"stderr","data":{"chunk":"2026-07-10 03:08:52 [INFO] acp_adapter.server: Session f78b0a82-cf87-4551-8984-ae630a9468a2: refreshed tool surface after ACP MCP registration (33 tools)\r\n"},"timestamp":1783670932263}
+{"id":27,"event":"stderr","data":{"chunk":"2026-07-10 03:08:52 [INFO] acp_adapter.server: New session f78b0a82-cf87-4551-8984-ae630a9468a2 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783670932263}
+{"id":28,"event":"stderr","data":{"chunk":"2026-07-10 03:08:53 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n"},"timestamp":1783670933163}
+{"id":29,"event":"agent","data":{"type":"status","label":"model","model":"nous:stepfun/step-3.7-flash:free"},"timestamp":1783670934320}
+{"id":30,"event":"agent","data":{"type":"status","label":"waiting_for_first_output","elapsedMs":22309},"timestamp":1783670934346}
+{"id":31,"event":"stderr","data":{"chunk":"2026-07-10 03:08:54 [INFO] acp_adapter.server: Prompt on session f78b0a82-cf87-4551-8984-ae630a9468a2: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n"},"timestamp":1783670934348}
+{"id":32,"event":"agent","data":{"type":"status","label":"available_commands_update","elapsedMs":22332},"timestamp":1783670934355}
+{"id":33,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":22338},"timestamp":1783670934356}
+{"id":34,"event":"stderr","data":{"chunk":"2026-07-10 03:08:54 [INFO] agent.turn_context: conversation turn: session=f78b0a82-cf87-4551-8984-ae630a9468a2 model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n"},"timestamp":1783670934390}
+{"id":35,"event":"stderr","data":{"chunk":"2026-07-10 03:09:08 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):62380 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783670948836}
+{"id":36,"event":"agent","data":{"type":"thinking_start"},"timestamp":1783670963382}
+{"id":37,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783670963384}
+{"id":38,"event":"agent","data":{"type":"thinking_delta","delta":" user has"},"timestamp":1783670963385}
+{"id":39,"event":"agent","data":{"type":"thinking_delta","delta":" dropped"},"timestamp":1783670963389}
+{"id":40,"event":"agent","data":{"type":"thinking_delta","delta":" 4"},"timestamp":1783670963555}
+{"id":41,"event":"agent","data":{"type":"thinking_delta","delta":" Cloudflare docs"},"timestamp":1783670963564}
+{"id":42,"event":"agent","data":{"type":"thinking_delta","delta":" links"},"timestamp":1783670963566}
+{"id":43,"event":"agent","data":{"type":"thinking_delta","delta":" without"},"timestamp":1783670963575}
+{"id":44,"event":"agent","data":{"type":"thinking_delta","delta":" an"},"timestamp":1783670963577}
+{"id":45,"event":"agent","data":{"type":"thinking_delta","delta":" explicit ask"},"timestamp":1783670963578}
+{"id":46,"event":"agent","data":{"type":"thinking_delta","delta":". They"},"timestamp":1783670963580}
+{"id":47,"event":"agent","data":{"type":"thinking_delta","delta":"'re"},"timestamp":1783670963582}
+{"id":48,"event":"agent","data":{"type":"thinking_delta","delta":" in"},"timestamp":1783670963584}
+{"id":49,"event":"agent","data":{"type":"thinking_delta","delta":" the middle"},"timestamp":1783670963586}
+{"id":50,"event":"agent","data":{"type":"thinking_delta","delta":" of a Voice"},"timestamp":1783670963588}
+{"id":51,"event":"agent","data":{"type":"thinking_delta","delta":"box build"},"timestamp":1783670963590}
+{"id":52,"event":"agent","data":{"type":"thinking_delta","delta":" discussion"},"timestamp":1783670963638}
+{"id":53,"event":"agent","data":{"type":"thinking_delta","delta":", and previously"},"timestamp":1783670963639}
+{"id":54,"event":"agent","data":{"type":"thinking_delta","delta":" asked"},"timestamp":1783670963641}
+{"id":55,"event":"agent","data":{"type":"thinking_delta","delta":" about Cloudflare Workers"},"timestamp":1783670963642}
+{"id":56,"event":"agent","data":{"type":"thinking_delta","delta":". The"},"timestamp":1783670963658}
+{"id":57,"event":"agent","data":{"type":"thinking_delta","delta":" most likely intent"},"timestamp":1783670963660}
+{"id":58,"event":"agent","data":{"type":"thinking_delta","delta":" is: \""},"timestamp":1783670963732}
+{"id":59,"event":"agent","data":{"type":"thinking_delta","delta":"what"},"timestamp":1783670963733}
+{"id":60,"event":"agent","data":{"type":"thinking_delta","delta":" can"},"timestamp":1783670963737}
+{"id":61,"event":"agent","data":{"type":"thinking_delta","delta":" I do"},"timestamp":1783670963749}
+{"id":62,"event":"agent","data":{"type":"thinking_delta","delta":" with these specific"},"timestamp":1783670963751}
+{"id":63,"event":"agent","data":{"type":"thinking_delta","delta":" capabilities"},"timestamp":1783670963783}
+{"id":64,"event":"agent","data":{"type":"thinking_delta","delta":" for"},"timestamp":1783670963785}
+{"id":65,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783670963791}
+{"id":66,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox project"},"timestamp":1783670963807}
+{"id":67,"event":"agent","data":{"type":"thinking_delta","delta":"?\" I should extract"},"timestamp":1783670963809}
+{"id":68,"event":"agent","data":{"type":"thinking_delta","delta":" the relevant"},"timestamp":1783670963835}
+{"id":69,"event":"agent","data":{"type":"thinking_delta","delta":" signal"},"timestamp":1783670963838}
+{"id":70,"event":"agent","data":{"type":"thinking_delta","delta":" from each page"},"timestamp":1783670963863}
+{"id":71,"event":"agent","data":{"type":"thinking_delta","delta":" and map"},"timestamp":1783670963864}
+{"id":72,"event":"agent","data":{"type":"thinking_delta","delta":" it back"},"timestamp":1783670963911}
+{"id":73,"event":"agent","data":{"type":"thinking_delta","delta":" to local"},"timestamp":1783670963912}
+{"id":74,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox, not"},"timestamp":1783670963914}
+{"id":75,"event":"agent","data":{"type":"thinking_delta","delta":" just summarize"},"timestamp":1783670963938}
+{"id":76,"event":"agent","data":{"type":"thinking_delta","delta":" docs"},"timestamp":1783670963940}
+{"id":77,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670963981}
+{"id":78,"event":"agent","data":{"type":"thinking_delta","delta":" I should"},"timestamp":1783670963991}
+{"id":79,"event":"agent","data":{"type":"thinking_delta","delta":" also stay"},"timestamp":1783670963992}
+{"id":80,"event":"agent","data":{"type":"thinking_delta","delta":" t"},"timestamp":1783670964042}
+{"id":81,"event":"agent","data":{"type":"thinking_delta","delta":"erse —"},"timestamp":1783670964063}
+{"id":82,"event":"agent","data":{"type":"thinking_delta","delta":" no S"},"timestamp":1783670964068}
+{"id":83,"event":"agent","data":{"type":"thinking_delta","delta":"ocratic questions"},"timestamp":1783670964072}
+{"id":84,"event":"agent","data":{"type":"thinking_delta","delta":", just actionable"},"timestamp":1783670964081}
+{"id":85,"event":"agent","data":{"type":"thinking_delta","delta":" mapping.\n\nGiven"},"timestamp":1783670964086}
+{"id":86,"event":"agent","data":{"type":"thinking_delta","delta":" the user"},"timestamp":1783670964127}
+{"id":87,"event":"agent","data":{"type":"thinking_delta","delta":" style"},"timestamp":1783670964129}
+{"id":88,"event":"agent","data":{"type":"thinking_delta","delta":" rules"},"timestamp":1783670964132}
+{"id":89,"event":"agent","data":{"type":"thinking_delta","delta":":"},"timestamp":1783670964173}
+{"id":90,"event":"agent","data":{"type":"thinking_delta","delta":" during"},"timestamp":1783670964177}
+{"id":91,"event":"agent","data":{"type":"thinking_delta","delta":" live incidents"},"timestamp":1783670964178}
+{"id":92,"event":"agent","data":{"type":"thinking_delta","delta":" /"},"timestamp":1783670964265}
+{"id":93,"event":"agent","data":{"type":"thinking_delta","delta":" ongoing"},"timestamp":1783670964267}
+{"id":94,"event":"agent","data":{"type":"thinking_delta","delta":" work, stop"},"timestamp":1783670964268}
+{"id":95,"event":"agent","data":{"type":"thinking_delta","delta":" questioning"},"timestamp":1783670964291}
+{"id":96,"event":"agent","data":{"type":"thinking_delta","delta":", give exact"},"timestamp":1783670964292}
+{"id":97,"event":"agent","data":{"type":"thinking_delta","delta":" paths/d"},"timestamp":1783670964692}
+{"id":98,"event":"agent","data":{"type":"thinking_delta","delta":"iffs/de"},"timestamp":1783670964695}
+{"id":99,"event":"agent","data":{"type":"thinking_delta","delta":"ploy steps. They"},"timestamp":1783670964699}
+{"id":100,"event":"agent","data":{"type":"thinking_delta","delta":" gave"},"timestamp":1783670964710}
+{"id":101,"event":"agent","data":{"type":"thinking_delta","delta":" 4 URLs,"},"timestamp":1783670964712}
+{"id":102,"event":"agent","data":{"type":"thinking_delta","delta":" likely"},"timestamp":1783670964714}
+{"id":103,"event":"agent","data":{"type":"thinking_delta","delta":" want"},"timestamp":1783670964723}
+{"id":104,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783670964725}
+{"id":105,"event":"agent","data":{"type":"thinking_delta","delta":" substance"},"timestamp":1783670964731}
+{"id":106,"event":"agent","data":{"type":"thinking_delta","delta":" pulled"},"timestamp":1783670964734}
+{"id":107,"event":"agent","data":{"type":"thinking_delta","delta":" and"},"timestamp":1783670964740}
+{"id":108,"event":"agent","data":{"type":"thinking_delta","delta":" applied."},"timestamp":1783670964741}
+{"id":109,"event":"agent","data":{"type":"thinking_delta","delta":" I can"},"timestamp":1783670964747}
+{"id":110,"event":"agent","data":{"type":"thinking_delta","delta":" use web_ext"},"timestamp":1783670964749}
+{"id":111,"event":"agent","data":{"type":"thinking_delta","delta":"ract to fetch those"},"timestamp":1783670964764}
+{"id":112,"event":"agent","data":{"type":"thinking_delta","delta":" docs"},"timestamp":1783670964766}
+{"id":113,"event":"agent","data":{"type":"thinking_delta","delta":" concurrently"},"timestamp":1783670964771}
+{"id":114,"event":"agent","data":{"type":"thinking_delta","delta":" since"},"timestamp":1783670964780}
+{"id":115,"event":"agent","data":{"type":"thinking_delta","delta":" they're plain"},"timestamp":1783670964782}
+{"id":116,"event":"agent","data":{"type":"thinking_delta","delta":"-text docs"},"timestamp":1783670964789}
+{"id":117,"event":"agent","data":{"type":"thinking_delta","delta":" endpoints"},"timestamp":1783670964791}
+{"id":118,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783670964793}
+{"id":119,"event":"agent","data":{"type":"thinking_delta","delta":" then cond"},"timestamp":1783670964804}
+{"id":120,"event":"agent","data":{"type":"thinking_delta","delta":"ense into"},"timestamp":1783670964814}
+{"id":121,"event":"agent","data":{"type":"thinking_delta","delta":" a"},"timestamp":1783670964823}
+{"id":122,"event":"agent","data":{"type":"thinking_delta","delta":" matrix"},"timestamp":1783670964840}
+{"id":123,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670964845}
+{"id":124,"event":"agent","data":{"type":"thinking_delta","delta":" No need to browse"},"timestamp":1783670964846}
+{"id":125,"event":"agent","data":{"type":"thinking_delta","delta":";"},"timestamp":1783670964847}
+{"id":126,"event":"agent","data":{"type":"thinking_delta","delta":" these"},"timestamp":1783670964848}
+{"id":127,"event":"agent","data":{"type":"thinking_delta","delta":" are developer docs,"},"timestamp":1783670964849}
+{"id":128,"event":"agent","data":{"type":"thinking_delta","delta":" text"},"timestamp":1783670964850}
+{"id":129,"event":"agent","data":{"type":"thinking_delta","delta":"-first"},"timestamp":1783670964851}
+{"id":130,"event":"agent","data":{"type":"thinking_delta","delta":".\n\nLet"},"timestamp":1783670964853}
+{"id":131,"event":"agent","data":{"type":"thinking_delta","delta":" me batch"},"timestamp":1783670964856}
+{"id":132,"event":"agent","data":{"type":"thinking_delta","delta":" fetch"},"timestamp":1783670965441}
+{"id":133,"event":"agent","data":{"type":"thinking_delta","delta":" them"},"timestamp":1783670965446}
+{"id":134,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670965450}
+{"id":135,"event":"stderr","data":{"chunk":"2026-07-10 03:09:25 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-26 (_call):62380 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783670965657}
+{"id":136,"event":"stderr","data":{"chunk":"2026-07-10 03:09:25 [INFO] agent.conversation_loop: API call #1: model=stepfun/step-3.7-flash:free provider=nous in=82392 out=312 total=82704 latency=19.7s\r\n"},"timestamp":1783670965658}
+{"id":137,"event":"agent","data":{"type":"status","label":"tool_call","elapsedMs":53684},"timestamp":1783670965702}
+{"id":138,"event":"stderr","data":{"chunk":"2026-07-10 03:09:25 [INFO] tools.web_tools: Extracting content from 5 URL(s)\r\n"},"timestamp":1783670965708}
+{"id":139,"event":"stderr","data":{"chunk":"2026-07-10 03:09:25 [INFO] tools.web_tools: Web extract via firecrawl: 5 URL(s)\r\n"},"timestamp":1783670965823}
+{"id":140,"event":"stderr","data":{"chunk":"2026-07-10 03:09:25 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://developers.cloudflare.com/agents/communication-channels/voice/\r\n"},"timestamp":1783670965963}
+{"id":141,"event":"stderr","data":{"chunk":"2026-07-10 03:09:31 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://developers.cloudflare.com/use-cases/media-streaming/\r\n"},"timestamp":1783670971682}
+{"id":142,"event":"stderr","data":{"chunk":"2026-07-10 03:09:35 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://developers.cloudflare.com/use-cases/media-streaming/store-media/\r\n"},"timestamp":1783670975775}
+{"id":143,"event":"stderr","data":{"chunk":"2026-07-10 03:09:39 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://developers.cloudflare.com/use-cases/apis/deploy-apis/\r\n"},"timestamp":1783670979434}
+{"id":144,"event":"stderr","data":{"chunk":"2026-07-10 03:09:43 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://developers.cloudflare.com/use-cases/ai/store-and-retrieve-context/\r\n"},"timestamp":1783670983196}
+{"id":145,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] tools.web_tools: Extracted content from 5 pages\r\n"},"timestamp":1783670986760}
+{"id":146,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] tools.web_tools: https://developers.cloudflare.com/agents/communication-channels/voice/ (truncated 30716 -> 6506 chars)\r\n"},"timestamp":1783670986771}
+{"id":147,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] tools.web_tools: https://developers.cloudflare.com/use-cases/media-streaming/ (3704 chars, whole)\r\n"},"timestamp":1783670986773}
+{"id":148,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] tools.web_tools: https://developers.cloudflare.com/use-cases/media-streaming/store-media/ (1571 chars, whole)\r\n"},"timestamp":1783670986774}
+{"id":149,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] tools.web_tools: https://developers.cloudflare.com/use-cases/apis/deploy-apis/ (1917 chars, whole)\r\n2026-07-10 03:09:46 [INFO] tools.web_tools: https://developers.cloudflare.com/use-cases/ai/store-and-retrieve-context/ (1960 chars, whole)\r\n"},"timestamp":1783670986775}
+{"id":150,"event":"stderr","data":{"chunk":"2026-07-10 03:09:46 [INFO] agent.tool_executor: tool web_extract completed (21.07s, 17342 chars)\r\n"},"timestamp":1783670986779}
+{"id":151,"event":"agent","data":{"type":"status","label":"tool_call_update","elapsedMs":74791},"timestamp":1783670986809}
+{"id":152,"event":"stderr","data":{"chunk":"2026-07-10 03:09:49 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-27 (_call):62892 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783670989699}
+{"id":153,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783670999026}
+{"id":154,"event":"agent","data":{"type":"thinking_delta","delta":" user asked"},"timestamp":1783670999029}
+{"id":155,"event":"agent","data":{"type":"thinking_delta","delta":" what"},"timestamp":1783670999031}
+{"id":156,"event":"agent","data":{"type":"thinking_delta","delta":" I know about those"},"timestamp":1783670999156}
+{"id":157,"event":"agent","data":{"type":"thinking_delta","delta":" specific"},"timestamp":1783670999158}
+{"id":158,"event":"agent","data":{"type":"thinking_delta","delta":" Cloudflare docs"},"timestamp":1783670999160}
+{"id":159,"event":"agent","data":{"type":"thinking_delta","delta":"/p"},"timestamp":1783670999163}
+{"id":160,"event":"agent","data":{"type":"thinking_delta","delta":"ages and"},"timestamp":1783670999165}
+{"id":161,"event":"agent","data":{"type":"thinking_delta","delta":" implicitly"},"timestamp":1783670999168}
+{"id":162,"event":"agent","data":{"type":"thinking_delta","delta":" wants to know"},"timestamp":1783670999171}
+{"id":163,"event":"agent","data":{"type":"thinking_delta","delta":" how this"},"timestamp":1783670999173}
+{"id":164,"event":"agent","data":{"type":"thinking_delta","delta":" applies to their"},"timestamp":1783670999178}
+{"id":165,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox project"},"timestamp":1783670999180}
+{"id":166,"event":"agent","data":{"type":"thinking_delta","delta":". I need"},"timestamp":1783670999211}
+{"id":167,"event":"agent","data":{"type":"thinking_delta","delta":" to summarize"},"timestamp":1783670999212}
+{"id":168,"event":"agent","data":{"type":"thinking_delta","delta":" the actual"},"timestamp":1783670999251}
+{"id":169,"event":"agent","data":{"type":"thinking_delta","delta":" docs"},"timestamp":1783670999252}
+{"id":170,"event":"agent","data":{"type":"thinking_delta","delta":" accurately"},"timestamp":1783670999255}
+{"id":171,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783670999304}
+{"id":172,"event":"agent","data":{"type":"thinking_delta","delta":" then directly"},"timestamp":1783670999307}
+{"id":173,"event":"agent","data":{"type":"thinking_delta","delta":" tie"},"timestamp":1783670999309}
+{"id":174,"event":"agent","data":{"type":"thinking_delta","delta":" it to their"},"timestamp":1783670999310}
+{"id":175,"event":"agent","data":{"type":"thinking_delta","delta":" goal"},"timestamp":1783670999370}
+{"id":176,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670999373}
+{"id":177,"event":"agent","data":{"type":"thinking_delta","delta":" Keep"},"timestamp":1783670999376}
+{"id":178,"event":"agent","data":{"type":"thinking_delta","delta":" it compact"},"timestamp":1783670999379}
+{"id":179,"event":"agent","data":{"type":"thinking_delta","delta":" and"},"timestamp":1783670999412}
+{"id":180,"event":"agent","data":{"type":"thinking_delta","delta":" actionable.\n"},"timestamp":1783670999416}
+{"id":181,"event":"agent","data":{"type":"thinking_delta","delta":"\nKey points from the"},"timestamp":1783670999427}
+{"id":182,"event":"agent","data":{"type":"thinking_delta","delta":" extracted"},"timestamp":1783670999455}
+{"id":183,"event":"agent","data":{"type":"thinking_delta","delta":" docs:\n1."},"timestamp":1783670999456}
+{"id":184,"event":"agent","data":{"type":"thinking_delta","delta":" Voice:"},"timestamp":1783670999458}
+{"id":185,"event":"agent","data":{"type":"thinking_delta","delta":" Real"},"timestamp":1783670999480}
+{"id":186,"event":"agent","data":{"type":"thinking_delta","delta":"-time voice agents"},"timestamp":1783670999481}
+{"id":187,"event":"agent","data":{"type":"thinking_delta","delta":" with ST"},"timestamp":1783670999539}
+{"id":188,"event":"agent","data":{"type":"thinking_delta","delta":"T/T"},"timestamp":1783670999541}
+{"id":189,"event":"agent","data":{"type":"thinking_delta","delta":"TS/con"},"timestamp":1783670999543}
+{"id":190,"event":"agent","data":{"type":"thinking_delta","delta":"versation persistence"},"timestamp":1783670999545}
+{"id":191,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783670999578}
+{"id":192,"event":"agent","data":{"type":"thinking_delta","delta":" built on Durable"},"timestamp":1783670999579}
+{"id":193,"event":"agent","data":{"type":"thinking_delta","delta":" Objects, Web"},"timestamp":1783670999583}
+{"id":194,"event":"agent","data":{"type":"thinking_delta","delta":"Socket audio"},"timestamp":1783670999635}
+{"id":195,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783670999636}
+{"id":196,"event":"agent","data":{"type":"thinking_delta","delta":" Workers"},"timestamp":1783670999638}
+{"id":197,"event":"agent","data":{"type":"thinking_delta","delta":" AI, React"},"timestamp":1783670999666}
+{"id":198,"event":"agent","data":{"type":"thinking_delta","delta":" hooks"},"timestamp":1783670999669}
+{"id":199,"event":"agent","data":{"type":"thinking_delta","delta":" available."},"timestamp":1783670999671}
+{"id":200,"event":"agent","data":{"type":"thinking_delta","delta":" Binary"},"timestamp":1783670999734}
+{"id":201,"event":"agent","data":{"type":"thinking_delta","delta":" PCM"},"timestamp":1783670999736}
+{"id":202,"event":"agent","data":{"type":"thinking_delta","delta":" frames"},"timestamp":1783670999738}
+{"id":203,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670999740}
+{"id":204,"event":"agent","data":{"type":"thinking_delta","delta":"\n2. Media"},"timestamp":1783670999742}
+{"id":205,"event":"agent","data":{"type":"thinking_delta","delta":" streaming: Cloudflare"},"timestamp":1783670999747}
+{"id":206,"event":"agent","data":{"type":"thinking_delta","delta":" Stream/"},"timestamp":1783670999804}
+{"id":207,"event":"agent","data":{"type":"thinking_delta","delta":"Images/R"},"timestamp":1783670999807}
+{"id":208,"event":"agent","data":{"type":"thinking_delta","delta":"2/C"},"timestamp":1783670999809}
+{"id":209,"event":"agent","data":{"type":"thinking_delta","delta":"ache for video"},"timestamp":1783670999812}
+{"id":210,"event":"agent","data":{"type":"thinking_delta","delta":"/images"},"timestamp":1783670999864}
+{"id":211,"event":"agent","data":{"type":"thinking_delta","delta":"/media"},"timestamp":1783670999865}
+{"id":212,"event":"agent","data":{"type":"thinking_delta","delta":";"},"timestamp":1783670999867}
+{"id":213,"event":"agent","data":{"type":"thinking_delta","delta":" architecture"},"timestamp":1783670999869}
+{"id":214,"event":"agent","data":{"type":"thinking_delta","delta":" patterns"},"timestamp":1783670999909}
+{"id":215,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783670999910}
+{"id":216,"event":"agent","data":{"type":"thinking_delta","delta":"\n3. Store"},"timestamp":1783670999912}
+{"id":217,"event":"agent","data":{"type":"thinking_delta","delta":" media: R2"},"timestamp":1783670999914}
+{"id":218,"event":"agent","data":{"type":"thinking_delta","delta":" zero"},"timestamp":1783670999961}
+{"id":219,"event":"agent","data":{"type":"thinking_delta","delta":" egress, S"},"timestamp":1783670999967}
+{"id":220,"event":"agent","data":{"type":"thinking_delta","delta":"3-com"},"timestamp":1783670999968}
+{"id":221,"event":"agent","data":{"type":"thinking_delta","delta":"patible, presigned"},"timestamp":1783670999971}
+{"id":222,"event":"agent","data":{"type":"thinking_delta","delta":" URLs, Workers"},"timestamp":1783670999972}
+{"id":223,"event":"agent","data":{"type":"thinking_delta","delta":" pipelines"},"timestamp":1783671000016}
+{"id":224,"event":"agent","data":{"type":"thinking_delta","delta":".\n4. De"},"timestamp":1783671000019}
+{"id":225,"event":"agent","data":{"type":"thinking_delta","delta":"ploy APIs: Workers"},"timestamp":1783671000022}
+{"id":226,"event":"agent","data":{"type":"thinking_delta","delta":" global"},"timestamp":1783671000078}
+{"id":227,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783671000095}
+{"id":228,"event":"agent","data":{"type":"thinking_delta","delta":" auto"},"timestamp":1783671000098}
+{"id":229,"event":"agent","data":{"type":"thinking_delta","delta":"-scaling, D"},"timestamp":1783671000102}
+{"id":230,"event":"agent","data":{"type":"thinking_delta","delta":"1,"},"timestamp":1783671000106}
+{"id":231,"event":"agent","data":{"type":"thinking_delta","delta":" Durable Objects"},"timestamp":1783671000107}
+{"id":232,"event":"agent","data":{"type":"thinking_delta","delta":", Queues."},"timestamp":1783671000109}
+{"id":233,"event":"agent","data":{"type":"thinking_delta","delta":"\n5. Store"},"timestamp":1783671000155}
+{"id":234,"event":"agent","data":{"type":"thinking_delta","delta":" context"},"timestamp":1783671000157}
+{"id":235,"event":"agent","data":{"type":"thinking_delta","delta":": Vector"},"timestamp":1783671000159}
+{"id":236,"event":"agent","data":{"type":"thinking_delta","delta":"ize for embeddings"},"timestamp":1783671000167}
+{"id":237,"event":"agent","data":{"type":"thinking_delta","delta":"/RAG, D"},"timestamp":1783671000168}
+{"id":238,"event":"agent","data":{"type":"thinking_delta","delta":"1 for structured"},"timestamp":1783671000222}
+{"id":239,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783671000223}
+{"id":240,"event":"agent","data":{"type":"thinking_delta","delta":" R"},"timestamp":1783671000225}
+{"id":241,"event":"agent","data":{"type":"thinking_delta","delta":"2 for assets"},"timestamp":1783671000227}
+{"id":242,"event":"agent","data":{"type":"thinking_delta","delta":", KV"},"timestamp":1783671000261}
+{"id":243,"event":"agent","data":{"type":"thinking_delta","delta":" for cache"},"timestamp":1783671000267}
+{"id":244,"event":"agent","data":{"type":"thinking_delta","delta":".\n\nFor"},"timestamp":1783671000269}
+{"id":245,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox,"},"timestamp":1783671000327}
+{"id":246,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783671000337}
+{"id":247,"event":"agent","data":{"type":"thinking_delta","delta":" relevant"},"timestamp":1783671000347}
+{"id":248,"event":"agent","data":{"type":"thinking_delta","delta":" mapping:"},"timestamp":1783671000349}
+{"id":249,"event":"agent","data":{"type":"thinking_delta","delta":"\n- Replace"},"timestamp":1783671000351}
+{"id":250,"event":"agent","data":{"type":"thinking_delta","delta":" local"},"timestamp":1783671000353}
+{"id":251,"event":"agent","data":{"type":"thinking_delta","delta":" backend"},"timestamp":1783671000398}
+{"id":252,"event":"agent","data":{"type":"thinking_delta","delta":" API"},"timestamp":1783671000402}
+{"id":253,"event":"agent","data":{"type":"thinking_delta","delta":" calls"},"timestamp":1783671000404}
+{"id":254,"event":"agent","data":{"type":"thinking_delta","delta":" or"},"timestamp":1783671000405}
+{"id":255,"event":"agent","data":{"type":"thinking_delta","delta":" augment"},"timestamp":1783671000436}
+{"id":256,"event":"agent","data":{"type":"thinking_delta","delta":" them with"},"timestamp":1783671000438}
+{"id":257,"event":"agent","data":{"type":"thinking_delta","delta":" a"},"timestamp":1783671000440}
+{"id":258,"event":"agent","data":{"type":"thinking_delta","delta":" Workers"},"timestamp":1783671000456}
+{"id":259,"event":"agent","data":{"type":"thinking_delta","delta":" backend.\n- Use"},"timestamp":1783671000457}
+{"id":260,"event":"agent","data":{"type":"thinking_delta","delta":" D"},"timestamp":1783671000480}
+{"id":261,"event":"agent","data":{"type":"thinking_delta","delta":"urable Objects for voice"},"timestamp":1783671000482}
+{"id":262,"event":"agent","data":{"type":"thinking_delta","delta":" cloning"},"timestamp":1783671000521}
+{"id":263,"event":"agent","data":{"type":"thinking_delta","delta":" session"},"timestamp":1783671000523}
+{"id":264,"event":"agent","data":{"type":"thinking_delta","delta":" state and"},"timestamp":1783671000525}
+{"id":265,"event":"agent","data":{"type":"thinking_delta","delta":" live"},"timestamp":1783671000560}
+{"id":266,"event":"agent","data":{"type":"thinking_delta","delta":" audio"},"timestamp":1783671000561}
+{"id":267,"event":"agent","data":{"type":"thinking_delta","delta":" sessions"},"timestamp":1783671000563}
+{"id":268,"event":"agent","data":{"type":"thinking_delta","delta":" instead"},"timestamp":1783671000590}
+{"id":269,"event":"agent","data":{"type":"thinking_delta","delta":" of local state"},"timestamp":1783671000591}
+{"id":270,"event":"agent","data":{"type":"thinking_delta","delta":" only"},"timestamp":1783671000634}
+{"id":271,"event":"agent","data":{"type":"thinking_delta","delta":".\n- Use Workers"},"timestamp":1783671000636}
+{"id":272,"event":"agent","data":{"type":"thinking_delta","delta":" AI for ST"},"timestamp":1783671000657}
+{"id":273,"event":"agent","data":{"type":"thinking_delta","delta":"T/T"},"timestamp":1783671000660}
+{"id":274,"event":"agent","data":{"type":"thinking_delta","delta":"TS instead"},"timestamp":1783671000662}
+{"id":275,"event":"agent","data":{"type":"thinking_delta","delta":" of local models"},"timestamp":1783671000689}
+{"id":276,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783671000690}
+{"id":277,"event":"agent","data":{"type":"thinking_delta","delta":"\n- Store"},"timestamp":1783671000691}
+{"id":278,"event":"agent","data":{"type":"thinking_delta","delta":" clones"},"timestamp":1783671000732}
+{"id":279,"event":"agent","data":{"type":"thinking_delta","delta":"/g"},"timestamp":1783671000734}
+{"id":280,"event":"agent","data":{"type":"thinking_delta","delta":"enerations in R"},"timestamp":1783671000735}
+{"id":281,"event":"agent","data":{"type":"thinking_delta","delta":"2 instead"},"timestamp":1783671000756}
+{"id":282,"event":"agent","data":{"type":"thinking_delta","delta":" of local files"},"timestamp":1783671000757}
+{"id":283,"event":"agent","data":{"type":"thinking_delta","delta":"ystem.\n- Use"},"timestamp":1783671000796}
+{"id":284,"event":"agent","data":{"type":"thinking_delta","delta":" D1 for"},"timestamp":1783671000798}
+{"id":285,"event":"agent","data":{"type":"thinking_delta","delta":" profiles/history metadata"},"timestamp":1783671000799}
+{"id":286,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783671000831}
+{"id":287,"event":"agent","data":{"type":"thinking_delta","delta":"\n- Use KV for"},"timestamp":1783671000836}
+{"id":288,"event":"agent","data":{"type":"thinking_delta","delta":" caching embeddings"},"timestamp":1783671000838}
+{"id":289,"event":"agent","data":{"type":"thinking_delta","delta":" or frequent"},"timestamp":1783671000859}
+{"id":290,"event":"agent","data":{"type":"thinking_delta","delta":" generations"},"timestamp":1783671000861}
+{"id":291,"event":"agent","data":{"type":"thinking_delta","delta":".\n"},"timestamp":1783671000897}
+{"id":292,"event":"agent","data":{"type":"thinking_delta","delta":"\nThis is exactly"},"timestamp":1783671000898}
+{"id":293,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783671000901}
+{"id":294,"event":"agent","data":{"type":"thinking_delta","delta":" kind of edge"},"timestamp":1783671000924}
+{"id":295,"event":"agent","data":{"type":"thinking_delta","delta":"-native"},"timestamp":1783671000926}
+{"id":296,"event":"agent","data":{"type":"thinking_delta","delta":" stack"},"timestamp":1783671000963}
+{"id":297,"event":"agent","data":{"type":"thinking_delta","delta":" they can"},"timestamp":1783671000965}
+{"id":298,"event":"agent","data":{"type":"thinking_delta","delta":" build"},"timestamp":1783671000982}
+{"id":299,"event":"agent","data":{"type":"thinking_delta","delta":" around to"},"timestamp":1783671000992}
+{"id":300,"event":"agent","data":{"type":"thinking_delta","delta":" reduce local"},"timestamp":1783671000993}
+{"id":301,"event":"agent","data":{"type":"thinking_delta","delta":" dependency.\n"},"timestamp":1783671001015}
+{"id":302,"event":"agent","data":{"type":"thinking_delta","delta":"\nI should present this"},"timestamp":1783671001025}
+{"id":303,"event":"agent","data":{"type":"thinking_delta","delta":" as a direct mapping"},"timestamp":1783671001036}
+{"id":304,"event":"agent","data":{"type":"thinking_delta","delta":", not a generic"},"timestamp":1783671001057}
+{"id":305,"event":"agent","data":{"type":"thinking_delta","delta":" summary."},"timestamp":1783671001060}
+{"id":306,"event":"agent","data":{"type":"thinking_delta","delta":" The"},"timestamp":1783671001092}
+{"id":307,"event":"agent","data":{"type":"thinking_delta","delta":" user is"},"timestamp":1783671001096}
+{"id":308,"event":"agent","data":{"type":"thinking_delta","delta":" technical"},"timestamp":1783671001097}
+{"id":309,"event":"agent","data":{"type":"thinking_delta","delta":" and wants to know"},"timestamp":1783671001120}
+{"id":310,"event":"agent","data":{"type":"thinking_delta","delta":" how"},"timestamp":1783671001121}
+{"id":311,"event":"agent","data":{"type":"thinking_delta","delta":" much they"},"timestamp":1783671001147}
+{"id":312,"event":"agent","data":{"type":"thinking_delta","delta":" can build"},"timestamp":1783671001148}
+{"id":313,"event":"agent","data":{"type":"thinking_delta","delta":" around Cloudflare to"},"timestamp":1783671001157}
+{"id":314,"event":"agent","data":{"type":"thinking_delta","delta":" replace local"},"timestamp":1783671001183}
+{"id":315,"event":"agent","data":{"type":"thinking_delta","delta":" API calls.\n"},"timestamp":1783671001185}
+{"id":316,"event":"agent","data":{"type":"thinking_delta","delta":"\nStructure"},"timestamp":1783671001226}
+{"id":317,"event":"agent","data":{"type":"thinking_delta","delta":":\n- Direct answer"},"timestamp":1783671001228}
+{"id":318,"event":"agent","data":{"type":"thinking_delta","delta":": Yes, most"},"timestamp":1783671001252}
+{"id":319,"event":"agent","data":{"type":"thinking_delta","delta":" of it"},"timestamp":1783671001254}
+{"id":320,"event":"agent","data":{"type":"thinking_delta","delta":" can"},"timestamp":1783671001256}
+{"id":321,"event":"agent","data":{"type":"thinking_delta","delta":" be replaced/b"},"timestamp":1783671001273}
+{"id":322,"event":"agent","data":{"type":"thinking_delta","delta":"uilt around Cloudflare"},"timestamp":1783671001282}
+{"id":323,"event":"agent","data":{"type":"thinking_delta","delta":".\n- Exact"},"timestamp":1783671001347}
+{"id":324,"event":"agent","data":{"type":"thinking_delta","delta":" mapping table"},"timestamp":1783671001348}
+{"id":325,"event":"agent","data":{"type":"thinking_delta","delta":":"},"timestamp":1783671001351}
+{"id":326,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox feature"},"timestamp":1783671001355}
+{"id":327,"event":"agent","data":{"type":"thinking_delta","delta":" → Cloud"},"timestamp":1783671001358}
+{"id":328,"event":"agent","data":{"type":"thinking_delta","delta":"flare primitive"},"timestamp":1783671001364}
+{"id":329,"event":"agent","data":{"type":"thinking_delta","delta":".\n- What"},"timestamp":1783671001366}
+{"id":330,"event":"agent","data":{"type":"thinking_delta","delta":" stays"},"timestamp":1783671001418}
+{"id":331,"event":"agent","data":{"type":"thinking_delta","delta":" local:"},"timestamp":1783671001421}
+{"id":332,"event":"agent","data":{"type":"thinking_delta","delta":" Model"},"timestamp":1783671001425}
+{"id":333,"event":"agent","data":{"type":"thinking_delta","delta":" weights"},"timestamp":1783671001427}
+{"id":334,"event":"agent","data":{"type":"thinking_delta","delta":"/in"},"timestamp":1783671001839}
+{"id":335,"event":"agent","data":{"type":"thinking_delta","delta":"ference if they"},"timestamp":1783671001851}
+{"id":336,"event":"agent","data":{"type":"thinking_delta","delta":" want,"},"timestamp":1783671001853}
+{"id":337,"event":"agent","data":{"type":"thinking_delta","delta":" or"},"timestamp":1783671001875}
+{"id":338,"event":"agent","data":{"type":"thinking_delta","delta":" can"},"timestamp":1783671001877}
+{"id":339,"event":"agent","data":{"type":"thinking_delta","delta":" move"},"timestamp":1783671001880}
+{"id":340,"event":"agent","data":{"type":"thinking_delta","delta":" to Workers AI."},"timestamp":1783671001882}
+{"id":341,"event":"agent","data":{"type":"thinking_delta","delta":"\n- Concrete"},"timestamp":1783671001885}
+{"id":342,"event":"agent","data":{"type":"thinking_delta","delta":" next steps"},"timestamp":1783671001888}
+{"id":343,"event":"agent","data":{"type":"thinking_delta","delta":":"},"timestamp":1783671001900}
+{"id":344,"event":"agent","data":{"type":"thinking_delta","delta":" "},"timestamp":1783671001902}
+{"id":345,"event":"agent","data":{"type":"thinking_delta","delta":"3"},"timestamp":1783671001917}
+{"id":346,"event":"agent","data":{"type":"thinking_delta","delta":" options"},"timestamp":1783671001919}
+{"id":347,"event":"agent","data":{"type":"thinking_delta","delta":" for"},"timestamp":1783671001924}
+{"id":348,"event":"agent","data":{"type":"thinking_delta","delta":" how"},"timestamp":1783671001926}
+{"id":349,"event":"agent","data":{"type":"thinking_delta","delta":" to wedge"},"timestamp":1783671001930}
+{"id":350,"event":"agent","data":{"type":"thinking_delta","delta":" this"},"timestamp":1783671001932}
+{"id":351,"event":"agent","data":{"type":"thinking_delta","delta":" in.\n\nKeep"},"timestamp":1783671001937}
+{"id":352,"event":"agent","data":{"type":"thinking_delta","delta":" it t"},"timestamp":1783671001939}
+{"id":353,"event":"agent","data":{"type":"thinking_delta","delta":"erse,"},"timestamp":1783671001954}
+{"id":354,"event":"agent","data":{"type":"thinking_delta","delta":" no fluff."},"timestamp":1783671001956}
+{"id":355,"event":"agent","data":{"type":"thinking_delta","delta":" Do"},"timestamp":1783671001960}
+{"id":356,"event":"agent","data":{"type":"thinking_delta","delta":" not narr"},"timestamp":1783671001962}
+{"id":357,"event":"agent","data":{"type":"thinking_delta","delta":"ate tool"},"timestamp":1783671001964}
+{"id":358,"event":"agent","data":{"type":"thinking_delta","delta":" calls."},"timestamp":1783671001966}
+{"id":359,"event":"agent","data":{"type":"status","label":"streaming","ttftMs":89949},"timestamp":1783671001968}
+{"id":360,"event":"agent","data":{"type":"text_delta","delta":"\n\nYes — most"},"timestamp":1783671001969}
+{"id":361,"event":"agent","data":{"type":"text_delta","delta":" of the local"},"timestamp":1783671001971}
+{"id":362,"event":"agent","data":{"type":"text_delta","delta":" Voice"},"timestamp":1783671001971}
+{"id":363,"event":"agent","data":{"type":"text_delta","delta":"box backend"},"timestamp":1783671001972}
+{"id":364,"event":"agent","data":{"type":"text_delta","delta":" can be replaced"},"timestamp":1783671001976}
+{"id":365,"event":"agent","data":{"type":"text_delta","delta":" or augmented"},"timestamp":1783671001978}
+{"id":366,"event":"agent","data":{"type":"text_delta","delta":" with"},"timestamp":1783671001980}
+{"id":367,"event":"agent","data":{"type":"text_delta","delta":" Cloudflare prim"},"timestamp":1783671001981}
+{"id":368,"event":"agent","data":{"type":"text_delta","delta":"itives,"},"timestamp":1783671001984}
+{"id":369,"event":"agent","data":{"type":"text_delta","delta":" **"},"timestamp":1783671001985}
+{"id":370,"event":"agent","data":{"type":"text_delta","delta":"including"},"timestamp":1783671001989}
+{"id":371,"event":"agent","data":{"type":"text_delta","delta":" voice"},"timestamp":1783671001991}
+{"id":372,"event":"agent","data":{"type":"text_delta","delta":" cloning and"},"timestamp":1783671001994}
+{"id":373,"event":"agent","data":{"type":"text_delta","delta":" generation**.\n\n###"},"timestamp":1783671001996}
+{"id":374,"event":"agent","data":{"type":"text_delta","delta":" Exact mapping from those"},"timestamp":1783671002025}
+{"id":375,"event":"agent","data":{"type":"text_delta","delta":" docs to"},"timestamp":1783671002030}
+{"id":376,"event":"agent","data":{"type":"text_delta","delta":" Voice"},"timestamp":1783671002031}
+{"id":377,"event":"agent","data":{"type":"text_delta","delta":"box\n\n| Voice"},"timestamp":1783671002032}
+{"id":378,"event":"agent","data":{"type":"text_delta","delta":"box capability"},"timestamp":1783671002034}
+{"id":379,"event":"agent","data":{"type":"text_delta","delta":" | Cloud"},"timestamp":1783671002036}
+{"id":380,"event":"agent","data":{"type":"text_delta","delta":"flare replacement"},"timestamp":1783671002037}
+{"id":381,"event":"agent","data":{"type":"text_delta","delta":" | Source"},"timestamp":1783671002038}
+{"id":382,"event":"agent","data":{"type":"text_delta","delta":" |\n|---|---|---|\n"},"timestamp":1783671002059}
+{"id":383,"event":"agent","data":{"type":"text_delta","delta":"| **"},"timestamp":1783671002061}
+{"id":384,"event":"agent","data":{"type":"text_delta","delta":"Voice"},"timestamp":1783671002108}
+{"id":385,"event":"agent","data":{"type":"text_delta","delta":" cloning +"},"timestamp":1783671002111}
+{"id":386,"event":"agent","data":{"type":"text_delta","delta":" real"},"timestamp":1783671002113}
+{"id":387,"event":"agent","data":{"type":"text_delta","delta":"-time TTS sessions"},"timestamp":1783671002125}
+{"id":388,"event":"agent","data":{"type":"text_delta","delta":"** | `with"},"timestamp":1783671002126}
+{"id":389,"event":"agent","data":{"type":"text_delta","delta":"Voice"},"timestamp":1783671002183}
+{"id":390,"event":"agent","data":{"type":"text_delta","delta":"` DO"},"timestamp":1783671002184}
+{"id":391,"event":"agent","data":{"type":"text_delta","delta":" agent"},"timestamp":1783671002186}
+{"id":392,"event":"agent","data":{"type":"text_delta","delta":": Web"},"timestamp":1783671002188}
+{"id":393,"event":"agent","data":{"type":"text_delta","delta":"Socket audio"},"timestamp":1783671002239}
+{"id":394,"event":"agent","data":{"type":"text_delta","delta":" in"},"timestamp":1783671002241}
+{"id":395,"event":"agent","data":{"type":"text_delta","delta":"/out"},"timestamp":1783671002243}
+{"id":396,"event":"agent","data":{"type":"text_delta","delta":", STT/T"},"timestamp":1783671002246}
+{"id":397,"event":"agent","data":{"type":"text_delta","delta":"TS,"},"timestamp":1783671002262}
+{"id":398,"event":"agent","data":{"type":"text_delta","delta":" conversation persistence |"},"timestamp":1783671002264}
+{"id":399,"event":"agent","data":{"type":"text_delta","delta":" ["},"timestamp":1783671002317}
+{"id":400,"event":"agent","data":{"type":"text_delta","delta":"Voice docs"},"timestamp":1783671002320}
+{"id":401,"event":"agent","data":{"type":"text_delta","delta":"](https://develop"},"timestamp":1783671002322}
+{"id":402,"event":"agent","data":{"type":"text_delta","delta":"ers.cloudflare.com"},"timestamp":1783671002330}
+{"id":403,"event":"agent","data":{"type":"text_delta","delta":"/agents/communication"},"timestamp":1783671002333}
+{"id":404,"event":"agent","data":{"type":"text_delta","delta":"-channels/voice"},"timestamp":1783671002358}
+{"id":405,"event":"agent","data":{"type":"text_delta","delta":"/) |\n| **"},"timestamp":1783671002360}
+{"id":406,"event":"agent","data":{"type":"text_delta","delta":"Local Fast"},"timestamp":1783671002414}
+{"id":407,"event":"agent","data":{"type":"text_delta","delta":"API `"},"timestamp":1783671002420}
+{"id":408,"event":"agent","data":{"type":"text_delta","delta":"POST"},"timestamp":1783671002422}
+{"id":409,"event":"agent","data":{"type":"text_delta","delta":" /api/g"},"timestamp":1783671002424}
+{"id":410,"event":"agent","data":{"type":"text_delta","delta":"enerations`"},"timestamp":1783671002446}
+{"id":411,"event":"agent","data":{"type":"text_delta","delta":"** | Workers"},"timestamp":1783671002450}
+{"id":412,"event":"agent","data":{"type":"text_delta","delta":" API route"},"timestamp":1783671002478}
+{"id":413,"event":"agent","data":{"type":"text_delta","delta":" + Que"},"timestamp":1783671002480}
+{"id":414,"event":"agent","data":{"type":"text_delta","delta":"ues for"},"timestamp":1783671002482}
+{"id":415,"event":"agent","data":{"type":"text_delta","delta":" async generation | ["},"timestamp":1783671002487}
+{"id":416,"event":"agent","data":{"type":"text_delta","delta":"Deploy APIs]("},"timestamp":1783671002517}
+{"id":417,"event":"agent","data":{"type":"text_delta","delta":"https://developers"},"timestamp":1783671002519}
+{"id":418,"event":"agent","data":{"type":"text_delta","delta":".cloudflare.com/"},"timestamp":1783671002547}
+{"id":419,"event":"agent","data":{"type":"text_delta","delta":"use-cases/"},"timestamp":1783671002548}
+{"id":420,"event":"agent","data":{"type":"text_delta","delta":"apis/deploy-"},"timestamp":1783671002576}
+{"id":421,"event":"agent","data":{"type":"text_delta","delta":"apis/) |\n|"},"timestamp":1783671002579}
+{"id":422,"event":"agent","data":{"type":"text_delta","delta":" **Local"},"timestamp":1783671002602}
+{"id":423,"event":"agent","data":{"type":"text_delta","delta":" filesystem storage"},"timestamp":1783671002609}
+{"id":424,"event":"agent","data":{"type":"text_delta","delta":" for clones"},"timestamp":1783671002650}
+{"id":425,"event":"agent","data":{"type":"text_delta","delta":"/"},"timestamp":1783671002659}
+{"id":426,"event":"agent","data":{"type":"text_delta","delta":"audio** | R"},"timestamp":1783671002662}
+{"id":427,"event":"agent","data":{"type":"text_delta","delta":"2 pres"},"timestamp":1783671002676}
+{"id":428,"event":"agent","data":{"type":"text_delta","delta":"igned uploads/download"},"timestamp":1783671002679}
+{"id":429,"event":"agent","data":{"type":"text_delta","delta":"s"},"timestamp":1783671002726}
+{"id":430,"event":"agent","data":{"type":"text_delta","delta":", zero egress"},"timestamp":1783671002727}
+{"id":431,"event":"agent","data":{"type":"text_delta","delta":" | [Store"},"timestamp":1783671002728}
+{"id":432,"event":"agent","data":{"type":"text_delta","delta":" media](https://"},"timestamp":1783671002752}
+{"id":433,"event":"agent","data":{"type":"text_delta","delta":"developers.cloudflare"},"timestamp":1783671002754}
+{"id":434,"event":"agent","data":{"type":"text_delta","delta":".com/use-c"},"timestamp":1783671002789}
+{"id":435,"event":"agent","data":{"type":"text_delta","delta":"ases/media-stream"},"timestamp":1783671002791}
+{"id":436,"event":"agent","data":{"type":"text_delta","delta":"ing/store-media/)"},"timestamp":1783671002811}
+{"id":437,"event":"agent","data":{"type":"text_delta","delta":" |\n| **Prof"},"timestamp":1783671002814}
+{"id":438,"event":"agent","data":{"type":"text_delta","delta":"iles/history DB"},"timestamp":1783671002848}
+{"id":439,"event":"agent","data":{"type":"text_delta","delta":"** | D"},"timestamp":1783671002852}
+{"id":440,"event":"agent","data":{"type":"text_delta","delta":"1 SQLite at"},"timestamp":1783671002893}
+{"id":441,"event":"agent","data":{"type":"text_delta","delta":" edge,"},"timestamp":1783671002912}
+{"id":442,"event":"agent","data":{"type":"text_delta","delta":" global"},"timestamp":1783671002933}
+{"id":443,"event":"agent","data":{"type":"text_delta","delta":" reads"},"timestamp":1783671002940}
+{"id":444,"event":"agent","data":{"type":"text_delta","delta":" | [Store context"},"timestamp":1783671002944}
+{"id":445,"event":"agent","data":{"type":"text_delta","delta":"](https://develop"},"timestamp":1783671002976}
+{"id":446,"event":"agent","data":{"type":"text_delta","delta":"ers.cloudflare.com"},"timestamp":1783671002986}
+{"id":447,"event":"agent","data":{"type":"text_delta","delta":"/use-cases"},"timestamp":1783671002999}
+{"id":448,"event":"agent","data":{"type":"text_delta","delta":"/ai/store"},"timestamp":1783671003007}
+{"id":449,"event":"agent","data":{"type":"text_delta","delta":"-and-retrieve-con"},"timestamp":1783671003010}
+{"id":450,"event":"agent","data":{"type":"text_delta","delta":"text/) |\n|"},"timestamp":1783671003045}
+{"id":451,"event":"agent","data":{"type":"text_delta","delta":" **F"},"timestamp":1783671003049}
+{"id":452,"event":"agent","data":{"type":"text_delta","delta":"requent generation"},"timestamp":1783671003052}
+{"id":453,"event":"agent","data":{"type":"text_delta","delta":" cache** | KV"},"timestamp":1783671003097}
+{"id":454,"event":"agent","data":{"type":"text_delta","delta":" edge"},"timestamp":1783671003101}
+{"id":455,"event":"agent","data":{"type":"text_delta","delta":" cache for repeated"},"timestamp":1783671003103}
+{"id":456,"event":"agent","data":{"type":"text_delta","delta":" prompts"},"timestamp":1783671003147}
+{"id":457,"event":"agent","data":{"type":"text_delta","delta":"/"},"timestamp":1783671003149}
+{"id":458,"event":"agent","data":{"type":"text_delta","delta":"audio"},"timestamp":1783671003150}
+{"id":459,"event":"agent","data":{"type":"text_delta","delta":" | [Store"},"timestamp":1783671003152}
+{"id":460,"event":"agent","data":{"type":"text_delta","delta":" context](https://"},"timestamp":1783671003179}
+{"id":461,"event":"agent","data":{"type":"text_delta","delta":"developers.cloudflare"},"timestamp":1783671003181}
+{"id":462,"event":"agent","data":{"type":"text_delta","delta":".com/use-c"},"timestamp":1783671003218}
+{"id":463,"event":"agent","data":{"type":"text_delta","delta":"ases/ai/store"},"timestamp":1783671003220}
+{"id":464,"event":"agent","data":{"type":"text_delta","delta":"-and-retrieve-con"},"timestamp":1783671003244}
+{"id":465,"event":"agent","data":{"type":"text_delta","delta":"text/) |\n|"},"timestamp":1783671003247}
+{"id":466,"event":"agent","data":{"type":"text_delta","delta":" **Voice"},"timestamp":1783671003287}
+{"id":467,"event":"agent","data":{"type":"text_delta","delta":" embeddings"},"timestamp":1783671003288}
+{"id":468,"event":"agent","data":{"type":"text_delta","delta":"/R"},"timestamp":1783671003293}
+{"id":469,"event":"agent","data":{"type":"text_delta","delta":"AG for prompts"},"timestamp":1783671003320}
+{"id":470,"event":"agent","data":{"type":"text_delta","delta":"** | Vector"},"timestamp":1783671003322}
+{"id":471,"event":"agent","data":{"type":"text_delta","delta":"ize |"},"timestamp":1783671003372}
+{"id":472,"event":"agent","data":{"type":"text_delta","delta":" [Store context]("},"timestamp":1783671003374}
+{"id":473,"event":"agent","data":{"type":"text_delta","delta":"https://developers"},"timestamp":1783671003379}
+{"id":474,"event":"agent","data":{"type":"text_delta","delta":".cloudflare.com/"},"timestamp":1783671003381}
+{"id":475,"event":"agent","data":{"type":"text_delta","delta":"use-cases/"},"timestamp":1783671003404}
+{"id":476,"event":"agent","data":{"type":"text_delta","delta":"ai/store-and-ret"},"timestamp":1783671003406}
+{"id":477,"event":"agent","data":{"type":"text_delta","delta":"rieve-context/)"},"timestamp":1783671003451}
+{"id":478,"event":"agent","data":{"type":"text_delta","delta":" |\n\n"},"timestamp":1783671003453}
+{"id":479,"event":"agent","data":{"type":"text_delta","delta":"### What this means"},"timestamp":1783671003455}
+{"id":480,"event":"agent","data":{"type":"text_delta","delta":" for your"},"timestamp":1783671003493}
+{"id":481,"event":"agent","data":{"type":"text_delta","delta":" stack"},"timestamp":1783671003497}
+{"id":482,"event":"agent","data":{"type":"text_delta","delta":"\n\nYou"},"timestamp":1783671003499}
+{"id":483,"event":"agent","data":{"type":"text_delta","delta":" can move"},"timestamp":1783671003568}
+{"id":484,"event":"agent","data":{"type":"text_delta","delta":" **"},"timestamp":1783671003571}
+{"id":485,"event":"agent","data":{"type":"text_delta","delta":"the"},"timestamp":1783671003573}
+{"id":486,"event":"agent","data":{"type":"text_delta","delta":" entire control"},"timestamp":1783671003575}
+{"id":487,"event":"agent","data":{"type":"text_delta","delta":" plane"},"timestamp":1783671003614}
+{"id":488,"event":"agent","data":{"type":"text_delta","delta":"** off"},"timestamp":1783671003616}
+{"id":489,"event":"agent","data":{"type":"text_delta","delta":" the"},"timestamp":1783671003618}
+{"id":490,"event":"agent","data":{"type":"text_delta","delta":" local Windows"},"timestamp":1783671003619}
+{"id":491,"event":"agent","data":{"type":"text_delta","delta":" backend"},"timestamp":1783671003674}
+{"id":492,"event":"agent","data":{"type":"text_delta","delta":":\n\n"},"timestamp":1783671003676}
+{"id":493,"event":"agent","data":{"type":"text_delta","delta":"- **Prof"},"timestamp":1783671003677}
+{"id":494,"event":"agent","data":{"type":"text_delta","delta":"iles**"},"timestamp":1783671003679}
+{"id":495,"event":"agent","data":{"type":"text_delta","delta":" → D"},"timestamp":1783671003730}
+{"id":496,"event":"agent","data":{"type":"text_delta","delta":"1 `"},"timestamp":1783671003732}
+{"id":497,"event":"agent","data":{"type":"text_delta","delta":"prof"},"timestamp":1783671003734}
+{"id":498,"event":"agent","data":{"type":"text_delta","delta":"iles` table,"},"timestamp":1783671003736}
+{"id":499,"event":"agent","data":{"type":"text_delta","delta":" served"},"timestamp":1783671003779}
+{"id":500,"event":"agent","data":{"type":"text_delta","delta":" by"},"timestamp":1783671003780}
+{"id":501,"event":"agent","data":{"type":"text_delta","delta":" Workers\n- **"},"timestamp":1783671003782}
+{"id":502,"event":"agent","data":{"type":"text_delta","delta":"Cloning"},"timestamp":1783671003805}
+{"id":503,"event":"agent","data":{"type":"text_delta","delta":" samples** → pres"},"timestamp":1783671003808}
+{"id":504,"event":"agent","data":{"type":"text_delta","delta":"igned R"},"timestamp":1783671003860}
+{"id":505,"event":"agent","data":{"type":"text_delta","delta":"2 upload,"},"timestamp":1783671003862}
+{"id":506,"event":"agent","data":{"type":"text_delta","delta":" no local disk"},"timestamp":1783671003863}
+{"id":507,"event":"agent","data":{"type":"text_delta","delta":"\n- **Generation"},"timestamp":1783671003880}
+{"id":508,"event":"agent","data":{"type":"text_delta","delta":" queue** → Workers"},"timestamp":1783671003899}
+{"id":509,"event":"agent","data":{"type":"text_delta","delta":" + Queues,"},"timestamp":1783671003912}
+{"id":510,"event":"agent","data":{"type":"text_delta","delta":" optionally"},"timestamp":1783671003916}
+{"id":511,"event":"agent","data":{"type":"text_delta","delta":" Workers AI inference"},"timestamp":1783671003923}
+{"id":512,"event":"agent","data":{"type":"text_delta","delta":" or"},"timestamp":1783671004027}
+{"id":513,"event":"agent","data":{"type":"text_delta","delta":" proxy"},"timestamp":1783671004047}
+{"id":514,"event":"agent","data":{"type":"text_delta","delta":" to local"},"timestamp":1783671004063}
+{"id":515,"event":"agent","data":{"type":"text_delta","delta":" models\n- **"},"timestamp":1783671004069}
+{"id":516,"event":"agent","data":{"type":"text_delta","delta":"History/c"},"timestamp":1783671004466}
+{"id":517,"event":"agent","data":{"type":"text_delta","delta":"aptures** →"},"timestamp":1783671004490}
+{"id":518,"event":"agent","data":{"type":"text_delta","delta":" D1 metadata"},"timestamp":1783671004500}
+{"id":519,"event":"agent","data":{"type":"text_delta","delta":" + R2 audio"},"timestamp":1783671004504}
+{"id":520,"event":"agent","data":{"type":"text_delta","delta":" blobs\n-"},"timestamp":1783671004519}
+{"id":521,"event":"agent","data":{"type":"text_delta","delta":" **Live"},"timestamp":1783671004526}
+{"id":522,"event":"agent","data":{"type":"text_delta","delta":" voice sessions"},"timestamp":1783671004533}
+{"id":523,"event":"agent","data":{"type":"text_delta","delta":"** → `"},"timestamp":1783671004536}
+{"id":524,"event":"agent","data":{"type":"text_delta","delta":"withVoice"},"timestamp":1783671004554}
+{"id":525,"event":"agent","data":{"type":"text_delta","delta":"` DO"},"timestamp":1783671004555}
+{"id":526,"event":"agent","data":{"type":"text_delta","delta":" replaces"},"timestamp":1783671004563}
+{"id":527,"event":"agent","data":{"type":"text_delta","delta":" local"},"timestamp":1783671004572}
+{"id":528,"event":"agent","data":{"type":"text_delta","delta":" Web"},"timestamp":1783671004574}
+{"id":529,"event":"agent","data":{"type":"text_delta","delta":"Socket +"},"timestamp":1783671004582}
+{"id":530,"event":"agent","data":{"type":"text_delta","delta":" audio I"},"timestamp":1783671004584}
+{"id":531,"event":"agent","data":{"type":"text_delta","delta":"/O\n\nThe"},"timestamp":1783671004598}
+{"id":532,"event":"agent","data":{"type":"text_delta","delta":" only thing that might"},"timestamp":1783671004600}
+{"id":533,"event":"agent","data":{"type":"text_delta","delta":" stay local is **"},"timestamp":1783671004609}
+{"id":534,"event":"agent","data":{"type":"text_delta","delta":"heavy model inference**,"},"timestamp":1783671004612}
+{"id":535,"event":"agent","data":{"type":"text_delta","delta":" unless you route"},"timestamp":1783671004635}
+{"id":536,"event":"agent","data":{"type":"text_delta","delta":" it through Workers AI"},"timestamp":1783671004637}
+{"id":537,"event":"agent","data":{"type":"text_delta","delta":" or a GPU"},"timestamp":1783671004647}
+{"id":538,"event":"agent","data":{"type":"text_delta","delta":"-backed"},"timestamp":1783671004649}
+{"id":539,"event":"agent","data":{"type":"text_delta","delta":" backend"},"timestamp":1783671004660}
+{"id":540,"event":"agent","data":{"type":"text_delta","delta":"."},"timestamp":1783671004663}
+{"id":541,"event":"agent","data":{"type":"text_delta","delta":" Your"},"timestamp":1783671004673}
+{"id":542,"event":"agent","data":{"type":"text_delta","delta":" existing T"},"timestamp":1783671004675}
+{"id":543,"event":"agent","data":{"type":"text_delta","delta":"auri shell"},"timestamp":1783671004685}
+{"id":544,"event":"agent","data":{"type":"text_delta","delta":" becomes"},"timestamp":1783671004687}
+{"id":545,"event":"agent","data":{"type":"text_delta","delta":" a **"},"timestamp":1783671004695}
+{"id":546,"event":"agent","data":{"type":"text_delta","delta":"thin client** hitting"},"timestamp":1783671004696}
+{"id":547,"event":"agent","data":{"type":"text_delta","delta":" Cloud"},"timestamp":1783671004709}
+{"id":548,"event":"agent","data":{"type":"text_delta","delta":"flare endpoints"},"timestamp":1783671004711}
+{"id":549,"event":"agent","data":{"type":"text_delta","delta":" instead of `"},"timestamp":1783671004717}
+{"id":550,"event":"agent","data":{"type":"text_delta","delta":"127.0."},"timestamp":1783671004719}
+{"id":551,"event":"agent","data":{"type":"text_delta","delta":"0.1:"},"timestamp":1783671004725}
+{"id":552,"event":"agent","data":{"type":"text_delta","delta":"17493`.\n\n###"},"timestamp":1783671004727}
+{"id":553,"event":"agent","data":{"type":"text_delta","delta":" Concrete fork"},"timestamp":1783671004739}
+{"id":554,"event":"agent","data":{"type":"text_delta","delta":"\n\n"},"timestamp":1783671004741}
+{"id":555,"event":"agent","data":{"type":"text_delta","delta":"1. **Edge"},"timestamp":1783671004746}
+{"id":556,"event":"agent","data":{"type":"text_delta","delta":"-first"},"timestamp":1783671004750}
+{"id":557,"event":"agent","data":{"type":"text_delta","delta":" rewrite"},"timestamp":1783671004758}
+{"id":558,"event":"agent","data":{"type":"text_delta","delta":"**:"},"timestamp":1783671004761}
+{"id":559,"event":"agent","data":{"type":"text_delta","delta":" Workers API + D"},"timestamp":1783671004764}
+{"id":560,"event":"agent","data":{"type":"text_delta","delta":"1 + R"},"timestamp":1783671004771}
+{"id":561,"event":"agent","data":{"type":"text_delta","delta":"2 + `"},"timestamp":1783671004792}
+{"id":562,"event":"agent","data":{"type":"text_delta","delta":"withVoice` DO"},"timestamp":1783671004794}
+{"id":563,"event":"agent","data":{"type":"text_delta","delta":";"},"timestamp":1783671004803}
+{"id":564,"event":"agent","data":{"type":"text_delta","delta":" Tauri just"},"timestamp":1783671004806}
+{"id":565,"event":"agent","data":{"type":"text_delta","delta":" shells it"},"timestamp":1783671004815}
+{"id":566,"event":"agent","data":{"type":"text_delta","delta":".\n"},"timestamp":1783671004818}
+{"id":567,"event":"agent","data":{"type":"text_delta","delta":"2. **Hy"},"timestamp":1783671004831}
+{"id":568,"event":"agent","data":{"type":"text_delta","delta":"brid**: Workers"},"timestamp":1783671004835}
+{"id":569,"event":"agent","data":{"type":"text_delta","delta":" control"},"timestamp":1783671004846}
+{"id":570,"event":"agent","data":{"type":"text_delta","delta":" plane + auth"},"timestamp":1783671004848}
+{"id":571,"event":"agent","data":{"type":"text_delta","delta":" +"},"timestamp":1783671004850}
+{"id":572,"event":"agent","data":{"type":"text_delta","delta":" R2, local"},"timestamp":1783671004858}
+{"id":573,"event":"agent","data":{"type":"text_delta","delta":" Fast"},"timestamp":1783671004860}
+{"id":574,"event":"agent","data":{"type":"text_delta","delta":"API still handles"},"timestamp":1783671004874}
+{"id":575,"event":"agent","data":{"type":"text_delta","delta":" heavy"},"timestamp":1783671004876}
+{"id":576,"event":"agent","data":{"type":"text_delta","delta":" inference,"},"timestamp":1783671004879}
+{"id":577,"event":"agent","data":{"type":"text_delta","delta":" Tauri talks"},"timestamp":1783671004884}
+{"id":578,"event":"agent","data":{"type":"text_delta","delta":" to both"},"timestamp":1783671004891}
+{"id":579,"event":"agent","data":{"type":"text_delta","delta":".\n3. **"},"timestamp":1783671004893}
+{"id":580,"event":"agent","data":{"type":"text_delta","delta":"Keep local"},"timestamp":1783671004894}
+{"id":581,"event":"agent","data":{"type":"text_delta","delta":" backend"},"timestamp":1783671004930}
+{"id":582,"event":"agent","data":{"type":"text_delta","delta":", add"},"timestamp":1783671004937}
+{"id":583,"event":"agent","data":{"type":"text_delta","delta":" Cloud"},"timestamp":1783671004939}
+{"id":584,"event":"agent","data":{"type":"text_delta","delta":"flare sync"},"timestamp":1783671004941}
+{"id":585,"event":"agent","data":{"type":"text_delta","delta":"**:"},"timestamp":1783671004968}
+{"id":586,"event":"agent","data":{"type":"text_delta","delta":" minimal"},"timestamp":1783671004972}
+{"id":587,"event":"agent","data":{"type":"text_delta","delta":" change,"},"timestamp":1783671004977}
+{"id":588,"event":"agent","data":{"type":"text_delta","delta":" profiles/h"},"timestamp":1783671004981}
+{"id":589,"event":"agent","data":{"type":"text_delta","delta":"istory optional"},"timestamp":1783671004990}
+{"id":590,"event":"agent","data":{"type":"text_delta","delta":"-cloud"},"timestamp":1783671004998}
+{"id":591,"event":"agent","data":{"type":"text_delta","delta":" sync"},"timestamp":1783671005035}
+{"id":592,"event":"agent","data":{"type":"text_delta","delta":".\n\nPick"},"timestamp":1783671005040}
+{"id":593,"event":"agent","data":{"type":"text_delta","delta":" one and"},"timestamp":1783671005044}
+{"id":594,"event":"agent","data":{"type":"text_delta","delta":" I’ll map"},"timestamp":1783671005062}
+{"id":595,"event":"agent","data":{"type":"text_delta","delta":" the exact endpoint"},"timestamp":1783671005068}
+{"id":596,"event":"agent","data":{"type":"text_delta","delta":" schema"},"timestamp":1783671005127}
+{"id":597,"event":"agent","data":{"type":"text_delta","delta":" and"},"timestamp":1783671005136}
+{"id":598,"event":"agent","data":{"type":"text_delta","delta":" file"},"timestamp":1783671005147}
+{"id":599,"event":"agent","data":{"type":"text_delta","delta":" layout."},"timestamp":1783671005153}
+{"id":600,"event":"stderr","data":{"chunk":"2026-07-10 03:10:05 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-27 (_call):62892 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783671005381}
+{"id":601,"event":"stderr","data":{"chunk":"2026-07-10 03:10:05 [INFO] agent.conversation_loop: API call #2: model=stepfun/step-3.7-flash:free provider=nous in=87277 out=1020 total=88297 latency=18.5s cache=82304/87277 (94%)\r\n"},"timestamp":1783671005381}
+{"id":602,"event":"stderr","data":{"chunk":"2026-07-10 03:10:05 [INFO] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=stepfun/step-3.7-flash:free api_calls=2/90 budget=2/90 tool_turns=1 last_msg_role=assistant response_len=2408 session=f78b0a82-cf87-4551-8984-ae630a9468a2\r\n"},"timestamp":1783671005460}
+{"id":603,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":93471},"timestamp":1783671005489}
+{"id":604,"event":"agent","data":{"type":"usage","usage":{"input_tokens":169669,"output_tokens":1332,"cached_read_tokens":82304,"thought_tokens":0,"total_tokens":171001},"durationMs":93473},"timestamp":1783671005491}
+{"id":605,"event":"diagnostic","data":{"type":"runtime_close","rpc_close_reason":"signal","status":"succeeded","signal":"SIGTERM"},"timestamp":1783671006029}
+{"id":606,"event":"end","data":{"code":null,"signal":"SIGTERM","status":"succeeded","resumable":false},"timestamp":1783671006030}

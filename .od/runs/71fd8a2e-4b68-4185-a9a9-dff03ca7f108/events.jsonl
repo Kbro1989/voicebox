@@ -1,0 +1,112 @@
+{"id":1,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"startedAt":1783699859032},"timestamp":1783699859032}
+{"id":2,"event":"genui_surface_request","data":{"kind":"genui_surface_request","surfaceId":"task-type","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","payload":{"id":"task-type","kind":"choice","persist":"conversation","trigger":{"stageId":"task-type","atom":"discovery-question-form"},"schema":{"type":"object","required":["taskType"],"properties":{"taskType":{"type":"string","title":"Task type","enum":["prototype","live-artifact","deck","image","video","hyperframes","audio","other"]}}},"prompt":"What type of design task should this free-form prompt create?"},"requestedAt":1783699859038},"timestamp":1783699859038}
+{"id":3,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"completedAt":1783699859044,"converged":true},"timestamp":1783699859044}
+{"id":4,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"startedAt":1783699859044},"timestamp":1783699859044}
+{"id":5,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"completedAt":1783699859046,"converged":true},"timestamp":1783699859046}
+{"id":6,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"startedAt":1783699859046},"timestamp":1783699859046}
+{"id":7,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"completedAt":1783699859047,"converged":true},"timestamp":1783699859047}
+{"id":8,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"startedAt":1783699859047},"timestamp":1783699859047}
+{"id":9,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"completedAt":1783699859047,"converged":true},"timestamp":1783699859047}
+{"id":10,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"startedAt":1783699859048},"timestamp":1783699859048}
+{"id":11,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"completedAt":1783699859049,"converged":true},"timestamp":1783699859049}
+{"id":12,"event":"start","data":{"runId":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","agentId":"hermes","bin":"hermes","streamFormat":"acp-json-rpc","projectId":"f2097a6e-4abf-4674-b16d-c3578d583dcd","cwd":"C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd","model":"default","reasoning":null,"toolTokenExpiresAt":"2026-07-10T16:26:03.191Z"},"timestamp":1783699864137}
+{"id":13,"event":"stderr","data":{"chunk":"2026-07-10 11:11:05 [INFO] acp_adapter.entry: Loaded env from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n2026-07-10 11:11:05 [INFO] acp_adapter.entry: Starting hermes-agent ACP adapter\r\n"},"timestamp":1783699865904}
+{"id":14,"event":"stderr","data":{"chunk":"2026-07-10 11:11:07 [INFO] acp_adapter.server: ACP client connected\r\n"},"timestamp":1783699867181}
+{"id":15,"event":"stderr","data":{"chunk":"2026-07-10 11:11:07 [INFO] acp_adapter.server: Initialize from open-design (protocol v1)\r\n"},"timestamp":1783699867213}
+{"id":16,"event":"stderr","data":{"chunk":"2026-07-10 11:11:07 [INFO] run_agent: Loaded environment variables from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783699867289}
+{"id":17,"event":"stderr","data":{"chunk":"2026-07-10 11:11:19 [INFO] run_agent: OpenAI client created (agent_init, shared=True) thread=MainThread:27536 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783699879909}
+{"id":18,"event":"stderr","data":{"chunk":"2026-07-10 11:11:20 [WARNING] tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783699880043}
+{"id":19,"event":"stderr","data":{"chunk":"2026-07-10 11:11:20 [WARNING] tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783699880106}
+{"id":20,"event":"stderr","data":{"chunk":"2026-07-10 11:11:25 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783699885490}
+{"id":21,"event":"stderr","data":{"chunk":"2026-07-10 11:11:29 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783699889919}
+{"id":22,"event":"stderr","data":{"chunk":"2026-07-10 11:11:31 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n"},"timestamp":1783699891856}
+{"id":23,"event":"stderr","data":{"chunk":"2026-07-10 11:11:33 [INFO] acp_adapter.session: Created ACP session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783699893394}
+{"id":24,"event":"stderr","data":{"chunk":"2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n"},"timestamp":1783699894384}
+{"id":25,"event":"stderr","data":{"chunk":"2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n"},"timestamp":1783699894384}
+{"id":26,"event":"stderr","data":{"chunk":"2026-07-10 11:11:34 [INFO] acp_adapter.server: Session 224e0d40-3a81-418f-afa8-58244401c89b: refreshed tool surface after ACP MCP registration (33 tools)\r\n"},"timestamp":1783699894645}
+{"id":27,"event":"stderr","data":{"chunk":"2026-07-10 11:11:34 [INFO] acp_adapter.server: New session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783699894646}
+{"id":28,"event":"stderr","data":{"chunk":"2026-07-10 11:11:35 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n"},"timestamp":1783699895803}
+{"id":29,"event":"agent","data":{"type":"status","label":"model","model":"nous:stepfun/step-3.7-flash:free"},"timestamp":1783699897300}
+{"id":30,"event":"agent","data":{"type":"status","label":"waiting_for_first_output","elapsedMs":33160},"timestamp":1783699897312}
+{"id":31,"event":"agent","data":{"type":"status","label":"available_commands_update","elapsedMs":33164},"timestamp":1783699897317}
+{"id":32,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":33167},"timestamp":1783699897320}
+{"id":33,"event":"stderr","data":{"chunk":"2026-07-10 11:11:37 [INFO] acp_adapter.server: Prompt on session 224e0d40-3a81-418f-afa8-58244401c89b: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n"},"timestamp":1783699897324}
+{"id":34,"event":"stderr","data":{"chunk":"2026-07-10 11:11:37 [INFO] agent.turn_context: conversation turn: session=224e0d40-3a81-418f-afa8-58244401c89b model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n"},"timestamp":1783699897396}
+{"id":35,"event":"stderr","data":{"chunk":"2026-07-10 11:11:55 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):68736 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783699915290}
+{"id":36,"event":"agent","data":{"type":"thinking_start"},"timestamp":1783699925030}
+{"id":37,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783699925031}
+{"id":38,"event":"agent","data":{"type":"thinking_delta","delta":" user wants to push"},"timestamp":1783699925033}
+{"id":39,"event":"agent","data":{"type":"thinking_delta","delta":" our"},"timestamp":1783699925034}
+{"id":40,"event":"agent","data":{"type":"thinking_delta","delta":" changes to the head"},"timestamp":1783699925036}
+{"id":41,"event":"agent","data":{"type":"thinking_delta","delta":" of the current"},"timestamp":1783699925040}
+{"id":42,"event":"agent","data":{"type":"thinking_delta","delta":" branch. I need"},"timestamp":1783699925042}
+{"id":43,"event":"agent","data":{"type":"thinking_delta","delta":" to check the git"},"timestamp":1783699925045}
+{"id":44,"event":"agent","data":{"type":"thinking_delta","delta":" status first to"},"timestamp":1783699925047}
+{"id":45,"event":"agent","data":{"type":"thinking_delta","delta":" see what files"},"timestamp":1783699925049}
+{"id":46,"event":"agent","data":{"type":"thinking_delta","delta":" have"},"timestamp":1783699925052}
+{"id":47,"event":"agent","data":{"type":"thinking_delta","delta":" changed"},"timestamp":1783699925055}
+{"id":48,"event":"agent","data":{"type":"thinking_delta","delta":", then add"},"timestamp":1783699925057}
+{"id":49,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783699925060}
+{"id":50,"event":"agent","data":{"type":"thinking_delta","delta":" commit, and push"},"timestamp":1783699925063}
+{"id":51,"event":"agent","data":{"type":"thinking_delta","delta":".\n"},"timestamp":1783699925065}
+{"id":52,"event":"agent","data":{"type":"thinking_delta","delta":"\nI"},"timestamp":1783699925066}
+{"id":53,"event":"agent","data":{"type":"thinking_delta","delta":"'m"},"timestamp":1783699925069}
+{"id":54,"event":"agent","data":{"type":"thinking_delta","delta":" in the open"},"timestamp":1783699925072}
+{"id":55,"event":"agent","data":{"type":"thinking_delta","delta":"-design workspace"},"timestamp":1783699925076}
+{"id":56,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783699925079}
+{"id":57,"event":"agent","data":{"type":"thinking_delta","delta":" The"},"timestamp":1783699925083}
+{"id":58,"event":"agent","data":{"type":"thinking_delta","delta":" voicebox-api worker"},"timestamp":1783699925085}
+{"id":59,"event":"agent","data":{"type":"thinking_delta","delta":" project should"},"timestamp":1783699925088}
+{"id":60,"event":"agent","data":{"type":"thinking_delta","delta":" be somewhere"},"timestamp":1783699925091}
+{"id":61,"event":"agent","data":{"type":"thinking_delta","delta":" in this workspace -"},"timestamp":1783699925093}
+{"id":62,"event":"agent","data":{"type":"thinking_delta","delta":" likely"},"timestamp":1783699925095}
+{"id":63,"event":"agent","data":{"type":"thinking_delta","delta":" in a"},"timestamp":1783699925102}
+{"id":64,"event":"agent","data":{"type":"thinking_delta","delta":" subdirectory."},"timestamp":1783699925105}
+{"id":65,"event":"agent","data":{"type":"thinking_delta","delta":" Let me check the"},"timestamp":1783699925107}
+{"id":66,"event":"agent","data":{"type":"thinking_delta","delta":" git status first to"},"timestamp":1783699925109}
+{"id":67,"event":"agent","data":{"type":"thinking_delta","delta":" see what's"},"timestamp":1783699925126}
+{"id":68,"event":"agent","data":{"type":"thinking_delta","delta":" changed.\n"},"timestamp":1783699925128}
+{"id":69,"event":"agent","data":{"type":"thinking_delta","delta":"\nActually, looking at"},"timestamp":1783699925143}
+{"id":70,"event":"agent","data":{"type":"thinking_delta","delta":" the conversation history"},"timestamp":1783699925152}
+{"id":71,"event":"agent","data":{"type":"thinking_delta","delta":", the voice"},"timestamp":1783699925181}
+{"id":72,"event":"agent","data":{"type":"thinking_delta","delta":"box-api worker files"},"timestamp":1783699925183}
+{"id":73,"event":"agent","data":{"type":"thinking_delta","delta":" ("},"timestamp":1783699925236}
+{"id":74,"event":"agent","data":{"type":"thinking_delta","delta":"src/index.ts,"},"timestamp":1783699925238}
+{"id":75,"event":"agent","data":{"type":"thinking_delta","delta":" wrangler.json"},"timestamp":1783699925239}
+{"id":76,"event":"agent","data":{"type":"thinking_delta","delta":"c, package"},"timestamp":1783699925273}
+{"id":77,"event":"agent","data":{"type":"thinking_delta","delta":".json,"},"timestamp":1783699925278}
+{"id":78,"event":"agent","data":{"type":"thinking_delta","delta":" etc.) should"},"timestamp":1783699925280}
+{"id":79,"event":"agent","data":{"type":"thinking_delta","delta":" be in a"},"timestamp":1783699925313}
+{"id":80,"event":"agent","data":{"type":"thinking_delta","delta":" subdirectory. Let"},"timestamp":1783699925316}
+{"id":81,"event":"agent","data":{"type":"thinking_delta","delta":" me find"},"timestamp":1783699925349}
+{"id":82,"event":"agent","data":{"type":"thinking_delta","delta":" the exact"},"timestamp":1783699925351}
+{"id":83,"event":"agent","data":{"type":"thinking_delta","delta":" path and push"},"timestamp":1783699925353}
+{"id":84,"event":"agent","data":{"type":"thinking_delta","delta":".\n\nWait -"},"timestamp":1783699925375}
+{"id":85,"event":"agent","data":{"type":"thinking_delta","delta":" I need to be"},"timestamp":1783699925376}
+{"id":86,"event":"agent","data":{"type":"thinking_delta","delta":" careful. The user"},"timestamp":1783699925406}
+{"id":87,"event":"agent","data":{"type":"thinking_delta","delta":" said \"git"},"timestamp":1783699925409}
+{"id":88,"event":"agent","data":{"type":"thinking_delta","delta":" push to head\""},"timestamp":1783699925433}
+{"id":89,"event":"agent","data":{"type":"thinking_delta","delta":" which likely"},"timestamp":1783699925438}
+{"id":90,"event":"agent","data":{"type":"thinking_delta","delta":" means push to the"},"timestamp":1783699925461}
+{"id":91,"event":"agent","data":{"type":"thinking_delta","delta":" default"},"timestamp":1783699925463}
+{"id":92,"event":"agent","data":{"type":"thinking_delta","delta":" branch ("},"timestamp":1783699925491}
+{"id":93,"event":"agent","data":{"type":"thinking_delta","delta":"main/master"},"timestamp":1783699925493}
+{"id":94,"event":"agent","data":{"type":"thinking_delta","delta":") on origin"},"timestamp":1783699925525}
+{"id":95,"event":"agent","data":{"type":"thinking_delta","delta":". Let me check"},"timestamp":1783699925528}
+{"id":96,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783699925565}
+{"id":97,"event":"agent","data":{"type":"thinking_delta","delta":" repo"},"timestamp":1783699925566}
+{"id":98,"event":"agent","data":{"type":"thinking_delta","delta":" state first."},"timestamp":1783699925568}
+{"id":99,"event":"agent","data":{"type":"status","label":"streaming","ttftMs":61464},"timestamp":1783699925615}
+{"id":100,"event":"agent","data":{"type":"text_delta","delta":"`"},"timestamp":1783699925616}
+{"id":101,"event":"agent","data":{"type":"text_delta","delta":"git status"},"timestamp":1783699925617}
+{"id":102,"event":"agent","data":{"type":"text_delta","delta":"` and exact"},"timestamp":1783699925619}
+{"id":103,"event":"agent","data":{"type":"text_delta","delta":" tree"},"timestamp":1783699925693}
+{"id":104,"event":"agent","data":{"type":"text_delta","delta":" next"},"timestamp":1783699925695}
+{"id":105,"event":"agent","data":{"type":"text_delta","delta":".\n\n"},"timestamp":1783699925698}
+{"id":106,"event":"agent","data":{"type":"text_delta","delta":"##"},"timestamp":1783699925700}
+{"id":107,"event":"agent","data":{"type":"fabricated_role_marker","marker":"## user","messageId":"run"},"timestamp":1783699925755}
+{"id":108,"event":"error","data":{"message":"Run terminated: model emitted fabricated role marker (`## user`). No further tokens or tool calls accepted from this turn. See https://github.com/nexu-io/open-design/issues/3247.","error":{"code":"ROLE_MARKER_HALLUCINATION","message":"Run terminated: model emitted fabricated role marker (`## user`). No further tokens or tool calls accepted from this turn. See https://github.com/nexu-io/open-design/issues/3247.","retryable":true}},"timestamp":1783699925758}
+{"id":109,"event":"error","data":{"message":"lash:free)\r\n2026-07-10 11:11:31 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n2026-07-10 11:11:33 [INFO] acp_adapter.session: Created ACP session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n2026-07-10 11:11:34 [INFO] acp_adapter.server: Session 224e0d40-3a81-418f-afa8-58244401c89b: refreshed tool surface after ACP MCP registration (33 tools)\r\n2026-07-10 11:11:34 [INFO] acp_adapter.server: New session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n2026-07-10 11:11:35 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n2026-07-10 11:11:37 [INFO] acp_adapter.server: Prompt on session 224e0d40-3a81-418f-afa8-58244401c89b: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n2026-07-10 11:11:37 [INFO] agent.turn_context: conversation turn: session=224e0d40-3a81-418f-afa8-58244401c89b model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n2026-07-10 11:11:55 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):68736 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free","error":{"code":"AGENT_EXECUTION_FAILED","message":"lash:free)\r\n2026-07-10 11:11:31 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n2026-07-10 11:11:33 [INFO] acp_adapter.session: Created ACP session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n2026-07-10 11:11:34 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n2026-07-10 11:11:34 [INFO] acp_adapter.server: Session 224e0d40-3a81-418f-afa8-58244401c89b: refreshed tool surface after ACP MCP registration (33 tools)\r\n2026-07-10 11:11:34 [INFO] acp_adapter.server: New session 224e0d40-3a81-418f-afa8-58244401c89b (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n2026-07-10 11:11:35 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n2026-07-10 11:11:37 [INFO] acp_adapter.server: Prompt on session 224e0d40-3a81-418f-afa8-58244401c89b: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n2026-07-10 11:11:37 [INFO] agent.turn_context: conversation turn: session=224e0d40-3a81-418f-afa8-58244401c89b model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n2026-07-10 11:11:55 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):68736 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free","retryable":true}},"timestamp":1783699925773}
+{"id":110,"event":"run_retry_finished","data":{"page_name":"chat_panel","area":"chat_panel","project_id":"f2097a6e-4abf-4674-b16d-c3578d583dcd","conversation_id":"854ec161-afe0-44da-a08c-9911348472d1","run_id":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","retry_of_run_id":"71fd8a2e-4b68-4185-a9a9-dff03ca7f108","retry_attempt_index":1,"retry_max_attempts":1,"retry_strategy":"same_run_transient","agent_provider_id":"hermes","model_id":"default","failure_category":"process_exit","failure_detail":"fabricated_role_marker","failure_stage":"child_close","error_code":"AGENT_EXECUTION_FAILED","retry_result":"suppressed","retry_suppressed_reason":"unsupported_category"},"timestamp":1783699925790}
+{"id":111,"event":"diagnostic","data":{"type":"runtime_close","rpc_close_reason":"signal","status":"failed","signal":"SIGTERM"},"timestamp":1783699925790}
+{"id":112,"event":"end","data":{"code":null,"signal":"SIGTERM","status":"failed","resumable":false},"timestamp":1783699925790}

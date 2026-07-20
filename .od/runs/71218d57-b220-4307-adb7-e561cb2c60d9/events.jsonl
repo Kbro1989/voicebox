@@ -1,0 +1,125 @@
+{"id":1,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"startedAt":1783668778329},"timestamp":1783668778329}
+{"id":2,"event":"genui_surface_request","data":{"kind":"genui_surface_request","surfaceId":"task-type","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","payload":{"id":"task-type","kind":"choice","persist":"conversation","trigger":{"stageId":"task-type","atom":"discovery-question-form"},"schema":{"type":"object","required":["taskType"],"properties":{"taskType":{"type":"string","title":"Task type","enum":["prototype","live-artifact","deck","image","video","hyperframes","audio","other"]}}},"prompt":"What type of design task should this free-form prompt create?"},"requestedAt":1783668778333},"timestamp":1783668778335}
+{"id":3,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"task-type","iteration":0,"completedAt":1783668778343,"converged":true},"timestamp":1783668778343}
+{"id":4,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"startedAt":1783668778343},"timestamp":1783668778343}
+{"id":5,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"discovery","iteration":0,"completedAt":1783668778345,"converged":true},"timestamp":1783668778345}
+{"id":6,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"startedAt":1783668778345},"timestamp":1783668778345}
+{"id":7,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"plan","iteration":0,"completedAt":1783668778346,"converged":true},"timestamp":1783668778346}
+{"id":8,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"startedAt":1783668778346},"timestamp":1783668778346}
+{"id":9,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"generate","iteration":0,"completedAt":1783668778347,"converged":true},"timestamp":1783668778347}
+{"id":10,"event":"pipeline_stage_started","data":{"kind":"pipeline_stage_started","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"startedAt":1783668778349},"timestamp":1783668778349}
+{"id":11,"event":"pipeline_stage_completed","data":{"kind":"pipeline_stage_completed","runId":"71218d57-b220-4307-adb7-e561cb2c60d9","snapshotId":"c54c26d2-4134-4b9a-85bb-8f93cd15764b","stageId":"critique","iteration":0,"completedAt":1783668778350,"converged":true},"timestamp":1783668778350}
+{"id":12,"event":"start","data":{"runId":"71218d57-b220-4307-adb7-e561cb2c60d9","agentId":"hermes","bin":"hermes","streamFormat":"acp-json-rpc","projectId":"f2097a6e-4abf-4674-b16d-c3578d583dcd","cwd":"C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd","model":"default","reasoning":null,"toolTokenExpiresAt":"2026-07-10T07:48:03.837Z"},"timestamp":1783668784455}
+{"id":13,"event":"stderr","data":{"chunk":"2026-07-10 02:33:12 [INFO] acp_adapter.entry: Loaded env from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783668792092}
+{"id":14,"event":"stderr","data":{"chunk":"2026-07-10 02:33:12 [INFO] acp_adapter.entry: Starting hermes-agent ACP adapter\r\n"},"timestamp":1783668792093}
+{"id":15,"event":"stderr","data":{"chunk":"2026-07-10 02:33:17 [INFO] acp_adapter.server: ACP client connected\r\n"},"timestamp":1783668797748}
+{"id":16,"event":"stderr","data":{"chunk":"2026-07-10 02:33:17 [INFO] acp_adapter.server: Initialize from open-design (protocol v1)\r\n"},"timestamp":1783668797927}
+{"id":17,"event":"stderr","data":{"chunk":"2026-07-10 02:33:18 [INFO] run_agent: Loaded environment variables from C:\\Users\\krist\\AppData\\Local\\hermes\\.env\r\n"},"timestamp":1783668798032}
+{"id":18,"event":"stderr","data":{"chunk":"2026-07-10 02:33:33 [INFO] run_agent: OpenAI client created (agent_init, shared=True) thread=MainThread:10176 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783668813164}
+{"id":19,"event":"stderr","data":{"chunk":"2026-07-10 02:33:33 [WARNING] tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783668813359}
+{"id":20,"event":"stderr","data":{"chunk":"2026-07-10 02:33:33 [WARNING] tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn\r\n"},"timestamp":1783668813433}
+{"id":21,"event":"stderr","data":{"chunk":"2026-07-10 02:33:40 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783668820462}
+{"id":22,"event":"stderr","data":{"chunk":"2026-07-10 02:33:47 [INFO] agent.auxiliary_client: Vision auto-detect: using main provider nous (stepfun/step-3.7-flash:free)\r\n"},"timestamp":1783668827277}
+{"id":23,"event":"stderr","data":{"chunk":"2026-07-10 02:33:48 [WARNING] run_agent: Context engine 'custom' not found — falling back to built-in compressor\r\n"},"timestamp":1783668828008}
+{"id":24,"event":"stderr","data":{"chunk":"2026-07-10 02:33:50 [INFO] acp_adapter.session: Created ACP session 3012f95c-f472-4901-9b73-ff362bfa8a92 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783668830281}
+{"id":25,"event":"stderr","data":{"chunk":"2026-07-10 02:33:52 [INFO] tools.mcp_tool: MCP server 'open-design-live-artifacts' (stdio): registered 6 tool(s): mcp__open_design_live_artifacts__live_artifacts_create, mcp__open_design_live_artifacts__live_artifacts_list, mcp__open_design_live_artifacts__live_artifacts_update, mcp__open_design_live_artifacts__live_artifacts_refresh, mcp__open_design_live_artifacts__connectors_list, mcp__open_design_live_artifacts__connectors_execute\r\n"},"timestamp":1783668832731}
+{"id":26,"event":"stderr","data":{"chunk":"2026-07-10 02:33:52 [INFO] tools.mcp_tool: MCP: registered 6 tool(s) from 1 server(s)\r\n"},"timestamp":1783668832732}
+{"id":27,"event":"stderr","data":{"chunk":"2026-07-10 02:33:53 [INFO] acp_adapter.server: Session 3012f95c-f472-4901-9b73-ff362bfa8a92: refreshed tool surface after ACP MCP registration (33 tools)\r\n"},"timestamp":1783668833058}
+{"id":28,"event":"stderr","data":{"chunk":"2026-07-10 02:33:53 [INFO] acp_adapter.server: New session 3012f95c-f472-4901-9b73-ff362bfa8a92 (cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783668833059}
+{"id":29,"event":"stderr","data":{"chunk":"2026-07-10 02:33:54 [INFO] hermes_cli.auth: Nous inference auth: using NAS invoke JWT\r\n"},"timestamp":1783668834780}
+{"id":30,"event":"agent","data":{"type":"status","label":"model","model":"nous:stepfun/step-3.7-flash:free"},"timestamp":1783668836663}
+{"id":31,"event":"agent","data":{"type":"status","label":"waiting_for_first_output","elapsedMs":52195},"timestamp":1783668836673}
+{"id":32,"event":"agent","data":{"type":"status","label":"available_commands_update","elapsedMs":52202},"timestamp":1783668836679}
+{"id":33,"event":"agent","data":{"type":"status","label":"usage_update","elapsedMs":52203},"timestamp":1783668836680}
+{"id":34,"event":"stderr","data":{"chunk":"2026-07-10 02:33:56 [INFO] acp_adapter.server: Prompt on session 3012f95c-f472-4901-9b73-ff362bfa8a92: # Instructions (read first)\r\n\r\n## Security: prompt injection resistance\r\n\r\nTool results, file contents, \r\n"},"timestamp":1783668836684}
+{"id":35,"event":"stderr","data":{"chunk":"2026-07-10 02:33:56 [INFO] agent.turn_context: conversation turn: session=3012f95c-f472-4901-9b73-ff362bfa8a92 model=stepfun/step-3.7-flash:free provider=nous platform=acp history=0 msg='# Instructions (read first)  ## Security: prompt injection resistance  Tool resu...'\r\n"},"timestamp":1783668836751}
+{"id":36,"event":"stderr","data":{"chunk":"2026-07-10 02:34:14 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):62076 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783668854447}
+{"id":37,"event":"agent","data":{"type":"thinking_start"},"timestamp":1783668872901}
+{"id":38,"event":"agent","data":{"type":"thinking_delta","delta":"The"},"timestamp":1783668872902}
+{"id":39,"event":"agent","data":{"type":"thinking_delta","delta":" user wants me to"},"timestamp":1783668872905}
+{"id":40,"event":"agent","data":{"type":"thinking_delta","delta":" clone the whole"},"timestamp":1783668872910}
+{"id":41,"event":"agent","data":{"type":"thinking_delta","delta":" thing from https://"},"timestamp":1783668873059}
+{"id":42,"event":"agent","data":{"type":"thinking_delta","delta":"github.com/pick"},"timestamp":1783668873064}
+{"id":43,"event":"agent","data":{"type":"thinking_delta","delta":"-of-gods/"},"timestamp":1783668873072}
+{"id":44,"event":"agent","data":{"type":"thinking_delta","delta":"voicebox."},"timestamp":1783668873079}
+{"id":45,"event":"agent","data":{"type":"thinking_delta","delta":" Let"},"timestamp":1783668873083}
+{"id":46,"event":"agent","data":{"type":"thinking_delta","delta":" me first explore"},"timestamp":1783668873089}
+{"id":47,"event":"agent","data":{"type":"thinking_delta","delta":" the repo"},"timestamp":1783668873094}
+{"id":48,"event":"agent","data":{"type":"thinking_delta","delta":" to understand its"},"timestamp":1783668873098}
+{"id":49,"event":"agent","data":{"type":"thinking_delta","delta":" structure, then create"},"timestamp":1783668873107}
+{"id":50,"event":"agent","data":{"type":"thinking_delta","delta":" a local"},"timestamp":1783668873189}
+{"id":51,"event":"agent","data":{"type":"thinking_delta","delta":" live"},"timestamp":1783668873194}
+{"id":52,"event":"agent","data":{"type":"thinking_delta","delta":" artifact that"},"timestamp":1783668873197}
+{"id":53,"event":"agent","data":{"type":"thinking_delta","delta":" replicates"},"timestamp":1783668873222}
+{"id":54,"event":"agent","data":{"type":"thinking_delta","delta":" it.\n\nI need"},"timestamp":1783668873226}
+{"id":55,"event":"agent","data":{"type":"thinking_delta","delta":" to:\n1."},"timestamp":1783668873264}
+{"id":56,"event":"agent","data":{"type":"thinking_delta","delta":" Fetch the repo"},"timestamp":1783668873270}
+{"id":57,"event":"agent","data":{"type":"thinking_delta","delta":" READ"},"timestamp":1783668873325}
+{"id":58,"event":"agent","data":{"type":"thinking_delta","delta":"ME and"},"timestamp":1783668873328}
+{"id":59,"event":"agent","data":{"type":"thinking_delta","delta":" key files to"},"timestamp":1783668873336}
+{"id":60,"event":"agent","data":{"type":"thinking_delta","delta":" understand the architecture"},"timestamp":1783668873348}
+{"id":61,"event":"agent","data":{"type":"thinking_delta","delta":"\n2. Build"},"timestamp":1783668873387}
+{"id":62,"event":"agent","data":{"type":"thinking_delta","delta":" a production"},"timestamp":1783668873392}
+{"id":63,"event":"agent","data":{"type":"thinking_delta","delta":"-grade live artifact in"},"timestamp":1783668873408}
+{"id":64,"event":"agent","data":{"type":"thinking_delta","delta":" the project root"},"timestamp":1783668873463}
+{"id":65,"event":"agent","data":{"type":"thinking_delta","delta":"\n3. Make real"},"timestamp":1783668873468}
+{"id":66,"event":"agent","data":{"type":"thinking_delta","delta":" API calls to local"},"timestamp":1783668873497}
+{"id":67,"event":"agent","data":{"type":"thinking_delta","delta":" Voicebox server ("},"timestamp":1783668873501}
+{"id":68,"event":"agent","data":{"type":"thinking_delta","delta":"127.0."},"timestamp":1783668873585}
+{"id":69,"event":"agent","data":{"type":"thinking_delta","delta":"0.1:"},"timestamp":1783668873589}
+{"id":70,"event":"agent","data":{"type":"thinking_delta","delta":"17493)\n4"},"timestamp":1783668873592}
+{"id":71,"event":"agent","data":{"type":"thinking_delta","delta":". Zero"},"timestamp":1783668873596}
+{"id":72,"event":"agent","data":{"type":"thinking_delta","delta":" mock data\n\nLet"},"timestamp":1783668873612}
+{"id":73,"event":"agent","data":{"type":"thinking_delta","delta":" me start by exploring"},"timestamp":1783668873617}
+{"id":74,"event":"agent","data":{"type":"thinking_delta","delta":" the repo via"},"timestamp":1783668873665}
+{"id":75,"event":"agent","data":{"type":"thinking_delta","delta":" web extraction"},"timestamp":1783668873671}
+{"id":76,"event":"agent","data":{"type":"thinking_delta","delta":" and"},"timestamp":1783668873748}
+{"id":77,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783668873754}
+{"id":78,"event":"agent","data":{"type":"thinking_delta","delta":" live"},"timestamp":1783668873758}
+{"id":79,"event":"agent","data":{"type":"thinking_delta","delta":" artifacts"},"timestamp":1783668873761}
+{"id":80,"event":"agent","data":{"type":"thinking_delta","delta":" connector"},"timestamp":1783668874543}
+{"id":81,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783668874548}
+{"id":82,"event":"stderr","data":{"chunk":"2026-07-10 02:34:34 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-26 (_call):62076 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783668874802}
+{"id":83,"event":"stderr","data":{"chunk":"2026-07-10 02:34:34 [INFO] agent.conversation_loop: API call #1: model=stepfun/step-3.7-flash:free provider=nous in=74525 out=220 total=74745 latency=25.7s\r\n"},"timestamp":1783668874806}
+{"id":84,"event":"agent","data":{"type":"status","label":"tool_call","elapsedMs":90470},"timestamp":1783668874947}
+{"id":85,"event":"stderr","data":{"chunk":"2026-07-10 02:34:34 [INFO] tools.web_tools: Extracting content from 2 URL(s)\r\n"},"timestamp":1783668874955}
+{"id":86,"event":"stderr","data":{"chunk":"2026-07-10 02:34:35 [INFO] tools.web_tools: Web extract via firecrawl: 2 URL(s)\r\n"},"timestamp":1783668875162}
+{"id":87,"event":"stderr","data":{"chunk":"2026-07-10 02:34:35 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://github.com/pick-of-gods/voicebox\r\n"},"timestamp":1783668875427}
+{"id":88,"event":"stderr","data":{"chunk":"2026-07-10 02:34:41 [INFO] plugins.web.firecrawl.provider: Firecrawl scraping: https://raw.githubusercontent.com/pick-of-gods/voicebox/main/README.md\r\n"},"timestamp":1783668881897}
+{"id":89,"event":"stderr","data":{"chunk":"2026-07-10 02:34:46 [INFO] tools.web_tools: Extracted content from 2 pages\r\n"},"timestamp":1783668886051}
+{"id":90,"event":"stderr","data":{"chunk":"2026-07-10 02:34:46 [INFO] tools.web_tools: https://github.com/pick-of-gods/voicebox (truncated 262745 -> 15403 chars)\r\n"},"timestamp":1783668886113}
+{"id":91,"event":"stderr","data":{"chunk":"2026-07-10 02:34:46 [INFO] tools.web_tools: https://raw.githubusercontent.com/pick-of-gods/voicebox/main/README.md (truncated 23477 -> 15202 chars)\r\n"},"timestamp":1783668886124}
+{"id":92,"event":"stderr","data":{"chunk":"2026-07-10 02:34:46 [INFO] agent.tool_executor: tool web_extract completed (11.18s, 32401 chars)\r\n"},"timestamp":1783668886130}
+{"id":93,"event":"agent","data":{"type":"status","label":"tool_call","elapsedMs":102712},"timestamp":1783668887189}
+{"id":94,"event":"stderr","data":{"chunk":"2026-07-10 02:34:47 [ERROR] tools.mcp_tool: MCP tool open-design-live-artifacts/connectors_list call failed: OD_DAEMON_URL is required\r\n"},"timestamp":1783668887640}
+{"id":95,"event":"stderr","data":{"chunk":"2026-07-10 02:34:47 [WARNING] agent.tool_executor: Tool mcp__open_design_live_artifacts__connectors_list returned error (0.45s): {\"error\": \"MCP call failed: McpError: OD_DAEMON_URL is required\"}\r\n"},"timestamp":1783668887641}
+{"id":96,"event":"agent","data":{"type":"status","label":"tool_call_update","elapsedMs":103185},"timestamp":1783668887662}
+{"id":97,"event":"agent","data":{"type":"status","label":"tool_call_update","elapsedMs":103188},"timestamp":1783668887665}
+{"id":98,"event":"stderr","data":{"chunk":"2026-07-10 02:34:52 [INFO] run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-27 (_call):35516 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783668892852}
+{"id":99,"event":"agent","data":{"type":"thinking_delta","delta":"Branch"},"timestamp":1783668907569}
+{"id":100,"event":"agent","data":{"type":"thinking_delta","delta":"ing"},"timestamp":1783668907575}
+{"id":101,"event":"agent","data":{"type":"thinking_delta","delta":": need"},"timestamp":1783668907579}
+{"id":102,"event":"agent","data":{"type":"thinking_delta","delta":" the"},"timestamp":1783668907800}
+{"id":103,"event":"agent","data":{"type":"thinking_delta","delta":" reference"},"timestamp":1783668907806}
+{"id":104,"event":"agent","data":{"type":"thinking_delta","delta":"-brand"},"timestamp":1783668907813}
+{"id":105,"event":"agent","data":{"type":"thinking_delta","delta":" extraction"},"timestamp":1783668907821}
+{"id":106,"event":"agent","data":{"type":"thinking_delta","delta":" materials"},"timestamp":1783668907825}
+{"id":107,"event":"agent","data":{"type":"thinking_delta","delta":","},"timestamp":1783668907832}
+{"id":108,"event":"agent","data":{"type":"thinking_delta","delta":" then clone"},"timestamp":1783668907838}
+{"id":109,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783668907844}
+{"id":110,"event":"agent","data":{"type":"thinking_delta","delta":" I’ll"},"timestamp":1783668907849}
+{"id":111,"event":"agent","data":{"type":"thinking_delta","delta":" inspect the repo/files"},"timestamp":1783668907856}
+{"id":112,"event":"agent","data":{"type":"thinking_delta","delta":"ystem"},"timestamp":1783668907860}
+{"id":113,"event":"agent","data":{"type":"thinking_delta","delta":" next"},"timestamp":1783668907865}
+{"id":114,"event":"agent","data":{"type":"thinking_delta","delta":" and"},"timestamp":1783668908293}
+{"id":115,"event":"agent","data":{"type":"thinking_delta","delta":" then write"},"timestamp":1783668908298}
+{"id":116,"event":"agent","data":{"type":"thinking_delta","delta":" the artifact directly"},"timestamp":1783668908305}
+{"id":117,"event":"agent","data":{"type":"thinking_delta","delta":"."},"timestamp":1783668908309}
+{"id":118,"event":"stderr","data":{"chunk":"2026-07-10 02:35:08 [INFO] run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-27 (_call):35516 provider=nous base_url=https://inference-api.nousresearch.com/v1 model=stepfun/step-3.7-flash:free\r\n"},"timestamp":1783668908480}
+{"id":119,"event":"stderr","data":{"chunk":"2026-07-10 02:35:08 [INFO] agent.conversation_loop: API call #2: model=stepfun/step-3.7-flash:free provider=nous in=84362 out=170 total=84532 latency=20.8s\r\n"},"timestamp":1783668908483}
+{"id":120,"event":"agent","data":{"type":"status","label":"tool_call","elapsedMs":124059},"timestamp":1783668908537}
+{"id":121,"event":"stderr","data":{"chunk":"2026-07-10 02:35:08 [INFO] tools.terminal_tool: Creating new local environment for task default...\r\n"},"timestamp":1783668908542}
+{"id":122,"event":"stderr","data":{"chunk":"2026-07-10 02:35:09 [ERROR] root: Background task failed\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\krist\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\acp\\task\\supervisor.py\", line 51, in _on_done\r\n    task.result()\r\n  File \"C:\\Users\\krist\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\acp\\task\\dispatcher.py\", line 81, in runner\r\n    result = await self._request_runner(message)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\krist\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\acp\\connection.py\", line 205, in _run_request\r\n    result = await self._handler(method, message.get(\"params\"), False)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\krist\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\acp\\router.py\", line 182, in __call__\r\n    raise RequestError.method_not_found(method)\r\nacp.exceptions.RequestError: Method not found\r\n"},"timestamp":1783668909500}
+{"id":123,"event":"stderr","data":{"chunk":"2026-07-10 02:35:10 [INFO] tools.environments.base: Session snapshot created (session=591e10e138bd, cwd=C:\\Users\\krist\\Desktop\\open-design\\.od\\projects\\f2097a6e-4abf-4674-b16d-c3578d583dcd)\r\n"},"timestamp":1783668910639}
+{"id":124,"event":"stderr","data":{"chunk":"2026-07-10 02:35:10 [INFO] tools.terminal_tool: local environment ready for task default\r\n"},"timestamp":1783668910640}
+{"id":125,"event":"end","data":{"code":null,"signal":"SIGTERM","status":"canceled","resumable":false},"timestamp":1783668912490}

@@ -1,0 +1,312 @@
+/* [project]/apps/web/src/components/NextStepActions.module.css [app-client] (css) */
+.NextStepActions-module__8QfMqa__root {
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  border-radius: var(--radius);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent-tint) 50%, var(--bg-panel)) 0%,
+    var(--bg-panel) 60%);
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  animation: .2s cubic-bezier(.23, 1, .32, 1) both NextStepActions-module__8QfMqa__next-step-in;
+  display: flex;
+}
+
+@keyframes NextStepActions-module__8QfMqa__next-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .NextStepActions-module__8QfMqa__root {
+    animation: none;
+  }
+}
+
+.NextStepActions-module__8QfMqa__label {
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.NextStepActions-module__8QfMqa__row {
+  flex-wrap: wrap;
+  gap: 6px;
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__share {
+  color: var(--accent-strong);
+  background: var(--accent-tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  cursor: pointer;
+  border-radius: 999px;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1);
+  display: inline-flex;
+}
+
+.NextStepActions-module__8QfMqa__share:hover {
+  background: color-mix(in srgb, var(--accent-tint) 70%, var(--accent) 14%);
+  border-color: var(--accent);
+}
+
+.NextStepActions-module__8QfMqa__share:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.NextStepActions-module__8QfMqa__toolboxList {
+  flex-direction: column;
+  gap: 2px;
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRowWrap {
+  position: relative;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRow, .NextStepActions-module__8QfMqa__moreRow {
+  width: 100%;
+  color: var(--text-default);
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: 1px solid #0000;
+  border-radius: 8px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1);
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRow:hover, .NextStepActions-module__8QfMqa__moreRow:hover {
+  background: var(--accent-tint);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.NextStepActions-module__8QfMqa__toolboxRow:focus-visible, .NextStepActions-module__8QfMqa__moreRow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRowIcon {
+  color: var(--accent-strong);
+  flex: none;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRowTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.NextStepActions-module__8QfMqa__toolboxRowArrow {
+  color: var(--text-muted);
+  flex: none;
+}
+
+.NextStepActions-module__8QfMqa__moreRow .NextStepActions-module__8QfMqa__toolboxRowTitle {
+  color: var(--text-muted);
+}
+
+.NextStepActions-module__8QfMqa__detail {
+  z-index: 1000;
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  width: 240px;
+  padding: 10px 12px;
+  animation: .14s cubic-bezier(.23, 1, .32, 1) both NextStepActions-module__8QfMqa__next-step-in;
+  position: fixed;
+  box-shadow: 0 1px 2px #0000000a, 0 10px 28px -10px #0000002e;
+}
+
+.NextStepActions-module__8QfMqa__detailTitle {
+  color: var(--text-default);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.NextStepActions-module__8QfMqa__detailDesc {
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.NextStepActions-module__8QfMqa__detailSkill {
+  color: var(--accent-strong);
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.NextStepActions-module__8QfMqa__detailBadge {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.NextStepActions-module__8QfMqa__divider {
+  background: var(--border);
+  height: 1px;
+  margin: 2px 0;
+}
+
+.NextStepActions-module__8QfMqa__openDesignRow {
+  align-items: center;
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__openDesignButton {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-default);
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1);
+  display: inline-flex;
+}
+
+.NextStepActions-module__8QfMqa__openDesignButton:hover:not(:disabled) {
+  background: var(--bg-default);
+  border-color: var(--border-strong);
+}
+
+.NextStepActions-module__8QfMqa__openDesignButton:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.NextStepActions-module__8QfMqa__flyout {
+  z-index: 1000;
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: var(--radius-lg, 12px);
+  background: var(--bg-panel);
+  flex-direction: column;
+  padding: 5px;
+  animation: .14s cubic-bezier(.23, 1, .32, 1) both NextStepActions-module__8QfMqa__next-step-in;
+  display: flex;
+  position: fixed;
+  box-shadow: 0 1px 2px #0000000a, 0 10px 28px -10px #0000002e;
+}
+
+.NextStepActions-module__8QfMqa__flyoutMenu {
+  width: 200px;
+}
+
+.NextStepActions-module__8QfMqa__flyoutToolbox {
+  width: 300px;
+  max-height: min(70vh, 500px);
+  padding: 10px;
+}
+
+.NextStepActions-module__8QfMqa__toolboxFlyoutTitle {
+  color: var(--text-default);
+  align-items: center;
+  gap: 8px;
+  padding: 2px 4px 8px;
+  font-size: 14px;
+  font-weight: 650;
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__toolboxFlyoutTitle svg {
+  color: var(--accent-strong);
+}
+
+.NextStepActions-module__8QfMqa__flyoutSearch {
+  border: 1px solid var(--border-strong, var(--border));
+  color: var(--text-muted);
+  background: var(--bg-default);
+  border-radius: 10px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 7px 9px;
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__flyoutSearch input {
+  min-width: 0;
+  color: var(--text-default);
+  background: none;
+  border: 0;
+  outline: none;
+  flex: auto;
+  font-size: 13px;
+}
+
+.NextStepActions-module__8QfMqa__flyoutScroll {
+  scrollbar-width: thin;
+  overflow-y: auto;
+}
+
+.NextStepActions-module__8QfMqa__flyoutSectionLabel {
+  letter-spacing: .02em;
+  color: var(--text-muted);
+  padding: 8px 8px 4px;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.NextStepActions-module__8QfMqa__flyoutEmpty {
+  color: var(--text-muted);
+  padding: 8px;
+  font-size: 12px;
+}
+
+.NextStepActions-module__8QfMqa__flyoutRow {
+  width: 100%;
+  color: var(--text-default);
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: 1px solid #0000;
+  border-radius: 8px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1);
+  display: flex;
+}
+
+.NextStepActions-module__8QfMqa__flyoutRow:hover:not(:disabled), .NextStepActions-module__8QfMqa__flyoutRow[aria-expanded="true"] {
+  background: var(--accent-tint);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.NextStepActions-module__8QfMqa__flyoutRow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.NextStepActions-module__8QfMqa__flyoutRow:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=apps_web_src_components_NextStepActions_module_css_0w3-wzy._.single.css.map*/

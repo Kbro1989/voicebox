@@ -1,0 +1,411 @@
+/* [project]/apps/web/src/components/OdCard.module.css [app-client] (css) */
+.OdCard-module__AZkp-a__card {
+  color: var(--text);
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.OdCard-module__AZkp-a__briefChip {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-pill, 999px);
+  background: var(--bg-subtle);
+  max-width: 100%;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1);
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__briefChip:hover {
+  background: var(--bg-muted);
+  border-color: var(--border-strong);
+}
+
+.OdCard-module__AZkp-a__briefChipIcon {
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__briefChipLabel {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__briefChipSummary {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  color: var(--text-muted);
+  overflow: hidden;
+}
+
+.OdCard-module__AZkp-a__briefChipChevron {
+  color: var(--text-faint);
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__briefBody {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-panel);
+  margin-top: 8px;
+  padding: 12px 14px;
+}
+
+.OdCard-module__AZkp-a__briefTitle {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__briefFields {
+  grid-template-columns: max-content 1fr;
+  gap: 4px 14px;
+  margin: 0;
+  display: grid;
+}
+
+.OdCard-module__AZkp-a__briefField {
+  display: contents;
+}
+
+.OdCard-module__AZkp-a__briefField dt {
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  align-self: baseline;
+  padding-top: 1px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__briefField dd {
+  color: var(--text);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.OdCard-module__AZkp-a__briefNote {
+  color: var(--text-muted);
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.OdCard-module__AZkp-a__appliedCard {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-subtle);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 6px 10px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__appliedIcon {
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__appliedSummary {
+  font-weight: 500;
+}
+
+.OdCard-module__AZkp-a__appliedRefs {
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__appliedRef {
+  color: var(--text-muted);
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__refDot {
+  background: var(--text-faint);
+  border-radius: 50%;
+  flex: none;
+  width: 7px;
+  height: 7px;
+}
+
+.OdCard-module__AZkp-a__refName {
+  white-space: nowrap;
+}
+
+.OdCard-module__AZkp-a__dotProfile {
+  background: var(--purple);
+}
+
+.OdCard-module__AZkp-a__dotUser {
+  background: var(--blue);
+}
+
+.OdCard-module__AZkp-a__dotFeedback {
+  background: var(--amber);
+}
+
+.OdCard-module__AZkp-a__dotProject {
+  background: var(--green);
+}
+
+.OdCard-module__AZkp-a__dotReference {
+  background: var(--text-soft);
+}
+
+.OdCard-module__AZkp-a__dotRule {
+  background: var(--accent);
+}
+
+.OdCard-module__AZkp-a__scorecard {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-panel);
+  padding: 12px 14px;
+}
+
+.OdCard-module__AZkp-a__scorecardHead {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__scorecardPill {
+  border-radius: var(--radius-pill, 999px);
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  background: var(--bg-fill-tertiary);
+  color: var(--text-muted);
+  align-items: center;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__pillPass {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.OdCard-module__AZkp-a__pillPartial {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.OdCard-module__AZkp-a__pillFail {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.OdCard-module__AZkp-a__scorecardTitle {
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__scorecardSummary {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.OdCard-module__AZkp-a__scoreRows {
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__scoreRow {
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__scoreRowIcon {
+  color: var(--text-faint);
+  flex: none;
+  margin-top: 1px;
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__rowPass .OdCard-module__AZkp-a__scoreRowIcon {
+  color: var(--green);
+}
+
+.OdCard-module__AZkp-a__rowFail .OdCard-module__AZkp-a__scoreRowIcon {
+  color: var(--red);
+}
+
+.OdCard-module__AZkp-a__rowFixed .OdCard-module__AZkp-a__scoreRowIcon {
+  color: var(--amber);
+}
+
+.OdCard-module__AZkp-a__scoreRowBody {
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__scoreRowRule {
+  line-height: 1.4;
+}
+
+.OdCard-module__AZkp-a__scoreRowNote {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.OdCard-module__AZkp-a__ruleCard {
+  border: 1px solid var(--border-soft, var(--border));
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-panel);
+  color: var(--text);
+  padding: 12px 14px;
+}
+
+.OdCard-module__AZkp-a__ruleHead {
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleHeadIcon {
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__ruleKicker {
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__ruleSummary {
+  flex-direction: column;
+  gap: 6px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleName {
+  color: var(--text-strong);
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__ruleDescription {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.OdCard-module__AZkp-a__ruleFacts {
+  grid-template-columns: max-content 1fr;
+  gap: 4px 14px;
+  margin: 4px 0 0;
+  display: grid;
+}
+
+.OdCard-module__AZkp-a__ruleFacts > div {
+  display: contents;
+}
+
+.OdCard-module__AZkp-a__ruleFacts dt {
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  align-self: baseline;
+  padding-top: 1px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.OdCard-module__AZkp-a__ruleFacts dd {
+  color: var(--text);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.OdCard-module__AZkp-a__ruleFields {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleFieldLabel {
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-direction: column;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleFieldLabel input, .OdCard-module__AZkp-a__ruleFieldLabel textarea {
+  letter-spacing: normal;
+  text-transform: none;
+  width: 100%;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.OdCard-module__AZkp-a__ruleError {
+  color: var(--red);
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+.OdCard-module__AZkp-a__ruleActions {
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleAction {
+  padding: 5px 12px;
+  font-size: 12.5px;
+}
+
+.OdCard-module__AZkp-a__ruleSaved {
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--green-bg);
+  color: var(--green);
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  display: flex;
+}
+
+.OdCard-module__AZkp-a__ruleSavedIcon {
+  color: currentColor;
+  display: inline-flex;
+}
+
+.OdCard-module__AZkp-a__ruleSavedLabel {
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=apps_web_src_components_OdCard_module_css_0w3-wzy._.single.css.map*/

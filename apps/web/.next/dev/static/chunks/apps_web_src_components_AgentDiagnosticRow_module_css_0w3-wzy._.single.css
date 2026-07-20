@@ -1,0 +1,70 @@
+/* [project]/apps/web/src/components/AgentDiagnosticRow.module.css [app-client] (css) */
+.AgentDiagnosticRow-module__9iepCG__root {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle, var(--bg-panel));
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  display: flex;
+}
+
+.AgentDiagnosticRow-module__9iepCG__error {
+  border-left-color: color-mix(in srgb, var(--danger, #d9534f) 40%, var(--border));
+}
+
+.AgentDiagnosticRow-module__9iepCG__warning {
+  border-left-color: color-mix(in srgb, var(--warning, #d9a441) 40%, var(--border));
+}
+
+.AgentDiagnosticRow-module__9iepCG__info {
+  border-left-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.AgentDiagnosticRow-module__9iepCG__message {
+  min-width: 0;
+  color: var(--text-muted, var(--text));
+  flex: auto;
+}
+
+.AgentDiagnosticRow-module__9iepCG__actions {
+  flex-wrap: wrap;
+  align-self: flex-end;
+  gap: 6px;
+  display: inline-flex;
+}
+
+.AgentDiagnosticRow-module__9iepCG__action {
+  width: 26px;
+  height: 26px;
+  color: var(--text);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background .14s cubic-bezier(.23, 1, .32, 1), border-color .14s cubic-bezier(.23, 1, .32, 1), color .14s cubic-bezier(.23, 1, .32, 1);
+  display: inline-flex;
+}
+
+.AgentDiagnosticRow-module__9iepCG__action:hover {
+  color: var(--text);
+  background: var(--bg-hover, var(--bg-subtle));
+  border-color: var(--accent);
+}
+
+.AgentDiagnosticRow-module__9iepCG__action svg {
+  flex: none;
+}
+
+.AgentDiagnosticRow-module__9iepCG__action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/*# sourceMappingURL=apps_web_src_components_AgentDiagnosticRow_module_css_0w3-wzy._.single.css.map*/
