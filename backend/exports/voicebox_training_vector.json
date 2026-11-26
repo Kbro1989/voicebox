@@ -1,0 +1,4310 @@
+{
+  "source": "kingwen-voicebox-export",
+  "emotional_input": 50,
+  "total_expanded": 64,
+  "total_resolved": 512,
+  "consensus": {
+    "consensus_hexagram_id": 28,
+    "consensus_temporal": "past",
+    "consensus_vector": {
+      "chaos": 0.09999999999999999,
+      "whimsy": 0.19999999999999993,
+      "darkTone": 0.09999999999999996,
+      "coherence": 0.8499999999999998,
+      "voiceWeight": 0.8499999999999998
+    },
+    "consensus_intent": "hexagram 28; past; category=dissipator; action=ADAPT; authoritative; focused"
+  },
+  "vector_rows": [
+    {
+      "hexagram_id": 1,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "genesis_spark",
+        "secondary_pool": "void_origin",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Creative: sovereign ASSERT | yin=0.00 yang=1.00 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 64,
+          "next": 2
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 0,
+          "yang_count": 6,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 0,
+          "old_yang_count": 6,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.0,
+          "yang_ratio": 1.0,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.128382,
+        "whimsy": 0.167012,
+        "darkTone": 0.091647,
+        "coherence": 0.494506,
+        "voiceWeight": 0.508204
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 2,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "earthy_patience",
+        "secondary_pool": "void_origin",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Receptive: transformer YIELD | yin=1.00 yang=0.00 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 1,
+          "next": 3
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 6,
+          "yang_count": 0,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 6,
+          "old_yang_count": 0,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 1.0,
+          "yang_ratio": 0.0,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.10192,
+        "whimsy": 0.208003,
+        "darkTone": 0.077142,
+        "coherence": 0.435735,
+        "voiceWeight": 0.412164
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 3,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "birth_chaos",
+        "secondary_pool": "naive_curiosity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Difficulty at the Beginning: dissipator ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 2,
+          "next": 4
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.17224,
+        "whimsy": 0.256829,
+        "darkTone": 0.108473,
+        "coherence": 0.390871,
+        "voiceWeight": 0.410031
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 4,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "naive_curiosity",
+        "secondary_pool": "gentle_restraint",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Youthful Folly: transformer WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 3,
+          "next": 5
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.143667,
+        "whimsy": 0.184252,
+        "darkTone": 0.157275,
+        "coherence": 0.405284,
+        "voiceWeight": 0.419544
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 5,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "gathered_force",
+        "secondary_pool": "measured_restraint",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Waiting: dissipator WAIT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 4,
+          "next": 6
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.127516,
+        "whimsy": 0.164538,
+        "darkTone": 0.140409,
+        "coherence": 0.443573,
+        "voiceWeight": 0.464994
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 6,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "adversarial_sharp",
+        "secondary_pool": "decisive_resolution",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Conflict: transformer ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 5,
+          "next": 7
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.143667,
+        "whimsy": 0.162519,
+        "darkTone": 0.160598,
+        "coherence": 0.427422,
+        "voiceWeight": 0.454899
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 7,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "hierarchical_command",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Army: sovereign ASSERT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 6,
+          "next": 8
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.146383,
+        "whimsy": 0.199156,
+        "darkTone": 0.141635,
+        "coherence": 0.394466,
+        "voiceWeight": 0.406769
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 8,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "warm_cooperation",
+        "secondary_pool": "harmonic_flow",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Holding Together: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 7,
+          "next": 9
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.128213,
+        "whimsy": 0.197137,
+        "darkTone": 0.121446,
+        "coherence": 0.412636,
+        "voiceWeight": 0.412825
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 9,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "gentle_restraint",
+        "secondary_pool": "adaptive_following",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Taming Power of the Small: dissipator ADAPT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 8,
+          "next": 10
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.116696,
+        "whimsy": 0.182523,
+        "darkTone": 0.114847,
+        "coherence": 0.474275,
+        "voiceWeight": 0.485959
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 10,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "cautious_confidence",
+        "secondary_pool": "advancing_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Treading: sovereign ADAPT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 9,
+          "next": 11
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.114814,
+        "whimsy": 0.176808,
+        "darkTone": 0.101228,
+        "coherence": 0.482659,
+        "voiceWeight": 0.493521
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 11,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "harmonic_flow",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Peace: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 10,
+          "next": 12
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.075739,
+        "whimsy": 0.145463,
+        "darkTone": 0.079671,
+        "coherence": 0.477784,
+        "voiceWeight": 0.472183
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 12,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "stagnant_blockage",
+        "secondary_pool": "hierarchical_command",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Standstill: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 11,
+          "next": 13
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.07372,
+        "whimsy": 0.141425,
+        "darkTone": 0.079671,
+        "coherence": 0.479803,
+        "voiceWeight": 0.468146
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 13,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "allied_collective",
+        "secondary_pool": "decisive_resolution",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Fellowship with Men: transformer ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 12,
+          "next": 14
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.10472,
+        "whimsy": 0.13643,
+        "darkTone": 0.105266,
+        "coherence": 0.490734,
+        "voiceWeight": 0.503616
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 14,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "abundant_wisdom",
+        "secondary_pool": "genesis_spark",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Possession in Great Measure: sovereign ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 13,
+          "next": 15
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.120734,
+        "whimsy": 0.170409,
+        "darkTone": 0.116866,
+        "coherence": 0.480332,
+        "voiceWeight": 0.491208
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 15,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "quiet_strength",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Modesty: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 14,
+          "next": 16
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.09591,
+        "whimsy": 0.193099,
+        "darkTone": 0.089256,
+        "coherence": 0.446553,
+        "voiceWeight": 0.424939
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 16,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "collective_energy",
+        "secondary_pool": "advancing_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Enthusiasm: dissipator ADAPT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 15,
+          "next": 17
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.130677,
+        "whimsy": 0.237754,
+        "darkTone": 0.055453,
+        "coherence": 0.422354,
+        "voiceWeight": 0.41895
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 17,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "adaptive_following",
+        "secondary_pool": "warm_cooperation",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Following: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 16,
+          "next": 18
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.143534,
+        "whimsy": 0.248324,
+        "darkTone": 0.069293,
+        "coherence": 0.439317,
+        "voiceWeight": 0.443808
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 18,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "confronting_rot",
+        "secondary_pool": "excess_weight",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Work on Decayed: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 17,
+          "next": 19
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.107194,
+        "whimsy": 0.226116,
+        "darkTone": 0.079211,
+        "coherence": 0.449008,
+        "voiceWeight": 0.437751
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 19,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "seasonal_turning",
+        "secondary_pool": "harmonic_flow",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Approach: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 18,
+          "next": 20
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.097677,
+        "whimsy": 0.232945,
+        "darkTone": 0.054653,
+        "coherence": 0.447708,
+        "voiceWeight": 0.429303
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 20,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "pattern_watching",
+        "secondary_pool": "measured_restraint",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Contemplation: boundary WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 19,
+          "next": 21
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.099696,
+        "whimsy": 0.24102,
+        "darkTone": 0.058514,
+        "coherence": 0.435595,
+        "voiceWeight": 0.423246
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 21,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "decisive_cutting",
+        "secondary_pool": "adversarial_sharp",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Biting Through: transformer ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 20,
+          "next": 22
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.139496,
+        "whimsy": 0.224097,
+        "darkTone": 0.071601,
+        "coherence": 0.443355,
+        "voiceWeight": 0.448653
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 22,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "ornamental_form",
+        "secondary_pool": "soft_persistence",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Grace: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 21,
+          "next": 23
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.107194,
+        "whimsy": 0.201889,
+        "darkTone": 0.077481,
+        "coherence": 0.461121,
+        "voiceWeight": 0.449864
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 23,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "collapsing_structure",
+        "secondary_pool": "inner_light_obscured",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Splitting Apart: dissipator WAIT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 22,
+          "next": 24
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.092317,
+        "whimsy": 0.207471,
+        "darkTone": 0.059314,
+        "coherence": 0.444158,
+        "voiceWeight": 0.41895
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 24,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "renewal_light",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Return: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 23,
+          "next": 25
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 5,
+          "yang_count": 1,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 5,
+          "old_yang_count": 1,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.8333333333333334,
+          "yang_ratio": 0.16666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.13427,
+        "whimsy": 0.223383,
+        "darkTone": 0.085395,
+        "coherence": 0.424749,
+        "voiceWeight": 0.424939
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 25,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "spontaneous_nature",
+        "secondary_pool": "genesis_spark",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Innocence: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 24,
+          "next": 26
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.131554,
+        "whimsy": 0.186746,
+        "darkTone": 0.106087,
+        "coherence": 0.457706,
+        "voiceWeight": 0.473069
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 26,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "restrained_storage",
+        "secondary_pool": "quiet_strength",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Taming Power of the Great: boundary ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 25,
+          "next": 27
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.095214,
+        "whimsy": 0.1605,
+        "darkTone": 0.112144,
+        "coherence": 0.477491,
+        "voiceWeight": 0.477107
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 27,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "sustaining_nourishment",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Corners of the Mouth: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 26,
+          "next": 28
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.12317,
+        "whimsy": 0.164165,
+        "darkTone": 0.119199,
+        "coherence": 0.446346,
+        "voiceWeight": 0.453283
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 28,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "excess_weight",
+        "secondary_pool": "deep_test",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Preponderance of the Great: dissipator ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 27,
+          "next": 29
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.127824,
+        "whimsy": 0.281532,
+        "darkTone": 0.085727,
+        "coherence": 0.438851,
+        "voiceWeight": 0.438522
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 29,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "deep_test",
+        "secondary_pool": "persistent_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Abysmal: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 28,
+          "next": 30
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.1778,
+        "whimsy": 0.143976,
+        "darkTone": 0.20763,
+        "coherence": 0.38474,
+        "voiceWeight": 0.42473
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 30,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "persistent_clarity",
+        "secondary_pool": "attractive_pull",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Clinging: boundary ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 29,
+          "next": 31
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.122023,
+        "whimsy": 0.20643,
+        "darkTone": 0.080184,
+        "coherence": 0.465981,
+        "voiceWeight": 0.466792
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 31,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "attractive_pull",
+        "secondary_pool": "harmonic_flow",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Influence: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 30,
+          "next": 32
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.091891,
+        "whimsy": 0.173727,
+        "darkTone": 0.097841,
+        "coherence": 0.468094,
+        "voiceWeight": 0.457647
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 32,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "enduring_rhythm",
+        "secondary_pool": "gradual_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Duration: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 31,
+          "next": 33
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.116117,
+        "whimsy": 0.201992,
+        "darkTone": 0.089765,
+        "coherence": 0.443463,
+        "voiceWeight": 0.451591
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 33,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "strategic_withdrawal",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Retreat: boundary YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 32,
+          "next": 34
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.083237,
+        "whimsy": 0.126521,
+        "darkTone": 0.10862,
+        "coherence": 0.486682,
+        "voiceWeight": 0.48265
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 34,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "unstoppable_momentum",
+        "secondary_pool": "genesis_spark",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Power of the Great: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 33,
+          "next": 35
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.11944,
+        "whimsy": 0.180689,
+        "darkTone": 0.104069,
+        "coherence": 0.463762,
+        "voiceWeight": 0.477107
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 35,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "advancing_clarity",
+        "secondary_pool": "seasonal_turning",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Progress: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 34,
+          "next": 36
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.097233,
+        "whimsy": 0.194346,
+        "darkTone": 0.084706,
+        "coherence": 0.454141,
+        "voiceWeight": 0.440136
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 36,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "inner_light_obscured",
+        "secondary_pool": "excess_weight",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Darkening of the Light: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 35,
+          "next": 37
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.103289,
+        "whimsy": 0.202422,
+        "darkTone": 0.086725,
+        "coherence": 0.450103,
+        "voiceWeight": 0.441348
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 37,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "structural_bonds",
+        "secondary_pool": "warm_cooperation",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Family: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 36,
+          "next": 38
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.115403,
+        "whimsy": 0.204916,
+        "darkTone": 0.110125,
+        "coherence": 0.457706,
+        "voiceWeight": 0.462975
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 38,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "divergent_strife",
+        "secondary_pool": "adversarial_sharp",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Opposition: dissipator ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 37,
+          "next": 39
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.121459,
+        "whimsy": 0.225105,
+        "darkTone": 0.104069,
+        "coherence": 0.459725,
+        "voiceWeight": 0.463782
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 39,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "blocked_path",
+        "secondary_pool": "deep_test",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Obstruction: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 38,
+          "next": 40
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.127516,
+        "whimsy": 0.182233,
+        "darkTone": 0.143143,
+        "coherence": 0.422243,
+        "voiceWeight": 0.4256
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 40,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "breaking_storm",
+        "secondary_pool": "renewal_light",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Deliverance: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 39,
+          "next": 41
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.164301,
+        "whimsy": 0.218812,
+        "darkTone": 0.117062,
+        "coherence": 0.38916,
+        "voiceWeight": 0.413555
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 41,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "serving_loss",
+        "secondary_pool": "earthy_patience",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Decrease: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 40,
+          "next": 42
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.106331,
+        "whimsy": 0.23823,
+        "darkTone": 0.071424,
+        "coherence": 0.452469,
+        "voiceWeight": 0.440866
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 42,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "abundant_growth",
+        "secondary_pool": "advancing_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Increase: transformer ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 41,
+          "next": 43
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.124193,
+        "whimsy": 0.195935,
+        "darkTone": 0.089765,
+        "coherence": 0.443463,
+        "voiceWeight": 0.454417
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 43,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "decisive_resolution",
+        "secondary_pool": "genesis_spark",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Breakthrough: sovereign ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 42,
+          "next": 44
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.108758,
+        "whimsy": 0.160657,
+        "darkTone": 0.101228,
+        "coherence": 0.486697,
+        "voiceWeight": 0.498771
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 44,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "unexpected_vigilance",
+        "secondary_pool": "divergent_strife",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Coming to Meet: boundary WAIT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 43,
+          "next": 45
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 1,
+          "yang_count": 5,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 1,
+          "old_yang_count": 5,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.16666666666666666,
+          "yang_ratio": 0.8333333333333334,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.120734,
+        "whimsy": 0.194636,
+        "darkTone": 0.116866,
+        "coherence": 0.468218,
+        "voiceWeight": 0.479095
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 45,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "collective_assembly",
+        "secondary_pool": "harmonic_flow",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Gathering Together: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 44,
+          "next": 46
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.10127,
+        "whimsy": 0.218573,
+        "darkTone": 0.084594,
+        "coherence": 0.450103,
+        "voiceWeight": 0.435291
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 46,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "steady_ascent",
+        "secondary_pool": "advancing_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Pushing Upward: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 45,
+          "next": 47
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.099696,
+        "whimsy": 0.24102,
+        "darkTone": 0.058514,
+        "coherence": 0.435595,
+        "voiceWeight": 0.423246
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 47,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "exhausted_spirit",
+        "secondary_pool": "deep_test",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Oppression: dissipator WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 46,
+          "next": 48
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.155648,
+        "whimsy": 0.224097,
+        "darkTone": 0.123803,
+        "coherence": 0.409033,
+        "voiceWeight": 0.425637
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 48,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "community_source",
+        "secondary_pool": "soft_persistence",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Well: boundary YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 47,
+          "next": 49
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.131113,
+        "whimsy": 0.185841,
+        "darkTone": 0.130031,
+        "coherence": 0.425869,
+        "voiceWeight": 0.441207
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 49,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "upheaval_fire",
+        "secondary_pool": "decisive_cutting",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Revolution: transformer ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 48,
+          "next": 50
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.107464,
+        "whimsy": 0.18305,
+        "darkTone": 0.096506,
+        "coherence": 0.470127,
+        "voiceWeight": 0.475786
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 50,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "transformative_vessel",
+        "secondary_pool": "persistent_clarity",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Cauldron: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 49,
+          "next": 51
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.115403,
+        "whimsy": 0.212991,
+        "darkTone": 0.110125,
+        "coherence": 0.453668,
+        "voiceWeight": 0.458937
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 51,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "sudden_awakening",
+        "secondary_pool": "adversarial_sharp",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Arousing: sovereign ASSERT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 50,
+          "next": 52
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.165994,
+        "whimsy": 0.228667,
+        "darkTone": 0.094689,
+        "coherence": 0.424434,
+        "voiceWeight": 0.439444
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 52,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "meditative_pause",
+        "secondary_pool": "quiet_strength",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Keeping Still: boundary WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 51,
+          "next": 53
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.101834,
+        "whimsy": 0.192567,
+        "darkTone": 0.080545,
+        "coherence": 0.45636,
+        "voiceWeight": 0.433455
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 53,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "gradual_patience",
+        "secondary_pool": "steady_ascent",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Development: transformer ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 52,
+          "next": 54
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.103156,
+        "whimsy": 0.209965,
+        "darkTone": 0.083248,
+        "coherence": 0.455872,
+        "voiceWeight": 0.440577
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 54,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "risky_union",
+        "secondary_pool": "warm_cooperation",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Marrying Maiden: dissipator YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 53,
+          "next": 55
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.125501,
+        "whimsy": 0.228477,
+        "darkTone": 0.057693,
+        "coherence": 0.449719,
+        "voiceWeight": 0.452178
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 55,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "peak_prosperity",
+        "secondary_pool": "excess_weight",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Abundance: sovereign ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 54,
+          "next": 56
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.119444,
+        "whimsy": 0.192137,
+        "darkTone": 0.059824,
+        "coherence": 0.455776,
+        "voiceWeight": 0.459446
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 56,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "journeying_stranger",
+        "secondary_pool": "soft_persistence",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Wanderer: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 55,
+          "next": 57
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.094773,
+        "whimsy": 0.1495,
+        "darkTone": 0.104074,
+        "coherence": 0.474726,
+        "voiceWeight": 0.464223
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 57,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "soft_persistence",
+        "secondary_pool": "enduring_rhythm",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Gentle: boundary YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 56,
+          "next": 58
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.113639,
+        "whimsy": 0.202495,
+        "darkTone": 0.102274,
+        "coherence": 0.456571,
+        "voiceWeight": 0.462172
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 58,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "open_pleasure",
+        "secondary_pool": "harmonic_flow",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "The Joyous: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 57,
+          "next": 59
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.123734,
+        "whimsy": 0.222684,
+        "darkTone": 0.092179,
+        "coherence": 0.466665,
+        "voiceWeight": 0.470248
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 59,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "scattering_wind",
+        "secondary_pool": "measured_restraint",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Dispersion: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 58,
+          "next": 60
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.143226,
+        "whimsy": 0.171708,
+        "darkTone": 0.148201,
+        "coherence": 0.415774,
+        "voiceWeight": 0.437977
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 60,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "measured_restraint",
+        "secondary_pool": "community_source",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Limitation: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 59,
+          "next": 61
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.13717,
+        "whimsy": 0.197954,
+        "darkTone": 0.123974,
+        "coherence": 0.431926,
+        "voiceWeight": 0.446052
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 61,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "sincere_resonance",
+        "secondary_pool": "soft_persistence",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Inner Truth: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 60,
+          "next": 62
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 2,
+          "yang_count": 4,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 2,
+          "old_yang_count": 4,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.3333333333333333,
+          "yang_ratio": 0.6666666666666666,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.117866,
+        "whimsy": 0.255628,
+        "darkTone": 0.074127,
+        "coherence": 0.449254,
+        "voiceWeight": 0.449718
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 62,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "cautious_flight",
+        "secondary_pool": "restrained_storage",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Preponderance of the Small: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 61,
+          "next": 63
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 4,
+          "yang_count": 2,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 4,
+          "old_yang_count": 2,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.6666666666666666,
+          "yang_ratio": 0.3333333333333333,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.119577,
+        "whimsy": 0.178537,
+        "darkTone": 0.089258,
+        "coherence": 0.443951,
+        "voiceWeight": 0.447295
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 63,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "achieved_state",
+        "secondary_pool": "deep_test",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "After Completion: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 62,
+          "next": 64
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.132577,
+        "whimsy": 0.205927,
+        "darkTone": 0.105745,
+        "coherence": 0.424609,
+        "voiceWeight": 0.436021
+      },
+      "resolved_count": 8
+    },
+    {
+      "hexagram_id": 64,
+      "phase_bits": 8,
+      "emotional_input": 50,
+      "inject_site": {
+        "primary_pool": "becoming_chaos",
+        "secondary_pool": "renewal_light",
+        "porosity": 0,
+        "porosity_norm": 0.0,
+        "porosity_label": "sealed",
+        "porosity_window": [
+          0.0,
+          0.05
+        ],
+        "porosity_description": "no bleed, rigid boundary",
+        "reason": "Before Completion: transformer ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50",
+        "neighbors": {
+          "previous": 63,
+          "next": 1
+        },
+        "intent_match": 0.5,
+        "line_balance": {
+          "yin_count": 3,
+          "yang_count": 3,
+          "yao_count": 0,
+          "changing_count": 0,
+          "old_yin_count": 3,
+          "old_yang_count": 3,
+          "old_yao_count": 0,
+          "stable_yin_count": 0,
+          "stable_yang_count": 0,
+          "stable_yao_count": 0,
+          "yin_ratio": 0.5,
+          "yang_ratio": 0.5,
+          "yao_ratio": 0.0,
+          "changing_ratio": 0.0
+        }
+      },
+      "vector_mean": {
+        "chaos": 0.136307,
+        "whimsy": 0.155557,
+        "darkTone": 0.144276,
+        "coherence": 0.421255,
+        "voiceWeight": 0.444322
+      },
+      "resolved_count": 8
+    }
+  ],
+  "profile_payloads": [
+    {
+      "profile_id": "kingwen-hex-01",
+      "name": null,
+      "hexagram_id": 1,
+      "unicode": null,
+      "instruct": "kingwen_hex=1 | temporal=past | chaos=0.128 | whimsy=0.167 | darkTone=0.092 | coherence=0.495 | voiceWeight=0.508",
+      "design_prompt": "Voice shaped by hexagram 1 None: primary pool genesis_spark, secondary void_origin, porosity 0. The Creative: sovereign ASSERT | yin=0.00 yang=1.00 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.128, whimsy=0.167, darkTone=0.092, coherence=0.495, voiceWeight=0.508.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 1 None. Your tone is shaped by pools genesis_spark and void_origin. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.128382,
+        "whimsy": 0.167012,
+        "darkTone": 0.091647,
+        "coherence": 0.494506,
+        "voiceWeight": 0.508204
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-02",
+      "name": null,
+      "hexagram_id": 2,
+      "unicode": null,
+      "instruct": "kingwen_hex=2 | temporal=past | chaos=0.102 | whimsy=0.208 | darkTone=0.077 | coherence=0.436 | voiceWeight=0.412",
+      "design_prompt": "Voice shaped by hexagram 2 None: primary pool earthy_patience, secondary void_origin, porosity 0. The Receptive: transformer YIELD | yin=1.00 yang=0.00 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.102, whimsy=0.208, darkTone=0.077, coherence=0.436, voiceWeight=0.412.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 2 None. Your tone is shaped by pools earthy_patience and void_origin. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.10192,
+        "whimsy": 0.208003,
+        "darkTone": 0.077142,
+        "coherence": 0.435735,
+        "voiceWeight": 0.412164
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-03",
+      "name": null,
+      "hexagram_id": 3,
+      "unicode": null,
+      "instruct": "kingwen_hex=3 | temporal=past | chaos=0.172 | whimsy=0.257 | darkTone=0.108 | coherence=0.391 | voiceWeight=0.410",
+      "design_prompt": "Voice shaped by hexagram 3 None: primary pool birth_chaos, secondary naive_curiosity, porosity 0. Difficulty at the Beginning: dissipator ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.172, whimsy=0.257, darkTone=0.108, coherence=0.391, voiceWeight=0.410.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 3 None. Your tone is shaped by pools birth_chaos and naive_curiosity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.17224,
+        "whimsy": 0.256829,
+        "darkTone": 0.108473,
+        "coherence": 0.390871,
+        "voiceWeight": 0.410031
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-04",
+      "name": null,
+      "hexagram_id": 4,
+      "unicode": null,
+      "instruct": "kingwen_hex=4 | temporal=past | chaos=0.144 | whimsy=0.184 | darkTone=0.157 | coherence=0.405 | voiceWeight=0.420",
+      "design_prompt": "Voice shaped by hexagram 4 None: primary pool naive_curiosity, secondary gentle_restraint, porosity 0. Youthful Folly: transformer WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.144, whimsy=0.184, darkTone=0.157, coherence=0.405, voiceWeight=0.420.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 4 None. Your tone is shaped by pools naive_curiosity and gentle_restraint. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.143667,
+        "whimsy": 0.184252,
+        "darkTone": 0.157275,
+        "coherence": 0.405284,
+        "voiceWeight": 0.419544
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-05",
+      "name": null,
+      "hexagram_id": 5,
+      "unicode": null,
+      "instruct": "kingwen_hex=5 | temporal=past | chaos=0.128 | whimsy=0.165 | darkTone=0.140 | coherence=0.444 | voiceWeight=0.465",
+      "design_prompt": "Voice shaped by hexagram 5 None: primary pool gathered_force, secondary measured_restraint, porosity 0. Waiting: dissipator WAIT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.128, whimsy=0.165, darkTone=0.140, coherence=0.444, voiceWeight=0.465.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 5 None. Your tone is shaped by pools gathered_force and measured_restraint. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.127516,
+        "whimsy": 0.164538,
+        "darkTone": 0.140409,
+        "coherence": 0.443573,
+        "voiceWeight": 0.464994
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-06",
+      "name": null,
+      "hexagram_id": 6,
+      "unicode": null,
+      "instruct": "kingwen_hex=6 | temporal=past | chaos=0.144 | whimsy=0.163 | darkTone=0.161 | coherence=0.427 | voiceWeight=0.455",
+      "design_prompt": "Voice shaped by hexagram 6 None: primary pool adversarial_sharp, secondary decisive_resolution, porosity 0. Conflict: transformer ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.144, whimsy=0.163, darkTone=0.161, coherence=0.427, voiceWeight=0.455.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 6 None. Your tone is shaped by pools adversarial_sharp and decisive_resolution. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.143667,
+        "whimsy": 0.162519,
+        "darkTone": 0.160598,
+        "coherence": 0.427422,
+        "voiceWeight": 0.454899
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-07",
+      "name": null,
+      "hexagram_id": 7,
+      "unicode": null,
+      "instruct": "kingwen_hex=7 | temporal=past | chaos=0.146 | whimsy=0.199 | darkTone=0.142 | coherence=0.394 | voiceWeight=0.407",
+      "design_prompt": "Voice shaped by hexagram 7 None: primary pool hierarchical_command, secondary earthy_patience, porosity 0. The Army: sovereign ASSERT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.146, whimsy=0.199, darkTone=0.142, coherence=0.394, voiceWeight=0.407.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 7 None. Your tone is shaped by pools hierarchical_command and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.146383,
+        "whimsy": 0.199156,
+        "darkTone": 0.141635,
+        "coherence": 0.394466,
+        "voiceWeight": 0.406769
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-08",
+      "name": null,
+      "hexagram_id": 8,
+      "unicode": null,
+      "instruct": "kingwen_hex=8 | temporal=past | chaos=0.128 | whimsy=0.197 | darkTone=0.121 | coherence=0.413 | voiceWeight=0.413",
+      "design_prompt": "Voice shaped by hexagram 8 None: primary pool warm_cooperation, secondary harmonic_flow, porosity 0. Holding Together: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.128, whimsy=0.197, darkTone=0.121, coherence=0.413, voiceWeight=0.413.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 8 None. Your tone is shaped by pools warm_cooperation and harmonic_flow. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.128213,
+        "whimsy": 0.197137,
+        "darkTone": 0.121446,
+        "coherence": 0.412636,
+        "voiceWeight": 0.412825
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-09",
+      "name": null,
+      "hexagram_id": 9,
+      "unicode": null,
+      "instruct": "kingwen_hex=9 | temporal=past | chaos=0.117 | whimsy=0.183 | darkTone=0.115 | coherence=0.474 | voiceWeight=0.486",
+      "design_prompt": "Voice shaped by hexagram 9 None: primary pool gentle_restraint, secondary adaptive_following, porosity 0. Taming Power of the Small: dissipator ADAPT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.117, whimsy=0.183, darkTone=0.115, coherence=0.474, voiceWeight=0.486.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 9 None. Your tone is shaped by pools gentle_restraint and adaptive_following. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.116696,
+        "whimsy": 0.182523,
+        "darkTone": 0.114847,
+        "coherence": 0.474275,
+        "voiceWeight": 0.485959
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-10",
+      "name": null,
+      "hexagram_id": 10,
+      "unicode": null,
+      "instruct": "kingwen_hex=10 | temporal=past | chaos=0.115 | whimsy=0.177 | darkTone=0.101 | coherence=0.483 | voiceWeight=0.494",
+      "design_prompt": "Voice shaped by hexagram 10 None: primary pool cautious_confidence, secondary advancing_clarity, porosity 0. Treading: sovereign ADAPT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.115, whimsy=0.177, darkTone=0.101, coherence=0.483, voiceWeight=0.494.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 10 None. Your tone is shaped by pools cautious_confidence and advancing_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.114814,
+        "whimsy": 0.176808,
+        "darkTone": 0.101228,
+        "coherence": 0.482659,
+        "voiceWeight": 0.493521
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-11",
+      "name": null,
+      "hexagram_id": 11,
+      "unicode": null,
+      "instruct": "kingwen_hex=11 | temporal=past | chaos=0.076 | whimsy=0.145 | darkTone=0.080 | coherence=0.478 | voiceWeight=0.472",
+      "design_prompt": "Voice shaped by hexagram 11 None: primary pool harmonic_flow, secondary earthy_patience, porosity 0. Peace: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.076, whimsy=0.145, darkTone=0.080, coherence=0.478, voiceWeight=0.472.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 11 None. Your tone is shaped by pools harmonic_flow and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.075739,
+        "whimsy": 0.145463,
+        "darkTone": 0.079671,
+        "coherence": 0.477784,
+        "voiceWeight": 0.472183
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-12",
+      "name": null,
+      "hexagram_id": 12,
+      "unicode": null,
+      "instruct": "kingwen_hex=12 | temporal=past | chaos=0.074 | whimsy=0.141 | darkTone=0.080 | coherence=0.480 | voiceWeight=0.468",
+      "design_prompt": "Voice shaped by hexagram 12 None: primary pool stagnant_blockage, secondary hierarchical_command, porosity 0. Standstill: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.074, whimsy=0.141, darkTone=0.080, coherence=0.480, voiceWeight=0.468.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 12 None. Your tone is shaped by pools stagnant_blockage and hierarchical_command. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.07372,
+        "whimsy": 0.141425,
+        "darkTone": 0.079671,
+        "coherence": 0.479803,
+        "voiceWeight": 0.468146
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-13",
+      "name": null,
+      "hexagram_id": 13,
+      "unicode": null,
+      "instruct": "kingwen_hex=13 | temporal=past | chaos=0.105 | whimsy=0.136 | darkTone=0.105 | coherence=0.491 | voiceWeight=0.504",
+      "design_prompt": "Voice shaped by hexagram 13 None: primary pool allied_collective, secondary decisive_resolution, porosity 0. Fellowship with Men: transformer ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.105, whimsy=0.136, darkTone=0.105, coherence=0.491, voiceWeight=0.504.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 13 None. Your tone is shaped by pools allied_collective and decisive_resolution. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.10472,
+        "whimsy": 0.13643,
+        "darkTone": 0.105266,
+        "coherence": 0.490734,
+        "voiceWeight": 0.503616
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-14",
+      "name": null,
+      "hexagram_id": 14,
+      "unicode": null,
+      "instruct": "kingwen_hex=14 | temporal=past | chaos=0.121 | whimsy=0.170 | darkTone=0.117 | coherence=0.480 | voiceWeight=0.491",
+      "design_prompt": "Voice shaped by hexagram 14 None: primary pool abundant_wisdom, secondary genesis_spark, porosity 0. Possession in Great Measure: sovereign ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.121, whimsy=0.170, darkTone=0.117, coherence=0.480, voiceWeight=0.491.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 14 None. Your tone is shaped by pools abundant_wisdom and genesis_spark. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.120734,
+        "whimsy": 0.170409,
+        "darkTone": 0.116866,
+        "coherence": 0.480332,
+        "voiceWeight": 0.491208
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-15",
+      "name": null,
+      "hexagram_id": 15,
+      "unicode": null,
+      "instruct": "kingwen_hex=15 | temporal=past | chaos=0.096 | whimsy=0.193 | darkTone=0.089 | coherence=0.447 | voiceWeight=0.425",
+      "design_prompt": "Voice shaped by hexagram 15 None: primary pool quiet_strength, secondary earthy_patience, porosity 0. Modesty: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.096, whimsy=0.193, darkTone=0.089, coherence=0.447, voiceWeight=0.425.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 15 None. Your tone is shaped by pools quiet_strength and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.09591,
+        "whimsy": 0.193099,
+        "darkTone": 0.089256,
+        "coherence": 0.446553,
+        "voiceWeight": 0.424939
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-16",
+      "name": null,
+      "hexagram_id": 16,
+      "unicode": null,
+      "instruct": "kingwen_hex=16 | temporal=past | chaos=0.131 | whimsy=0.238 | darkTone=0.055 | coherence=0.422 | voiceWeight=0.419",
+      "design_prompt": "Voice shaped by hexagram 16 None: primary pool collective_energy, secondary advancing_clarity, porosity 0. Enthusiasm: dissipator ADAPT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.131, whimsy=0.238, darkTone=0.055, coherence=0.422, voiceWeight=0.419.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 16 None. Your tone is shaped by pools collective_energy and advancing_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.130677,
+        "whimsy": 0.237754,
+        "darkTone": 0.055453,
+        "coherence": 0.422354,
+        "voiceWeight": 0.41895
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-17",
+      "name": null,
+      "hexagram_id": 17,
+      "unicode": null,
+      "instruct": "kingwen_hex=17 | temporal=past | chaos=0.144 | whimsy=0.248 | darkTone=0.069 | coherence=0.439 | voiceWeight=0.444",
+      "design_prompt": "Voice shaped by hexagram 17 None: primary pool adaptive_following, secondary warm_cooperation, porosity 0. Following: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.144, whimsy=0.248, darkTone=0.069, coherence=0.439, voiceWeight=0.444.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 17 None. Your tone is shaped by pools adaptive_following and warm_cooperation. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.143534,
+        "whimsy": 0.248324,
+        "darkTone": 0.069293,
+        "coherence": 0.439317,
+        "voiceWeight": 0.443808
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-18",
+      "name": null,
+      "hexagram_id": 18,
+      "unicode": null,
+      "instruct": "kingwen_hex=18 | temporal=past | chaos=0.107 | whimsy=0.226 | darkTone=0.079 | coherence=0.449 | voiceWeight=0.438",
+      "design_prompt": "Voice shaped by hexagram 18 None: primary pool confronting_rot, secondary excess_weight, porosity 0. Work on Decayed: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.107, whimsy=0.226, darkTone=0.079, coherence=0.449, voiceWeight=0.438.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 18 None. Your tone is shaped by pools confronting_rot and excess_weight. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.107194,
+        "whimsy": 0.226116,
+        "darkTone": 0.079211,
+        "coherence": 0.449008,
+        "voiceWeight": 0.437751
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-19",
+      "name": null,
+      "hexagram_id": 19,
+      "unicode": null,
+      "instruct": "kingwen_hex=19 | temporal=past | chaos=0.098 | whimsy=0.233 | darkTone=0.055 | coherence=0.448 | voiceWeight=0.429",
+      "design_prompt": "Voice shaped by hexagram 19 None: primary pool seasonal_turning, secondary harmonic_flow, porosity 0. Approach: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.098, whimsy=0.233, darkTone=0.055, coherence=0.448, voiceWeight=0.429.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 19 None. Your tone is shaped by pools seasonal_turning and harmonic_flow. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.097677,
+        "whimsy": 0.232945,
+        "darkTone": 0.054653,
+        "coherence": 0.447708,
+        "voiceWeight": 0.429303
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-20",
+      "name": null,
+      "hexagram_id": 20,
+      "unicode": null,
+      "instruct": "kingwen_hex=20 | temporal=past | chaos=0.100 | whimsy=0.241 | darkTone=0.059 | coherence=0.436 | voiceWeight=0.423",
+      "design_prompt": "Voice shaped by hexagram 20 None: primary pool pattern_watching, secondary measured_restraint, porosity 0. Contemplation: boundary WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.100, whimsy=0.241, darkTone=0.059, coherence=0.436, voiceWeight=0.423.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 20 None. Your tone is shaped by pools pattern_watching and measured_restraint. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.099696,
+        "whimsy": 0.24102,
+        "darkTone": 0.058514,
+        "coherence": 0.435595,
+        "voiceWeight": 0.423246
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-21",
+      "name": null,
+      "hexagram_id": 21,
+      "unicode": null,
+      "instruct": "kingwen_hex=21 | temporal=past | chaos=0.139 | whimsy=0.224 | darkTone=0.072 | coherence=0.443 | voiceWeight=0.449",
+      "design_prompt": "Voice shaped by hexagram 21 None: primary pool decisive_cutting, secondary adversarial_sharp, porosity 0. Biting Through: transformer ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.139, whimsy=0.224, darkTone=0.072, coherence=0.443, voiceWeight=0.449.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 21 None. Your tone is shaped by pools decisive_cutting and adversarial_sharp. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.139496,
+        "whimsy": 0.224097,
+        "darkTone": 0.071601,
+        "coherence": 0.443355,
+        "voiceWeight": 0.448653
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-22",
+      "name": null,
+      "hexagram_id": 22,
+      "unicode": null,
+      "instruct": "kingwen_hex=22 | temporal=past | chaos=0.107 | whimsy=0.202 | darkTone=0.077 | coherence=0.461 | voiceWeight=0.450",
+      "design_prompt": "Voice shaped by hexagram 22 None: primary pool ornamental_form, secondary soft_persistence, porosity 0. Grace: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.107, whimsy=0.202, darkTone=0.077, coherence=0.461, voiceWeight=0.450.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 22 None. Your tone is shaped by pools ornamental_form and soft_persistence. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.107194,
+        "whimsy": 0.201889,
+        "darkTone": 0.077481,
+        "coherence": 0.461121,
+        "voiceWeight": 0.449864
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-23",
+      "name": null,
+      "hexagram_id": 23,
+      "unicode": null,
+      "instruct": "kingwen_hex=23 | temporal=past | chaos=0.092 | whimsy=0.207 | darkTone=0.059 | coherence=0.444 | voiceWeight=0.419",
+      "design_prompt": "Voice shaped by hexagram 23 None: primary pool collapsing_structure, secondary inner_light_obscured, porosity 0. Splitting Apart: dissipator WAIT | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.092, whimsy=0.207, darkTone=0.059, coherence=0.444, voiceWeight=0.419.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 23 None. Your tone is shaped by pools collapsing_structure and inner_light_obscured. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.092317,
+        "whimsy": 0.207471,
+        "darkTone": 0.059314,
+        "coherence": 0.444158,
+        "voiceWeight": 0.41895
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-24",
+      "name": null,
+      "hexagram_id": 24,
+      "unicode": null,
+      "instruct": "kingwen_hex=24 | temporal=past | chaos=0.134 | whimsy=0.223 | darkTone=0.085 | coherence=0.425 | voiceWeight=0.425",
+      "design_prompt": "Voice shaped by hexagram 24 None: primary pool renewal_light, secondary earthy_patience, porosity 0. Return: transformer YIELD | yin=0.83 yang=0.17 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.134, whimsy=0.223, darkTone=0.085, coherence=0.425, voiceWeight=0.425.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 24 None. Your tone is shaped by pools renewal_light and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.13427,
+        "whimsy": 0.223383,
+        "darkTone": 0.085395,
+        "coherence": 0.424749,
+        "voiceWeight": 0.424939
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-25",
+      "name": null,
+      "hexagram_id": 25,
+      "unicode": null,
+      "instruct": "kingwen_hex=25 | temporal=past | chaos=0.132 | whimsy=0.187 | darkTone=0.106 | coherence=0.458 | voiceWeight=0.473",
+      "design_prompt": "Voice shaped by hexagram 25 None: primary pool spontaneous_nature, secondary genesis_spark, porosity 0. Innocence: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.132, whimsy=0.187, darkTone=0.106, coherence=0.458, voiceWeight=0.473.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 25 None. Your tone is shaped by pools spontaneous_nature and genesis_spark. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.131554,
+        "whimsy": 0.186746,
+        "darkTone": 0.106087,
+        "coherence": 0.457706,
+        "voiceWeight": 0.473069
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-26",
+      "name": null,
+      "hexagram_id": 26,
+      "unicode": null,
+      "instruct": "kingwen_hex=26 | temporal=past | chaos=0.095 | whimsy=0.161 | darkTone=0.112 | coherence=0.477 | voiceWeight=0.477",
+      "design_prompt": "Voice shaped by hexagram 26 None: primary pool restrained_storage, secondary quiet_strength, porosity 0. Taming Power of the Great: boundary ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.095, whimsy=0.161, darkTone=0.112, coherence=0.477, voiceWeight=0.477.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 26 None. Your tone is shaped by pools restrained_storage and quiet_strength. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.095214,
+        "whimsy": 0.1605,
+        "darkTone": 0.112144,
+        "coherence": 0.477491,
+        "voiceWeight": 0.477107
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-27",
+      "name": null,
+      "hexagram_id": 27,
+      "unicode": null,
+      "instruct": "kingwen_hex=27 | temporal=past | chaos=0.123 | whimsy=0.164 | darkTone=0.119 | coherence=0.446 | voiceWeight=0.453",
+      "design_prompt": "Voice shaped by hexagram 27 None: primary pool sustaining_nourishment, secondary earthy_patience, porosity 0. Corners of the Mouth: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.123, whimsy=0.164, darkTone=0.119, coherence=0.446, voiceWeight=0.453.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 27 None. Your tone is shaped by pools sustaining_nourishment and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.12317,
+        "whimsy": 0.164165,
+        "darkTone": 0.119199,
+        "coherence": 0.446346,
+        "voiceWeight": 0.453283
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-28",
+      "name": null,
+      "hexagram_id": 28,
+      "unicode": null,
+      "instruct": "kingwen_hex=28 | temporal=past | chaos=0.128 | whimsy=0.282 | darkTone=0.086 | coherence=0.439 | voiceWeight=0.439",
+      "design_prompt": "Voice shaped by hexagram 28 None: primary pool excess_weight, secondary deep_test, porosity 0. Preponderance of the Great: dissipator ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.128, whimsy=0.282, darkTone=0.086, coherence=0.439, voiceWeight=0.439.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 28 None. Your tone is shaped by pools excess_weight and deep_test. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.127824,
+        "whimsy": 0.281532,
+        "darkTone": 0.085727,
+        "coherence": 0.438851,
+        "voiceWeight": 0.438522
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-29",
+      "name": null,
+      "hexagram_id": 29,
+      "unicode": null,
+      "instruct": "kingwen_hex=29 | temporal=past | chaos=0.178 | whimsy=0.144 | darkTone=0.208 | coherence=0.385 | voiceWeight=0.425",
+      "design_prompt": "Voice shaped by hexagram 29 None: primary pool deep_test, secondary persistent_clarity, porosity 0. The Abysmal: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.178, whimsy=0.144, darkTone=0.208, coherence=0.385, voiceWeight=0.425.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 29 None. Your tone is shaped by pools deep_test and persistent_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.1778,
+        "whimsy": 0.143976,
+        "darkTone": 0.20763,
+        "coherence": 0.38474,
+        "voiceWeight": 0.42473
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-30",
+      "name": null,
+      "hexagram_id": 30,
+      "unicode": null,
+      "instruct": "kingwen_hex=30 | temporal=past | chaos=0.122 | whimsy=0.206 | darkTone=0.080 | coherence=0.466 | voiceWeight=0.467",
+      "design_prompt": "Voice shaped by hexagram 30 None: primary pool persistent_clarity, secondary attractive_pull, porosity 0. The Clinging: boundary ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.122, whimsy=0.206, darkTone=0.080, coherence=0.466, voiceWeight=0.467.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 30 None. Your tone is shaped by pools persistent_clarity and attractive_pull. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.122023,
+        "whimsy": 0.20643,
+        "darkTone": 0.080184,
+        "coherence": 0.465981,
+        "voiceWeight": 0.466792
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-31",
+      "name": null,
+      "hexagram_id": 31,
+      "unicode": null,
+      "instruct": "kingwen_hex=31 | temporal=past | chaos=0.092 | whimsy=0.174 | darkTone=0.098 | coherence=0.468 | voiceWeight=0.458",
+      "design_prompt": "Voice shaped by hexagram 31 None: primary pool attractive_pull, secondary harmonic_flow, porosity 0. Influence: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.092, whimsy=0.174, darkTone=0.098, coherence=0.468, voiceWeight=0.458.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 31 None. Your tone is shaped by pools attractive_pull and harmonic_flow. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.091891,
+        "whimsy": 0.173727,
+        "darkTone": 0.097841,
+        "coherence": 0.468094,
+        "voiceWeight": 0.457647
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-32",
+      "name": null,
+      "hexagram_id": 32,
+      "unicode": null,
+      "instruct": "kingwen_hex=32 | temporal=past | chaos=0.116 | whimsy=0.202 | darkTone=0.090 | coherence=0.443 | voiceWeight=0.452",
+      "design_prompt": "Voice shaped by hexagram 32 None: primary pool enduring_rhythm, secondary gradual_patience, porosity 0. Duration: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.116, whimsy=0.202, darkTone=0.090, coherence=0.443, voiceWeight=0.452.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 32 None. Your tone is shaped by pools enduring_rhythm and gradual_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.116117,
+        "whimsy": 0.201992,
+        "darkTone": 0.089765,
+        "coherence": 0.443463,
+        "voiceWeight": 0.451591
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-33",
+      "name": null,
+      "hexagram_id": 33,
+      "unicode": null,
+      "instruct": "kingwen_hex=33 | temporal=past | chaos=0.083 | whimsy=0.127 | darkTone=0.109 | coherence=0.487 | voiceWeight=0.483",
+      "design_prompt": "Voice shaped by hexagram 33 None: primary pool strategic_withdrawal, secondary earthy_patience, porosity 0. Retreat: boundary YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.083, whimsy=0.127, darkTone=0.109, coherence=0.487, voiceWeight=0.483.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 33 None. Your tone is shaped by pools strategic_withdrawal and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.083237,
+        "whimsy": 0.126521,
+        "darkTone": 0.10862,
+        "coherence": 0.486682,
+        "voiceWeight": 0.48265
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-34",
+      "name": null,
+      "hexagram_id": 34,
+      "unicode": null,
+      "instruct": "kingwen_hex=34 | temporal=past | chaos=0.119 | whimsy=0.181 | darkTone=0.104 | coherence=0.464 | voiceWeight=0.477",
+      "design_prompt": "Voice shaped by hexagram 34 None: primary pool unstoppable_momentum, secondary genesis_spark, porosity 0. Power of the Great: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.119, whimsy=0.181, darkTone=0.104, coherence=0.464, voiceWeight=0.477.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 34 None. Your tone is shaped by pools unstoppable_momentum and genesis_spark. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.11944,
+        "whimsy": 0.180689,
+        "darkTone": 0.104069,
+        "coherence": 0.463762,
+        "voiceWeight": 0.477107
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-35",
+      "name": null,
+      "hexagram_id": 35,
+      "unicode": null,
+      "instruct": "kingwen_hex=35 | temporal=past | chaos=0.097 | whimsy=0.194 | darkTone=0.085 | coherence=0.454 | voiceWeight=0.440",
+      "design_prompt": "Voice shaped by hexagram 35 None: primary pool advancing_clarity, secondary seasonal_turning, porosity 0. Progress: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.097, whimsy=0.194, darkTone=0.085, coherence=0.454, voiceWeight=0.440.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 35 None. Your tone is shaped by pools advancing_clarity and seasonal_turning. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.097233,
+        "whimsy": 0.194346,
+        "darkTone": 0.084706,
+        "coherence": 0.454141,
+        "voiceWeight": 0.440136
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-36",
+      "name": null,
+      "hexagram_id": 36,
+      "unicode": null,
+      "instruct": "kingwen_hex=36 | temporal=past | chaos=0.103 | whimsy=0.202 | darkTone=0.087 | coherence=0.450 | voiceWeight=0.441",
+      "design_prompt": "Voice shaped by hexagram 36 None: primary pool inner_light_obscured, secondary excess_weight, porosity 0. Darkening of the Light: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.103, whimsy=0.202, darkTone=0.087, coherence=0.450, voiceWeight=0.441.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 36 None. Your tone is shaped by pools inner_light_obscured and excess_weight. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.103289,
+        "whimsy": 0.202422,
+        "darkTone": 0.086725,
+        "coherence": 0.450103,
+        "voiceWeight": 0.441348
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-37",
+      "name": null,
+      "hexagram_id": 37,
+      "unicode": null,
+      "instruct": "kingwen_hex=37 | temporal=past | chaos=0.115 | whimsy=0.205 | darkTone=0.110 | coherence=0.458 | voiceWeight=0.463",
+      "design_prompt": "Voice shaped by hexagram 37 None: primary pool structural_bonds, secondary warm_cooperation, porosity 0. The Family: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.115, whimsy=0.205, darkTone=0.110, coherence=0.458, voiceWeight=0.463.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 37 None. Your tone is shaped by pools structural_bonds and warm_cooperation. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.115403,
+        "whimsy": 0.204916,
+        "darkTone": 0.110125,
+        "coherence": 0.457706,
+        "voiceWeight": 0.462975
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-38",
+      "name": null,
+      "hexagram_id": 38,
+      "unicode": null,
+      "instruct": "kingwen_hex=38 | temporal=past | chaos=0.121 | whimsy=0.225 | darkTone=0.104 | coherence=0.460 | voiceWeight=0.464",
+      "design_prompt": "Voice shaped by hexagram 38 None: primary pool divergent_strife, secondary adversarial_sharp, porosity 0. Opposition: dissipator ADAPT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.121, whimsy=0.225, darkTone=0.104, coherence=0.460, voiceWeight=0.464.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 38 None. Your tone is shaped by pools divergent_strife and adversarial_sharp. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.121459,
+        "whimsy": 0.225105,
+        "darkTone": 0.104069,
+        "coherence": 0.459725,
+        "voiceWeight": 0.463782
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-39",
+      "name": null,
+      "hexagram_id": 39,
+      "unicode": null,
+      "instruct": "kingwen_hex=39 | temporal=past | chaos=0.128 | whimsy=0.182 | darkTone=0.143 | coherence=0.422 | voiceWeight=0.426",
+      "design_prompt": "Voice shaped by hexagram 39 None: primary pool blocked_path, secondary deep_test, porosity 0. Obstruction: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.128, whimsy=0.182, darkTone=0.143, coherence=0.422, voiceWeight=0.426.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 39 None. Your tone is shaped by pools blocked_path and deep_test. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.127516,
+        "whimsy": 0.182233,
+        "darkTone": 0.143143,
+        "coherence": 0.422243,
+        "voiceWeight": 0.4256
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-40",
+      "name": null,
+      "hexagram_id": 40,
+      "unicode": null,
+      "instruct": "kingwen_hex=40 | temporal=past | chaos=0.164 | whimsy=0.219 | darkTone=0.117 | coherence=0.389 | voiceWeight=0.414",
+      "design_prompt": "Voice shaped by hexagram 40 None: primary pool breaking_storm, secondary renewal_light, porosity 0. Deliverance: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.164, whimsy=0.219, darkTone=0.117, coherence=0.389, voiceWeight=0.414.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 40 None. Your tone is shaped by pools breaking_storm and renewal_light. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.164301,
+        "whimsy": 0.218812,
+        "darkTone": 0.117062,
+        "coherence": 0.38916,
+        "voiceWeight": 0.413555
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-41",
+      "name": null,
+      "hexagram_id": 41,
+      "unicode": null,
+      "instruct": "kingwen_hex=41 | temporal=past | chaos=0.106 | whimsy=0.238 | darkTone=0.071 | coherence=0.452 | voiceWeight=0.441",
+      "design_prompt": "Voice shaped by hexagram 41 None: primary pool serving_loss, secondary earthy_patience, porosity 0. Decrease: transformer YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.106, whimsy=0.238, darkTone=0.071, coherence=0.452, voiceWeight=0.441.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 41 None. Your tone is shaped by pools serving_loss and earthy_patience. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.106331,
+        "whimsy": 0.23823,
+        "darkTone": 0.071424,
+        "coherence": 0.452469,
+        "voiceWeight": 0.440866
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-42",
+      "name": null,
+      "hexagram_id": 42,
+      "unicode": null,
+      "instruct": "kingwen_hex=42 | temporal=past | chaos=0.124 | whimsy=0.196 | darkTone=0.090 | coherence=0.443 | voiceWeight=0.454",
+      "design_prompt": "Voice shaped by hexagram 42 None: primary pool abundant_growth, secondary advancing_clarity, porosity 0. Increase: transformer ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.124, whimsy=0.196, darkTone=0.090, coherence=0.443, voiceWeight=0.454.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 42 None. Your tone is shaped by pools abundant_growth and advancing_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.124193,
+        "whimsy": 0.195935,
+        "darkTone": 0.089765,
+        "coherence": 0.443463,
+        "voiceWeight": 0.454417
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-43",
+      "name": null,
+      "hexagram_id": 43,
+      "unicode": null,
+      "instruct": "kingwen_hex=43 | temporal=past | chaos=0.109 | whimsy=0.161 | darkTone=0.101 | coherence=0.487 | voiceWeight=0.499",
+      "design_prompt": "Voice shaped by hexagram 43 None: primary pool decisive_resolution, secondary genesis_spark, porosity 0. Breakthrough: sovereign ASSERT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.109, whimsy=0.161, darkTone=0.101, coherence=0.487, voiceWeight=0.499.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 43 None. Your tone is shaped by pools decisive_resolution and genesis_spark. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.108758,
+        "whimsy": 0.160657,
+        "darkTone": 0.101228,
+        "coherence": 0.486697,
+        "voiceWeight": 0.498771
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-44",
+      "name": null,
+      "hexagram_id": 44,
+      "unicode": null,
+      "instruct": "kingwen_hex=44 | temporal=past | chaos=0.121 | whimsy=0.195 | darkTone=0.117 | coherence=0.468 | voiceWeight=0.479",
+      "design_prompt": "Voice shaped by hexagram 44 None: primary pool unexpected_vigilance, secondary divergent_strife, porosity 0. Coming to Meet: boundary WAIT | yin=0.17 yang=0.83 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.121, whimsy=0.195, darkTone=0.117, coherence=0.468, voiceWeight=0.479.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 44 None. Your tone is shaped by pools unexpected_vigilance and divergent_strife. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.120734,
+        "whimsy": 0.194636,
+        "darkTone": 0.116866,
+        "coherence": 0.468218,
+        "voiceWeight": 0.479095
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-45",
+      "name": null,
+      "hexagram_id": 45,
+      "unicode": null,
+      "instruct": "kingwen_hex=45 | temporal=past | chaos=0.101 | whimsy=0.219 | darkTone=0.085 | coherence=0.450 | voiceWeight=0.435",
+      "design_prompt": "Voice shaped by hexagram 45 None: primary pool collective_assembly, secondary harmonic_flow, porosity 0. Gathering Together: transformer YIELD | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.101, whimsy=0.219, darkTone=0.085, coherence=0.450, voiceWeight=0.435.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 45 None. Your tone is shaped by pools collective_assembly and harmonic_flow. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.10127,
+        "whimsy": 0.218573,
+        "darkTone": 0.084594,
+        "coherence": 0.450103,
+        "voiceWeight": 0.435291
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-46",
+      "name": null,
+      "hexagram_id": 46,
+      "unicode": null,
+      "instruct": "kingwen_hex=46 | temporal=past | chaos=0.100 | whimsy=0.241 | darkTone=0.059 | coherence=0.436 | voiceWeight=0.423",
+      "design_prompt": "Voice shaped by hexagram 46 None: primary pool steady_ascent, secondary advancing_clarity, porosity 0. Pushing Upward: transformer ADAPT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.100, whimsy=0.241, darkTone=0.059, coherence=0.436, voiceWeight=0.423.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 46 None. Your tone is shaped by pools steady_ascent and advancing_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.099696,
+        "whimsy": 0.24102,
+        "darkTone": 0.058514,
+        "coherence": 0.435595,
+        "voiceWeight": 0.423246
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-47",
+      "name": null,
+      "hexagram_id": 47,
+      "unicode": null,
+      "instruct": "kingwen_hex=47 | temporal=past | chaos=0.156 | whimsy=0.224 | darkTone=0.124 | coherence=0.409 | voiceWeight=0.426",
+      "design_prompt": "Voice shaped by hexagram 47 None: primary pool exhausted_spirit, secondary deep_test, porosity 0. Oppression: dissipator WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.156, whimsy=0.224, darkTone=0.124, coherence=0.409, voiceWeight=0.426.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 47 None. Your tone is shaped by pools exhausted_spirit and deep_test. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.155648,
+        "whimsy": 0.224097,
+        "darkTone": 0.123803,
+        "coherence": 0.409033,
+        "voiceWeight": 0.425637
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-48",
+      "name": null,
+      "hexagram_id": 48,
+      "unicode": null,
+      "instruct": "kingwen_hex=48 | temporal=past | chaos=0.131 | whimsy=0.186 | darkTone=0.130 | coherence=0.426 | voiceWeight=0.441",
+      "design_prompt": "Voice shaped by hexagram 48 None: primary pool community_source, secondary soft_persistence, porosity 0. The Well: boundary YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.131, whimsy=0.186, darkTone=0.130, coherence=0.426, voiceWeight=0.441.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 48 None. Your tone is shaped by pools community_source and soft_persistence. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.131113,
+        "whimsy": 0.185841,
+        "darkTone": 0.130031,
+        "coherence": 0.425869,
+        "voiceWeight": 0.441207
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-49",
+      "name": null,
+      "hexagram_id": 49,
+      "unicode": null,
+      "instruct": "kingwen_hex=49 | temporal=past | chaos=0.107 | whimsy=0.183 | darkTone=0.097 | coherence=0.470 | voiceWeight=0.476",
+      "design_prompt": "Voice shaped by hexagram 49 None: primary pool upheaval_fire, secondary decisive_cutting, porosity 0. Revolution: transformer ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.107, whimsy=0.183, darkTone=0.097, coherence=0.470, voiceWeight=0.476.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 49 None. Your tone is shaped by pools upheaval_fire and decisive_cutting. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.107464,
+        "whimsy": 0.18305,
+        "darkTone": 0.096506,
+        "coherence": 0.470127,
+        "voiceWeight": 0.475786
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-50",
+      "name": null,
+      "hexagram_id": 50,
+      "unicode": null,
+      "instruct": "kingwen_hex=50 | temporal=past | chaos=0.115 | whimsy=0.213 | darkTone=0.110 | coherence=0.454 | voiceWeight=0.459",
+      "design_prompt": "Voice shaped by hexagram 50 None: primary pool transformative_vessel, secondary persistent_clarity, porosity 0. The Cauldron: sovereign ASSERT | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.115, whimsy=0.213, darkTone=0.110, coherence=0.454, voiceWeight=0.459.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 50 None. Your tone is shaped by pools transformative_vessel and persistent_clarity. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.115403,
+        "whimsy": 0.212991,
+        "darkTone": 0.110125,
+        "coherence": 0.453668,
+        "voiceWeight": 0.458937
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-51",
+      "name": null,
+      "hexagram_id": 51,
+      "unicode": null,
+      "instruct": "kingwen_hex=51 | temporal=past | chaos=0.166 | whimsy=0.229 | darkTone=0.095 | coherence=0.424 | voiceWeight=0.439",
+      "design_prompt": "Voice shaped by hexagram 51 None: primary pool sudden_awakening, secondary adversarial_sharp, porosity 0. The Arousing: sovereign ASSERT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.166, whimsy=0.229, darkTone=0.095, coherence=0.424, voiceWeight=0.439.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 51 None. Your tone is shaped by pools sudden_awakening and adversarial_sharp. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.165994,
+        "whimsy": 0.228667,
+        "darkTone": 0.094689,
+        "coherence": 0.424434,
+        "voiceWeight": 0.439444
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-52",
+      "name": null,
+      "hexagram_id": 52,
+      "unicode": null,
+      "instruct": "kingwen_hex=52 | temporal=past | chaos=0.102 | whimsy=0.193 | darkTone=0.081 | coherence=0.456 | voiceWeight=0.433",
+      "design_prompt": "Voice shaped by hexagram 52 None: primary pool meditative_pause, secondary quiet_strength, porosity 0. Keeping Still: boundary WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.102, whimsy=0.193, darkTone=0.081, coherence=0.456, voiceWeight=0.433.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 52 None. Your tone is shaped by pools meditative_pause and quiet_strength. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.101834,
+        "whimsy": 0.192567,
+        "darkTone": 0.080545,
+        "coherence": 0.45636,
+        "voiceWeight": 0.433455
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-53",
+      "name": null,
+      "hexagram_id": 53,
+      "unicode": null,
+      "instruct": "kingwen_hex=53 | temporal=past | chaos=0.103 | whimsy=0.210 | darkTone=0.083 | coherence=0.456 | voiceWeight=0.441",
+      "design_prompt": "Voice shaped by hexagram 53 None: primary pool gradual_patience, secondary steady_ascent, porosity 0. Development: transformer ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.103, whimsy=0.210, darkTone=0.083, coherence=0.456, voiceWeight=0.441.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 53 None. Your tone is shaped by pools gradual_patience and steady_ascent. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.103156,
+        "whimsy": 0.209965,
+        "darkTone": 0.083248,
+        "coherence": 0.455872,
+        "voiceWeight": 0.440577
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-54",
+      "name": null,
+      "hexagram_id": 54,
+      "unicode": null,
+      "instruct": "kingwen_hex=54 | temporal=past | chaos=0.126 | whimsy=0.228 | darkTone=0.058 | coherence=0.450 | voiceWeight=0.452",
+      "design_prompt": "Voice shaped by hexagram 54 None: primary pool risky_union, secondary warm_cooperation, porosity 0. The Marrying Maiden: dissipator YIELD | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.126, whimsy=0.228, darkTone=0.058, coherence=0.450, voiceWeight=0.452.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 54 None. Your tone is shaped by pools risky_union and warm_cooperation. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.125501,
+        "whimsy": 0.228477,
+        "darkTone": 0.057693,
+        "coherence": 0.449719,
+        "voiceWeight": 0.452178
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-55",
+      "name": null,
+      "hexagram_id": 55,
+      "unicode": null,
+      "instruct": "kingwen_hex=55 | temporal=past | chaos=0.119 | whimsy=0.192 | darkTone=0.060 | coherence=0.456 | voiceWeight=0.459",
+      "design_prompt": "Voice shaped by hexagram 55 None: primary pool peak_prosperity, secondary excess_weight, porosity 0. Abundance: sovereign ASSERT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.119, whimsy=0.192, darkTone=0.060, coherence=0.456, voiceWeight=0.459.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 55 None. Your tone is shaped by pools peak_prosperity and excess_weight. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.119444,
+        "whimsy": 0.192137,
+        "darkTone": 0.059824,
+        "coherence": 0.455776,
+        "voiceWeight": 0.459446
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-56",
+      "name": null,
+      "hexagram_id": 56,
+      "unicode": null,
+      "instruct": "kingwen_hex=56 | temporal=past | chaos=0.095 | whimsy=0.149 | darkTone=0.104 | coherence=0.475 | voiceWeight=0.464",
+      "design_prompt": "Voice shaped by hexagram 56 None: primary pool journeying_stranger, secondary soft_persistence, porosity 0. The Wanderer: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.095, whimsy=0.149, darkTone=0.104, coherence=0.475, voiceWeight=0.464.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 56 None. Your tone is shaped by pools journeying_stranger and soft_persistence. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.094773,
+        "whimsy": 0.1495,
+        "darkTone": 0.104074,
+        "coherence": 0.474726,
+        "voiceWeight": 0.464223
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-57",
+      "name": null,
+      "hexagram_id": 57,
+      "unicode": null,
+      "instruct": "kingwen_hex=57 | temporal=past | chaos=0.114 | whimsy=0.202 | darkTone=0.102 | coherence=0.457 | voiceWeight=0.462",
+      "design_prompt": "Voice shaped by hexagram 57 None: primary pool soft_persistence, secondary enduring_rhythm, porosity 0. The Gentle: boundary YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.114, whimsy=0.202, darkTone=0.102, coherence=0.457, voiceWeight=0.462.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 57 None. Your tone is shaped by pools soft_persistence and enduring_rhythm. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.113639,
+        "whimsy": 0.202495,
+        "darkTone": 0.102274,
+        "coherence": 0.456571,
+        "voiceWeight": 0.462172
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-58",
+      "name": null,
+      "hexagram_id": 58,
+      "unicode": null,
+      "instruct": "kingwen_hex=58 | temporal=past | chaos=0.124 | whimsy=0.223 | darkTone=0.092 | coherence=0.467 | voiceWeight=0.470",
+      "design_prompt": "Voice shaped by hexagram 58 None: primary pool open_pleasure, secondary harmonic_flow, porosity 0. The Joyous: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.124, whimsy=0.223, darkTone=0.092, coherence=0.467, voiceWeight=0.470.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 58 None. Your tone is shaped by pools open_pleasure and harmonic_flow. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.123734,
+        "whimsy": 0.222684,
+        "darkTone": 0.092179,
+        "coherence": 0.466665,
+        "voiceWeight": 0.470248
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-59",
+      "name": null,
+      "hexagram_id": 59,
+      "unicode": null,
+      "instruct": "kingwen_hex=59 | temporal=past | chaos=0.143 | whimsy=0.172 | darkTone=0.148 | coherence=0.416 | voiceWeight=0.438",
+      "design_prompt": "Voice shaped by hexagram 59 None: primary pool scattering_wind, secondary measured_restraint, porosity 0. Dispersion: dissipator ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.143, whimsy=0.172, darkTone=0.148, coherence=0.416, voiceWeight=0.438.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 59 None. Your tone is shaped by pools scattering_wind and measured_restraint. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.143226,
+        "whimsy": 0.171708,
+        "darkTone": 0.148201,
+        "coherence": 0.415774,
+        "voiceWeight": 0.437977
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-60",
+      "name": null,
+      "hexagram_id": 60,
+      "unicode": null,
+      "instruct": "kingwen_hex=60 | temporal=past | chaos=0.137 | whimsy=0.198 | darkTone=0.124 | coherence=0.432 | voiceWeight=0.446",
+      "design_prompt": "Voice shaped by hexagram 60 None: primary pool measured_restraint, secondary community_source, porosity 0. Limitation: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.137, whimsy=0.198, darkTone=0.124, coherence=0.432, voiceWeight=0.446.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 60 None. Your tone is shaped by pools measured_restraint and community_source. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.13717,
+        "whimsy": 0.197954,
+        "darkTone": 0.123974,
+        "coherence": 0.431926,
+        "voiceWeight": 0.446052
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-61",
+      "name": null,
+      "hexagram_id": 61,
+      "unicode": null,
+      "instruct": "kingwen_hex=61 | temporal=past | chaos=0.118 | whimsy=0.256 | darkTone=0.074 | coherence=0.449 | voiceWeight=0.450",
+      "design_prompt": "Voice shaped by hexagram 61 None: primary pool sincere_resonance, secondary soft_persistence, porosity 0. Inner Truth: transformer YIELD | yin=0.33 yang=0.67 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.118, whimsy=0.256, darkTone=0.074, coherence=0.449, voiceWeight=0.450.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 61 None. Your tone is shaped by pools sincere_resonance and soft_persistence. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.117866,
+        "whimsy": 0.255628,
+        "darkTone": 0.074127,
+        "coherence": 0.449254,
+        "voiceWeight": 0.449718
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-62",
+      "name": null,
+      "hexagram_id": 62,
+      "unicode": null,
+      "instruct": "kingwen_hex=62 | temporal=past | chaos=0.120 | whimsy=0.179 | darkTone=0.089 | coherence=0.444 | voiceWeight=0.447",
+      "design_prompt": "Voice shaped by hexagram 62 None: primary pool cautious_flight, secondary restrained_storage, porosity 0. Preponderance of the Small: dissipator WAIT | yin=0.67 yang=0.33 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.120, whimsy=0.179, darkTone=0.089, coherence=0.444, voiceWeight=0.447.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 62 None. Your tone is shaped by pools cautious_flight and restrained_storage. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.119577,
+        "whimsy": 0.178537,
+        "darkTone": 0.089258,
+        "coherence": 0.443951,
+        "voiceWeight": 0.447295
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-63",
+      "name": null,
+      "hexagram_id": 63,
+      "unicode": null,
+      "instruct": "kingwen_hex=63 | temporal=past | chaos=0.133 | whimsy=0.206 | darkTone=0.106 | coherence=0.425 | voiceWeight=0.436",
+      "design_prompt": "Voice shaped by hexagram 63 None: primary pool achieved_state, secondary deep_test, porosity 0. After Completion: boundary WAIT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.133, whimsy=0.206, darkTone=0.106, coherence=0.425, voiceWeight=0.436.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 63 None. Your tone is shaped by pools achieved_state and deep_test. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.132577,
+        "whimsy": 0.205927,
+        "darkTone": 0.105745,
+        "coherence": 0.424609,
+        "voiceWeight": 0.436021
+      }
+    },
+    {
+      "profile_id": "kingwen-hex-64",
+      "name": null,
+      "hexagram_id": 64,
+      "unicode": null,
+      "instruct": "kingwen_hex=64 | temporal=past | chaos=0.136 | whimsy=0.156 | darkTone=0.144 | coherence=0.421 | voiceWeight=0.444",
+      "design_prompt": "Voice shaped by hexagram 64 None: primary pool becoming_chaos, secondary renewal_light, porosity 0. Before Completion: transformer ADAPT | yin=0.50 yang=0.50 yao=0.00 | changing=0.00 intent_match=0.50. Express chaos=0.136, whimsy=0.156, darkTone=0.144, coherence=0.421, voiceWeight=0.444.",
+      "voice_type": "designed",
+      "preset_engine": "qwen",
+      "preset_voice_id": null,
+      "personality": "You are the voice of hexagram 64 None. Your tone is shaped by pools becoming_chaos and renewal_light. Porosity 0 governs how much outside emotion passes through you.",
+      "source": "kingwen-collapse-full-128",
+      "consensus_vector": {
+        "chaos": 0.136307,
+        "whimsy": 0.155557,
+        "darkTone": 0.144276,
+        "coherence": 0.421255,
+        "voiceWeight": 0.444322
+      }
+    }
+  ]
+}

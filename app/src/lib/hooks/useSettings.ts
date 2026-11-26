@@ -46,10 +46,11 @@ export function useCaptureSettings() {
       if (data) queryClient.setQueryData(CAPTURE_SETTINGS_KEY, data);
       // /capture/readiness resolves stt_model / llm_model live on each
       // call, but its cached response keeps serving the previous
-      // model's state until the next 5 s poll. Invalidate on model
-      // swaps so the readiness checklist re-checks immediately.
+      // model's state until the next 5 s poll. Refetch readiness once
+      // on model swaps so the checklist re-checks immediately without
+      // invalidating the query and retriggering refetchInterval timers.
       if (patch.stt_model !== undefined || patch.llm_model !== undefined) {
-        queryClient.invalidateQueries({ queryKey: ['capture-readiness'] });
+        queryClient.refetchQueries({ queryKey: ['capture-readiness'] });
       }
     },
   });
@@ -75,8 +76,7 @@ export function useGenerationSettings() {
   });
 
   const mutation = useMutation({
-    mutationFn: (patch: GenerationSettingsUpdate) =>
-      apiClient.updateGenerationSettings(patch),
+    mutationFn: (patch: GenerationSettingsUpdate) => apiClient.updateGenerationSettings(patch),
     onMutate: async (patch) => {
       await queryClient.cancelQueries({ queryKey: GENERATION_SETTINGS_KEY });
       const previous = queryClient.getQueryData<GenerationSettings>(GENERATION_SETTINGS_KEY);

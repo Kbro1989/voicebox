@@ -30,7 +30,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-import httpx
+import http
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]

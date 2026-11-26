@@ -9,7 +9,7 @@ import {
   Keyboard,
   Loader2,
 } from 'lucide-react';
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -117,18 +117,37 @@ export function DictationReadinessChecklist({
   // When a download disappears from activeTasks, it just finished — refetch
   // readiness immediately so the row flips to ✓ instead of waiting up to 5s
   // for the next readiness poll.
+  const refetchReadiness = useCallback(() => {
+    queryClient.refetchQueries({ queryKey: ['capture-readiness'] });
+  }, [queryClient]);
+
   const prevActive = useRef<Set<string>>(new Set());
+  const invalidateTimerRef = useRef<number | null>(null);
   useEffect(() => {
     const current = new Set(downloadByModel.keys());
+    let changed = false;
     for (const name of prevActive.current) {
       if (!current.has(name)) {
-        queryClient.invalidateQueries({ queryKey: ['capture-readiness'] });
-        queryClient.invalidateQueries({ queryKey: ['modelStatus'] });
+        changed = true;
         break;
       }
     }
+    if (changed) {
+      if (invalidateTimerRef.current) window.clearTimeout(invalidateTimerRef.current);
+      invalidateTimerRef.current = window.setTimeout(() => {
+        refetchReadiness();
+        queryClient.refetchQueries({ queryKey: ['modelStatus'] });
+        invalidateTimerRef.current = null;
+      }, 150);
+    }
     prevActive.current = current;
-  }, [downloadByModel, queryClient]);
+  }, [downloadByModel, queryClient, refetchReadiness]);
+
+  useEffect(() => {
+    return () => {
+      if (invalidateTimerRef.current) window.clearTimeout(invalidateTimerRef.current);
+    };
+  }, []);
 
   const downloadMutation = useMutation({
     mutationFn: async ({ modelName }: { gate: ReadinessGate; modelName: string }) =>
@@ -139,7 +158,6 @@ export function DictationReadinessChecklist({
       // keep adjacent UI in sync.
       queryClient.invalidateQueries({ queryKey: ['activeTasks'] });
       queryClient.invalidateQueries({ queryKey: ['modelStatus'] });
-      queryClient.invalidateQueries({ queryKey: ['capture-readiness'] });
       const displayName =
         vars.gate === 'stt' ? readiness.stt?.display_name : readiness.llm?.display_name;
       toast({
@@ -200,9 +218,7 @@ export function DictationReadinessChecklist({
           <h2 className="text-base font-semibold text-foreground">
             {t('captures.readiness.title')}
           </h2>
-          <p className="text-xs text-muted-foreground">
-            {t('captures.readiness.subheading')}
-          </p>
+          <p className="text-xs text-muted-foreground">{t('captures.readiness.subheading')}</p>
         </div>
       )}
 
@@ -283,5 +299,4 @@ export function DictationReadinessChecklist({
   );
 }
 
-const isMacOS =
-  typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.userAgent);
+const isMacOS = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.userAgent);
